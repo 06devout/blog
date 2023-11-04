@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -187,6 +187,148 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2020/04/29/NOI-Online-Round-2-%E6%B8%B8%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2020/04/29/NOI-Online-Round-2-%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">NOI Online Round 2 游记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-04-29 20:49:19" itemprop="dateCreated datePublished" datetime="2020-04-29T20:49:19+08:00">2020-04-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-02 21:50:17" itemprop="dateModified" datetime="2023-11-02T21:50:17+08:00">2023-11-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><span
+class="math inline">\(China\  Collect\  money\  Foundation\)</span>又要办<span
+class="math inline">\(NOI\  online\)</span>了！
+<del>上次NOIO炸的太惨了所以没写游记</del></p>
+<p>照例从<span class="math inline">\(day \  -1\)</span>开始说</p>
+<h3 id="day--1">day -1</h3>
+<p>拿权值线段树写平衡树板子结果WA了<span
+class="math inline">\(n\)</span>次... <span
+class="math inline">\(rp--\)</span> ### day 0 白天文化课美滋滋（<span
+class="math inline">\(\tiny\color{white}物理考试成功爆炸\)</span>）
+晚上写单调队列题结果写成了个线段树 <span
+class="math inline">\(rp--\)</span> ### day 1 上午提高组
+一进去开题看出T1是结论题 看T2应该是数据结构吧 T3？期望？不会</p>
+<p>大概8:50左右yy了一个做法，然后9点多完善了一下开始码
+9:15的时候过了样例，打了暴力拍上了，拍了5000组，感觉很稳（flag）</p>
+<p>看T2，这不就是个线段树区间修改区间求和吗（flag+1），好水啊
+9:45码完，过不了样例/kk
+后来发现区间平方维护错了，应该乘上区间长度，10点左右过掉了大样例
+花了十分钟写了对拍，小数据拍了3000组，大数据貌似要跑4s诶...
+估计是维护个树状数组吧 树状数组咋维护啊...</p>
+<p>看T3吧，嗯，<span
+class="math inline">\(n=20\)</span>，暴力似乎很不可做的样子
+不会暴力了/kk
+快11:00的时候就开始划水，划到11:30跑去吃饭了，然后T3就这么弃坑了...</p>
+<p>结果后来发现<span
+class="math inline">\(n=20,m=10\)</span>貌似可以<code>next_permutation</code>...
+wzy就打出来了，<del>但是至今不知道怎么做</del></p>
+<p>赛事估分：<span class="math inline">\(S:100+(70\sim
+100)+0,J:100+75+0=175\)</span> **** 后来看论坛，T1有原题？？？
+去原题上测了，过了(flag+1) 后来看讨论区还要特判<span
+class="math inline">\(k=1\)</span>？？？？？？？ 好了现在估分变成<span
+class="math inline">\((0\sim 100)+(70\sim 100)+0=(70\sim
+200)\)</span><del>事实证明我估分还是很准的</del></p>
+<p>进去一眼秒T1 看T2，嗯，估计是个搜索啥的，暴力分挺多？
+看T3，嗯，插板法？貌似不太好打的样子</p>
+<p>下午有点累，以至于开始的时候一点没有写的欲望...
+然后划水划到15:10左右在开始写T1,5min就切了，懒得对拍了 然后花了<span
+class="math inline">\(15\)</span>分钟想T2正解，无果，然后也累了，就打了75暴力走人
+然后因为下午要<span
+class="math inline">\(keeeeeeeeeep\)</span>，晚上还有课，就<span
+class="math inline">\(175\)</span>滚粗了</p>
+<p>滚粗之后在床上躺了半个小时，然后<span
+class="math inline">\(keeeeeeeep\)</span>，然后吃饭，然后继续考试...</p>
+<p>不知道是不是一天神魂颠倒的缘故莫名其妙选择开T2，T1又莫名其妙的写了个线段树合并，<del>最后被老师找谈话了</del></p>
+<hr />
+<h3 id="day-24">day 2~4</h3>
+<p>文化课划水 ### day 5 听说成绩出了，上去看 <span
+class="math inline">\(80+80+0=160\)</span>
+<del>CCF真仁慈</del>，T1就卡了我20分，T2居然还放我过了10分 <span
+class="math inline">\(xzh,wzy\ 180\)</span>，tql <span
+class="math inline">\(gjm\  160\)</span> Orz</p>
+<p>入门组<span
+class="math inline">\(175\)</span>，一分不差，嗯，<del>我居然帮我爸打了个全国rank50内</del></p>
+<p><del>听说可以用假名参赛</del>，嗯，<del>下次也用假名</del>，<del>教练的名挺好</del>（危）</p>
+<hr />
+<h3 id="总结">总结：</h3>
+<p>暴力能力低 思考不全面 还是用不少问题的</p>
+<p>这次还是有挂分的现象出现，稳定性还是很重要的，还有就是思维程度低，要多打打比赛了...</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

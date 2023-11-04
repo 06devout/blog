@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -187,6 +187,352 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/04/Dirichlet%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/11/04/Dirichlet%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Dirichlet问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-11-04 19:47:36 / Modified: 21:17:01" itemprop="dateCreated datePublished" datetime="2023-11-04T19:47:36+08:00">2023-11-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="dirichlet-问题">Dirichlet 问题</h1>
+<p>Dirichlet 问题是指对于实值函数 <span class="math inline">\(V\in
+C([0,1])\)</span>，求常微分方程</p>
+<p><span class="math display">\[
+(DP)
+\left\{\begin{matrix}
+-u^{\prime\prime}(x)+V(x)u(x)=f(x)  &amp; x\in [0,1]\\
+u(0)=u(1)=0  &amp;
+\end{matrix}\right.
+\]</span></p>
+<p>的解。</p>
+<p>我们接下来会证明，当 <span class="math inline">\(V\geq 0\)</span>
+恒成立的时候，<span class="math inline">\((DP)\)</span> 恒有唯一解。</p>
+<h1 id="唯一性">唯一性</h1>
+<p><strong><span
+class="math inline">\(\color{red}定理1\)</span>：</strong> 假设 <span
+class="math inline">\(V\geq 0\)</span>，<span class="math inline">\(f\in
+C([0,1]),u_1,u_2\in C^2([0,1])\)</span> 是 <span
+class="math inline">\((DP)\)</span> 的解，则 <span
+class="math inline">\(u_1=u_2\)</span></p>
+<p><strong>证明：</strong></p>
+<p>设 <span class="math inline">\(u=u_1-u_2\)</span>，则 <span
+class="math inline">\(u\)</span> 满足</p>
+<p><span class="math display">\[\left\{\begin{matrix}
+-u^{\prime\prime}+Vu=0  \\
+u(0)=u(1)=0
+\end{matrix}\right.\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp;=\int_0^1 [-u^{\prime\prime}+Vu]\bar u\mathrm dx \\
+&amp;= -\int_0^1 u^{\prime\prime}\bar u\mathrm dx+\int_0^1 V|u|^2\mathrm
+dx \text{ (分部积分)}\\
+&amp;= -u^\prime(x)\bar u(x)\Big |_0^1 +\int_0^1 u^\prime\bar
+u^\prime\mathrm dx+\int_0^1 V|u|^2\mathrm dx \  (\bar u(0)=\bar u(1)=0)
+\\
+&amp;= \int_0^1 |u^\prime|^2\mathrm dx+\int_0^1 V|u|^2\mathrm dx\geq
+\int_0^1 |u^\prime|\mathrm dx
+\end{aligned}
+\]</span></p>
+<p>所以 <span class="math inline">\(u^\prime =0,u\)</span> 为常函数，
+<span class="math inline">\(u=u(0)=0\)</span>.</p>
+<h1 id="v0-的情况"><span class="math inline">\(V=0\)</span> 的情况</h1>
+<p>我们先考虑 <span class="math inline">\(V=0\)</span>.</p>
+<p><strong><span
+class="math inline">\(\color{red}定理2\)</span>：</strong> 定义</p>
+$$ K(x,y)={
+<span class="math display">\[\begin{matrix}
+(x-1)y &amp; 0\leq y\leq x\leq 1 \\
+(y-1)x &amp; 0\leq x\leq y\leq 1
+\end{matrix}\]</span>
+<p>.</p>
+<p>C([0,1]) $$</p>
+<p>并定义运算 <span class="math inline">\(A\)</span>：</p>
+<p><span class="math display">\[Af(x)=\int_0^1 K(x,y)f(y)\mathrm
+dy\]</span></p>
+<p>则 <span class="math inline">\(A\in\mathcal B(L^2([0,1]))\)</span> 为
+compact symmetric 算子，且对于 <span class="math inline">\(f\in
+C([0,1]),Af\)</span> 是常微分方程</p>
+<p><span class="math display">\[
+\left\{\begin{matrix}
+-u^{\prime\prime}(x)=f(x)  &amp; x\in [0,1]\\
+u(0)=u(1)=0  &amp;
+\end{matrix}\right.
+\]</span></p>
+<p>的唯一解。</p>
+<p><strong>注：实际上在下面的证明过程中，我们并不依赖 <span
+class="math inline">\(K(x,y)\)</span> 具体是多少，定理成立只需要 <span
+class="math inline">\(K(x,y)\)</span> 有界实值即可，但这里明确给出 <span
+class="math inline">\(K\)</span> 是因为这个就是解决 Dirichlet 问题的
+Kernel。</strong></p>
+<p><strong>证明：</strong></p>
+<p>先证 <span class="math inline">\(A\)</span> 是紧(compact)的：设 <span
+class="math inline">\(C=\sup_{[0,1]\times [0,1]} K(x,y)\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+|Af(x)| &amp;= |\int_0^1 K(x,y) f(y)\mathrm dy| \\
+&amp;\leq C\int_0^1 |f(y)|\mathrm dy (\text{ Cauchy-Schwarz 不等式}) \\
+&amp;\leq C(\int_0^1 1^2)^{1/2}(\int_0^1 |f(y)|^2 \mathrm dy)^{1/2} \\
+&amp;= C ||f||_2
+\end{aligned}
+\]</span></p>
+<p>即 <span class="math inline">\(Af\)</span> 一致有界，同理对于 <span
+class="math inline">\(\forall x,z\)</span> 有</p>
+<p><span class="math display">\[|Af(x)-Af(z)|\leq \sup_{y\in [0,1]}
+|K(x,y)-K(z,y)|\cdot ||f||_2\]</span></p>
+<p>故 <span class="math inline">\(Af\)</span> 是连续的</p>
+<p>有了这两个性质，运用 <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Arzel%C3%A0%E2%80%93Ascoli_theorem">Arzela-Ascoli
+Theorem</a> 就可以证明 <span class="math inline">\(A\)</span>
+是紧的。</p>
+<p>接下来证明 <span class="math inline">\(A\)</span>
+是对称(symmetric)的</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle Af,g \rangle_2 &amp;= \int_0^1 \Big[ \int_0^1 K(x,y)f(y)\mathrm
+dy\Big] \overline{g(x)}\mathrm dx (\text{ 交换积分次序}) \\
+&amp;= \int_0^1 f(y) \overline{\Big[\int_0^1 \overline{K(x,y)}
+g(x)\mathrm dx \Big]}\mathrm dy \\
+&amp;= \int_0^1 f(y) \overline{\Big[\int_0^1 K(x,y) g(x)\mathrm dx
+\Big]}\mathrm dy \\
+&amp;= \langle f,Ag \rangle_2
+\end{aligned}
+\]</span></p>
+<p>故 <span class="math inline">\(A\)</span> 是对称的。</p>
+<p>不难验证 <span class="math inline">\(u=Af\)</span>
+确实是函数的一个解。</p>
+<h1 id="vneq-0-的情况"><span class="math inline">\(V\neq 0\)</span>
+的情况</h1>
+<p>首先给出一个 sketch。</p>
+<p>问题等价于求解 <span
+class="math inline">\(-u^{\prime\prime}=f-Vu\)</span>，即求 <span
+class="math inline">\(u=A(f-Vu)\)</span>，即求 <span
+class="math inline">\((I+Av)u=Af\)</span>.</p>
+<p>把 <span class="math inline">\(u\)</span> 写作 <span
+class="math inline">\(u=A^{1/2}v\)</span>，注意我们这里只是一个
+sketch，我们接下来会证明 <span class="math inline">\(A^{1/2}\)</span>
+存在且为紧且对称的（说明他有逆）</p>
+<p>则原来的问题转化成</p>
+<p><span
+class="math display">\[A^{1/2}(I+A^{1/2}VA^{1/2})v=Af\]</span></p>
+<p>即</p>
+<p><span
+class="math display">\[(I+A^{1/2}VA^{1/2})v=A^{1/2}f\]</span></p>
+<p>我们接下来要做的就是证明 <span class="math inline">\(A^{1/2}\)</span>
+是存在的，但这还不足以说明问题，因为我们还需要求出 <span
+class="math inline">\(v\)</span>，这需要 <span
+class="math inline">\((I+A^{1/2}VA^{1/2})\)</span> 是可逆的，</p>
+<p><strong><span
+class="math inline">\(\color{red}引理3\)</span>：</strong> <span
+class="math inline">\(NULL(A)=\{0\}\)</span>，且 <span
+class="math inline">\(A\)</span> 存在一组无穷特征值 <span
+class="math inline">\(\{\lambda_k\}_k\)</span>
+即其对应的正交单位特征向量 <span
+class="math inline">\(\{u_k\}_k\)</span> 满足</p>
+<p><span class="math display">\[\left\{\begin{matrix}
+u_k(x)=\sqrt 2\sin 2k\pi x  &amp; \\
+\lambda_k=\dfrac{1}{k^2\pi^2} &amp;
+\end{matrix}\right. \forall k\in\mathbb N\]</span></p>
+<p><strong>证明：</strong></p>
+<p>因为 <span
+class="math inline">\(NULL(A)=\overline{Range(A)}^\bot\)</span>，只需证明
+<span class="math inline">\(\overline{Range(A)}=L^2([0,1])\)</span>
+即可。</p>
+<p>取 <span class="math inline">\(u\)</span> 为 <span
+class="math inline">\([0,1]\)</span> 上的多项式，取 <span
+class="math inline">\(f=-u^{\prime\prime}\)</span>，此时 <span
+class="math inline">\(Af=0\)</span> 是唯一的 <span
+class="math inline">\((DP)\)</span> 的解，故 <span
+class="math inline">\(Range(A)\)</span> 包含所有的 <span
+class="math inline">\([0,1]\)</span> 上的多项式。</p>
+<p>因为 <span class="math inline">\([0,1]\)</span>
+上的多项式是致密的，且任意一个连续函数可以用多项式来逼近 (<a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Stone%E2%80%93Weierstrass_theorem">Weierstrass
+Approximation Theorem</a>)</p>
+<p>故 <span
+class="math inline">\(\overline{Range(A)}=L^2([0,1])\)</span>.</p>
+<p>接下来我们求解 <span class="math inline">\(A\)</span>
+的各个特征值。</p>
+<p>设 <span class="math inline">\(\lambda\neq 0,Au=\lambda
+u\)</span>，则 <span
+class="math inline">\(u=\dfrac{1}{\lambda}A\Rightarrow
+u=A(\dfrac{1}{\lambda}u) \Rightarrow
+-u^{\prime\prime}=\dfrac{u}{\lambda}\)</span>，这是最基本的常微分方程，他的解是三角级数
+<span class="math inline">\(u=A\sin
+\dfrac{1}{\sqrt\lambda}x+B\cos\dfrac{1}{\sqrt \lambda}x\)</span>。</p>
+<p>因为 <span class="math inline">\(u(0)=0\)</span>，所以 <span
+class="math inline">\(B=0\)</span>，因为 <span
+class="math inline">\(u(1)=0\)</span>，所以我们要求 <span
+class="math inline">\(\dfrac{1}{\sqrt\lambda}\in \mathbb
+N\pi\)</span>，故 <span class="math inline">\(u(x)=A\sin k\pi
+x\)</span>，为了满足 <span
+class="math inline">\(||u||_2=1\)</span>，我们可以解得 <span
+class="math inline">\(A=\sqrt 2\)</span>.</p>
+<p>接下来我们证明 <span class="math inline">\(A^{1/2}\)</span>
+存在，且是紧且对称的。</p>
+<p><strong><span
+class="math inline">\(\color{red}引理4\)</span>：</strong> 对于 <span
+class="math inline">\(f\in L^2([0,1])\)</span> 且有傅里叶级数表示</p>
+<p><span class="math display">\[
+\left\{\begin{matrix}
+f(x)=\sum_{k=1}^\infty c_k\sqrt 2 \sin k\pi x  &amp; \\
+c_k=\int_0^1 f(x)\sqrt 2\sin k\pi x\mathrm dx  &amp;
+\end{matrix}\right.
+\]</span></p>
+<p>定义算子 <span class="math inline">\(B\)</span> 为</p>
+<p><span class="math display">\[Bf(x)=\sum_{k=1}^\infty \frac{1}{k\pi
+}c_k\sqrt 2\sin k\pi x\]</span></p>
+<p>则 <span class="math inline">\(B\)</span> 在 <span
+class="math inline">\(L^2([0,1])\)</span> 上为紧且对称的有界算子，且
+<span class="math inline">\(B^2=A\)</span>.</p>
+<p><strong>证明：</strong> <span class="math inline">\(B^2=A\)</span>
+不难验证，剩下的咕咕咕</p>
+<p>接下来我们对于实值函数 <span class="math inline">\(V\in
+C([0,1])\)</span> 定义 <span class="math inline">\(m_Vf=Vf\)</span>，则
+<span class="math inline">\(m_V\in\mathcal B(L^2([0,1]))\)</span>
+且是对称的（<span class="math inline">\(V\)</span> 是连续有界的故 <span
+class="math inline">\(m_V\)</span> 有界，<span
+class="math inline">\(V\)</span> 是实值函数故 <span
+class="math inline">\(m_V\)</span> 是对称的）</p>
+<p><strong><span
+class="math inline">\(\color{red}引理5\)</span>：</strong> <span
+class="math inline">\(T=Bm_V B\)</span> 满足 1）<span
+class="math inline">\(T\)</span> 是紧且对称的 2) <span
+class="math inline">\(T\in\mathcal B(L^2([0,1]),C([0,1]))\)</span></p>
+<p><strong>证明：</strong></p>
+<p>因为 <span class="math inline">\(B\)</span> 和 <span
+class="math inline">\(m_V\)</span> 都是紧且对称的，所以 1)
+可以直接得出。</p>
+<p>对于 2)，我们只需要证明 <span class="math inline">\(B\in\mathcal
+B(L^2([0,1]),C([0,1]))\)</span>.</p>
+<p>延续此前对 <span class="math inline">\(f\)</span>
+的傅里叶级数表示的记号，</p>
+<p><span class="math display">\[Bf=\sum_{k=1}^\infty
+\frac{c_k}{k\pi}\sqrt 2\sin k\pi x,\]</span> <span
+class="math display">\[\frac{c_k}{k\pi}\sqrt 2 \sin k\pi x| \leq
+\frac{|c_k|\sqrt 2}{k\pi}\leq \frac{|c_k|}{k},\]</span> <span
+class="math display">\[\sum_{k=1}^\infty \frac{|c_k|}{k}\leq (\sum_j
+\frac{1}{k^2})^{1/2}(\sum_{k}|c_k|^2)^{1/2}=\frac{\pi}{\sqrt
+6}||f||_2\]</span></p>
+<p>由 <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Weierstrass_M-test">Weierstrass
+M-test</a>，<span class="math inline">\(|Bf(x)|\leq \dfrac{\pi}{\sqrt 6}
+||f||_2\)</span>，即证明 <span class="math inline">\(B\)</span>
+是有界的。</p>
+<p><strong><span
+class="math inline">\(\color{red}引理6\)</span>：</strong> <span
+class="math inline">\(I+Bm_VB\)</span> 可逆</p>
+<p>根据 <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Fredholm_alternative">Fredholm
+Alternative</a>，一个紧对称算子的逆算子存在当且仅当他的零空间是平凡的。</p>
+<p>假设 <span class="math inline">\((I+Bm_VB)g=0\)</span>，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+0 &amp;=\langle (I+Bm_VB)g,g\rangle \\
+&amp;= ||g||_2^2+\langle Bm_VBg,g\rangle (\text{ B 是对称的}) \\
+&amp;= ||g||_2^2+\langle m_V Bg,Bg\rangle \\
+&amp;= ||g||_2^2+\int_0^1 V|Bg|^2\mathrm dx \\
+&amp;\geq ||g||_2^2
+\end{aligned}
+\]</span></p>
+<p>所以 <span class="math inline">\(g=0\)</span>，<span
+class="math inline">\(NULL(I+Bm_VB)=\{0\}\)</span>，<span
+class="math inline">\(I+Bm_VB\)</span> 可逆。</p>
+<p><strong><span
+class="math inline">\(\color{red}定理7：\)</span></strong> 对于 <span
+class="math inline">\(V\in C([0,1])\)</span> 且 <span
+class="math inline">\(V\geq 0\)</span> 的实值函数和 <span
+class="math inline">\(f\in C([0,1])\)</span>，存在唯一 <span
+class="math inline">\(u\in C^2([0,1])\)</span> 为常微分方程</p>
+<p><span class="math display">\[
+(DP)
+\left\{\begin{matrix}
+-u^{\prime\prime}(x)+V(x)u(x)=f(x)  &amp; x\in [0,1]\\
+u(0)=u(1)=0  &amp;
+\end{matrix}\right.
+\]</span></p>
+<p>的解。</p>
+<p><strong>证明：</strong></p>
+<p>取 <span
+class="math inline">\(v=(I+A^{1/2}m_VA^{1/2})^{-1}A^{1/2}f,u=A^{1/2}v\)</span>，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+u+A(Vu) &amp;=A^{1/2} v+A^{1/2}[A^{1/2}m_VA^{1/2}]v \\
+&amp;= A^{1/2}(I+A^{1/2}m_V A^{1/2})v \\
+&amp;= Af
+\end{aligned}
+\]</span></p>
+<p>两边同时求二阶导，得到</p>
+<p><span class="math display">\[u^{\prime\prime}-Vu=-f\]</span></p>
+<p>整理即得</p>
+<p><span class="math display">\[-u^{\prime\prime}+Vu=f\]</span></p>
+<p>不难验证 <span class="math inline">\(u\)</span>
+也满足边界条件，故存在唯一的</p>
+<p><span
+class="math display">\[u=A^{1/2}(I+A^{1/2}m_VA^{1/2})^{-1}A^{1/2}f\]</span></p>
+<p>解决 Dirichlet 问题。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1857,148 +2203,6 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/smarthehe/article/det
 <p>比预期的位置还是低了点。。。</p>
 <h4 id="day-3">day 3</h4>
 <p>美妙的 whk，再次开启（</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2020/04/29/NOI-Online-Round-2-%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2020/04/29/NOI-Online-Round-2-%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">NOI Online Round 2 游记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-04-29 20:49:19" itemprop="dateCreated datePublished" datetime="2020-04-29T20:49:19+08:00">2020-04-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-02 21:50:17" itemprop="dateModified" datetime="2023-11-02T21:50:17+08:00">2023-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><span
-class="math inline">\(China\  Collect\  money\  Foundation\)</span>又要办<span
-class="math inline">\(NOI\  online\)</span>了！
-<del>上次NOIO炸的太惨了所以没写游记</del></p>
-<p>照例从<span class="math inline">\(day \  -1\)</span>开始说</p>
-<h3 id="day--1">day -1</h3>
-<p>拿权值线段树写平衡树板子结果WA了<span
-class="math inline">\(n\)</span>次... <span
-class="math inline">\(rp--\)</span> ### day 0 白天文化课美滋滋（<span
-class="math inline">\(\tiny\color{white}物理考试成功爆炸\)</span>）
-晚上写单调队列题结果写成了个线段树 <span
-class="math inline">\(rp--\)</span> ### day 1 上午提高组
-一进去开题看出T1是结论题 看T2应该是数据结构吧 T3？期望？不会</p>
-<p>大概8:50左右yy了一个做法，然后9点多完善了一下开始码
-9:15的时候过了样例，打了暴力拍上了，拍了5000组，感觉很稳（flag）</p>
-<p>看T2，这不就是个线段树区间修改区间求和吗（flag+1），好水啊
-9:45码完，过不了样例/kk
-后来发现区间平方维护错了，应该乘上区间长度，10点左右过掉了大样例
-花了十分钟写了对拍，小数据拍了3000组，大数据貌似要跑4s诶...
-估计是维护个树状数组吧 树状数组咋维护啊...</p>
-<p>看T3吧，嗯，<span
-class="math inline">\(n=20\)</span>，暴力似乎很不可做的样子
-不会暴力了/kk
-快11:00的时候就开始划水，划到11:30跑去吃饭了，然后T3就这么弃坑了...</p>
-<p>结果后来发现<span
-class="math inline">\(n=20,m=10\)</span>貌似可以<code>next_permutation</code>...
-wzy就打出来了，<del>但是至今不知道怎么做</del></p>
-<p>赛事估分：<span class="math inline">\(S:100+(70\sim
-100)+0,J:100+75+0=175\)</span> **** 后来看论坛，T1有原题？？？
-去原题上测了，过了(flag+1) 后来看讨论区还要特判<span
-class="math inline">\(k=1\)</span>？？？？？？？ 好了现在估分变成<span
-class="math inline">\((0\sim 100)+(70\sim 100)+0=(70\sim
-200)\)</span><del>事实证明我估分还是很准的</del></p>
-<p>进去一眼秒T1 看T2，嗯，估计是个搜索啥的，暴力分挺多？
-看T3，嗯，插板法？貌似不太好打的样子</p>
-<p>下午有点累，以至于开始的时候一点没有写的欲望...
-然后划水划到15:10左右在开始写T1,5min就切了，懒得对拍了 然后花了<span
-class="math inline">\(15\)</span>分钟想T2正解，无果，然后也累了，就打了75暴力走人
-然后因为下午要<span
-class="math inline">\(keeeeeeeeeep\)</span>，晚上还有课，就<span
-class="math inline">\(175\)</span>滚粗了</p>
-<p>滚粗之后在床上躺了半个小时，然后<span
-class="math inline">\(keeeeeeeep\)</span>，然后吃饭，然后继续考试...</p>
-<p>不知道是不是一天神魂颠倒的缘故莫名其妙选择开T2，T1又莫名其妙的写了个线段树合并，<del>最后被老师找谈话了</del></p>
-<hr />
-<h3 id="day-24">day 2~4</h3>
-<p>文化课划水 ### day 5 听说成绩出了，上去看 <span
-class="math inline">\(80+80+0=160\)</span>
-<del>CCF真仁慈</del>，T1就卡了我20分，T2居然还放我过了10分 <span
-class="math inline">\(xzh,wzy\ 180\)</span>，tql <span
-class="math inline">\(gjm\  160\)</span> Orz</p>
-<p>入门组<span
-class="math inline">\(175\)</span>，一分不差，嗯，<del>我居然帮我爸打了个全国rank50内</del></p>
-<p><del>听说可以用假名参赛</del>，嗯，<del>下次也用假名</del>，<del>教练的名挺好</del>（危）</p>
-<hr />
-<h3 id="总结">总结：</h3>
-<p>暴力能力低 思考不全面 还是用不少问题的</p>
-<p>这次还是有挂分的现象出现，稳定性还是很重要的，还有就是思维程度低，要多打打比赛了...</p>
 
       
     </div>
