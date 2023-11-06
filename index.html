@@ -73,7 +73,7 @@
       <h1 class="site-title">devout</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">人</p>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
   </div>
 
   <div class="site-nav-right">
@@ -124,18 +124,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -187,6 +187,198 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/11/06/Maths-is-Hard-I/" class="post-title-link" itemprop="url">Maths is Hard I</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-11-06 18:45:22 / Modified: 19:45:05" itemprop="dateCreated datePublished" datetime="2023-11-06T18:45:22+08:00">2023-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Maths-Is-Hard-Series/" itemprop="url" rel="index"><span itemprop="name">Maths Is Hard Series</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="description">Description</h2>
+<p>对于 <span class="math inline">\(A,B\in \mathbb F_2^n\)</span>，定义
+<span class="math inline">\(A\cdot B=\sum_{i=1}^n
+a_ib_i\)</span>，并定义 <span class="math inline">\(T_n=\{A\in\mathbb
+F_2^n|A\cdot A=3\}\)</span></p>
+<p>证明：对于互不相同的 <span
+class="math inline">\(A_1,A_2,\cdots,A_{n+1}\in T_n\)</span>, <span
+class="math inline">\(\exists 1\leq i&lt;j\leq n+1\)</span> 使得 <span
+class="math inline">\(A_i\cdots A_j=1\)</span>.</p>
+<h2 id="solution">Solution</h2>
+<p>用 <span class="math inline">\(A_k(i)\)</span> 表示 <span
+class="math inline">\(A_k\)</span> 的 <span
+class="math inline">\(x_i\)</span> 的值。</p>
+<p>设 <span
+class="math inline">\(B_k=\{i=1,2,\cdots,n|A_k(i)=1\}\)</span>，即 <span
+class="math inline">\(A_k\)</span> 中每个元素的值为 1 的下标位置。</p>
+<p>由抽屉原理，<span class="math inline">\(n+1\)</span> 个 <span
+class="math inline">\(A_k\)</span> 代表 <span
+class="math inline">\(n+1\)</span>
+个颜色的小球，每个颜色有三个小球，放入 <span
+class="math inline">\(A_k(i)=1\)</span>
+的三个位置（抽屉）中，则存在一个抽屉中有至少两个不同颜色的小球，即 <span
+class="math inline">\(\exists 1\leq i&lt;j\leq n+1\)</span> 使得 <span
+class="math inline">\(A_i\cdot A_j&gt;0\)</span>。</p>
+<p>因为 <span class="math inline">\(A_i\cdot A_j\in
+\{0,1,2\}\)</span>，</p>
+<ul>
+<li>若 <span class="math inline">\(A_i\cdot
+A_j=1\)</span>，则命题成立.</li>
+<li>否则 <span class="math inline">\(\forall A_i\cdot A_j\neq 0,A_i\cdot
+A_j=2\)</span>.</li>
+</ul>
+<p>假设 <span class="math inline">\(\forall A_i\cdot A_j\neq 0,A_i\cdot
+A_j=2(*)\)</span>。</p>
+<p><strong>引理1：</strong> 对于互不相同的 <span
+class="math inline">\(i,j,k\)</span>，若 <span
+class="math inline">\(A_i\cdot A_j=A_j\cdot A_k=2\)</span>，则 <span
+class="math inline">\(A_i\cdot A_k=2\)</span>。</p>
+<p><strong>证明：</strong> 不妨设 <span
+class="math inline">\(A_j(1)=A_j(2)=A_j(3)=1,A_i(1)=A_i(2)=1\)</span>，因为
+<span class="math inline">\(A_j\cdot A_k=2\)</span>，所以 <span
+class="math inline">\(A_k(1),A_k(2)\)</span> 中至少有一个为 <span
+class="math inline">\(1\)</span>，故 <span
+class="math inline">\(A_i\cdot A_k\neq 0,A_i\cdot A_k=2\)</span>. <span
+class="math inline">\(\Box\)</span></p>
+<p>即我们可以把 <span class="math inline">\(A_i\)</span> 分成若干组
+<span
+class="math inline">\(E_1,E_2,\cdots,E_m\)</span>，每一组内的任意两个元素的点乘恰好为
+2，而不同组的元素的点乘为 0.</p>
+<p>形式化的：设 <span
+class="math inline">\(C_k=\{j=1,2,\cdots,n+1|A_j\cdot
+A_k=2\}\)</span>，则 <span class="math inline">\(\forall j\in
+C_k,C_j=C_k\)</span>，而 <span
+class="math inline">\(\{C_k\}_{k=1}^n\)</span> 中所有不同的元素构成
+<span class="math inline">\(\{E_k\}_{k=1}^m\)</span>。</p>
+<p>设 <span class="math inline">\(D_j=\cup_{i\in E_j}B_i\)</span>，即
+<span class="math inline">\(E_j\)</span> 中某个元素在该位上为 1
+的下标集合（<span class="math inline">\(E_j\)</span>
+覆盖的下标位置）</p>
+<p><strong>引理2：</strong> <span class="math inline">\(\forall i\neq
+j,D_i\cap D_j=\emptyset\)</span>，即 <span
+class="math inline">\(E_i\)</span> 和 <span
+class="math inline">\(E_j\)</span> 覆盖的下标无交集。</p>
+<p><strong>证明：</strong> 反证法：若 <span
+class="math inline">\(D_i\cap D_j\neq \emptyset,\)</span> 则存在 <span
+class="math inline">\(k\in E_i,\ell\in E_j\)</span> 使得 <span
+class="math inline">\(B_k\cap B_\ell\neq \emptyset\)</span>，即 <span
+class="math inline">\(A_k\cdot A_\ell \neq 0\)</span>，则 <span
+class="math inline">\(A_k\cdot A_\ell=2\)</span>，与 <span
+class="math inline">\(k,\ell\)</span> 在不同的 <span
+class="math inline">\(E_i,E_j\)</span> 中矛盾。 <span
+class="math inline">\(\Box\)</span></p>
+<p><strong>引理3：</strong> <span class="math inline">\(|D_k|\geq
+|E_k|\)</span>，即大小为 <span class="math inline">\(\sigma\)</span>
+的一个集合 <span class="math inline">\(E_k\)</span> 至少覆盖了 <span
+class="math inline">\(\sigma\)</span> 个位置。</p>
+<p><strong>证明：</strong></p>
+<p>对于 <span class="math inline">\(\sigma\leq
+2\)</span>，不难证明。</p>
+<p>设 <span
+class="math inline">\(E_k=\{e_1,e_2,\cdots,e_\sigma\}\)</span>,</p>
+<p>不妨设 <span class="math inline">\(B_{e_1}=\{1,2,3\}\)</span>，即
+<span class="math inline">\(A_{e_1}=1,1,1,0,\cdots\)</span>。</p>
+<p>因为 <span class="math inline">\(A_{e_2}\cdot
+A_{e_1}=2\)</span>，不妨设 <span
+class="math inline">\(B_{e_2}=\{1,2,4\}\)</span>。</p>
+<p>则对于 <span class="math inline">\(\sigma=3,4\)</span>，<span
+class="math inline">\(\{1,2,3,4\}\subseteq D_k\)</span>，<span
+class="math inline">\(|D_k|\geq \sigma\)</span>。</p>
+<p>对于 <span class="math inline">\(\sigma\geq 5\)</span>，</p>
+<p>若 <span class="math inline">\(B_{e_3}\cap B_{e_1}\neq
+\{1,2\}\)</span>，则不妨设 <span
+class="math inline">\(B_{e_3}=\{1,3,4\}\)</span>。</p>
+<p><span class="math inline">\(B_{e_4}\)</span> 只能等于 <span
+class="math inline">\(\{2,3,4\}\)</span>。（类似第二问证明）</p>
+<p>此时不存在合法的 <span class="math inline">\(B_{e_5}\)</span>。</p>
+<p>故 <span class="math inline">\(B_{e_1}\cap B_{e_3}=
+\{1,2\}\)</span>，不妨设 <span
+class="math inline">\(B_{e_3}=\{1,2,4\}\)</span>。</p>
+<p>则 <span class="math inline">\(B_{e_4}\cap
+B_{e_1}=\{1,2\}\)</span>，否则无法同时满足 <span
+class="math inline">\(A_{e_2}\cdot A_{e_4}=A_{e_3}\cdot
+A_{e_4}=2\)</span>，则不妨设 <span
+class="math inline">\(B_{e_4}=\{1,2,5\}\)</span>。</p>
+<p>以此类推，<span class="math inline">\(B_{e_k}\)</span>
+唯一确定，不难发现此时 <span
+class="math inline">\(|D_k|=\sigma+1\)</span>，引理3即证。 <span
+class="math inline">\(\Box\)</span></p>
+<p>应用引理3，对于所有的 <span class="math inline">\(E_k\)</span>
+求和，得到</p>
+<p><span class="math display">\[n=\sum_{k=1}^m |D_k|\geq \sum_{k=1}^m
+|E_k|=n+1\]</span></p>
+<p>的矛盾，即假设 <span class="math inline">\((*)\)</span>
+不成立，原命题成立。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1903,306 +2095,6 @@ cy也没做出来，我觉得不一定是因为这道题有多难，而是因为
 <p>总体来看，命题非常新颖，没有考察往常经常考察到的dp问题，考察了一道大家都没有预料到的大模拟题。</p>
 <p>同时XHOI2020OCT也押中了T1会是一道大模拟（</p>
 <p>感觉自己的做题策略还有一定的问题，如果没有刚40分钟的T4可能T3就打出来了</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2020/08/23/NOI2020%E5%90%8C%E6%AD%A5%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2020/08/23/NOI2020%E5%90%8C%E6%AD%A5%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/" class="post-title-link" itemprop="url">NOI2020同步赛爆零记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-08-23 20:51:28" itemprop="dateCreated datePublished" datetime="2020-08-23T20:51:28+08:00">2020-08-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-02 21:49:12" itemprop="dateModified" datetime="2023-11-02T21:49:12+08:00">2023-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><del>大概从寒假开始都叫暑假吧</del></p>
-<p><del>所以要从头开始</del></p>
-<p><del>大概记录一下在学校划水的事吧</del></p>
-<h4 id="day--2132020.1.17">day -213(2020.1.17)</h4>
-<p>放寒假啦！<del>开心</del></p>
-<h4 id="day--2042020.1.26">day -204(2020.1.26)</h4>
-<p><del>延期开学了</del></p>
-<h4 id="day--772020.6.1">day -77(2020.6.1)</h4>
-<p>终于开学了...</p>
-<p>然后我们一帮人中午就被 gu 放学之后找去谈话，说了说“训练计划”</p>
-<p>然后 nls 把我扣在了食堂，等我过去的时候他们差不多都说完了...</p>
-<p>于是啥东西都没听见</p>
-<h4 id="day--722020.6.6">day -72(2020.6.6)</h4>
-<p>开学之后的第一次<del>唯一一次</del>训练</p>
-<p>做的是 FJ 集训的题好像，反正三道暴力走人，被吊打了/dk</p>
-<h4 id="day--672020.6.11">day -67(2020.6.11)</h4>
-<p>BJ 新增一例确诊</p>
-<h4 id="day--662020.6.12">day -66(2020.6.12)</h4>
-<p>BJOI2020 没了（</p>
-<h4 id="day--612020.6.17">day -61(2020.6.17)</h4>
-<p>终于还是放假了，然后<del>愉快</del>的暑假就开始啦（</p>
-<h4 id="day--392020.7.9">day -39(2020.7.9)</h4>
-<p>学校期末总算搞完了，然后微信群里就被 gu 催着去学校训练了...</p>
-<h4 id="day--372020.7.11">day -37(2020.7.11)</h4>
-<p>集训第一天，日常在学校的<del>小破OJ</del>上打模拟赛</p>
-<p>然后成功被 lpl 吊打</p>
-<h4 id="day">day ???</h4>
-<p>gu 让 cy 每天下午给我们讲两道题，然后 cy 问我们想听什么，毒瘤的 xyc
-想听牛顿迭代法，于是 cy 就说给我们贩毒，于是就开始讲 <span
-class="math inline">\(\text{FFT}\)</span>，开始听的一头雾水，后来 cy
-让我们手玩了一遍 <span class="math inline">\(limit=8\)</span>
-的，然后差不多就懂了。</p>
-<p><del>虽然中间推错了无数次</del></p>
-<p>反正最后算是会了吧。。。虽然 <span
-class="math inline">\(\text{IFFT}\)</span> 没听懂（</p>
-<p>后来讲多项式全家桶基本上就不说人话了</p>
-<p>然后 cy 就放弃<del>贩毒</del>了</p>
-<p>gjm
-说“他家里有点事”，然后就没来，<strong>这意味着什么呢？</strong></p>
-<hr />
-<p>上午模拟赛，下午 cy 讲题，然后还被 gu
-<del>压榨现役选手</del>去给初一的讲课。。。。。。</p>
-<p>初一除了一个 hhr 跟我们一起训练还有一堆人，但是都是来这里划水的</p>
-<p>gu 让我讲 ds，还不让我讲树状数组，说“先把基础数据结构讲明白”</p>
-<p>xyc 给他们讲图论，一天就讲到 tarjan
-了，最后一问，连链式<strong>向前</strong>星都不会</p>
-<p>感觉他们听课的感受跟我们去年差不多...我们初一的时候就被强行灌输了树剖<del>虽然显然没听懂</del></p>
-<p>最后 gu
-还说“我们这个暑假，把提高组的东西<strong>都过了一遍</strong>了，接下来就是大量的刷题了”</p>
-<p>但是...</p>
-<hr />
-<p>然后某天早上，gjm 依然家里有事，gu
-进来给我们宣布了一个消息，那就是</p>
-<p>gjm 家里的事，就是去 bdf 某校区 1+3 面试了（</p>
-<p>于是 gjm 就光荣的去了 bdf（</p>
-<p>然后他就光荣的成为了 gu 嘴里的下一个反例（</p>
-<hr />
-<p>中午饭学校有盒饭，第一天的时候 gu
-给我们弄了两份饭于是我们就觉得饭是免费的（</p>
-<p>于是后来两天都去那里白嫖，每次就签个字走人</p>
-<p>然后第三天开始<del>食堂的就开始催债了</del></p>
-<p>然后我们<del>一气之下</del>就去华彩吃了</p>
-<p>第一天出去的时候正面撞上 gu，</p>
-<blockquote>
-<p>gu:“你们是去食堂吧”</p>
-<p>齐:“去华彩”</p>
-<p>gu:“嫌学校的太次了啊”</p>
-<p>(沉默)</p>
-<p>lpl:“换换口味”</p>
-</blockquote>
-<p>然后我们就天天换口味了，顺便长了个教训，不从4层走了，先下到3层再去做电梯</p>
-<p><del>后来发现 cy 和 ljh 也是这么干的</del></p>
-<p>后来中午太晒了就开始点外卖，压榨苦力 lpl 取外卖，顺便我们刷
-Railgun（</p>
-<p>点外卖点汉堡王或者西少爷之类的地方，<del>西少爷的酸辣粉是真好吃</del></p>
-<p>不过不得不说，疫情之后学校的饭越做越难吃了</p>
-<hr />
-<p>晚上和<del>反例同学</del>打CF <del>话说这不是 gu
-禁止做的事情吗</del></p>
-<p>然而日常 fst</p>
-<p>一共没打几场都 fst 三次了。。。</p>
-<p>然后发挥极不稳定。。。</p>
-<p>反正菜是原罪啦</p>
-<hr />
-<p>后来 cy 貌似也没题讲了，然后就带着我们随机跳题</p>
-<p>“诶这题挺简单啊，你们5分钟想一想”</p>
-<p>“我觉得洛谷评分一直偏高啊，这题（蓝题）应该也就是个黄题水平吧”</p>
-<p><del>并且叉掉了小行星那道题（虽然之前有人叉过了</del></p>
-<p>后来WC，省队集训之后就没讲过了...</p>
-<hr />
-<p>然后放暑假之前就知道初三学校要提前开学补课</p>
-<p><del>为啥不选赶快直升选完就没这事了</del></p>
-<p>大悲 #### day -4 之前 gu 让我们报 NOI 同步赛，结果 xyc 和 lpl
-因为某种原因没报（</p>
-<p>gu 进来遗憾的说</p>
-<p>“哎呀你知道吗，好不容易 CCF
-能有一次免费的比赛，之前这些比赛都是要收费的啊，好不容易这次免费了，要抓住这种机会啊”</p>
-<p>然后我跟他说我们刚好8.18开始线上补课</p>
-<p>然后 gu 让我请假</p>
-<p>神奇的是 nls lls zls 居然没有阻拦我</p>
-<p><del>想当年NOIP集训可是费了 gu
-九牛二虎之力才把我们几个从班里弄出来</del></p>
-<h4 id="day--3">day -3</h4>
-<p>暑假集训最后一天了（</p>
-<p>模拟赛依然是被吊打</p>
-<p>中午想着最后一天了就去了必胜客，然后撞见了（撞见了 cjr cfz ms
-等人）的 cy ljh 和学姐</p>
-<p>然后就相当于给 cy 和学姐壮行了？（雾</p>
-<p>然后听 cjr 给我们分享经验“只要做出D1T1，后面的瞎搞点分，就能到 Cu 和
-Ag 之间的位置”</p>
-<p>嗯...</p>
-<p>晚上本来说好和<del>反例同学</del>打CF，结果网死活上不去，<strong>这意味着什么呢？</strong></p>
-<p>然后刚好有点拉肚子...然后就没打</p>
-<h4 id="day--2">day -2</h4>
-<p>凌晨不知道几点醒了，头疼，然后是不是的肚子剧烈的疼痛</p>
-<p>然后强迫自己睡着，然后失败了</p>
-<p>感觉天快亮了才又睡着</p>
-<p>醒了之后头更痛了</p>
-<p>然后上午就发烧了 <del>莫非是必胜客出问题了</del></p>
-<p>然后喝了美林下午就好了（</p>
-<p><del>退烧药还是要美林啊</del></p>
-<p>晚上被老爸拉去看电影，挑了个什么“龙门飞甲”</p>
-<h4 id="day--1">day -1</h4>
-<p>写去年NOI D1T1，然后斜率优化挂了好几次。。。</p>
-<p>感觉会炸的很惨的样子。。。</p>
-<p>晚上打 Global Round 成功掉分</p>
-<p>看A的时候对自己说，A就这么毒瘤要不然不打了吧</p>
-<p>然后最后还是交了。。。</p>
-<p>然后A和C都因为数组开小了RE了一次。。。</p>
-<p><del>不知道是不是发烧把脑子烧坏了</del></p>
-<h4 id="day-0">day 0</h4>
-<p>上午望京医院半日游</p>
-<p>下午回来尝试写之前 cy 讲过的斗主地，经过WA了无数次之后总算过了</p>
-<p>看 dthkxy 的题还有一个莫队二离没写，感觉都0202年了，只要不是 lxl
-那种毒瘤出题人不会考莫队二离这种毒瘤东西吧，就想NOI之后写（flag）</p>
-<p>然后就开始颓废（</p>
-<h4 id="day-1">day 1</h4>
-<blockquote>
-<p>一个<strong>美食家</strong>，因为悲惨的<strong>命运</strong>，成为了<strong>时代的眼泪</strong>。</p>
-</blockquote>
-<p>刚过7点就醒了，rp--</p>
-<p>NOI同步赛成功继承了NOIO的光荣传统</p>
-<p>8:45终于进去了</p>
-<p>第一题看数据范围想到矩阵乘法</p>
-<p>但是这复杂度好像是 <span class="math inline">\(O(5^3n^3k\log
-T)\)</span> 的</p>
-<p>感觉复杂度不太对啊。。。</p>
-<p>就打了前 <span class="math inline">\(65pts\)</span>
-的分，然后莫名其妙忘了 <span class="math inline">\(k\leq 10\)</span>
-的点 <del>要打了估计还多能拿个十几二十分的</del></p>
-<p>大概10:30左右的时候过掉了样例</p>
-<p>看T2，发现前几个点 <span class="math inline">\(m\)</span>
-很小，想到了暴力枚举状态做个容斥</p>
-<p>然后套个树剖就好了，复杂度 <span
-class="math inline">\(O(2^mm\log^2n)\)</span>，大概能拿 <span
-class="math inline">\(32pts\)</span>
-吧，然后开始码，12：00左右过了，然后去吃了点东西回来看T3</p>
-<p>题面写的真毒瘤，有点像 Ynoi 的风格了（flag</p>
-<p>大概问的就是“区间有上下界顺序对个数”（</p>
-<p>然后看部分分，没有上下界的部分不就是区间顺序对个数吗</p>
-<p>只会莫队+BIT的 <span class="math inline">\(O(m\sqrt n\log n)\)</span>
-的做法</p>
-<p>等会这不是 Ynoi 模拟赛的题吗？</p>
-<p>那题做法好像是莫队二离吧。。。</p>
-<p>然后就只能打前面一部分的题</p>
-<p>大概能拿<span class="math inline">\(24pts\)</span></p>
-<p>然后就剩十分钟了就跑了</p>
-<p>期望得分：<span class="math inline">\(65+32+24=121\)</span></p>
-<p>实际得分：<span class="math inline">\(55+32+32=119\)</span></p>
-<p>T1莫名其妙挂了10，T2好像过了第二个点。。。<span
-class="math inline">\(O(n^2m)\)</span> 过 <span
-class="math inline">\(3000\)</span> khx</p>
-<p><del>T3真的是 lxl 出的</del></p>
-<p>其实T1要把那个暴力拆点的矩阵乘打了应该最后就有 Ag 了吧。。。</p>
-<p>要是打了 NOIO 知道那个套路应该就有 Ag 了吧。。。</p>
-<p>不过感觉 Day1 炸的还是不是特别惨。。。</p>
-<h4 id="day-2">day 2</h4>
-<p>成功 Day2 崩盘了</p>
-<p>早上被 nls 拎起来上早读，然后就特别困</p>
-<p>网站没有咕咕咕还不错</p>
-<p>读T1，NOI 考构造？</p>
-<p>感觉可以退火（</p>
-<p>然后不会</p>
-<p><span class="math inline">\(15pts\)</span> 暴力走人</p>
-<p>T2 “超”现实树？</p>
-<p><del>绢旗最爱附体</del></p>
-<p><del>设X1=绢旗最爱，X2=芙兰）（达</del></p>
-<p>阿哲，三页的题面</p>
-<p><del>众所周知，这道题在致敬[NOI2018]你的名字，所以题面要有三页（叶）</del></p>
-<p>没看懂，叉了一堆做法，最后 <span class="math inline">\(12pts\)</span>
-走人了。。。</p>
-<p>T3 输出-1总要有 <span class="math inline">\(5\)</span> 吧。。。</p>
-<p>回去想T1，叉了好几个贪心，无果</p>
-<p>然后就崩盘了，回去弄 whk 了</p>
-<p>期望得分：<span class="math inline">\(15+12+(0\sim 100)=27\sim
-127\)</span> <del>你可真敢估</del></p>
-<p>实际得分：<span class="math inline">\(15+12+5=32\)</span></p>
-<p>最后 <span class="math inline">\(151\)</span> 滚粗了</p>
-<p>发现某些错误的贪心可以骗一堆分。。。</p>
-<p>要T1打了或许又 Ag 了？（</p>
-<p>cy 好像Day1崩了。。。最后差 <span class="math inline">\(5pts\)</span>
-Au，太惨了。。。</p>
-<p>然后在网上找到了和 cy 一个屋的人的<a
-target="_blank" rel="noopener" href="https://blog.csdn.net/smarthehe/article/details/108064865">游记</a></p>
-<p><del>然后知道了 cy 在女生宿舍里电竞的故事</del></p>
-<hr />
-<p>感觉这次还是有失误的。。。</p>
-<p>包括策略上的和代码上的</p>
-<p>d1t1 挂了 10 分
-，然后当时感觉拆点矩阵乘不太好写，就说都打完再来写，然后就没时间了</p>
-<p>然后 Day2 的策略有点太保守了，一个认为是错的的方法就没写。。。</p>
-<p>其实之前打 CF 和 AT
-的时候就好几次自己猜到了结论因为不会证就没写。。。</p>
-<p>比预期的位置还是低了点。。。</p>
-<h4 id="day-3">day 3</h4>
-<p>美妙的 whk，再次开启（</p>
 
       
     </div>
