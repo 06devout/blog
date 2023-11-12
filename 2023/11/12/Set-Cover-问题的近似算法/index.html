@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="Description 对于 \(A,B\in \mathbb F_2^n\)，定义 \(A\cdot B&#x3D;\sum_{i&#x3D;1}^n a_ib_i\)，并定义 \(T_n&#x3D;\{A\in\mathbb F_2^n|A\cdot A&#x3D;3\}\) 证明：对于互不相同的 \(A_1,A_2,\cdots,A_{n+1}\in T_n\), \(\exists 1\leq i&lt;j\leq n">
+    <meta name="description" content="Set Cover Set Cover 是指给定 \(n\) 个元素 \(E&#x3D;\{e_1,\cdots,e_n\}\) 以及 \(m\) 个集合 \(S_1,\cdots,S_m\subseteq E\)，每个集合有代价 \(w_1,\cdots,w_m\)，要求从这些集合中选出 \(k\) 个集合 \(S_{i_1},\cdots,S_{i_k}\) 使得 \(\cup_{j&#x3D;1}^k">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maths is Hard I">
-<meta property="og:url" content="https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/index.html">
+<meta property="og:title" content="Set Cover 问题的近似算法">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="devout">
-<meta property="og:description" content="Description 对于 \(A,B\in \mathbb F_2^n\)，定义 \(A\cdot B&#x3D;\sum_{i&#x3D;1}^n a_ib_i\)，并定义 \(T_n&#x3D;\{A\in\mathbb F_2^n|A\cdot A&#x3D;3\}\) 证明：对于互不相同的 \(A_1,A_2,\cdots,A_{n+1}\in T_n\), \(\exists 1\leq i&lt;j\leq n">
+<meta property="og:description" content="Set Cover Set Cover 是指给定 \(n\) 个元素 \(E&#x3D;\{e_1,\cdots,e_n\}\) 以及 \(m\) 个集合 \(S_1,\cdots,S_m\subseteq E\)，每个集合有代价 \(w_1,\cdots,w_m\)，要求从这些集合中选出 \(k\) 个集合 \(S_{i_1},\cdots,S_{i_k}\) 使得 \(\cup_{j&#x3D;1}^k">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-06T10:45:22.000Z">
-<meta property="article:modified_time" content="2023-11-06T11:45:05.631Z">
+<meta property="article:published_time" content="2023-11-12T03:59:27.000Z">
+<meta property="article:modified_time" content="2023-11-12T04:26:21.767Z">
 <meta property="article:author" content="devout">
-<meta property="article:tag" content="初等数学">
+<meta property="article:tag" content="近似算法">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/">
+<link rel="canonical" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/","path":"2023/11/06/Maths-is-Hard-I/","title":"Maths is Hard I"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/","path":"2023/11/12/Set-Cover-问题的近似算法/","title":"Set Cover 问题的近似算法"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Maths is Hard I | devout</title>
+<title>Set Cover 问题的近似算法 | devout</title>
   
 
 
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-cover"><span class="nav-number">1.</span> <span class="nav-text">Set Cover</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#h_n-approximation"><span class="nav-number">2.</span> <span class="nav-text">\(H_n\)-Approximation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#further-application"><span class="nav-number">3.</span> <span class="nav-text">Further Application</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
@@ -214,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Maths is Hard I | devout">
+      <meta itemprop="name" content="Set Cover 问题的近似算法 | devout">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Maths is Hard I
+          Set Cover 问题的近似算法
         </h1>
 
         <div class="post-meta-container">
@@ -231,7 +231,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-11-06 18:45:22 / Modified: 19:45:05" itemprop="dateCreated datePublished" datetime="2023-11-06T18:45:22+08:00">2023-11-06</time>
+      <time title="Created: 2023-11-12 11:59:27 / Modified: 12:26:21" itemprop="dateCreated datePublished" datetime="2023-11-12T11:59:27+08:00">2023-11-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,7 +239,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Maths-Is-Hard-Series/" itemprop="url" rel="index"><span itemprop="name">Maths Is Hard Series</span></a>
+          <a href="/blog/categories/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B/" itemprop="url" rel="index"><span itemprop="name">《近似算法设计》</span></a>
         </span>
     </span>
 
@@ -252,120 +252,81 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="description">Description</h2>
-<p>对于 <span class="math inline">\(A,B\in \mathbb F_2^n\)</span>，定义
-<span class="math inline">\(A\cdot B=\sum_{i=1}^n
-a_ib_i\)</span>，并定义 <span class="math inline">\(T_n=\{A\in\mathbb
-F_2^n|A\cdot A=3\}\)</span></p>
-<p>证明：对于互不相同的 <span
-class="math inline">\(A_1,A_2,\cdots,A_{n+1}\in T_n\)</span>, <span
-class="math inline">\(\exists 1\leq i&lt;j\leq n+1\)</span> 使得 <span
-class="math inline">\(A_i\cdots A_j=1\)</span>.</p>
-<h2 id="solution">Solution</h2>
-<p>用 <span class="math inline">\(A_k(i)\)</span> 表示 <span
-class="math inline">\(A_k\)</span> 的 <span
-class="math inline">\(x_i\)</span> 的值。</p>
-<p>设 <span
-class="math inline">\(B_k=\{i=1,2,\cdots,n|A_k(i)=1\}\)</span>，即 <span
-class="math inline">\(A_k\)</span> 中每个元素的值为 1 的下标位置。</p>
-<p>由抽屉原理，<span class="math inline">\(n+1\)</span> 个 <span
-class="math inline">\(A_k\)</span> 代表 <span
-class="math inline">\(n+1\)</span>
-个颜色的小球，每个颜色有三个小球，放入 <span
-class="math inline">\(A_k(i)=1\)</span>
-的三个位置（抽屉）中，则存在一个抽屉中有至少两个不同颜色的小球，即 <span
-class="math inline">\(\exists 1\leq i&lt;j\leq n+1\)</span> 使得 <span
-class="math inline">\(A_i\cdot A_j&gt;0\)</span>。</p>
-<p>因为 <span class="math inline">\(A_i\cdot A_j\in
-\{0,1,2\}\)</span>，</p>
-<ul>
-<li>若 <span class="math inline">\(A_i\cdot
-A_j=1\)</span>，则命题成立.</li>
-<li>否则 <span class="math inline">\(\forall A_i\cdot A_j\neq 0,A_i\cdot
-A_j=2\)</span>.</li>
-</ul>
-<p>假设 <span class="math inline">\(\forall A_i\cdot A_j\neq 0,A_i\cdot
-A_j=2(*)\)</span>。</p>
-<p><strong>引理1：</strong> 对于互不相同的 <span
-class="math inline">\(i,j,k\)</span>，若 <span
-class="math inline">\(A_i\cdot A_j=A_j\cdot A_k=2\)</span>，则 <span
-class="math inline">\(A_i\cdot A_k=2\)</span>。</p>
-<p><strong>证明：</strong> 不妨设 <span
-class="math inline">\(A_j(1)=A_j(2)=A_j(3)=1,A_i(1)=A_i(2)=1\)</span>，因为
-<span class="math inline">\(A_j\cdot A_k=2\)</span>，所以 <span
-class="math inline">\(A_k(1),A_k(2)\)</span> 中至少有一个为 <span
-class="math inline">\(1\)</span>，故 <span
-class="math inline">\(A_i\cdot A_k\neq 0,A_i\cdot A_k=2\)</span>. <span
-class="math inline">\(\Box\)</span></p>
-<p>即我们可以把 <span class="math inline">\(A_i\)</span> 分成若干组
+    <div class="post-body" itemprop="articleBody"><h2 id="set-cover">Set Cover</h2>
+<p>Set Cover 是指给定 <span class="math inline">\(n\)</span> 个元素
+<span class="math inline">\(E=\{e_1,\cdots,e_n\}\)</span> 以及 <span
+class="math inline">\(m\)</span> 个集合 <span
+class="math inline">\(S_1,\cdots,S_m\subseteq E\)</span>，每个集合有代价
 <span
-class="math inline">\(E_1,E_2,\cdots,E_m\)</span>，每一组内的任意两个元素的点乘恰好为
-2，而不同组的元素的点乘为 0.</p>
-<p>形式化的：设 <span
-class="math inline">\(C_k=\{j=1,2,\cdots,n+1|A_j\cdot
-A_k=2\}\)</span>，则 <span class="math inline">\(\forall j\in
-C_k,C_j=C_k\)</span>，而 <span
-class="math inline">\(\{C_k\}_{k=1}^n\)</span> 中所有不同的元素构成
-<span class="math inline">\(\{E_k\}_{k=1}^m\)</span>。</p>
-<p>设 <span class="math inline">\(D_j=\cup_{i\in E_j}B_i\)</span>，即
-<span class="math inline">\(E_j\)</span> 中某个元素在该位上为 1
-的下标集合（<span class="math inline">\(E_j\)</span>
-覆盖的下标位置）</p>
-<p><strong>引理2：</strong> <span class="math inline">\(\forall i\neq
-j,D_i\cap D_j=\emptyset\)</span>，即 <span
-class="math inline">\(E_i\)</span> 和 <span
-class="math inline">\(E_j\)</span> 覆盖的下标无交集。</p>
-<p><strong>证明：</strong> 反证法：若 <span
-class="math inline">\(D_i\cap D_j\neq \emptyset,\)</span> 则存在 <span
-class="math inline">\(k\in E_i,\ell\in E_j\)</span> 使得 <span
-class="math inline">\(B_k\cap B_\ell\neq \emptyset\)</span>，即 <span
-class="math inline">\(A_k\cdot A_\ell \neq 0\)</span>，则 <span
-class="math inline">\(A_k\cdot A_\ell=2\)</span>，与 <span
-class="math inline">\(k,\ell\)</span> 在不同的 <span
-class="math inline">\(E_i,E_j\)</span> 中矛盾。 <span
-class="math inline">\(\Box\)</span></p>
-<p><strong>引理3：</strong> <span class="math inline">\(|D_k|\geq
-|E_k|\)</span>，即大小为 <span class="math inline">\(\sigma\)</span>
-的一个集合 <span class="math inline">\(E_k\)</span> 至少覆盖了 <span
-class="math inline">\(\sigma\)</span> 个位置。</p>
-<p><strong>证明：</strong></p>
-<p>对于 <span class="math inline">\(\sigma\leq
-2\)</span>，不难证明。</p>
-<p>设 <span
-class="math inline">\(E_k=\{e_1,e_2,\cdots,e_\sigma\}\)</span>,</p>
-<p>不妨设 <span class="math inline">\(B_{e_1}=\{1,2,3\}\)</span>，即
-<span class="math inline">\(A_{e_1}=1,1,1,0,\cdots\)</span>。</p>
-<p>因为 <span class="math inline">\(A_{e_2}\cdot
-A_{e_1}=2\)</span>，不妨设 <span
-class="math inline">\(B_{e_2}=\{1,2,4\}\)</span>。</p>
-<p>则对于 <span class="math inline">\(\sigma=3,4\)</span>，<span
-class="math inline">\(\{1,2,3,4\}\subseteq D_k\)</span>，<span
-class="math inline">\(|D_k|\geq \sigma\)</span>。</p>
-<p>对于 <span class="math inline">\(\sigma\geq 5\)</span>，</p>
-<p>若 <span class="math inline">\(B_{e_3}\cap B_{e_1}\neq
-\{1,2\}\)</span>，则不妨设 <span
-class="math inline">\(B_{e_3}=\{1,3,4\}\)</span>。</p>
-<p><span class="math inline">\(B_{e_4}\)</span> 只能等于 <span
-class="math inline">\(\{2,3,4\}\)</span>。（类似第二问证明）</p>
-<p>此时不存在合法的 <span class="math inline">\(B_{e_5}\)</span>。</p>
-<p>故 <span class="math inline">\(B_{e_1}\cap B_{e_3}=
-\{1,2\}\)</span>，不妨设 <span
-class="math inline">\(B_{e_3}=\{1,2,4\}\)</span>。</p>
-<p>则 <span class="math inline">\(B_{e_4}\cap
-B_{e_1}=\{1,2\}\)</span>，否则无法同时满足 <span
-class="math inline">\(A_{e_2}\cdot A_{e_4}=A_{e_3}\cdot
-A_{e_4}=2\)</span>，则不妨设 <span
-class="math inline">\(B_{e_4}=\{1,2,5\}\)</span>。</p>
-<p>以此类推，<span class="math inline">\(B_{e_k}\)</span>
-唯一确定，不难发现此时 <span
-class="math inline">\(|D_k|=\sigma+1\)</span>，引理3即证。 <span
-class="math inline">\(\Box\)</span></p>
-<p>应用引理3，对于所有的 <span class="math inline">\(E_k\)</span>
-求和，得到</p>
-<p><span class="math display">\[n=\sum_{k=1}^m |D_k|\geq \sum_{k=1}^m
-|E_k|=n+1\]</span></p>
-<p>的矛盾，即假设 <span class="math inline">\((*)\)</span>
-不成立，原命题成立。</p>
+class="math inline">\(w_1,\cdots,w_m\)</span>，要求从这些集合中选出
+<span class="math inline">\(k\)</span> 个集合 <span
+class="math inline">\(S_{i_1},\cdots,S_{i_k}\)</span> 使得 <span
+class="math inline">\(\cup_{j=1}^k S_{j_k}=E\)</span>，且 <span
+class="math inline">\(\sum_{j=1}^k w_{i_k}\)</span> 最小。</p>
+<p>Set Cover 是经典的 NP-complete 问题，同时在近似上也是经典的
+LOG-APX-complete 问题。</p>
+<p>关于 Set Cover 的 LOG-APX-hard 的证明可以参见 Fiege'98 的论文。</p>
+<p>下面我们给出一个 Set Cover 的 <span
+class="math inline">\(H_n\)</span>- 近似。</p>
+<h2 id="h_n-approximation"><span
+class="math inline">\(H_n\)</span>-Approximation</h2>
+<p>Set Cover 的近似是非常易于入门的。</p>
+<p>我们考虑一个自然的贪心，即每次选择一个“平均代价最小的集合”，把他加到集合中。</p>
+<p>具体来说，初始我们选择的集合的集合 <span
+class="math inline">\(I=\emptyset\)</span>，设 <span
+class="math inline">\(\hat S_k\)</span> 表示 <span
+class="math inline">\(S_k\)</span>
+中现在还没有覆盖的元素的集合，我们每次选择</p>
+<p><span class="math display">\[\ell=\operatorname{argmin}_{|\hat
+S_k|&gt;0} \frac{w_k}{|\hat S_k|}\]</span></p>
+<p>并将他放入 <span class="math inline">\(I\)</span> 中，再从所有 <span
+class="math inline">\(\hat S_k\)</span> 中去掉 <span
+class="math inline">\(\ell\)</span>，直到我们选出了一个覆盖。</p>
+<p>这个过程显然可以在多项式时间内实现，下面我们证明 <span
+class="math inline">\(\sum_{k\in I}w_k\leq H_n\cdot OPT\)</span>.</p>
+<p>直觉上来讲，对于一个最优的覆盖 <span
+class="math inline">\(O\)</span>, <span class="math inline">\(\sum_{k\in
+O}w_k=OPT\)</span>，在 <span class="math inline">\(O\)</span>
+中一定存在一个集合的平均代价不超过 <span
+class="math inline">\(OPT/n\)</span>，覆盖了第一个之后，相应的，<span
+class="math inline">\(O\)</span> 中一定存在一个集合平均代价不超过 <span
+class="math inline">\(OPT/(n-1)\)</span>
+来覆盖第二个，以此类推就得到了我们这个算法得到的结果 <span
+class="math inline">\(\leq
+OPT\cdot(1+\frac{1}{2}+\cdots+\frac{1}{n})\)</span>。</p>
+<p>下面是严谨的证明：设加入 <span class="math inline">\(k\)</span>
+个集合之后还剩下 <span class="math inline">\(n_k\)</span>
+个元素没有被覆盖，则</p>
+<p><span class="math display">\[\min_{|\hat S_k|&gt;0}\frac{w_k}{|\hat
+S_k|}\leq \min_{k\in O \wedge |\hat S_k|&gt;0}\frac{w_k}{|\hat
+S_k|}\]</span></p>
+<p>根据盐水原理，右边小于等于</p>
+<p><span class="math display">\[\frac{\sum_{k\in O\wedge |\hat
+S_k|&gt;0}w_k}{\sum_{k\in O}|\hat S_k|}\leq \frac{OPT}{n_k}\]</span></p>
+<p>故</p>
+<p><span class="math display">\[\sum_{k\in I}w_k\leq \sum_{j=1}^k
+\frac{n_j-n_{j+1}}{n_j}OPT\leq H_n\cdot OPT\]</span></p>
+<p>即完成了我们的证明。</p>
+<h2 id="further-application">Further Application</h2>
+<p>Set Cover 是（比较少有的） LOG-APX-complete 的问题，所以往往需要证明
+LOG-APX-hardness 时往往需要从 Set Cover 来规约。比如 Steiner Tree
+等问题的 hardness 可以通过非常简单的规约来解决。</p>
+<p>同时这种调和级数的证明方法也可以用在 Steiner Tree Variants 的 <span
+class="math inline">\(O(\log n)\)</span> Approximation
+的正确性的证明。</p>
+<p>习题：</p>
+<p>对于两个集合 <span class="math inline">\(A,B,A\cap
+B=\emptyset\)</span>，<span class="math inline">\(B\)</span>
+中每个元素有代价 <span class="math inline">\(w_k\)</span>，对于 <span
+class="math inline">\(i\in A,j\in B\)</span> 有额外代价 <span
+class="math inline">\(c_{i,j}\)</span>，选取 <span
+class="math inline">\(B\)</span> 的一个非空子集 <span
+class="math inline">\(E\)</span>，最小化</p>
+<p><span class="math display">\[\sum_{i\in E}w_i+\sum_{i\in A}\min_{j\in
+E}c_{i,j}\]</span></p>
+<p>通过证明这个问题是 LOG-APX-hard 并给出一个 <span
+class="math inline">\(O(\log n)\)</span> 近似算法，证明他是
+LOG-APX-complete。</p>
 
     </div>
 
@@ -375,21 +336,18 @@ class="math inline">\(\Box\)</span></p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="tag"># 初等数学</a>
+              <a href="/blog/tags/%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/" rel="tag"># 近似算法</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/11/04/Dirichlet%E9%97%AE%E9%A2%98/" rel="prev" title="Dirichlet问题">
-                  <i class="fa fa-angle-left"></i> Dirichlet问题
+                <a href="/blog/2023/11/06/%E3%80%90%E9%B2%9C%E8%8A%B1-2%E3%80%91%E8%AD%A6%E9%86%92%E4%B9%8B%E9%A3%8E/" rel="prev" title="【鲜花#2】警醒之风">
+                  <i class="fa fa-angle-left"></i> 【鲜花#2】警醒之风
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2023/11/06/%E3%80%90%E9%B2%9C%E8%8A%B1-2%E3%80%91%E8%AD%A6%E9%86%92%E4%B9%8B%E9%A3%8E/" rel="next" title="【鲜花#2】警醒之风">
-                  【鲜花#2】警醒之风 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
