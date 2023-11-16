@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -224,9 +224,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-11-13 22:01:51 / Modified: 22:05:03" itemprop="dateCreated datePublished" datetime="2023-11-13T22:01:51+08:00">2023-11-13</time>
+      <time title="Created: 2023-11-13 22:01:51" itemprop="dateCreated datePublished" datetime="2023-11-13T22:01:51+08:00">2023-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-15 21:59:29" itemprop="dateModified" datetime="2023-11-15T21:59:29+08:00">2023-11-15</time>
     </span>
 
   
@@ -242,9 +248,145 @@
           <p>大概也不光是 Open Problem，就是一些闲的时候可以思考的问题（</p>
 <ul>
 <li>2-player motion planning with 1-toggles EXPTIME-complete?
-PSAPCE-complete?</li>
+PSAPCE-hard?</li>
 <li>edge coloring with max degree 3 NP-complete.</li>
+<li>2.13 Local optimal solution of monotone, submodular function subject
+to a matroid is at least half the optimal solution.</li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/16/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/11/16/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98/" class="post-title-link" itemprop="url">《近似算法设计》第二章习题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-11-16 20:19:54 / Modified: 20:21:03" itemprop="dateCreated datePublished" datetime="2023-11-16T20:19:54+08:00">2023-11-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B/" itemprop="url" rel="index"><span itemprop="name">《近似算法设计》</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="section">2.3</h2>
+<p>首先有</p>
+<p><span class="math display">\[OPT\geq \frac{1}{m} \sum
+w_i\]</span></p>
+<p>同时对于最长的链 <span class="math inline">\(\ell\)</span></p>
+<p><span class="math display">\[OPT\geq \sum_{i\in \ell}w_i\]</span></p>
+<p>考虑在 <span class="math inline">\([a_i,b_i]\)</span> 时段每一个
+processor 都在工作。</p>
+<p>则</p>
+<p><span class="math display">\[|\cup [a_i,b_i]|\leq \frac{1}{m}\sum
+w_i\leq OPT\]</span></p>
+<p>同时对于 <span class="math inline">\((b_{i+1},a_{i+2})\)</span>
+里面的每一个工作，他一定有 <span
+class="math inline">\((b_i,a_{i+1})\)</span> 里的前序，否则他就可以在
+<span class="math inline">\((b_{i},a_{i+1})\)</span> 里处理。</p>
+<p>所以这些位置的长度之和不超过最长链，不超过 <span
+class="math inline">\(OPT\)</span></p>
+<p>所以是 2-approximation.</p>
+<h2 id="section-1">2.5</h2>
+<p>取欧拉序，依次连边</p>
+<h2 id="section-2">2.10</h2>
+<p>考虑第一次最优选择是 <span class="math inline">\(e_1\)</span>
+，第二次最优选择是 <span class="math inline">\(e_2\)</span>。</p>
+<p><span class="math display">\[f(S+e_1+e_2)+f(S)\leq
+f(S+e_1)+f(S+e_2)\]</span></p>
+<p>整理得</p>
+<p><span class="math display">\[f(S+e_1+e_2)-f(S+e_1)\leq
+f(S+e_2)-f(S)\leq f(S+e_1)-f(S)\]</span></p>
+<p>所以 <span class="math inline">\(f\)</span> 的选择是“凸”的。</p>
+<p>所以他满足 2.6 中的条件</p>
+<p><span class="math display">\[f(S+e)-f(S)\geq
+\frac{1}{k}(f(O)-f(S))\]</span></p>
+<p>所以就得到了 <span
+class="math inline">\((1-1/e)\)</span>-approximation</p>
+<h2 id="section-3">2.11</h2>
+<ol type="a">
+<li><p>和 2.10 类似</p></li>
+<li></li>
+</ol>
+<p>假设存在一个 <span
+class="math inline">\((1-1/e+\epsilon)\)</span>-approximation，我们给出一个
+Set Cover 的 <span class="math inline">\(O(n^{O(\log\log n)})\)</span>
+的做法。</p>
+<p>显然 Set Cover 可以很快转化成 Coverage Problem</p>
+<p>我们可以从 <span class="math inline">\(1\)</span> 到 <span
+class="math inline">\(m\)</span> 调用这个算法，设第一次得到一个大于
+<span class="math inline">\((1-1/e+\epsilon)m\)</span> 的返回值时，记录
+<span class="math inline">\(k_0\)</span>，显然 <span
+class="math inline">\(OPT\geq k_0\)</span>。</p>
+<p>然后把覆盖的这些位置全部都扔掉，然后再调用，再扔掉，最多调用</p>
+<p><span class="math display">\[\ell\leq
+\log_{1/(1-\frac{1}{e}+\epsilon)}n&lt;\ln n\]</span></p>
+<p>次，最后得到的近似解 <span class="math inline">\(\leq \ell k_0\leq
+c\ln n\cdot OPT(c&lt;1)\)</span>。</p>
+<h2 id="section-4">2.16</h2>
+<p>CF600F</p>
 
       
     </div>
@@ -1673,235 +1815,6 @@ T1。</p>
 <h3 id="day-32023.4.3">Day 3(2023.4.3)</h3>
 <p>结束了。</p>
 <p>但结束也好。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2022/08/27/NOI2022%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2022/08/27/NOI2022%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">NOI2022游记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-08-27 20:57:30" itemprop="dateCreated datePublished" datetime="2022-08-27T20:57:30+08:00">2022-08-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-02 21:51:11" itemprop="dateModified" datetime="2023-11-02T21:51:11+08:00">2023-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="day--">day -???</h2>
-<p>CSP 寄了。</p>
-<h2 id="day---1">day -???</h2>
-<p>NOIP 寄了。</p>
-<h2 id="day---2">day -???</h2>
-<p>WC 寄了。</p>
-<h2 id="day---2022.4.17">day -??? / 2022.4.17</h2>
-<p>省选。</p>
-<h2 id="day---3">day -???</h2>
-<p>THUSC 寄了。</p>
-<h2 id="day---4">day -???</h2>
-<p>APIO 三道暴力搞了个 Au。</p>
-<h2 id="day---2022.6.15">day -??? / 2022.6.15</h2>
-<p>搞到了C。</p>
-<h2 id="day--12-2022.8.10">day -12 / 2022.8.10</h2>
-<p>BJSC 第一天，又是久违的曹哥哥的题目。</p>
-<p>第一题发现送了 78，第二题发现 wqs
-板子，第三题随便打了个暴力跑路了。</p>
-<p><span class="math inline">\(78+100+24\)</span></p>
-<h2 id="day--11-2022.8.11">day -11 / 2022.8.11</h2>
-<p>BJSC 第二天，又是久违的曹哥哥的题目。</p>
-<p>第一题发现不会，第二题发现不会，第三题尝试打暴力打不出来。</p>
-<p><span class="math inline">\(0+0+0\)</span></p>
-<h2 id="day--10-2022.8.12">day -10 / 2022.8.12</h2>
-<p>题目分享，一如既往的全程掉线，然后就跑去 generals 了。</p>
-<p>明天就要去昆山了，下午一如既往的在机房写了退役感言。</p>
-<p>因为我校只有我一个人并且<del>教练不想去</del>有出京限制，所以我和 rdf
-的同学一起住酒店。</p>
-<h2 id="day--9-2022.8.13">day -9 / 2022.8.13</h2>
-<p>去昆山的路上，和 ssf 的同学在一起，调了调前两天 BJSC 的题，然后
-generals 和 gartic。</p>
-<p>然而子达哥之前去 CQ
-集训了，并且和我不住在一个酒店所以只能进学习之后见了 /wq。</p>
-<p>下午到酒店之后开始卷摆混合态，晚上和 rdf
-同学出去吃大桌饭，一条街上全是湘菜徽菜江西菜，就是没有苏州菜。</p>
-<p>晚上去了趟健身房，感觉这个酒店非常高级的样子。</p>
-<h2 id="day--8-2022.8.14">day -8 / 2022.8.14</h2>
-<p>BJSC 模拟赛第三场，又是久违的 AKEE 的题目。</p>
-<p>一如既往的没有大样例。</p>
-<p>第一题想了一会只会 <span
-class="math inline">\(O(n^3)\)</span>，但是貌似常数非常小的样子，写了一个发现跑的飞快，于是不管了。</p>
-<p>第二题打暴力，第三题打暴力。</p>
-<p><span class="math inline">\(100+70+30\)</span></p>
-<h2 id="day--7-2022.8.15">day -7 / 2022.8.15</h2>
-<p>第一题可持久化线段树板子，懒得写了。</p>
-<p>第二题看出一个循环可行流的模型。</p>
-<p>第三题大暴力。</p>
-<p>然后交了昨天的代码。</p>
-<p><span class="math inline">\(0+0+0\)</span></p>
-<h2 id="day--6-2022.8.16">day -6 / 2022.8.16</h2>
-<p>题目分享，分享了一道曹哥哥的毒瘤数据结构和一个 xsy 的毒瘤构造。</p>
-<p>然后其他人的题目基本上没听，接着摆。</p>
-<h2 id="day--5-2022.8.17">day -5 / 2022.8.17</h2>
-<p>重要节日<del>但是不放假</del>。</p>
-<p>在此也祝他生日快乐。</p>
-<p>模拟赛找了三个小姐姐出题<del>然后一位小姐姐的名字两个字我都不认识</del>。</p>
-<p>第一题树哈希板子题，随便哈都能过，然后赛后听 xtq 讲了个 xtq
-树哈希感觉非常强<del>为后文买下了伏笔</del>。</p>
-<p>第二题 sam 板子题，第三题暴力。</p>
-<p>然后 sam 数组没开两倍，寄了。</p>
-<p><span class="math inline">\(100+60+10\)</span></p>
-<h2 id="day--4-2022.8.18">day -4 / 2022.8.18</h2>
-<p>BJSC 最后一天。</p>
-<p>第一题杜教筛板子题，第二题复杂度分析题，第三题暴力。</p>
-<p>结果杜教筛预处理 1e6，小于等于 1e6+5 的时候调用预处理数组，拍了 2w
-组没拍出来，寄了</p>
-<p><span class="math inline">\(35+100+10\)</span></p>
-<h2 id="day--3-2022.8.19">day -3 / 2022.8.19</h2>
-<p>打了打板子，摆了摆。</p>
-<h2 id="day--2-2022.8.20-进校日">day -2 / 2022.8.20 [进校日]</h2>
-<p>今天进学校，见到了子达哥，顺便面了 GD 队长瑞哥。</p>
-<p>悄悄换到了子达哥的宿舍，<del>宿舍环境真的好</del>，同宿舍的还有 fyq
-和 wxb，大家都是很好处的人捏。</p>
-<p>发现子达哥有两副牌，于是下午开始打牌。</p>
-<p>然后就一路打到了晚上。</p>
-<p>今年题目数据啥的都不公开，奶一口题目有鬼。<del>结果真的奶中了</del></p>
-<h2 id="day--1-2022.8.21-报道日">day -1 / 2022.8.21 [报道日]</h2>
-<p>上午去领物资，领到了徽章然后瞬间换完了，顺便白嫖了一个徽章。</p>
-<p>今年的包和衣服都比去年好看多了qwq。</p>
-<p>还发了一个玩偶，上面写的是 0 和 1 （确信</p>
-<p>回去之后打了两个板子，写去年的 d2t2 调了好久发现平衡树 split
-写挂了。<del>继续埋伏笔</del></p>
-<h2 id="day-0-2022.8.22-笔试日">day 0 / 2022.8.22 [笔试日]</h2>
-<p>上午打牌，边打牌边复习笔试。</p>
-<p>然后打着打着牌 rdf 教练进来了，wxb 被现场捉奸。</p>
-<p>然后打着打着牌 bdf 教练跟着过来看我们打牌（</p>
-<p>晚上打了打板子</p>
-<h2 id="day-1-2022.8.23-day-1">day 1 / 2022.8.23 [Day 1]</h2>
-<p>6：20 起床，吃完饭歇了会 7:45左右进的考场。</p>
-<p>一上来先看第一题，一眼洛谷 总统选举。</p>
-<p>然后发现忘记投票法是啥了，花了 30 min
-左右编了一个，然后尝试证明这玩意能合并，发现证不出来，不过发现代码还挺好写的，就一个平衡树和
-segmerge 的板子，所以打算先冲一个</p>
-<p>大概 9:30 的时候过了第三个样例，但是第四个寄了。</p>
-<p>于是打了个暴力验证正确性，发现是对的，然后调了好久，发现是建笛卡尔树写挂了。</p>
-<p>然后过了个大样例，写了个拍子，研究怎么写 gen 研究了好久，拍上已经
-10:30</p>
-<p>然后尝试玩 T2 的性质，半个小时之后发现操作 1
-是大于等于不是等于，不加粗差评。</p>
-<p>发现完全不会，于是去想 T3。</p>
-<p>T3 开始感觉会 45，写了一手交互库报错，发现边不能有交集，然后发现只会
-10 分，写了个分块跑路了，这个时候已经 11:10.</p>
-<p>11:20 开始 rush T2
-15分暴力，写着写着编出来一个性质，覆盖次数不太多，于是随便写了个 dp 去
-check，应该能拿 25.</p>
-<p>期望得分： <span class="math inline">\(100+25+10\)</span></p>
-<p>实际得分： <span class="math inline">\(100+25+0\)</span></p>
-<p>T3 没注意到 init 里面只能调用
-3e7次操作，块长开大了，题面这么长还不加粗差评。</p>
-<p>出考场以为寄了，但是发现大家差不多都只会这个分。</p>
-<p>晚上讲题出题人被喷惨了。</p>
-<p>T2 正解 dp 套 dp，T3 正解全局平衡二叉树，都是不会的科技。</p>
-<p>子达哥 Day1 因为 MLE 问题神秘爆零了，默哀。</p>
-<h2 id="day-1.5-2022.8.24-开幕式">day 1.5 / 2022.8.24 [开幕式]</h2>
-<p>听了杜子德主席的伟大指导。</p>
-<p>无人机表演非常好。</p>
-<p>上午升级，下午三国杀，晚上升级。</p>
-<h2 id="day-2-2022.8.25-day-2">day 2 / 2022.8.25 [Day 2]</h2>
-<p>Day 1 完全没有拉开差距，所以还是 day 2 定胜负。</p>
-<p>看题 d2t1 和 d2t2 感觉都像是人类智慧题，属于不太会做的类型。</p>
-<p>然后发现暴力分挺多的，一眼看下去有一百多分，加上 day1 的分 Ag
-肯定够了，于是决定先保个 Ag，边想边打，暴力打完是 11:15
-左右，然后尝试想了想 T1 正解，未果，于是开摆。</p>
-<p>预期得分：<span class="math inline">\(76+48+13\)</span></p>
-<p>实际得分：<span class="math inline">\(64+48+17\)</span></p>
-<p>题目里明明说的《不卡哈希》结果写 xtq 哈希的全都被定向卡了，这波属于
-rdf 血亏。</p>
-<p>考完发现昆山出疫情了，于是赶紧收拾行李跑回来了，回来火车上接着打牌。<del>本来还可以多打一天半的</del></p>
-<p>北京真凉快~</p>
-<h2 id="day-3-2022.8.26-闭幕式">day 3 / 2022.8.26 [~~闭幕式]~~</h2>
-<p>发榜了，意料之中的 Ag 吧。</p>
-<p>闭幕式就没了。</p>
-<h2 id="day-4-2022.8.27">day 4 / 2022.8.27</h2>
-<p>怎么说呢，大概之前的各种压力算是放下来了吧。</p>
-<p>今年这个题多少有点问题，从省选到 NOI。</p>
-<p>如果子达哥这样的 deque
-爆空间的神秘问题发生在我身上，或者发生在高二的我身上会发生什么呢。</p>
-<p>不好说。</p>
-<p>竞赛是不是看运气呢。</p>
-<p>不好说。</p>
-<p>明年还是不是yyl。</p>
-<p>不好说。</p>
-<p>明年省选还有没有大样例。</p>
-<p>不好说。</p>
-<p>那就祝一切都好。</p>
 
       
     </div>
