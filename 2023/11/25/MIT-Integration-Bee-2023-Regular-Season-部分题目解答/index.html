@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="gjm镇楼 2021.1.31 (day 0) 貌似没有发生什么特别的事情 下午 jya 打电话过来让我们去学校比赛（ 2021.2.1 (day 1) 太菜了，只能听第二课堂 上午讲 dp，差不多都能听懂，四边形不等式没听懂，中午学了学，依然只记了个结论 下午讲概率，一个小时后基本掉线，因为一题讲了一个多小时，回想起了听德强讲物理题时的样子 2021.2.2 (day 2)">
+    <meta name="description" content="一些有意思的题的解答，题目见 这里 5. \[\int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx\] 法1： \[ \begin{aligned} \int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx &amp;&#x3D; \int_{0}^{\pi&#x2F;2}x\mathrm d\ln\sin x \\ &amp;&#x3D; x\ln\sin x\Big |_0^{\p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WC2021游记">
-<meta property="og:url" content="https://06devout.github.io/blog/2021/02/06/WC2021%E6%B8%B8%E8%AE%B0/index.html">
+<meta property="og:title" content="MIT Integration Bee 2023 - Regular Season 部分题目解答">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/index.html">
 <meta property="og:site_name" content="devout">
-<meta property="og:description" content="gjm镇楼 2021.1.31 (day 0) 貌似没有发生什么特别的事情 下午 jya 打电话过来让我们去学校比赛（ 2021.2.1 (day 1) 太菜了，只能听第二课堂 上午讲 dp，差不多都能听懂，四边形不等式没听懂，中午学了学，依然只记了个结论 下午讲概率，一个小时后基本掉线，因为一题讲了一个多小时，回想起了听德强讲物理题时的样子 2021.2.2 (day 2)">
+<meta property="og:description" content="一些有意思的题的解答，题目见 这里 5. \[\int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx\] 法1： \[ \begin{aligned} \int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx &amp;&#x3D; \int_{0}^{\pi&#x2F;2}x\mathrm d\ln\sin x \\ &amp;&#x3D; x\ln\sin x\Big |_0^{\p">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-06T12:53:48.000Z">
-<meta property="article:modified_time" content="2023-11-02T13:50:59.068Z">
+<meta property="article:published_time" content="2023-11-25T09:31:32.000Z">
+<meta property="article:modified_time" content="2023-11-25T10:51:46.942Z">
 <meta property="article:author" content="devout">
-<meta property="article:tag" content="日常">
+<meta property="article:tag" content="微积分">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://06devout.github.io/blog/2021/02/06/WC2021%E6%B8%B8%E8%AE%B0/">
+<link rel="canonical" href="https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2021/02/06/WC2021%E6%B8%B8%E8%AE%B0/","path":"2021/02/06/WC2021游记/","title":"WC2021游记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/","path":"2023/11/25/MIT-Integration-Bee-2023-Regular-Season-部分题目解答/","title":"MIT Integration Bee 2023 - Regular Season 部分题目解答"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>WC2021游记 | devout</title>
+<title>MIT Integration Bee 2023 - Regular Season 部分题目解答 | devout</title>
   
 
 
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#day-0"><span class="nav-number">1.</span> <span class="nav-text">2021.1.31 (day 0)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-1"><span class="nav-number">2.</span> <span class="nav-text">2021.2.1 (day 1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-2"><span class="nav-number">3.</span> <span class="nav-text">2021.2.2 (day 2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-3"><span class="nav-number">4.</span> <span class="nav-text">2021.2.3 (day 3)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-4"><span class="nav-number">5.</span> <span class="nav-text">2021.2.4 (day 4)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-5-match-day"><span class="nav-number">6.</span> <span class="nav-text">2021.2.5 (day 5 &amp;&amp; match day)</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">5.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">8.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">11.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-number">4.</span> <span class="nav-text">13.</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2021/02/06/WC2021%E6%B8%B8%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
@@ -214,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="WC2021游记 | devout">
+      <meta itemprop="name" content="MIT Integration Bee 2023 - Regular Season 部分题目解答 | devout">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          WC2021游记
+          MIT Integration Bee 2023 - Regular Season 部分题目解答
         </h1>
 
         <div class="post-meta-container">
@@ -229,15 +229,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-02-06 20:53:48" itemprop="dateCreated datePublished" datetime="2021-02-06T20:53:48+08:00">2021-02-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-02 21:50:59" itemprop="dateModified" datetime="2023-11-02T21:50:59+08:00">2023-11-02</time>
+      <time title="Created: 2023-11-25 17:31:32 / Modified: 18:51:46" itemprop="dateCreated datePublished" datetime="2023-11-25T17:31:32+08:00">2023-11-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,7 +239,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
+          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
         </span>
     </span>
 
@@ -258,69 +252,102 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img
-src="https://img-blog.csdnimg.cn/20210203164701465.png#pic_center" /></p>
-<p>gjm镇楼</p>
-<h3 id="day-0">2021.1.31 (day 0)</h3>
-<p>貌似没有发生什么特别的事情</p>
-<p>下午 jya 打电话过来让我们去学校比赛（</p>
-<h3 id="day-1">2021.2.1 (day 1)</h3>
-<p>太菜了，只能听第二课堂</p>
-<p>上午讲
-dp，差不多都能听懂，四边形不等式没听懂，中午学了学，依然只记了个结论</p>
-<p>下午讲概率，一个小时后基本掉线，<del>因为一题讲了一个多小时，回想起了听德强讲物理题时的样子</del></p>
-<h3 id="day-2">2021.2.2 (day 2)</h3>
-<p>网络流直播写一节课代码？</p>
-<p>下午作死去听第一课堂，半个小时后开始掉线</p>
-<h3 id="day-3">2021.2.3 (day 3)</h3>
-<p>上午听第二课堂，啥都没听懂，倒是搞到了一堆题（</p>
-<p>下午 第一课堂：NOI/NOI+/CTSC，第二课堂：普及-</p>
-<h3 id="day-4">2021.2.4 (day 4)</h3>
-<p>基本没听懂</p>
-<p>新池子两发出了保底，rp--</p>
-<p><del>虽然没出sora</del></p>
-<h3 id="day-5-match-day">2021.2.5 (day 5 &amp;&amp; match day)</h3>
-<p>早上 <span class="math inline">\(8:10\)</span>
-左右到了机房，和同学们随便聊了聊</p>
-<p><span class="math inline">\(8:30\)</span> 开题</p>
-<p>反正也是打暴力，所以就直接按顺序开题了</p>
-<p>第一题一眼下去感觉能拿 <span
-class="math inline">\(48\)</span>，但是死活不会 <span
-class="math inline">\(k=1\)</span> 的部分，然后想了一个小时，无果</p>
-<p><span class="math inline">\(9:45\)</span>
-开始打暴力，突然发现这个暴力貌似不太好打</p>
-<p>当时是直接通过找括号的个数判断是否合法，然而 <code>([)]</code>
-实际上是不合法的</p>
-<p>打完 <span class="math inline">\(32\)</span> 接着按照这个思路打 <span
-class="math inline">\(m\leq n-1\)</span></p>
-<p>搞完发现大样例输出 2154</p>
-<p>然后发下锅了，重新拿栈写了写</p>
-<p>然后搜索去重盲猜栈长不超过 <span
-class="math inline">\(2n\)</span>，写了一个 <span
-class="math inline">\(4n^2\times 2^{2n}\)</span> 的做法</p>
-<p>感觉很不稳。</p>
-<p><span class="math inline">\(11:00\)</span> 开始写 T2</p>
-<p>一眼秒了不带问号的 <span class="math inline">\(n|E|\)</span> 的 50
-分</p>
-<p><del>中间发现把 n m 看反了</del></p>
-<p>然后开始写，发现自己常写的是 <span
-class="math inline">\(n|E|^2\)</span> 的分治写法</p>
-<p>脑补了一下栈的写法，感觉并不是很稳。</p>
-<p>写的过程中搞了一个 <span class="math inline">\(O(nm^2|E|)\)</span>
-的带问号的方法</p>
-<p>回来把中间 <span class="math inline">\(n=2\)</span>
-的写了,然后测大样例跑了30s之后发现结果不对</p>
-<p>调了半个小时，发现是数组忘清空看</p>
-<p><span class="math inline">\(12:40\)</span> 开始看T3，随便打了个 <span
-class="math inline">\(O(m^2)\)</span> 的暴力滚了</p>
-<p><span class="math inline">\(13:00\)</span>
-之后检查了检查，然后就弃疗了</p>
-<p>期望得分：<span class="math inline">\(48+70+20=138\)</span></p>
-<p>实际得分：<span class="math inline">\(48+70+20=138\)</span></p>
-<p>这次没有挂分，比较幸运</p>
-<p>Au/Ag/Cu：158/118/70</p>
-<p>就这样混了个 Ag（</p>
-<p><del>貌似是 OI 生涯中第一次没拿 1= 的比赛呢</del></p>
+    <div class="post-body" itemprop="articleBody"><p>一些有意思的题的解答，题目见 <a
+target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_regular_season.pdf">这里</a></p>
+<h2 id="section">5.</h2>
+<p><span class="math display">\[\int_{0}^{\pi/2}x\cot x\mathrm
+dx\]</span></p>
+<p><strong>法1：</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{0}^{\pi/2}x\cot x\mathrm dx &amp;= \int_{0}^{\pi/2}x\mathrm
+d\ln\sin x \\
+&amp;= x\ln\sin x\Big |_0^{\pi/2}-\int_0^{\pi/2} \ln \sin x \mathrm dx
+\\
+&amp;= -\int_0^{\pi/2} \ln \sin x \mathrm dx
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(\ln\sin x\)</span> 在 <span
+class="math inline">\([0,\pi/2]\)</span> 上积分是经典的问题。</p>
+<p>设</p>
+<p><span class="math display">\[I=\int_0^{\pi/2} \ln \sin x \mathrm
+dx\]</span></p>
+<p>则</p>
+<p><span class="math display">\[\int_0^{\pi/2} \ln \cos x \mathrm
+dx=I\]</span></p>
+<p><span class="math display">\[\int_0^{\pi/2} \ln \sin 2x \mathrm
+dx=I\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I&amp;=\int_0^{\pi/2} \ln \sin 2x \mathrm dx \\
+&amp;=\int_0^{\pi/2} (\ln 2+\ln\sin x+\ln\cos x) \mathrm dx \\
+&amp;= \frac{\pi}{2}\ln 2+2I
+\end{aligned}
+\]</span></p>
+<p>整理有 <span class="math inline">\(I=-\dfrac{\pi}{2}\ln
+2\)</span>，故</p>
+<p><span class="math display">\[\int_{0}^{\pi/2}x\cot x\mathrm
+dx=\frac{\pi}{2}\ln 2\]</span></p>
+<p><strong>法2:</strong></p>
+<p>运用 Feynman 方法，设</p>
+<p><span class="math display">\[I(a)=\int_0^{\pi/2}\frac{\arctan(a\tan
+x)}{\tan x}\mathrm dx\]</span></p>
+<p>所求即 <span class="math inline">\(I(1)\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I^\prime(a)&amp;=\int_0^{\pi/2} \frac{1}{1+a^2\tan^2 x}\mathrm dx \\
+&amp;=\int_0^{\pi/2}\frac{1}{(1+a^2\tan^2 x)(1+\tan^2 x)}\cdot
+\frac{1}{\cos^2 x}\mathrm dx \  (t:=\tan x) \\
+&amp;=\int_0^\infty \frac{\mathrm dt}{(1+a^2t^2)(1+t^2)} \\
+&amp;=\frac{1}{a^2-1}\int_0^\infty
+(\frac{a^2}{1+a^2t^2}-\frac{1}{1+t^2})\mathrm dt \\
+&amp;=\frac{1}{a+1}\cdot \frac{\pi}{2}
+\end{aligned}
+\]</span></p>
+<p>同时我们有 <span
+class="math inline">\(I(0)=0\)</span>，因此我们知道</p>
+<p><span class="math display">\[I(1)=\int_0^1 I^\prime(a)\mathrm
+da=\frac{\pi}{2}\ln 2\]</span></p>
+<h2 id="section-1">8.</h2>
+<p><span class="math display">\[\int_0^\pi x\sin^4 x\mathrm
+dx\]</span></p>
+<p>经典方法</p>
+<p><span class="math display">\[
+\int_0^\pi x\sin^4 x\mathrm dx=\pi \int_0^{\pi/2}\sin^4x\mathrm dx
+\]</span></p>
+<p>然后点火，得到 <span
+class="math inline">\(\dfrac{3}{16}\pi^2\)</span></p>
+<h2 id="section-2">11.</h2>
+<p><span class="math display">\[\int(\sqrt{2\ln x}+\frac{1}{\sqrt{2\ln
+x}})\mathrm dx\]</span></p>
+<p>先换元设 <span class="math inline">\(t=\sqrt{\ln x}\)</span></p>
+<p>得到</p>
+<p><span class="math display">\[\sqrt 2\int (2t^2+1)e^{t^2}\mathrm
+dt\]</span></p>
+<p>对 <span class="math inline">\(e^{t^2}\)</span> 分部积分</p>
+<p><span class="math display">\[\int e^{t^2}\mathrm dt=te^{t^2}-\int
+2t^2e^{t^2}\mathrm dt\]</span></p>
+<p>把右边积分挪到左边即得 <span
+class="math inline">\((2t^2+1)e^{t^2}\)</span> 的积分，最后得到 <span
+class="math inline">\(x\sqrt{2\ln x}\)</span></p>
+<h2 id="section-3">13.</h2>
+<p><span
+class="math display">\[\int_0^{\frac{\pi}{2}+1}\sin(x-\sin(x-\sin(x-\cdots)))\mathrm
+dx\]</span></p>
+<p>看到的时候是相当震撼的，实际上不要被他欺骗了。</p>
+<p>设 <span
+class="math inline">\(t=\sin(x-\sin(x-\sin(x-\cdots)))\)</span>，则
+<span class="math inline">\(t=\sin(x-t)\)</span></p>
+<p>两边对 <span class="math inline">\(x\)</span> 求导得到</p>
+<p><span class="math display">\[\frac{\mathrm dt}{\mathrm
+dx}=\sqrt{1-t^2}(1-\frac{\mathrm dt}{\mathrm dx})\]</span></p>
+<p>即</p>
+<p><span class="math display">\[\mathrm
+dx=(1+\frac{1}{\sqrt{1-t^2}})\mathrm dt\]</span></p>
+<p>然后对初始积分做换元，得到</p>
+<p><span class="math display">\[\int_0^1
+(t+\frac{t}{\sqrt{1-t^2}})\mathrm dt=\frac{3}{2}\]</span></p>
+<p>未完待续...</p>
 
     </div>
 
@@ -330,21 +357,18 @@ class="math inline">\(O(m^2)\)</span> 的暴力滚了</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E6%97%A5%E5%B8%B8/" rel="tag"># 日常</a>
+              <a href="/blog/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2020/12/07/NOIP2020%E9%80%80%E5%BD%B9%E8%AE%B0/" rel="prev" title="NOIP2020退役记">
-                  <i class="fa fa-angle-left"></i> NOIP2020退役记
+                <a href="/blog/2023/11/18/Aizu-Afterthoughts-NOIP2023-%E6%B8%B8%E8%AE%B0-%E3%80%90%E9%B2%9C%E8%8A%B1-4%E3%80%91%E4%BC%9A%E6%B4%A5%E6%A2%A6%E8%AE%B0%C2%B7%E8%A1%A5/" rel="prev" title="Aizu Afterthoughts - NOIP2023 游记/【鲜花#4】会津梦记·补">
+                  <i class="fa fa-angle-left"></i> Aizu Afterthoughts - NOIP2023 游记/【鲜花#4】会津梦记·补
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2021/07/29/NOI2021%E6%89%93%E9%93%81%E8%AE%B0/" rel="next" title="NOI2021打铁记">
-                  NOI2021打铁记 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
