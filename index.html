@@ -307,9 +307,15 @@ to a matroid is at least half the optimal solution.</li>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-11-25 17:31:32 / Modified: 18:51:46" itemprop="dateCreated datePublished" datetime="2023-11-25T17:31:32+08:00">2023-11-25</time>
+      <time title="Created: 2023-11-25 17:31:32" itemprop="dateCreated datePublished" datetime="2023-11-25T17:31:32+08:00">2023-11-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-28 21:35:11" itemprop="dateModified" datetime="2023-11-28T21:35:11+08:00">2023-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -426,7 +432,31 @@ dx=(1+\frac{1}{\sqrt{1-t^2}})\mathrm dt\]</span></p>
 <p>然后对初始积分做换元，得到</p>
 <p><span class="math display">\[\int_0^1
 (t+\frac{t}{\sqrt{1-t^2}})\mathrm dt=\frac{3}{2}\]</span></p>
-<p>未完待续...</p>
+<h2 id="section-4">18.</h2>
+<p><span class="math display">\[\int_0^\infty \frac{x+1}{x+2}\cdot
+\frac{x+3}{x+4} \cdot \frac{x+5}{x+6} \cdots \mathrm dx\]</span></p>
+<p>设 <span class="math inline">\(A=\dfrac{x+1}{x+2}\cdot
+\dfrac{x+3}{x+4} \cdots \dfrac{x+2n+1}{x+2n+2}&lt;\dfrac{x+2}{x+3}\cdot
+\dfrac{x+4}{x+5}\cdots \dfrac{x+2n+2}{x+2n+3}=B\)</span></p>
+<p>则 <span
+class="math inline">\(A&lt;\sqrt{AB}=\sqrt{\dfrac{x+1}{x+2n+3}}\)</span></p>
+<p>同理 <span class="math inline">\(A&gt;\dfrac{x+1}{x+2}\cdot
+\dfrac{x+2}{x+3}\cdot \dfrac{x+4}{x+5}\cdots
+\dfrac{x+2n}{x+2n+1}=C\)</span></p>
+<p>则 <span
+class="math inline">\(A&gt;\sqrt{AC}=\sqrt{\dfrac{(x+1)^2}{x+2n+1}}\)</span></p>
+<p>由极限的夹逼性知，<span
+class="math inline">\(\lim_{n\to\infty}A=0\)</span>，故原积分为 <span
+class="math inline">\(0\)</span>。</p>
+<h2 id="section-5">19.</h2>
+<p><span class="math display">\[\int_{0}^{\pi/2}\frac{\sin 23x}{\sin
+x}\mathrm dx\]</span></p>
+<p>经典方法</p>
+<p><span class="math display">\[\frac{\sin (2k+1)x}{\sin
+x}=1+2\sum_{n=1}^k \cos 2nx\]</span></p>
+<p>证明直接数归。</p>
+<p>于是直接做完了，积分值为 <span
+class="math inline">\(\pi/2\)</span>。</p>
 
       
     </div>
