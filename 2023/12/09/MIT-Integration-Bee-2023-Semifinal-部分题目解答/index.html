@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="Set Cover Set Cover 是指给定 \(n\) 个元素 \(E&#x3D;\{e_1,\cdots,e_n\}\) 以及 \(m\) 个集合 \(S_1,\cdots,S_m\subseteq E\)，每个集合有代价 \(w_1,\cdots,w_m\)，要求从这些集合中选出 \(k\) 个集合 \(S_{i_1},\cdots,S_{i_k}\) 使得 \(\cup_{j&#x3D;1}^k">
+    <meta name="description" content="题目链接 感觉 Semifinal 除了 1.3 和 2.3 神题以外其他的反而比较常规。 1.1 \[\int e^{\cos x}\cos(2x+\sin x)\mathrm dx\] \[ \begin{aligned} I &amp;&#x3D;\int e^{\cos x}\cos(x+(x+\sin x))\mathrm dx \\ &amp;&#x3D; \int e^{\cos x}\">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Set Cover 问题的近似算法">
-<meta property="og:url" content="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="MIT Integration Bee 2023 - Semifinal 部分题目解答">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/index.html">
 <meta property="og:site_name" content="devout">
-<meta property="og:description" content="Set Cover Set Cover 是指给定 \(n\) 个元素 \(E&#x3D;\{e_1,\cdots,e_n\}\) 以及 \(m\) 个集合 \(S_1,\cdots,S_m\subseteq E\)，每个集合有代价 \(w_1,\cdots,w_m\)，要求从这些集合中选出 \(k\) 个集合 \(S_{i_1},\cdots,S_{i_k}\) 使得 \(\cup_{j&#x3D;1}^k">
+<meta property="og:description" content="题目链接 感觉 Semifinal 除了 1.3 和 2.3 神题以外其他的反而比较常规。 1.1 \[\int e^{\cos x}\cos(2x+\sin x)\mathrm dx\] \[ \begin{aligned} I &amp;&#x3D;\int e^{\cos x}\cos(x+(x+\sin x))\mathrm dx \\ &amp;&#x3D; \int e^{\cos x}\">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-12T03:59:27.000Z">
-<meta property="article:modified_time" content="2023-11-12T04:26:21.767Z">
+<meta property="article:published_time" content="2023-12-09T11:36:47.000Z">
+<meta property="article:modified_time" content="2023-12-10T12:06:21.777Z">
 <meta property="article:author" content="devout">
-<meta property="article:tag" content="近似算法">
+<meta property="article:tag" content="微积分">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="https://06devout.github.io/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/","path":"2023/11/12/Set-Cover-问题的近似算法/","title":"Set Cover 问题的近似算法"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/","path":"2023/12/09/MIT-Integration-Bee-2023-Semifinal-部分题目解答/","title":"MIT Integration Bee 2023 - Semifinal 部分题目解答"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Set Cover 问题的近似算法 | devout</title>
+<title>MIT Integration Bee 2023 - Semifinal 部分题目解答 | devout</title>
   
 
 
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-cover"><span class="nav-number">1.</span> <span class="nav-text">Set Cover</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#h_n-approximation"><span class="nav-number">2.</span> <span class="nav-text">\(H_n\)-Approximation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#further-application"><span class="nav-number">3.</span> <span class="nav-text">Further Application</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">1.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">1.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">1.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-number">4.</span> <span class="nav-text">2.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-number">5.</span> <span class="nav-text">2.3</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
@@ -214,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Set Cover 问题的近似算法 | devout">
+      <meta itemprop="name" content="MIT Integration Bee 2023 - Semifinal 部分题目解答 | devout">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Set Cover 问题的近似算法
+          MIT Integration Bee 2023 - Semifinal 部分题目解答
         </h1>
 
         <div class="post-meta-container">
@@ -229,9 +229,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-11-12 11:59:27 / Modified: 12:26:21" itemprop="dateCreated datePublished" datetime="2023-11-12T11:59:27+08:00">2023-11-12</time>
+      <time title="Created: 2023-12-09 19:36:47" itemprop="dateCreated datePublished" datetime="2023-12-09T19:36:47+08:00">2023-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-10 20:06:21" itemprop="dateModified" datetime="2023-12-10T20:06:21+08:00">2023-12-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,7 +245,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B/" itemprop="url" rel="index"><span itemprop="name">《近似算法设计》</span></a>
+          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
         </span>
     </span>
 
@@ -252,81 +258,86 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="set-cover">Set Cover</h2>
-<p>Set Cover 是指给定 <span class="math inline">\(n\)</span> 个元素
-<span class="math inline">\(E=\{e_1,\cdots,e_n\}\)</span> 以及 <span
-class="math inline">\(m\)</span> 个集合 <span
-class="math inline">\(S_1,\cdots,S_m\subseteq E\)</span>，每个集合有代价
-<span
-class="math inline">\(w_1,\cdots,w_m\)</span>，要求从这些集合中选出
-<span class="math inline">\(k\)</span> 个集合 <span
-class="math inline">\(S_{i_1},\cdots,S_{i_k}\)</span> 使得 <span
-class="math inline">\(\cup_{j=1}^k S_{j_k}=E\)</span>，且 <span
-class="math inline">\(\sum_{j=1}^k w_{i_k}\)</span> 最小。</p>
-<p>Set Cover 是经典的 NP-complete 问题，同时在近似上也是经典的
-LOG-APX-complete 问题。</p>
-<p>关于 Set Cover 的 LOG-APX-hard 的证明可以参见 Fiege'98 的论文。</p>
-<p>下面我们给出一个 Set Cover 的 <span
-class="math inline">\(H_n\)</span>- 近似。</p>
-<h2 id="h_n-approximation"><span
-class="math inline">\(H_n\)</span>-Approximation</h2>
-<p>Set Cover 的近似是非常易于入门的。</p>
-<p>我们考虑一个自然的贪心，即每次选择一个“平均代价最小的集合”，把他加到集合中。</p>
-<p>具体来说，初始我们选择的集合的集合 <span
-class="math inline">\(I=\emptyset\)</span>，设 <span
-class="math inline">\(\hat S_k\)</span> 表示 <span
-class="math inline">\(S_k\)</span>
-中现在还没有覆盖的元素的集合，我们每次选择</p>
-<p><span class="math display">\[\ell=\operatorname{argmin}_{|\hat
-S_k|&gt;0} \frac{w_k}{|\hat S_k|}\]</span></p>
-<p>并将他放入 <span class="math inline">\(I\)</span> 中，再从所有 <span
-class="math inline">\(\hat S_k\)</span> 中去掉 <span
-class="math inline">\(\ell\)</span>，直到我们选出了一个覆盖。</p>
-<p>这个过程显然可以在多项式时间内实现，下面我们证明 <span
-class="math inline">\(\sum_{k\in I}w_k\leq H_n\cdot OPT\)</span>.</p>
-<p>直觉上来讲，对于一个最优的覆盖 <span
-class="math inline">\(O\)</span>, <span class="math inline">\(\sum_{k\in
-O}w_k=OPT\)</span>，在 <span class="math inline">\(O\)</span>
-中一定存在一个集合的平均代价不超过 <span
-class="math inline">\(OPT/n\)</span>，覆盖了第一个之后，相应的，<span
-class="math inline">\(O\)</span> 中一定存在一个集合平均代价不超过 <span
-class="math inline">\(OPT/(n-1)\)</span>
-来覆盖第二个，以此类推就得到了我们这个算法得到的结果 <span
-class="math inline">\(\leq
-OPT\cdot(1+\frac{1}{2}+\cdots+\frac{1}{n})\)</span>。</p>
-<p>下面是严谨的证明：设加入 <span class="math inline">\(k\)</span>
-个集合之后还剩下 <span class="math inline">\(n_k\)</span>
-个元素没有被覆盖，则</p>
-<p><span class="math display">\[\min_{|\hat S_k|&gt;0}\frac{w_k}{|\hat
-S_k|}\leq \min_{k\in O \wedge |\hat S_k|&gt;0}\frac{w_k}{|\hat
-S_k|}\]</span></p>
-<p>根据盐水原理，右边小于等于</p>
-<p><span class="math display">\[\frac{\sum_{k\in O\wedge |\hat
-S_k|&gt;0}w_k}{\sum_{k\in O}|\hat S_k|}\leq \frac{OPT}{n_k}\]</span></p>
-<p>故</p>
-<p><span class="math display">\[\sum_{k\in I}w_k\leq \sum_{j=1}^k
-\frac{n_j-n_{j+1}}{n_j}OPT\leq H_n\cdot OPT\]</span></p>
-<p>即完成了我们的证明。</p>
-<h2 id="further-application">Further Application</h2>
-<p>Set Cover 是（比较少有的） LOG-APX-complete 的问题，所以往往需要证明
-LOG-APX-hardness 时往往需要从 Set Cover 来规约。比如 Steiner Tree
-等问题的 hardness 可以通过非常简单的规约来解决。</p>
-<p>同时这种调和级数的证明方法也可以用在 Steiner Tree Variants 的 <span
-class="math inline">\(O(\log n)\)</span> Approximation
-的正确性的证明。</p>
-<p>习题：</p>
-<p>对于两个集合 <span class="math inline">\(A,B,A\cap
-B=\emptyset\)</span>，<span class="math inline">\(B\)</span>
-中每个元素有代价 <span class="math inline">\(w_k\)</span>，对于 <span
-class="math inline">\(i\in A,j\in B\)</span> 有额外代价 <span
-class="math inline">\(c_{i,j}\)</span>，选取 <span
-class="math inline">\(B\)</span> 的一个非空子集 <span
-class="math inline">\(E\)</span>，最小化</p>
-<p><span class="math display">\[\sum_{i\in E}w_i+\sum_{i\in A}\min_{j\in
-E}c_{i,j}\]</span></p>
-<p>通过证明这个问题是 LOG-APX-hard 并给出一个 <span
-class="math inline">\(O(\log n)\)</span> 近似算法，证明他是
-LOG-APX-complete。</p>
+    <div class="post-body" itemprop="articleBody"><p><a
+target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_semifinal.pdf">题目链接</a></p>
+<p>感觉 Semifinal 除了 1.3 和 2.3 神题以外其他的反而比较常规。</p>
+<h2 id="section">1.1</h2>
+<p><span class="math display">\[\int e^{\cos x}\cos(2x+\sin x)\mathrm
+dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I &amp;=\int e^{\cos x}\cos(x+(x+\sin x))\mathrm dx \\
+&amp;= \int e^{\cos x}\Big((1+\cos x)\cos(x+\sin x)-\sin x\sin (x+\sin
+x)\Big) \mathrm dx-\int e^{\cos x}\cos(x+\sin x)\mathrm dx \\
+&amp;= e^{\cos x}\sin(x+\sin x)-\int e^{\cos x}\Big(\cos x\cos\sin
+x-\sin x\sin\sin x)\mathrm dx \\
+&amp;= e^{\cos x}\sin (x+\sin x)-e^{\cos x}\sin\sin x
+\end{aligned}
+\]</span></p>
+<h2 id="section-1">1.2</h2>
+<p><del>不会。</del></p>
+<p>直接扔个 <a
+target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/4638248/evaluate-int1-0-9x9-x909x99-x9009x909-x9909x999-x900">StackExchange</a></p>
+<p>讲真这题神了（</p>
+<h2 id="section-2">1.3</h2>
+<p><span class="math display">\[\int_0^\pi \frac{1\cos x-\cos
+2021x-2\cos 2022 x-\cos 2023 x+2}{1-\cos 2x}\mathrm dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I &amp;=\int_0^\pi \frac{2\cos x+2-(\cos 2021x+\cos 2022 x)-(\cos2022
+x-\cos 2023 x)}{1-\cos 2x}\mathrm dx \\
+&amp;=\int_0^\pi \frac{2\cos
+x+2-2\cos\dfrac{x}{2}\Big(\cos\dfrac{4043}{2}x+\cos\dfrac{4045}{2}x\Big)}{1-\cos
+2x}\mathrm dx \\
+&amp;= \int_0^\pi \frac{2\cos x+2-4\cos^2\dfrac{x}{2}\cos 2022 x}{1-\cos
+2x}\mathrm dx \\
+&amp;= \int_0^\pi \frac{4\cos^2\dfrac{x}{2}(1-\cos 2022x)}{2\sin^2
+x}\mathrm dx \\
+&amp;= \int_0^\pi \frac{1-\cos 2022x}{2\cos^2\dfrac{x}{2}}\mathrm dx \\
+&amp;= \int_0^\pi \frac{1-\cos 2022x}{1-\cos x}\mathrm dx \\
+&amp;= 2022\pi
+\end{aligned}
+\]</span></p>
+<p>最后一步用了 Fejer 积分：</p>
+<p><span class="math display">\[\int_0^{\pi/2}\frac{1-\cos nx}{1-\cos
+x}\mathrm dx=\frac{n\pi}{2}\]</span></p>
+<p>证明实际上不难：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1-\cos nx}{1-\cos x} &amp;= \frac{(1-\cos x)+(\cos x-\cos
+2x)+\cdots (\cos(n-1)x-\cos nx)}{1-\cos x} \\
+&amp;= \frac{2\sin \dfrac{x}{2}\sum_{k=1}^n
+\sin(k-\dfrac{1}{2})x}{2\sin^2 \dfrac{x}{2}} \\
+&amp;=\sum_{k=1}^n \sin(k-\frac{1}{2})x
+\end{aligned}
+\]</span></p>
+<p>因为</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sin(n+\frac{1}{2})x&amp;=\sin\frac{x}{2}+(\sin \frac{3}{2}x-\sin
+x)+\cdots+(\sin(n+\frac{1}{2})x-\sin(n-\frac{1}{2})x) \\
+&amp;=\sin\frac{x}{2}(1+\sum_{k=1}^n\cos kx)
+\end{aligned}
+\]</span></p>
+<p>带入上面的式子，得到</p>
+<p><span class="math display">\[\frac{1-\cos nx}{1-\cos
+x}=n+\sum_{k=1}^n\sum_{j=1}^k\cos jx\]</span></p>
+<p>两边在 <span class="math inline">\((0,\pi)\)</span> 上积分，<span
+class="math inline">\(\cos kx\)</span> 积分值是 <span
+class="math inline">\(0\)</span>，因此</p>
+<p><span class="math display">\[\int_0^\pi \frac{1-\cos nx}{1-\cos
+x}\mathrm dx=n\pi\]</span></p>
+<h2 id="section-3">2.2</h2>
+<p><span class="math display">\[\int_{-2}^2
+((((x^2-2)^2-2)^2-2)^2-2)\mathrm dx\]</span></p>
+<p>找规律，</p>
+<p><span class="math display">\[\int_{-2}^2 (x^2-2)\mathrm
+dx=-\frac{8}{3}\]</span></p>
+<p><span class="math display">\[\int_{-2}^2 ((x^2-2)^2-2)\mathrm
+dx=-\frac{8}{15}\]</span></p>
+<p>因此原积分 <span class="math inline">\(-\dfrac{8}{255}\)</span></p>
+<h2 id="section-4">2.3</h2>
+<p>不会。</p>
 
     </div>
 
@@ -336,21 +347,18 @@ LOG-APX-complete。</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/" rel="tag"># 近似算法</a>
+              <a href="/blog/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/11/06/%E3%80%90%E9%B2%9C%E8%8A%B1-2%E3%80%91%E8%AD%A6%E9%86%92%E4%B9%8B%E9%A3%8E/" rel="prev" title="【鲜花#2】警醒之风">
-                  <i class="fa fa-angle-left"></i> 【鲜花#2】警醒之风
+                <a href="/blog/2023/12/04/MIT-Integration-Bee-2023-Quarterfinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" rel="prev" title="MIT Integration Bee 2023 - Quarterfinal 部分题目解答">
+                  <i class="fa fa-angle-left"></i> MIT Integration Bee 2023 - Quarterfinal 部分题目解答
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2023/11/12/%E3%80%90%E9%B2%9C%E8%8A%B1-3%E3%80%912023%E6%9C%9F%E4%B8%AD%E8%80%83%E6%B8%B8%E8%AE%B0/" rel="next" title="【鲜花#3】2023期中考游记">
-                  【鲜花#3】2023期中考游记 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
