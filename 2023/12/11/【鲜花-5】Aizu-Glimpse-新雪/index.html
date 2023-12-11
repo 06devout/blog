@@ -19,28 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="一些有意思的题的解答，题目见 这里 5. \[\int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx\] 法1： \[ \begin{aligned} \int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx &amp;&#x3D; \int_{0}^{\pi&#x2F;2}x\mathrm d\ln\sin x \\ &amp;&#x3D; x\ln\sin x\Big |_0^{\p">
+    <meta name="description" content="天空是绯色的，就像沙尘暴。 早上进学校的时候发现小猫还活着，不知道该为他们感到高兴还是感到悲哀。 雪花白了我的发迹，引得涂洁对我指手画脚。  今天换了羽绒服，于是没戴手套。 课间玩雪，寒冰红润了我的双手。 滚起雪球，为了雪球最终化为水。  出校门，风平浪静，冰冷渐渐刺进我的躯干。 校门口有两个小贩，卖冰糖葫芦。 第一个小贩在校门口的有利位置，还提供了 Extra Service">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MIT Integration Bee 2023 - Regular Season 部分题目解答">
-<meta property="og:url" content="https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/index.html">
+<meta property="og:title" content="【鲜花#5】Aizu Glimpse - 新雪">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/12/11/%E3%80%90%E9%B2%9C%E8%8A%B1-5%E3%80%91Aizu-Glimpse-%E6%96%B0%E9%9B%AA/index.html">
 <meta property="og:site_name" content="devout">
-<meta property="og:description" content="一些有意思的题的解答，题目见 这里 5. \[\int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx\] 法1： \[ \begin{aligned} \int_{0}^{\pi&#x2F;2}x\cot x\mathrm dx &amp;&#x3D; \int_{0}^{\pi&#x2F;2}x\mathrm d\ln\sin x \\ &amp;&#x3D; x\ln\sin x\Big |_0^{\p">
+<meta property="og:description" content="天空是绯色的，就像沙尘暴。 早上进学校的时候发现小猫还活着，不知道该为他们感到高兴还是感到悲哀。 雪花白了我的发迹，引得涂洁对我指手画脚。  今天换了羽绒服，于是没戴手套。 课间玩雪，寒冰红润了我的双手。 滚起雪球，为了雪球最终化为水。  出校门，风平浪静，冰冷渐渐刺进我的躯干。 校门口有两个小贩，卖冰糖葫芦。 第一个小贩在校门口的有利位置，还提供了 Extra Service">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-25T09:31:32.000Z">
-<meta property="article:modified_time" content="2023-11-28T13:35:11.814Z">
+<meta property="article:published_time" content="2023-12-11T11:10:26.000Z">
+<meta property="article:modified_time" content="2023-12-11T11:29:08.878Z">
 <meta property="article:author" content="devout">
-<meta property="article:tag" content="微积分">
+<meta property="article:tag" content="日常">
+<meta property="article:tag" content="鲜花">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
+<link rel="canonical" href="https://06devout.github.io/blog/2023/12/11/%E3%80%90%E9%B2%9C%E8%8A%B1-5%E3%80%91Aizu-Glimpse-%E6%96%B0%E9%9B%AA/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/","path":"2023/11/25/MIT-Integration-Bee-2023-Regular-Season-部分题目解答/","title":"MIT Integration Bee 2023 - Regular Season 部分题目解答"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/12/11/%E3%80%90%E9%B2%9C%E8%8A%B1-5%E3%80%91Aizu-Glimpse-%E6%96%B0%E9%9B%AA/","path":"2023/12/11/【鲜花-5】Aizu-Glimpse-新雪/","title":"【鲜花#5】Aizu Glimpse - 新雪"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>MIT Integration Bee 2023 - Regular Season 部分题目解答 | devout</title>
+<title>【鲜花#5】Aizu Glimpse - 新雪 | devout</title>
   
 
 
@@ -100,7 +101,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -113,7 +114,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">5.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">8.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">11.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-number">4.</span> <span class="nav-text">13.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-number">5.</span> <span class="nav-text">18.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-5"><span class="nav-number">6.</span> <span class="nav-text">19.</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/11/%E3%80%90%E9%B2%9C%E8%8A%B1-5%E3%80%91Aizu-Glimpse-%E6%96%B0%E9%9B%AA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
@@ -214,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="MIT Integration Bee 2023 - Regular Season 部分题目解答 | devout">
+      <meta itemprop="name" content="【鲜花#5】Aizu Glimpse - 新雪 | devout">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          MIT Integration Bee 2023 - Regular Season 部分题目解答
+          【鲜花#5】Aizu Glimpse - 新雪
         </h1>
 
         <div class="post-meta-container">
@@ -229,15 +229,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2023-11-25 17:31:32" itemprop="dateCreated datePublished" datetime="2023-11-25T17:31:32+08:00">2023-11-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-28 21:35:11" itemprop="dateModified" datetime="2023-11-28T21:35:11+08:00">2023-11-28</time>
+      <time title="Created: 2023-12-11 19:10:26 / Modified: 19:29:08" itemprop="dateCreated datePublished" datetime="2023-12-11T19:10:26+08:00">2023-12-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,7 +239,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
+          <a href="/blog/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a>
         </span>
     </span>
 
@@ -258,126 +252,48 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>一些有意思的题的解答，题目见 <a
-target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_regular_season.pdf">这里</a></p>
-<h2 id="section">5.</h2>
-<p><span class="math display">\[\int_{0}^{\pi/2}x\cot x\mathrm
-dx\]</span></p>
-<p><strong>法1：</strong></p>
-<p><span class="math display">\[
-\begin{aligned}
-\int_{0}^{\pi/2}x\cot x\mathrm dx &amp;= \int_{0}^{\pi/2}x\mathrm
-d\ln\sin x \\
-&amp;= x\ln\sin x\Big |_0^{\pi/2}-\int_0^{\pi/2} \ln \sin x \mathrm dx
-\\
-&amp;= -\int_0^{\pi/2} \ln \sin x \mathrm dx
-\end{aligned}
-\]</span></p>
-<p><span class="math inline">\(\ln\sin x\)</span> 在 <span
-class="math inline">\([0,\pi/2]\)</span> 上积分是经典的问题。</p>
-<p>设</p>
-<p><span class="math display">\[I=\int_0^{\pi/2} \ln \sin x \mathrm
-dx\]</span></p>
-<p>则</p>
-<p><span class="math display">\[\int_0^{\pi/2} \ln \cos x \mathrm
-dx=I\]</span></p>
-<p><span class="math display">\[\int_0^{\pi/2} \ln \sin 2x \mathrm
-dx=I\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I&amp;=\int_0^{\pi/2} \ln \sin 2x \mathrm dx \\
-&amp;=\int_0^{\pi/2} (\ln 2+\ln\sin x+\ln\cos x) \mathrm dx \\
-&amp;= \frac{\pi}{2}\ln 2+2I
-\end{aligned}
-\]</span></p>
-<p>整理有 <span class="math inline">\(I=-\dfrac{\pi}{2}\ln
-2\)</span>，故</p>
-<p><span class="math display">\[\int_{0}^{\pi/2}x\cot x\mathrm
-dx=\frac{\pi}{2}\ln 2\]</span></p>
-<p><strong>法2:</strong></p>
-<p>运用 Feynman 方法，设</p>
-<p><span class="math display">\[I(a)=\int_0^{\pi/2}\frac{\arctan(a\tan
-x)}{\tan x}\mathrm dx\]</span></p>
-<p>所求即 <span class="math inline">\(I(1)\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I^\prime(a)&amp;=\int_0^{\pi/2} \frac{1}{1+a^2\tan^2 x}\mathrm dx \\
-&amp;=\int_0^{\pi/2}\frac{1}{(1+a^2\tan^2 x)(1+\tan^2 x)}\cdot
-\frac{1}{\cos^2 x}\mathrm dx \  (t:=\tan x) \\
-&amp;=\int_0^\infty \frac{\mathrm dt}{(1+a^2t^2)(1+t^2)} \\
-&amp;=\frac{1}{a^2-1}\int_0^\infty
-(\frac{a^2}{1+a^2t^2}-\frac{1}{1+t^2})\mathrm dt \\
-&amp;=\frac{1}{a+1}\cdot \frac{\pi}{2}
-\end{aligned}
-\]</span></p>
-<p>同时我们有 <span
-class="math inline">\(I(0)=0\)</span>，因此我们知道</p>
-<p><span class="math display">\[I(1)=\int_0^1 I^\prime(a)\mathrm
-da=\frac{\pi}{2}\ln 2\]</span></p>
-<h2 id="section-1">8.</h2>
-<p><span class="math display">\[\int_0^\pi x\sin^4 x\mathrm
-dx\]</span></p>
-<p>经典方法</p>
-<p><span class="math display">\[
-\int_0^\pi x\sin^4 x\mathrm dx=\pi \int_0^{\pi/2}\sin^4x\mathrm dx
-\]</span></p>
-<p>然后点火，得到 <span
-class="math inline">\(\dfrac{3}{16}\pi^2\)</span></p>
-<h2 id="section-2">11.</h2>
-<p><span class="math display">\[\int(\sqrt{2\ln x}+\frac{1}{\sqrt{2\ln
-x}})\mathrm dx\]</span></p>
-<p>先换元设 <span class="math inline">\(t=\sqrt{\ln x}\)</span></p>
-<p>得到</p>
-<p><span class="math display">\[\sqrt 2\int (2t^2+1)e^{t^2}\mathrm
-dt\]</span></p>
-<p>对 <span class="math inline">\(e^{t^2}\)</span> 分部积分</p>
-<p><span class="math display">\[\int e^{t^2}\mathrm dt=te^{t^2}-\int
-2t^2e^{t^2}\mathrm dt\]</span></p>
-<p>把右边积分挪到左边即得 <span
-class="math inline">\((2t^2+1)e^{t^2}\)</span> 的积分，最后得到 <span
-class="math inline">\(x\sqrt{2\ln x}\)</span></p>
-<h2 id="section-3">13.</h2>
-<p><span
-class="math display">\[\int_0^{\frac{\pi}{2}+1}\sin(x-\sin(x-\sin(x-\cdots)))\mathrm
-dx\]</span></p>
-<p>看到的时候是相当震撼的，实际上不要被他欺骗了。</p>
-<p>设 <span
-class="math inline">\(t=\sin(x-\sin(x-\sin(x-\cdots)))\)</span>，则
-<span class="math inline">\(t=\sin(x-t)\)</span></p>
-<p>两边对 <span class="math inline">\(x\)</span> 求导得到</p>
-<p><span class="math display">\[\frac{\mathrm dt}{\mathrm
-dx}=\sqrt{1-t^2}(1-\frac{\mathrm dt}{\mathrm dx})\]</span></p>
-<p>即</p>
-<p><span class="math display">\[\mathrm
-dx=(1+\frac{1}{\sqrt{1-t^2}})\mathrm dt\]</span></p>
-<p>然后对初始积分做换元，得到</p>
-<p><span class="math display">\[\int_0^1
-(t+\frac{t}{\sqrt{1-t^2}})\mathrm dt=\frac{3}{2}\]</span></p>
-<h2 id="section-4">18.</h2>
-<p><span class="math display">\[\int_0^\infty \frac{x+1}{x+2}\cdot
-\frac{x+3}{x+4} \cdot \frac{x+5}{x+6} \cdots \mathrm dx\]</span></p>
-<p>设 <span class="math inline">\(A=\dfrac{x+1}{x+2}\cdot
-\dfrac{x+3}{x+4} \cdots \dfrac{x+2n+1}{x+2n+2}&lt;\dfrac{x+2}{x+3}\cdot
-\dfrac{x+4}{x+5}\cdots \dfrac{x+2n+2}{x+2n+3}=B\)</span></p>
-<p>则 <span
-class="math inline">\(A&lt;\sqrt{AB}=\sqrt{\dfrac{x+1}{x+2n+3}}\)</span></p>
-<p>同理 <span class="math inline">\(A&gt;\dfrac{x+1}{x+2}\cdot
-\dfrac{x+2}{x+3}\cdot \dfrac{x+4}{x+5}\cdots
-\dfrac{x+2n}{x+2n+1}=C\)</span></p>
-<p>则 <span
-class="math inline">\(A&gt;\sqrt{AC}=\sqrt{\dfrac{(x+1)^2}{x+2n+1}}\)</span></p>
-<p>由极限的夹逼性知，<span
-class="math inline">\(\lim_{n\to\infty}A=0\)</span>，故原积分为 <span
-class="math inline">\(0\)</span>。</p>
-<h2 id="section-5">19.</h2>
-<p><span class="math display">\[\int_{0}^{\pi/2}\frac{\sin 23x}{\sin
-x}\mathrm dx\]</span></p>
-<p>经典方法</p>
-<p><span class="math display">\[\frac{\sin (2k+1)x}{\sin
-x}=1+2\sum_{n=1}^k \cos 2nx\]</span></p>
-<p>证明直接数归。</p>
-<p>于是直接做完了，积分值为 <span
-class="math inline">\(\pi/2\)</span>。</p>
+    <div class="post-body" itemprop="articleBody"><p>天空是绯色的，就像沙尘暴。</p>
+<p>早上进学校的时候发现小猫还活着，不知道该为他们感到高兴还是感到悲哀。</p>
+<p>雪花白了我的发迹，引得涂洁对我指手画脚。</p>
+<hr />
+<p>今天换了羽绒服，于是没戴手套。</p>
+<p>课间玩雪，寒冰红润了我的双手。</p>
+<p>滚起雪球，为了雪球最终化为水。</p>
+<hr />
+<p>出校门，风平浪静，冰冷渐渐刺进我的躯干。</p>
+<p>校门口有两个小贩，卖冰糖葫芦。</p>
+<p>第一个小贩在校门口的有利位置，还提供了 Extra Service - 卖烤肠。</p>
+<p>他的生意相当的好。</p>
+<p>第二个小贩在校门口出去走一段路的不利位置，还不会营销，他卖的是糖雪球。</p>
+<p>这么说来还挺应景。</p>
+<p>小贩在这一学期重新出现了，不知道应当感到高兴还是悲哀。</p>
+<p>大概还是高兴的好，因为相当小贩的人本没有消失，只是曾经被强制抹去了。</p>
+<hr />
+<p>冰封，等公交车。</p>
+<p>小学生们愉快的打着雪仗。</p>
+<p>一个小男孩对另一个小女孩说“去年就下了一次雪”。</p>
+<p>第一反应想，原来去年就下了一次雪啊。</p>
+<p>转念一想，这一次雪是什么时候呢？</p>
+<p>大概还记得去年发生了什么的人已经相当的少了吧。</p>
+<p>原来去年我在杭州见过雪。</p>
+<p>但是去年北京的雪在哪里呢？</p>
+<hr />
+<p>原来去年是我从杭州回来的日子。</p>
+<p>葡萄牙被淘汰已经一年了。</p>
+<p>从五点睡到六点半，起来赶火车的故事也已经快要忘了吧。</p>
+<p>果然寒冷的天气是好的。</p>
+<p>寒冷的天气让人警醒。</p>
+<hr />
+<p>微醺。</p>
+<p>上一次喝醉是什么时候？</p>
+<p>好像那时候子达哥还在。</p>
+<p>喝酒是好的，让人温暖。</p>
+<p>也让人麻痹。</p>
+<hr />
+<p>小同学们去三亚了。</p>
+<p>我的三亚就这样被疫情偷走了。</p>
+<p>我的三年就这样被疫情偷走了。</p>
+<p>什么都变了。</p>
 
     </div>
 
@@ -387,21 +303,19 @@ class="math inline">\(\pi/2\)</span>。</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
+              <a href="/blog/tags/%E6%97%A5%E5%B8%B8/" rel="tag"># 日常</a>
+              <a href="/blog/tags/%E9%B2%9C%E8%8A%B1/" rel="tag"># 鲜花</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/11/18/Aizu-Afterthoughts-NOIP2023-%E6%B8%B8%E8%AE%B0-%E3%80%90%E9%B2%9C%E8%8A%B1-4%E3%80%91%E4%BC%9A%E6%B4%A5%E6%A2%A6%E8%AE%B0%C2%B7%E8%A1%A5/" rel="prev" title="Aizu Afterthoughts - NOIP2023 游记/【鲜花#4】会津梦记·补">
-                  <i class="fa fa-angle-left"></i> Aizu Afterthoughts - NOIP2023 游记/【鲜花#4】会津梦记·补
+                <a href="/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" rel="prev" title="MIT Integration Bee 2023 - Semifinal 部分题目解答">
+                  <i class="fa fa-angle-left"></i> MIT Integration Bee 2023 - Semifinal 部分题目解答
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2023/12/04/MIT-Integration-Bee-2023-Quarterfinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" rel="next" title="MIT Integration Bee 2023 - Quarterfinal 部分题目解答">
-                  MIT Integration Bee 2023 - Quarterfinal 部分题目解答 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
