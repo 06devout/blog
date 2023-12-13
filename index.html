@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -253,6 +253,207 @@ PSAPCE-hard?</li>
 <li>2.13 Local optimal solution of monotone, submodular function subject
 to a matroid is at least half the optimal solution.</li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">MIT Integration Bee 2023 - Final 题目解答</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-12 19:37:15" itemprop="dateCreated datePublished" datetime="2023-12-12T19:37:15+08:00">2023-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-13 17:36:21" itemprop="dateModified" datetime="2023-12-13T17:36:21+08:00">2023-12-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="section">1</h2>
+<p><span class="math display">\[\int_0^{\pi/2}\frac{\sqrt[3]{\tan
+x}}{(\cos x+\sin x)^2}\mathrm dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I &amp;= \int_0^{\pi/2}\frac{\sqrt[3]{\tan x}}{(1+\tan x)^2}\mathrm
+d\tan x \\
+&amp;=\int_0^{\infty}\frac{t^{1/3}}{(1+t)^2}\mathrm dt \\
+&amp;=\mathcal B(\frac{4}{3},\frac{2}{3}) \\
+&amp;=\Gamma(\frac{4}{3})\Gamma(\frac{2}{3}) \\
+&amp;=\frac{\Gamma(\dfrac{1}{3})\Gamma(\dfrac{2}{3})}{3} \\
+&amp;=\frac{2\pi}{3\sin\dfrac{\pi}{3}} \\
+&amp;= \frac{2\sqrt 3}{9}\pi
+\end{aligned}
+\]</span></p>
+<h2 id="section-1">2</h2>
+<p><span class="math display">\[\int_0^\pi \Big(\frac{\sin 2x\sin 3x\sin
+5x\sin 30x}{\sin x\sin 6x\sin 10x\sin 15x}\Big)^2\mathrm dx\]</span></p>
+<p>先用二倍角公式上下抵消一下，得到</p>
+<p><span class="math display">\[I=\int_0^\pi \Big(\frac{\cos x\cos
+15x}{\cos 3x\cos 5x}\Big)^2\mathrm dx\]</span></p>
+<p>然后用三倍角公式展开，得到</p>
+<p><span class="math display">\[I=\int_0^\pi\Big(\frac{4\cos^2
+5x-3}{4\cos^2 x-3}\Big)\mathrm dx=\int_0^\pi\Big(\frac{2\cos
+10x-1}{2\cos 2x-1}\Big)^2\mathrm dx\]</span></p>
+<p>然后做变换 <span class="math inline">\(t=2x\)</span>，得到</p>
+<p><span class="math display">\[I=\frac{1}{2}\int_0^{2\pi}
+\Big(\frac{2\cos 5x-1}{2\cos x-1})^2\mathrm dx\]</span></p>
+<p>对这个东西傅里叶展开，得到</p>
+<p><span class="math display">\[-1-2\cos x+2\cos 3x+2\cos
+4x\]</span></p>
+<p>这个的平方在 <span class="math inline">\(0\)</span> 到 <span
+class="math inline">\(2\pi\)</span> 积分，因为 <span
+class="math inline">\(\sin kx\)</span>
+是正交的，所以只需要考虑平方的积分，除了常数项是 <span
+class="math inline">\(2\pi\)</span> 其他的都是 <span
+class="math inline">\(\pi\)</span>，因此</p>
+<p><span
+class="math display">\[I=\frac{1}{2}(2\pi+4\pi+4\pi+4\pi)=7\pi\]</span></p>
+<h2 id="section-2">3</h2>
+<p><span
+class="math display">\[\int_{-1/2}^{1/2}\sqrt{x^2+1+\sqrt{x^4+x^2+1}}\mathrm
+dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I&amp;=2\int_0^{1/2}\sqrt{\Big(\sqrt{\frac{x^2+x+1}{2}}+\sqrt{\frac{x^2-x+1}{2}}\Big)^2}\mathrm
+dx \\
+&amp;= \sqrt 2\int_0^{1/2}\sqrt{x^2+x+1}\mathrm dx+\sqrt
+2\int_0^{1/2}\sqrt {x^2-x+1}\mathrm dx
+\end{aligned}\]</span></p>
+<p>后面就是基本的套公式了。</p>
+<p><span class="math display">\[I=\frac{\sqrt 7}{2\sqrt
+8}+\frac{3}{4\sqrt 2}\ln |\frac{\sqrt 7+2}{\sqrt 3}|\]</span></p>
+<h2 id="section-3">4</h2>
+<p>感觉做法挺一眼的，就是可能如果不让用计算器的话最后计算数值解会有些困难？</p>
+<h2 id="section-4">5</h2>
+<p><span class="math display">\[\int_0^1
+\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2\mathrm
+dx\]</span></p>
+<p>神仙题呜呜呜</p>
+<p>stackexchange 上抄的初等做法。</p>
+<p><span class="math display">\[I_a:=\int_0^a
+\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2\mathrm
+dx\]</span></p>
+<p>则对于 <span
+class="math inline">\(I_1\)</span>，我们有两种处理方法，一种是做变换
+<span class="math inline">\(t=x/2\)</span>，一种是做变换 <span
+class="math inline">\(t=x-1/2\)</span>，这两种都可以得到一个 <span
+class="math inline">\(I_1\)</span> 和 <span
+class="math inline">\(I_{1/2}\)</span> 的关系、</p>
+<p>首先做变换 <span class="math inline">\(t=x/2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I_1 &amp;= 2\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^{n+1}x\rfloor}{3^n}\Big)^2 \mathrm dx \\
+&amp;= 2\int_0^{1/2}\Big(3\sum_{n=\color{red}1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}\Big)^2 \mathrm dx \\
+&amp;= 18 I_1
+\end{aligned}
+\]</span></p>
+<p>注意红色的地方，本来是没有这一项的，但是因为 <span
+class="math inline">\(\lfloor 2x\rfloor\)</span> 对于 <span
+class="math inline">\(x\in (0,1/2)\)</span> 都是 <span
+class="math inline">\(0\)</span>，所以可以添上这一项。</p>
+<p>接下来做变换 <span class="math inline">\(t=x-1/2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I_1 &amp;= \int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}\Big)^2\mathrm dx+\int_{1/2}^1
+\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2 \mathrm dx
+\\
+&amp;= I_{1/2}+\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}-\sum_{n=1}^{\infty}\frac{2^{n-1}}{3^n}\Big)^2 \mathrm
+dx \\
+&amp;= I_{1/2}+\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}-1\Big)^2\mathrm dx \\
+&amp;= 2I_{1/2}+2\int_0^{1/2}\sum_{n=1}^\infty \frac{\lfloor 2^n
+x\rfloor}{3^n}\mathrm dx+\frac{1}{2}
+\end{aligned}
+\]</span></p>
+<p>这个一次项的积分是好做的。</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_0^{1/2}\frac{\lfloor 2^n x\rfloor}{3^n}\mathrm dx &amp;=
+\frac{1}{6^n}\int_0^{2^{n-1}}\lfloor x \rfloor \mathrm dx \\
+&amp;= \frac{1}{6^n}\frac{1}{2}2^{n-1}(2^{n-1}-1) \\
+&amp;= \frac{2^{n-1}-1}{4\times 3^n}
+\end{aligned}
+\]</span></p>
+<p>等比数列求和得到</p>
+<p><span class="math display">\[\int_0^{1/2}\sum_{n=1}^\infty
+\frac{\lfloor 2^n x\rfloor}{3^n}\mathrm dx=\frac{1}{8}\]</span></p>
+<p>带入 <span class="math inline">\(I_{1/2}=I_1/18\)</span>，有</p>
+<p><span
+class="math display">\[I_1=\frac{I_1}{9}+\frac{3}{4}\]</span></p>
+<p>整理即得</p>
+<p><span class="math display">\[I_1=\frac{27}{32}\]</span></p>
 
       
     </div>
@@ -1532,159 +1733,6 @@ class="math inline">\(6\times
 <p><span
 class="math inline">\(111+141+142+94(90)+100(92)+91(69)=679\)</span></p>
 <p>感觉考的真的抽象，最后赋分也真的抽象。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">Set Cover 问题的近似算法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-11-12 11:59:27 / Modified: 12:26:21" itemprop="dateCreated datePublished" datetime="2023-11-12T11:59:27+08:00">2023-11-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B/" itemprop="url" rel="index"><span itemprop="name">《近似算法设计》</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="set-cover">Set Cover</h2>
-<p>Set Cover 是指给定 <span class="math inline">\(n\)</span> 个元素
-<span class="math inline">\(E=\{e_1,\cdots,e_n\}\)</span> 以及 <span
-class="math inline">\(m\)</span> 个集合 <span
-class="math inline">\(S_1,\cdots,S_m\subseteq E\)</span>，每个集合有代价
-<span
-class="math inline">\(w_1,\cdots,w_m\)</span>，要求从这些集合中选出
-<span class="math inline">\(k\)</span> 个集合 <span
-class="math inline">\(S_{i_1},\cdots,S_{i_k}\)</span> 使得 <span
-class="math inline">\(\cup_{j=1}^k S_{j_k}=E\)</span>，且 <span
-class="math inline">\(\sum_{j=1}^k w_{i_k}\)</span> 最小。</p>
-<p>Set Cover 是经典的 NP-complete 问题，同时在近似上也是经典的
-LOG-APX-complete 问题。</p>
-<p>关于 Set Cover 的 LOG-APX-hard 的证明可以参见 Fiege'98 的论文。</p>
-<p>下面我们给出一个 Set Cover 的 <span
-class="math inline">\(H_n\)</span>- 近似。</p>
-<h2 id="h_n-approximation"><span
-class="math inline">\(H_n\)</span>-Approximation</h2>
-<p>Set Cover 的近似是非常易于入门的。</p>
-<p>我们考虑一个自然的贪心，即每次选择一个“平均代价最小的集合”，把他加到集合中。</p>
-<p>具体来说，初始我们选择的集合的集合 <span
-class="math inline">\(I=\emptyset\)</span>，设 <span
-class="math inline">\(\hat S_k\)</span> 表示 <span
-class="math inline">\(S_k\)</span>
-中现在还没有覆盖的元素的集合，我们每次选择</p>
-<p><span class="math display">\[\ell=\operatorname{argmin}_{|\hat
-S_k|&gt;0} \frac{w_k}{|\hat S_k|}\]</span></p>
-<p>并将他放入 <span class="math inline">\(I\)</span> 中，再从所有 <span
-class="math inline">\(\hat S_k\)</span> 中去掉 <span
-class="math inline">\(\ell\)</span>，直到我们选出了一个覆盖。</p>
-<p>这个过程显然可以在多项式时间内实现，下面我们证明 <span
-class="math inline">\(\sum_{k\in I}w_k\leq H_n\cdot OPT\)</span>.</p>
-<p>直觉上来讲，对于一个最优的覆盖 <span
-class="math inline">\(O\)</span>, <span class="math inline">\(\sum_{k\in
-O}w_k=OPT\)</span>，在 <span class="math inline">\(O\)</span>
-中一定存在一个集合的平均代价不超过 <span
-class="math inline">\(OPT/n\)</span>，覆盖了第一个之后，相应的，<span
-class="math inline">\(O\)</span> 中一定存在一个集合平均代价不超过 <span
-class="math inline">\(OPT/(n-1)\)</span>
-来覆盖第二个，以此类推就得到了我们这个算法得到的结果 <span
-class="math inline">\(\leq
-OPT\cdot(1+\frac{1}{2}+\cdots+\frac{1}{n})\)</span>。</p>
-<p>下面是严谨的证明：设加入 <span class="math inline">\(k\)</span>
-个集合之后还剩下 <span class="math inline">\(n_k\)</span>
-个元素没有被覆盖，则</p>
-<p><span class="math display">\[\min_{|\hat S_k|&gt;0}\frac{w_k}{|\hat
-S_k|}\leq \min_{k\in O \wedge |\hat S_k|&gt;0}\frac{w_k}{|\hat
-S_k|}\]</span></p>
-<p>根据盐水原理，右边小于等于</p>
-<p><span class="math display">\[\frac{\sum_{k\in O\wedge |\hat
-S_k|&gt;0}w_k}{\sum_{k\in O}|\hat S_k|}\leq \frac{OPT}{n_k}\]</span></p>
-<p>故</p>
-<p><span class="math display">\[\sum_{k\in I}w_k\leq \sum_{j=1}^k
-\frac{n_j-n_{j+1}}{n_j}OPT\leq H_n\cdot OPT\]</span></p>
-<p>即完成了我们的证明。</p>
-<h2 id="further-application">Further Application</h2>
-<p>Set Cover 是（比较少有的） LOG-APX-complete 的问题，所以往往需要证明
-LOG-APX-hardness 时往往需要从 Set Cover 来规约。比如 Steiner Tree
-等问题的 hardness 可以通过非常简单的规约来解决。</p>
-<p>同时这种调和级数的证明方法也可以用在 Steiner Tree Variants 的 <span
-class="math inline">\(O(\log n)\)</span> Approximation
-的正确性的证明。</p>
-<p>习题：</p>
-<p>对于两个集合 <span class="math inline">\(A,B,A\cap
-B=\emptyset\)</span>，<span class="math inline">\(B\)</span>
-中每个元素有代价 <span class="math inline">\(w_k\)</span>，对于 <span
-class="math inline">\(i\in A,j\in B\)</span> 有额外代价 <span
-class="math inline">\(c_{i,j}\)</span>，选取 <span
-class="math inline">\(B\)</span> 的一个非空子集 <span
-class="math inline">\(E\)</span>，最小化</p>
-<p><span class="math display">\[\sum_{i\in E}w_i+\sum_{i\in A}\min_{j\in
-E}c_{i,j}\]</span></p>
-<p>通过证明这个问题是 LOG-APX-hard 并给出一个 <span
-class="math inline">\(O(\log n)\)</span> 近似算法，证明他是
-LOG-APX-complete。</p>
 
       
     </div>

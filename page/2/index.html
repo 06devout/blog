@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,159 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">Set Cover 问题的近似算法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-11-12 11:59:27 / Modified: 12:26:21" itemprop="dateCreated datePublished" datetime="2023-11-12T11:59:27+08:00">2023-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B/" itemprop="url" rel="index"><span itemprop="name">《近似算法设计》</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="set-cover">Set Cover</h2>
+<p>Set Cover 是指给定 <span class="math inline">\(n\)</span> 个元素
+<span class="math inline">\(E=\{e_1,\cdots,e_n\}\)</span> 以及 <span
+class="math inline">\(m\)</span> 个集合 <span
+class="math inline">\(S_1,\cdots,S_m\subseteq E\)</span>，每个集合有代价
+<span
+class="math inline">\(w_1,\cdots,w_m\)</span>，要求从这些集合中选出
+<span class="math inline">\(k\)</span> 个集合 <span
+class="math inline">\(S_{i_1},\cdots,S_{i_k}\)</span> 使得 <span
+class="math inline">\(\cup_{j=1}^k S_{j_k}=E\)</span>，且 <span
+class="math inline">\(\sum_{j=1}^k w_{i_k}\)</span> 最小。</p>
+<p>Set Cover 是经典的 NP-complete 问题，同时在近似上也是经典的
+LOG-APX-complete 问题。</p>
+<p>关于 Set Cover 的 LOG-APX-hard 的证明可以参见 Fiege'98 的论文。</p>
+<p>下面我们给出一个 Set Cover 的 <span
+class="math inline">\(H_n\)</span>- 近似。</p>
+<h2 id="h_n-approximation"><span
+class="math inline">\(H_n\)</span>-Approximation</h2>
+<p>Set Cover 的近似是非常易于入门的。</p>
+<p>我们考虑一个自然的贪心，即每次选择一个“平均代价最小的集合”，把他加到集合中。</p>
+<p>具体来说，初始我们选择的集合的集合 <span
+class="math inline">\(I=\emptyset\)</span>，设 <span
+class="math inline">\(\hat S_k\)</span> 表示 <span
+class="math inline">\(S_k\)</span>
+中现在还没有覆盖的元素的集合，我们每次选择</p>
+<p><span class="math display">\[\ell=\operatorname{argmin}_{|\hat
+S_k|&gt;0} \frac{w_k}{|\hat S_k|}\]</span></p>
+<p>并将他放入 <span class="math inline">\(I\)</span> 中，再从所有 <span
+class="math inline">\(\hat S_k\)</span> 中去掉 <span
+class="math inline">\(\ell\)</span>，直到我们选出了一个覆盖。</p>
+<p>这个过程显然可以在多项式时间内实现，下面我们证明 <span
+class="math inline">\(\sum_{k\in I}w_k\leq H_n\cdot OPT\)</span>.</p>
+<p>直觉上来讲，对于一个最优的覆盖 <span
+class="math inline">\(O\)</span>, <span class="math inline">\(\sum_{k\in
+O}w_k=OPT\)</span>，在 <span class="math inline">\(O\)</span>
+中一定存在一个集合的平均代价不超过 <span
+class="math inline">\(OPT/n\)</span>，覆盖了第一个之后，相应的，<span
+class="math inline">\(O\)</span> 中一定存在一个集合平均代价不超过 <span
+class="math inline">\(OPT/(n-1)\)</span>
+来覆盖第二个，以此类推就得到了我们这个算法得到的结果 <span
+class="math inline">\(\leq
+OPT\cdot(1+\frac{1}{2}+\cdots+\frac{1}{n})\)</span>。</p>
+<p>下面是严谨的证明：设加入 <span class="math inline">\(k\)</span>
+个集合之后还剩下 <span class="math inline">\(n_k\)</span>
+个元素没有被覆盖，则</p>
+<p><span class="math display">\[\min_{|\hat S_k|&gt;0}\frac{w_k}{|\hat
+S_k|}\leq \min_{k\in O \wedge |\hat S_k|&gt;0}\frac{w_k}{|\hat
+S_k|}\]</span></p>
+<p>根据盐水原理，右边小于等于</p>
+<p><span class="math display">\[\frac{\sum_{k\in O\wedge |\hat
+S_k|&gt;0}w_k}{\sum_{k\in O}|\hat S_k|}\leq \frac{OPT}{n_k}\]</span></p>
+<p>故</p>
+<p><span class="math display">\[\sum_{k\in I}w_k\leq \sum_{j=1}^k
+\frac{n_j-n_{j+1}}{n_j}OPT\leq H_n\cdot OPT\]</span></p>
+<p>即完成了我们的证明。</p>
+<h2 id="further-application">Further Application</h2>
+<p>Set Cover 是（比较少有的） LOG-APX-complete 的问题，所以往往需要证明
+LOG-APX-hardness 时往往需要从 Set Cover 来规约。比如 Steiner Tree
+等问题的 hardness 可以通过非常简单的规约来解决。</p>
+<p>同时这种调和级数的证明方法也可以用在 Steiner Tree Variants 的 <span
+class="math inline">\(O(\log n)\)</span> Approximation
+的正确性的证明。</p>
+<p>习题：</p>
+<p>对于两个集合 <span class="math inline">\(A,B,A\cap
+B=\emptyset\)</span>，<span class="math inline">\(B\)</span>
+中每个元素有代价 <span class="math inline">\(w_k\)</span>，对于 <span
+class="math inline">\(i\in A,j\in B\)</span> 有额外代价 <span
+class="math inline">\(c_{i,j}\)</span>，选取 <span
+class="math inline">\(B\)</span> 的一个非空子集 <span
+class="math inline">\(E\)</span>，最小化</p>
+<p><span class="math display">\[\sum_{i\in E}w_i+\sum_{i\in A}\min_{j\in
+E}c_{i,j}\]</span></p>
+<p>通过证明这个问题是 LOG-APX-hard 并给出一个 <span
+class="math inline">\(O(\log n)\)</span> 近似算法，证明他是
+LOG-APX-complete。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1851,163 +2004,6 @@ class="math inline">\(O(m^2)\)</span> 的暴力滚了</p>
 <p>Au/Ag/Cu：158/118/70</p>
 <p>就这样混了个 Ag（</p>
 <p><del>貌似是 OI 生涯中第一次没拿 1= 的比赛呢</del></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2020/12/07/NOIP2020%E9%80%80%E5%BD%B9%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2020/12/07/NOIP2020%E9%80%80%E5%BD%B9%E8%AE%B0/" class="post-title-link" itemprop="url">NOIP2020退役记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-12-07 20:55:03" itemprop="dateCreated datePublished" datetime="2020-12-07T20:55:03+08:00">2020-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-02 21:50:45" itemprop="dateModified" datetime="2023-11-02T21:50:45+08:00">2023-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="day0">day0</h3>
-<p>机房日常赛前娱乐（？）</p>
-<p>上午比赛打板子</p>
-<p>树剖 17:52</p>
-<p>spfa 3:32</p>
-<p>dijkstra 4:05</p>
-<p>下午打 lpl 带过来的三国杀，结果被 Co 抓了个正着</p>
-<p>毒奶一口今年会考字符串</p>
-<p>晚上复习了一下kmp和马拉车</p>
-<h3 id="day1">day1</h3>
-<p>在这个阳光上下飞舞，蝴蝶摧毁停车场，树木长出四只手的日子里，冒着北京早晨八点的寒风，我耀武扬威、大步流星、手舞足蹈、载歌载舞、海纳百川、口吐莲花地迈入了实验中学的考点</p>
-<p>八点零五进到考场里面，监考老师一直说不让用键盘，然后我偷偷的打完了头文件（</p>
-<p>Linux 密码是 allac <del>然后就被毒奶了</del></p>
-<p>8:23 的时候才发试题密码差评，密码是
-选手加油+1205，瞬间感觉这次考试的毒瘤。</p>
-<p>一上来看T1，一眼秒了拓扑，然后扔掉去看T2了</p>
-<p>然后发现果然我考前复习字符串没错（</p>
-<p>一上来感觉不太好做，一眼下去只会 <span
-class="math inline">\(32pts\)</span> 感觉有点慌。</p>
-<p>看T3，？？？？ NOIP考构造题就离谱</p>
-<p>看T4，<span class="math inline">\(30pts\)</span> 非常好做，应该 <span
-class="math inline">\(k=1\)</span> 也能拿到</p>
-<p>开考之后直接去写T1，发现这个题还要写个分数，开个ll感觉没有问题</p>
-<p>20分钟过了大样例，等会这个大样例里怎么还有个 <span
-class="math inline">\(10^7\)</span> 啊？？？</p>
-<p>感觉不会炸ll，测了几组数据就扔了。</p>
-<p>T2想了一会口胡了一个哈希 <span class="math inline">\(O(n\sqrt
-n)\)</span> 的做法，然后开始写，写到 9:40 发现自己锅了。</p>
-<p>出去呼吸了一口新鲜空气，回来就想到了枚举长度的 <span
-class="math inline">\(O(n\ln n+26n)\)</span> 的做法</p>
-<p>然后差不多 <span class="math inline">\(10:20\)</span>
-的时候调过了大样例</p>
-<p>考场发面包好评</p>
-<p>卡常卡到快 <span class="math inline">\(11:00\)</span>，但是 <span
-class="math inline">\(2^{20}\)</span> 个 <span
-class="math inline">\(a\)</span> 还是会T</p>
-<p>然后把T4 的 <span class="math inline">\(40pts\)</span> 写了，差不多
-<span class="math inline">\(12:00\)</span> 交了</p>
-<p>然后接下来的一个小时</p>
-<p>一直在写代码</p>
-<p>然而并没有什么事情发生</p>
-<p>一个小时过去了</p>
-<p>比赛结束了</p>
-<p>T3就这样抱灵了</p>
-<p>czd说他最高 <span
-class="math inline">\(188\)</span>（事后证明他确实在假）</p>
-<p>估分：<span class="math inline">\(100+(84\sim 100)+0+40=224\sim
-240\)</span></p>
-<p>stO cy <span class="math inline">\(100+100+100+80=380\)</span></p>
-<h3 id="day1.5">day1.5</h3>
-<p>回去看LA群里面有人说T1要高精</p>
-<p>想了想确实</p>
-<p>然后T1就挂没了</p>
-<p>发现T4还有模数 <del>为什么写在输出里面</del></p>
-<p>然后挂了10分</p>
-<p>然后人就没了</p>
-<h3 id="day2">day2</h3>
-<p>程序发下来</p>
-<p>发现T1虽然其他地方都开了ll，结果写了一句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int GCD=gcd(res.a,res.b);</span><br></pre></td></tr></table></figure>
-<p>然后就挂了更没了</p>
-<p>洛谷：<span class="math inline">\(90+92+0+30=212\)</span></p>
-<p>oitk：<span class="math inline">\(80+(84\sim 100)+0+30=194\sim
-210\)</span></p>
-<p>人没了</p>
-<p>AFO</p>
-<h3 id="day3">day3</h3>
-<p>早安，whk人！</p>
-<p>NOIP
-过去了，就过去吧。未来我可能还有机会，可就算没有机会，我也是一样地活。</p>
-<h3 id="day4">day4</h3>
-<p>官方数据 <span class="math inline">\(60+84+10+35=189\)</span></p>
-<p>T1先除再乘有90就离谱</p>
 
       
     </div>
