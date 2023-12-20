@@ -19,25 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-<meta property="og:type" content="website">
-<meta property="og:title" content="devout">
-<meta property="og:url" content="https://06devout.github.io/blog/categories/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B/index.html">
+    <meta name="description" content="Exercise 9  定义 \[\chi_{[a,b]}(x)&#x3D;[x\in[a,b]]\]  求其在 \([-\pi,pi]\) 上的傅里叶展开 证明该展开在 \(a,b\neq \pi\) 且 \(a\neq b\) 时不绝对收敛 证明该展开在任意一点收敛   (1)，易得 \[f(x)\sim \frac{b-a}{2\pi}+\sum_{n\neq 0}\fr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Steins 傅里叶分析 第二章部分习题解答">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/12/18/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/index.html">
 <meta property="og:site_name" content="devout">
-<meta property="og:description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+<meta property="og:description" content="Exercise 9  定义 \[\chi_{[a,b]}(x)&#x3D;[x\in[a,b]]\]  求其在 \([-\pi,pi]\) 上的傅里叶展开 证明该展开在 \(a,b\neq \pi\) 且 \(a\neq b\) 时不绝对收敛 证明该展开在任意一点收敛   (1)，易得 \[f(x)\sim \frac{b-a}{2\pi}+\sum_{n\neq 0}\fr">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-18T13:22:56.000Z">
+<meta property="article:modified_time" content="2023-12-19T12:53:34.170Z">
 <meta property="article:author" content="devout">
+<meta property="article:tag" content="傅里叶分析">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://06devout.github.io/blog/categories/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B/">
+<link rel="canonical" href="https://06devout.github.io/blog/2023/12/18/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"categories/《近似算法设计》/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/12/18/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/","path":"2023/12/18/Steins-傅里叶分析-第二章部分习题解答/","title":"Steins 傅里叶分析 第二章部分习题解答"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Category: 《近似算法设计》 | devout</title>
+<title>Steins 傅里叶分析 第二章部分习题解答 | devout</title>
   
 
 
@@ -97,7 +100,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -110,6 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#exercise"><span class="nav-number">1.</span> <span class="nav-text">Exercise</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.1.</span> <span class="nav-text">9</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -124,18 +128,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -186,70 +190,158 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">《近似算法设计》
-          <small>Category</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/18/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Steins 傅里叶分析 第二章部分习题解答 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Steins 傅里叶分析 第二章部分习题解答
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-18 21:22:56" itemprop="dateCreated datePublished" datetime="2023-12-18T21:22:56+08:00">2023-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-19 20:53:34" itemprop="dateModified" datetime="2023-12-19T20:53:34+08:00">2023-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Steins-I/" itemprop="url" rel="index"><span itemprop="name">Steins I</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="exercise">Exercise</h1>
+<h2 id="section">9</h2>
+<blockquote>
+<p>定义</p>
+<p><span class="math display">\[\chi_{[a,b]}(x)=[x\in[a,b]]\]</span></p>
+<ol type="1">
+<li><p>求其在 <span class="math inline">\([-\pi,pi]\)</span>
+上的傅里叶展开</p></li>
+<li><p>证明该展开在 <span class="math inline">\(a,b\neq \pi\)</span> 且
+<span class="math inline">\(a\neq b\)</span> 时不绝对收敛</p></li>
+<li><p>证明该展开在任意一点收敛</p></li>
+</ol>
+</blockquote>
+<p>(1)，易得</p>
+<p><span class="math display">\[f(x)\sim \frac{b-a}{2\pi}+\sum_{n\neq
+0}\frac{e^{-ina}-e^{-inb}}{2\pi in}e^{inx}\]</span></p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p>取 <span
+class="math inline">\(x=\dfrac{a+b}{2}\)</span>，注意到最后是 <span
+class="math inline">\(\sum \dfrac{\sin n\frac{b-a}{2}}{\pi n}\)</span>
+的形式，而 <span class="math inline">\(|\sin \dfrac{b-a}{2}|\)</span>
+在大部分地方 <span class="math inline">\(\geq \epsilon
+&gt;0\)</span>，因此不绝对收敛。</p>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<p><span class="math inline">\(a=b\)</span> 和 <span
+class="math inline">\(a=-\pi,b=\pi\)</span> 的情况易证。</p>
+<p><span class="math display">\[\hat f(n)e^{inx}+\hat
+f(-n)e^{-inx}=\frac{\sin n(x-a)-\sin n(x-b)}{\pi n} \]</span></p>
+<p>考虑级数 <span class="math inline">\(\sum \sin n(x-a)-\sin
+n(x-b)\)</span> 的部分和</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{n=1}^N \sin n(x-a)-\sin n(a-b)&amp;=\frac{\sin
+\dfrac{N(x-a)}{2}\sin \dfrac{(N+1)(x-a)}{2}}{\sin \dfrac{x-a}{2}}[x\neq
+a] \\
+&amp;- \frac{\sin \dfrac{N(x-b)}{2}\sin \dfrac{(N+1)(x-b)}{2}}{\sin
+\dfrac{x-b}{2}}[x\neq b] \\
+&amp; \leq \frac{1}{\sin \dfrac{x-a}{2}}[x\neq a] + \frac{1}{\sin
+\dfrac{x-b}{2}}[x\neq b] = O(1)
+\end{aligned}
+\]</span></p>
+<p>由 A-D 判别法，<span
+class="math inline">\(\{\dfrac{1}{n\pi}\}_n\)</span> 单调收敛于 0，
+<span class="math inline">\(\sum \sin n(x-a)+\sin n(x-b)\)</span>
+有界，因此 <span class="math inline">\(\sum \hat f(n)e^{inx}+\hat
+f(-n)e^{-inx}\)</span> 收敛。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-16T20:19:54+08:00"
-              content="2023-11-16">
-          11-16
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/blog/2023/11/16/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98/" itemprop="url">
-          <span itemprop="name">《近似算法设计》第二章习题</span>
-        </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90/" rel="tag"># 傅里叶分析</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" rel="prev" title="MIT Integration Bee 2023 - Final 题目解答">
+                  <i class="fa fa-angle-left"></i> MIT Integration Bee 2023 - Final 题目解答
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/" rel="next" title="【M#2】 Cesaro 和, Abel 和">
+                  【M#2】 Cesaro 和, Abel 和 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-12T11:59:27+08:00"
-              content="2023-11-12">
-          11-12
-        </time>
-      </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/" itemprop="url">
-          <span itemprop="name">Set Cover 问题的近似算法</span>
-        </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-    </div>
-  </div>
-  
-  
-  
+
 
 </div>
   </main>
@@ -306,7 +398,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/blog/js/third-party/math/mathjax.js"></script>
 
 
