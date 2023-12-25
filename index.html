@@ -124,18 +124,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -253,6 +253,219 @@ PSAPCE-hard?</li>
 <li>2.13 Local optimal solution of monotone, submodular function subject
 to a matroid is at least half the optimal solution.</li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/25/%E3%80%90Ynoi-31%E3%80%91%E3%80%90Ynoi2019-%E6%A8%A1%E6%8B%9F%E8%B5%9B%E3%80%91-Yuno-loves-sqrt-technology-III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/25/%E3%80%90Ynoi-31%E3%80%91%E3%80%90Ynoi2019-%E6%A8%A1%E6%8B%9F%E8%B5%9B%E3%80%91-Yuno-loves-sqrt-technology-III/" class="post-title-link" itemprop="url">【Ynoi#31】【Ynoi2019 模拟赛】 Yuno loves sqrt technology III</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-12-25 20:13:05 / Modified: 20:18:32" itemprop="dateCreated datePublished" datetime="2023-12-25T20:13:05+08:00">2023-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Ynoi/" itemprop="url" rel="index"><span itemprop="name">Ynoi</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><del>2023年第一道洛谷</del></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5048">题目链接</a></p>
+<p>一句话题意就是静态区间众数出现次数。</p>
+<p>分块，先预处理出 <span class="math inline">\(l\)</span> 到 <span
+class="math inline">\(r\)</span> 块内出现的众数出现次数。</p>
+<p>然后考虑散块的部分，对于新添加的一个数，我们查询他在区间里出现的次数即可，但是这样二分带
+log。</p>
+<p>解决方法对于当前的 <span
+class="math inline">\(ans\)</span>，对于（以右边部分散块为例）一个新的数
+<span class="math inline">\(a_k\)</span>，找 <span
+class="math inline">\(a_k\)</span> 前面第 <span
+class="math inline">\(ans\)</span>
+个位置，判断他是否在这个区间内，如果是，<span
+class="math inline">\(ans:=ans+1\)</span>，然后一步一步往前跳。</p>
+<p>这样均摊下来每个散块里的位置只会被跳一遍，复杂度 <span
+class="math inline">\(O((n+m)\sqrt n)\)</span>。</p>
+<p>应当说是 Ynoi 里面相当简单的一道题，也不卡常。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> Rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> _Rep(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> RepG(i,u) for(int i=head[u];~i;i=e[i].next)</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">5e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> M=<span class="number">805</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> db double</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> uint unsigned int</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmax(a,b) a=max(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmin(a,b) a=min(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> mkp make_pair</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PIL pair<span class="string">&lt;int,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLI pair<span class="string">&lt;ll,int&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="type">int</span> f=<span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> sq=<span class="number">700</span>,bl,L[N],R[N],pos[N];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; p[N];</span><br><span class="line"><span class="type">int</span> mode[M][M],cnt[N];</span><br><span class="line"><span class="type">int</span> loc[N];</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta"># <span class="keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;testdata.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="comment">//freopen(&quot;test1.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="meta"># <span class="keyword">endif</span></span></span><br><span class="line">    <span class="built_in">read</span>(n),<span class="built_in">read</span>(m);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)<span class="built_in">read</span>(a[i]),loc[i]=p[a[i]].<span class="built_in">size</span>(),p[a[i]].<span class="built_in">push_back</span>(i);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)pos[i]=(i<span class="number">-1</span>)/sq+<span class="number">1</span>;</span><br><span class="line">    bl=pos[n];</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,bl)L[i]=(i<span class="number">-1</span>)*sq+<span class="number">1</span>,R[i]=i*sq;</span><br><span class="line">    R[bl]=n;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,bl)&#123;</span><br><span class="line">        <span class="built_in">Rep</span>(j,i,bl)&#123;</span><br><span class="line">            mode[i][j]=mode[i][j<span class="number">-1</span>];</span><br><span class="line">            <span class="built_in">Rep</span>(k,L[j],R[j])&#123;</span><br><span class="line">                cnt[a[k]]++;</span><br><span class="line">                <span class="built_in">chkmax</span>(mode[i][j],cnt[a[k]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">Rep</span>(j,L[i],n)cnt[a[j]]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        <span class="built_in">read</span>(x),<span class="built_in">read</span>(y);</span><br><span class="line">        x^=ans,y^=ans;</span><br><span class="line">        <span class="keyword">if</span>(pos[x]==pos[y])&#123;</span><br><span class="line">            ans=<span class="number">0</span>;</span><br><span class="line">            <span class="built_in">Rep</span>(j,x,y)cnt[a[j]]++,<span class="built_in">chkmax</span>(ans,cnt[a[j]]);</span><br><span class="line">            <span class="built_in">Rep</span>(j,x,y)cnt[a[j]]=<span class="number">0</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            ans=mode[pos[x]+<span class="number">1</span>][pos[y]<span class="number">-1</span>];</span><br><span class="line">            <span class="built_in">Rep</span>(j,x,R[pos[x]])&#123;</span><br><span class="line">                <span class="type">int</span> k=loc[j];</span><br><span class="line">                <span class="keyword">while</span>(k+ans&lt;p[a[j]].<span class="built_in">size</span>()&amp;&amp;p[a[j]][k+ans]&lt;=y)ans++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">Rep</span>(j,L[pos[y]],y)&#123;</span><br><span class="line">                <span class="type">int</span> k=loc[j];</span><br><span class="line">                <span class="keyword">while</span>(k-ans&gt;=<span class="number">0</span>&amp;&amp;p[a[j]][k-ans]&gt;=x)ans++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/" class="post-title-link" itemprop="url">《近似算法设计》第三章习题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-12-24 20:00:57 / Modified: 21:13:38" itemprop="dateCreated datePublished" datetime="2023-12-24T20:00:57+08:00">2023-12-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="section">3.1</h2>
+<p>对于一个最优解 <span
+class="math inline">\(O\)</span>，我们把他分成两部分，第一部分是按照
+<span class="math inline">\(v_k/s_k\)</span>
+从大到小排序之后选出来的一个前缀，记这部分的价值为 <span
+class="math inline">\(\nu_1\)</span>，大小记为 <span
+class="math inline">\(\sigma_1\)</span>，剩下的部分是第二部分，代价记为
+<span class="math inline">\(\nu_2\)</span>，大小记为 <span
+class="math inline">\(\sigma_2\)</span></p>
+<p>若 <span class="math inline">\(\nu_1\)</span> 大于 <span
+class="math inline">\(\nu_2\)</span>，则按照第一种选法选出来的价值 <span
+class="math inline">\(\geq \nu_1\geq (1/2)OPT\)</span></p>
+<p>若 <span class="math inline">\(\nu_1\)</span> 小于 <span
+class="math inline">\(\nu_2\)</span>，设第一部分的下一个为 <span
+class="math inline">\(k\)</span>，则 <span
+class="math inline">\(s_k&gt;\sigma_2\)</span>，因为 <span
+class="math inline">\(v_k/s_k\geq \nu_2/\sigma_2\)</span>，<span
+class="math inline">\(v_k\geq \nu_2\geq (1/2)OPT\)</span></p>
+<h2 id="section-1">3.2</h2>
+<p>设 3.1 得到的结果为 <span class="math inline">\(M\)</span>，将所有的
+<span class="math inline">\(v_i\)</span> 变为 <span
+class="math inline">\(\lfloor nv_i/\epsilon M\rfloor\)</span>，则</p>
+<p><span class="math display">\[\sum_{k\in O}v^\prime _k\leq
+\frac{n}{\epsilon M}\sum_{k\in O} v_k=\frac{2n}{\epsilon}\]</span></p>
+<p>因此可以将 dp 的上限设为 <span
+class="math inline">\(n/\epsilon\)</span>，最终复杂度为 <span
+class="math inline">\(O(n^2/\epsilon)\)</span></p>
+<h2 id="section-2">3.3</h2>
+<p><span class="math inline">\(O(nW)\)</span> 的做法就是一个很显然的
+dp，维护最小值即可。</p>
+<p>考虑我们要求一个 <span class="math inline">\((1-\epsilon)\)</span>
+近似，设 <span class="math inline">\(\mu=\epsilon W/n\)</span>，设 <span
+class="math inline">\(w_i^\prime=\lfloor w_i/\mu\rfloor\)</span>，对于
+<span class="math inline">\(w^\prime_i\)</span> 做上面的
+dp，设我们得到的对应选出的集合为 <span
+class="math inline">\(S\)</span>，真实最优解为 <span
+class="math inline">\(O\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i\in S}w_i&amp;\geq \mu\sum_{i\in S}w^\prime_i \\
+&amp;\geq \mu \sum_{i\in O}w^\prime_i \\
+&amp;\geq \sum_{i\in O}w_i-\mu|O| \\
+&amp;\geq OPT-\mu n \\
+&amp;\geq OPT-\epsilon W \\
+&amp;\geq (1-\epsilon)OPT
+\end{aligned}
+\]</span></p>
+<p>即解决。</p>
 
       
     </div>
@@ -1461,377 +1674,6 @@ x}=1+2\sum_{n=1}^k \cos 2nx\]</span></p>
 <p>证明直接数归。</p>
 <p>于是直接做完了，积分值为 <span
 class="math inline">\(\pi/2\)</span>。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/18/Aizu-Afterthoughts-NOIP2023-%E6%B8%B8%E8%AE%B0-%E3%80%90%E9%B2%9C%E8%8A%B1-4%E3%80%91%E4%BC%9A%E6%B4%A5%E6%A2%A6%E8%AE%B0%C2%B7%E8%A1%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/18/Aizu-Afterthoughts-NOIP2023-%E6%B8%B8%E8%AE%B0-%E3%80%90%E9%B2%9C%E8%8A%B1-4%E3%80%91%E4%BC%9A%E6%B4%A5%E6%A2%A6%E8%AE%B0%C2%B7%E8%A1%A5/" class="post-title-link" itemprop="url">Aizu Afterthoughts - NOIP2023 游记/【鲜花#4】会津梦记·补</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-11-18 18:42:02 / Modified: 19:25:49" itemprop="dateCreated datePublished" datetime="2023-11-18T18:42:02+08:00">2023-11-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>磐越长烟浩浩，磐梯万里蝉嘶。梦麟曾记凤凰知，二三年多少事。</p>
-<p>游形只见三渡，翻身最上川原。不向锦官向临安，独钓雪月江畔。</p>
-</blockquote>
-<p>【前言】</p>
-<p>那天是 3 月 18 日，下了很大的雪。</p>
-<p>虽然会津的雪要到四月底才能完全化完，三月末的雪也是罕见的。</p>
-<p>我从若松坐电车回家，电车上挤满了人，听说往郡山去的公路封路了。</p>
-<p>空气中弥漫着灰尘的气息，竟有些好闻，人们伞上的雪水化作污泥低落在地板上。</p>
-<p>横风从门缝中穿过，蹂躏着摇摇欲坠的车躯，唯有人间的温存可以点亮已经黑蓝的天空。</p>
-<p>从车窗里往外一望，苍白的天底下，远近横着几个萧索的荒村，没有一丝活气。</p>
-<p>我的心禁不住悲凉起来了。</p>
-<p>啊！这不是我六年来所待过的会津？</p>
-<p>我所记得的会津不全于此。</p>
-<p>我的会津比现在好得多了。</p>
-<hr />
-<p>到会津的第一天是在一个寒冷的冬日，那时年纪还小，我爸牵着我的手，走在昏黑的路上。</p>
-<p>那时候我总觉得，到一个新的地方后，总觉得路灯是昏暗的。</p>
-<p>我以为是人生地不熟带来的错觉，直到我再次回到北京，才发现这里的街道也是昏暗的。</p>
-<p>我爸问我，感兴趣的研究方向是什么？我说：图论。</p>
-<p>那时候我还不知道，不是有点有边的问题就是图论问题，比如说我想说的那个问题，他有另一个名字，叫做对称二叉树。</p>
-<hr />
-<p>会津大作为计算机传统强校，自然经费是充足的，所以不必担忧空调电费的问题。</p>
-<p>实验室坐西朝东，冬冷夏冷，气候宜人。在这样优美的环境里，自然是少不了
-30 度制热的空调。</p>
-<p>并且这个空调还非常智能，知道热空气会上升，因此制热时一定要朝下吹。</p>
-<p>这样自然是带来了更多温暖，只是苦了坐在空调出风口正下方的同学，是谁呢？</p>
-<p>于是我自己解释说：会津本也如此，——虽然没有进步，也未必有如我所感的悲凉，这只是我自己心情的改变罢了，因为我这次离开，本没有什么好心绪。</p>
-<hr />
-<p>会津大作为计算机传统强校，自然经费是充足的，所以有大把的钱来请老师来做
-Guest Lecture.</p>
-<p>其中印象最深的就是此前的学长 <span class="math inline">\(\mathfrak
-z\)</span> 君了。</p>
-<p><span class="math inline">\(\mathfrak z\)</span>
-君的课确实是有实力的，只是当时太菜，实在听不懂，现在只记得一件趣事了。</p>
-<p><span class="math inline">\(\mathfrak z\)</span> 君点其了 <span
-class="math inline">\(\mathcal P\)</span>
-君回答问题，然后在她上黑板演算的时候，拿出了手机对着她。</p>
-<p>我们都觉得是偷拍，但是系主任愿意为其争辩：“读书人的事情，能叫偷拍吗...”</p>
-<p>系主任说的很有道理，但是我的心不认同。</p>
-<p>当然，我们仍未知道 <span class="math inline">\(\mathcal P\)</span>
-君知不知道这件事的发生。</p>
-<hr />
-<p>夕阳西下，我依偎在他的肩上，寻求他的赞扬。</p>
-<p>看台是空旷的，只有我们两个人，但是操场是更空旷的，一个人也没有。</p>
-<p>“接下来的路要怎么走？”</p>
-<p>那片运动场坐落在盆地的边缘，直接面对的就是青山。</p>
-<p>山上的坟头遥不可及，只能看到零星两点。</p>
-<p>当时的我们都坚信着，有一天会在胜利的彼岸相遇。</p>
-<p>就这样，没有一丝迷惘的相信着。</p>
-<hr />
-<p>分居两地是痛苦的，虽然会津和筑波坐火车也不过是三个半小时的路程，但是繁重的精神压力依旧将我们分开，这对于身体和心灵都是一种折磨。</p>
-<p>又一次见到他的时候，他是成功者，我是失败者。</p>
-<p>再一次见到他的时候，我是成功者，他是失败者。</p>
-<p>最后一次见到他的时候，我是成功者，他是失败者。</p>
-<p>我曾给他写信，他也曾给我回信，回信上是电报体一般的简短。</p>
-<p>后来的某一天，我收到了他的最后一封信。</p>
-<p>我静静的把信烧了，看着墟烟缓缓上升最后消失在粉红色的天空里。</p>
-<hr />
-<p>夕阳西下，我想依偎在他的肩上，将脸埋入他温暖的胸膛，手抚过他低垂的发迹。他强颜欢笑，最后一次与我吻别。</p>
-<p>我有许多话，想要连珠一般涌出：数据结构，stack，deque，Au，T/P，……但又总觉得被什么挡着似的，单在脑里面回旋，吐不出口外去。</p>
-<p>“我们回不去了吗？”</p>
-<p>我似乎打了一个寒噤。我就知道，我们之间已经隔了一层可悲的厚障壁了。</p>
-<p>我也说不出话。</p>
-<p>一个人哭着，走在回家的街头，是什么让曾经温柔的他变成这样？</p>
-<p>那晚，我久久不能入眠，脑海里回想出这样一幅图景。</p>
-<hr />
-<p>深蓝的天空中挂着一轮金黄的明月，下面是海边的沙地，都种着一望无际的金黄的菜花。</p>
-<p>其间有一个少年，头戴项圈，手拿一把钢叉，向一匹猹尽力的刺去，那猹则将身一扭，反从他的胯下逃走了。</p>
-<p>这个少年便是他，我第一次见到他的时候，还是我刚到会津一日无聊参观核电站遗址的时候，那时他正在浪江的归还困难区里面刺猹。（归还困难区：福岛核电站事故后部分核污染清理无法达标的地区，目前属于封锁状态）</p>
-<p>他那时的活力现在去了哪里？</p>
-<p>是因为他在归还困难区里待久了，核辐射照多了吗？</p>
-<p>自然不是。</p>
-<p>那晚，我的悲戚最终化为二字，命运。</p>
-<p>为什么是命运？或许是因为他去了筑波，如果他不去的话，是不是就不会被命运捉弄了呢？</p>
-<p>我和他一样选择了这条道路，我似乎已经看到了我不可避免的结局——在痛苦中让最后一丝灵魂被无情剥去。</p>
-<hr />
-<p>于是我开始逃课，只需要混到毕业就好了。</p>
-<p>我去徒步六十里越，我去荡舟猪苗代湖。</p>
-<p>我带着你，你带着钱，我们去环游世界。</p>
-<p>这样的生活多么的美好？</p>
-<p>大概生活本是无边无际的，只是我们总是将其中的一部分定义为生活。</p>
-<p>大概生命的意义也是无限的，只是我们有时太过忙碌，没有时间停下来扪心自问，生命的意义是什么？</p>
-<p>只是我们有时太过轻松，于是化作一句我的生命没有意义。</p>
-<p>生活就像光子，本身是充满随机和可能的，你从某个角度去观测他的时，他才被限定于某个偏振的方向。</p>
-<hr />
-<p>【正文】</p>
-<p>这次又在 ssf 考试，大概有始有终吧。</p>
-<p>第一次参加 NOIP 普及组也是在这里，当时 chenzida
-就坐我旁边，虽然当时还不认识。</p>
-<p>记得考前教练说过，想不出来题了就多去上厕所，换一换思路。</p>
-<p>记得 NOI2021
-的时候看到一个老哥上厕所的时候拿着试题册在那里想，我觉得他就没有理解到上厕所的作用——上厕所的时候是没法思考的。</p>
-<p>说回
-NOIP2018，当时上厕所的时候看到的是一片荒芜的工地，现在这里已经是高楼林立的小区了，时间过得真快。</p>
-<p>进门的时候看到了
-liqingyang，他是爱，是暖，是希望，是北京的红太阳。</p>
-<p>考场里 8：32 才发试题密码，真的抽象。</p>
-<p>扫了一眼题，然后写，T1T2 很快就过了样例，希望不会锅。</p>
-<p>然后发现 T3 T4 暴力刚好加起来 71 分，271
-正是我第一次参加提高组（当时还是6道题）的分数，感觉有始有终也挺好的。于是打完暴力直接润了，还剩两个半小时，来写游记。</p>
-<p>希望不要挂分，要不然就成小丑了。</p>
-<p>顺带一提这次还带了很多吃的，想学习 ClCN 曾经的某篇博客的精神。</p>
-<p>但是我开始写之后一个监考老师经常在我旁边转悠，不知道是不是觉得我是个奇怪的人。</p>
-<hr />
-<p>【后记】</p>
-<p>在这最后的几十分钟里，让我尽量理性的分析一下会津大这段经历。</p>
-<p>我想，我还是爱会津大的，没有会津大的这段日子，我可能会成为如今被我称为”愚昧“的那一类人，在他人规定的测度下将生命定义为其中一个方向。</p>
-<p>感谢会津大，让我能够站在一个比大部分人高的视角活出我的生命，让我拥有选择我的方向的权利。</p>
-<p>当然，还有你。</p>
-<p>我现在依旧时时想起你，浪江初遇的日子仿佛就在昨天。</p>
-<p>不知道你现在在哪里，过的怎么样。</p>
-<p>我时时想，我对你的爱是不是只是一个幸运的人对不幸的人的愧怍。</p>
-<p>但相信不管是你，还是 <span class="math inline">\(\zeta\)</span>
-君，<span class="math inline">\(\ell\)</span> 君，<span
-class="math inline">\(y\)</span> 君，<span
-class="math inline">\(\gamma\)</span> 君，<span
-class="math inline">\(\Upsilon\)</span> 君，<span
-class="math inline">\(\mathcal Y\)</span>
-君或是没有来得及写下名字的每一个人，都能够自己定义出生命的意义。</p>
-<hr />
-<p>【尾声】</p>
-<p>主啊，我还有 500 英里就要回家。</p>
-<p>疾驰在最上川原，风在我耳边嘶吼，与身旁的新干线竞速，我几乎就要成功。</p>
-<p>我要去一个没有观测者的地方，那里没有外界的浮华，只有内心的赤诚。</p>
-<p>那里左边是平原，右边是裂谷。</p>
-<p>那里没有向左的不甘与向右的不敢，没有向左看的自信与向右看的自卑。</p>
-<p>君だけがいるんだ。</p>
-<p>对乌托邦不屑一顾者，终将落入自己的乌托邦。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Goodbye World!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2023.11.18</p>
-<p>首都师范大学附属中学 笃行楼403-18</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%81%E4%BA%94%E6%98%AF%E5%A4%A7%E6%BD%AE%EF%BC%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%81%E4%BA%94%E6%98%AF%E5%A4%A7%E6%BD%AE%EF%BC%9F/" class="post-title-link" itemprop="url">【P#1】 为什么十五是大潮？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-17 19:35:56" itemprop="dateCreated datePublished" datetime="2023-11-17T19:35:56+08:00">2023-11-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-20 21:39:48" itemprop="dateModified" datetime="2023-12-20T21:39:48+08:00">2023-12-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/P/" itemprop="url" rel="index"><span itemprop="name">P</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>期中考试地理死在了“常识”题上。</p>
-<p>所以回去研究了一下潮汐的问题（</p>
-<p>实际上海面是等势面，地球和太阳组成的系统和地球和月球组成的系统是类似的，我们仅分析地球和月球组成的系统。</p>
-<p>这里面主要有这么几个势能：地球引力势，月球引力势，地月系转动势，地球自转势。</p>
-<p>设地球质量为 <span class="math inline">\(M\)</span>，月球质量为 <span
-class="math inline">\(m\)</span>，月球质心到地球质心的矢量为 <span
-class="math inline">\(\vec d\)</span>，用 <span
-class="math inline">\(v\)</span> 表示 <span class="math inline">\(\vec
-v\)</span> 的模，以地球为原点，分析位置 <span class="math inline">\(\vec
-r\)</span> 的势能情况</p>
-<p>引力势很简单，<span
-class="math inline">\(\varphi_{earth}=-G\dfrac{M}{r},\varphi_{moon}=-G\dfrac{M}{|\vec
-r+\vec d|}\)</span>。</p>
-<p>接下来是地月系转动势，虽然常说月球绕着地球转，但是实际上他们是绕着整个系统的质心转动。</p>
-<p>设地月质心到地球的矢量为 <span class="math inline">\(\vec
-s\)</span>，设地月转动角速度为 <span
-class="math inline">\(\omega_{rot}\)</span></p>
-<p>则 <span
-class="math inline">\(G\dfrac{Mm}{d^2}=Ms\omega_{rot}^2\)</span></p>
-<p>地球表面的所有物体运动均需要角速度为 <span
-class="math inline">\(\omega_{rot}\)</span>，实际上忽略自转的情况下，他们的轨迹都是一个半径相同的圆，因此地球和月球的旋转系中的惯性是一个常数场，他的大小为
-<span class="math inline">\(s\omega_{rot}\dfrac{\vec
-d}{d}\)</span>，选取恰当的零势面，得到 <span
-class="math inline">\(\varphi_{rot}=G\dfrac{m\vec d\cdot \vec
-r}{d^3}\)</span></p>
-<p>接下来是地球自转的转动势，设地球自转角速度为 <span
-class="math inline">\(\omega_{aut}\)</span>，则 <span
-class="math inline">\(F=r\omega_{aut}^2,\varphi_{aut}=-\frac{1}{2}\omega_{aut}^2r^2\)</span></p>
-<p>所以我们得到了海平面方程：</p>
-<p><span class="math display">\[-G\frac{M}{r}-G\frac{m}{|\vec r+\vec
-d|}-G\frac{m\vec d\cdot \vec
-r}{d^3}-\frac{1}{2}\omega_{aut}^2r^2=C\]</span></p>
-<p>考虑赤道平面的潮高，设 <span class="math inline">\(\theta=\langle
-\vec r,\vec d\rangle\)</span>，则有</p>
-<p><span
-class="math display">\[\varphi(r,\theta)=-G\frac{M}{r}-G\frac{m}{\sqrt{r^2+d^2+2rd\cos
-\theta}}-G\frac{mr\cos\theta}{d^2}-\frac{1}{2}\omega_{aut}^2r^2=C\]</span></p>
-<p>设 <span class="math inline">\(r(0)=r_0,r(\theta)=r_0+\Delta
-r\)</span>，则上面的方程可以写作</p>
-<p><span class="math display">\[\varphi(r_0+\Delta
-r,\theta)=\varphi(r_0,0)\]</span></p>
-<p>因为 <span class="math inline">\(\Delta r \ll r\)</span>，所以可以取
-<span class="math inline">\(\varphi(r,\theta)\)</span> 对 <span
-class="math inline">\(\dfrac{\Delta r}{r_0}\)</span>
-的一次项近似，这样可以得到一个 <span class="math inline">\(A\Delta
-r=B\)</span> 的形式。</p>
-<p>因为 <span class="math inline">\(\varphi(r,\theta)\)</span> 中都是
-<span class="math inline">\(\varphi_i(\vec r)\)</span>
-的形式，所以提取出 <span class="math inline">\(\Delta r\)</span>
-之后，<span class="math inline">\(A\)</span> 中每一项都是 <span
-class="math inline">\(\dfrac{\mathrm d\varphi_i(\vec r)}{\mathrm
-dr}\)</span>
-的形式，这刚好是加速度的相反数，而这些势能中，除了地球重力加速度产生的
-<span class="math inline">\(g=9.8 m/s^2\)</span>
-以外，其他的加速度均远小于这个，因此在展开的时候只需要展开第一项的地球引力势能，其他的都可以用
-<span class="math inline">\(r_0\)</span> 来近似替代 <span
-class="math inline">\(r_0+\Delta r\)</span></p>
-<p>而 <span class="math inline">\(-G\dfrac{M}{r_0+\Delta
-r}=-G\dfrac{M}{r_0(1+\dfrac{\Delta r}{r_0})}\sim
--G\dfrac{M}{r_0}+G\dfrac{M\Delta r}{r^2}\)</span>，这里用到的是 <span
-class="math inline">\((1+x)^k\sim 1+kx(x\to 0)\)</span>.</p>
-<p>因此得到方程</p>
-<p><span class="math display">\[-G\frac{M}{r_0}+G\frac{M\Delta
-r}{r_0^2}-G\frac{m}{\sqrt{r_0^2+d^2+2r_0d\cos\theta}}-G\frac{mr_0\cos\theta}{d^2}-\frac{1}{2}\omega_{aut}^2r_0^2
-\\ =
--G\frac{M}{r_0}-G\frac{m}{d+r_0}-G\frac{mr_0}{d^2}-\frac{1}{2}\omega_{aut}^2r_0^2\]</span></p>
-<p>化简可得</p>
-<p><span class="math display">\[G\frac{M\Delta
-r}{r_0^2}=G\frac{m}{\sqrt{r_0^2+d^2+2r_0d\cos\theta}}-G\frac{m}{d+r_0}-G\frac{mr_0(1-\cos\theta)}{d^2}\]</span></p>
-<p>将左右对 <span class="math inline">\(\dfrac{r_0}{d}\)</span>
-展开到平方项，化简得到</p>
-<p><span class="math display">\[\Delta
-r=-\frac{3mr_0^4}{2Md^3}(1-\cos^2\theta)\]</span></p>
-<p>所以潮汐的最高点在 <span class="math inline">\(\theta=0,\pi\)</span>
-处，最低点在 <span class="math inline">\(\pi/2,3\pi/2\)</span> 处。</p>
-<p>也就是说仅由地月作用就已经产生了一个“椭圆”的潮汐形状，而太阳引起的潮汐也是这个形状。</p>
-<p>这也就不难解释为什么初一和十五是大潮了，因为此时日地月处于同一直线上，月球引起的潮汐和太阳引起的潮汐叠加形成大潮，而初七和二十三则形成小潮。</p>
 
       
     </div>

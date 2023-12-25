@@ -19,25 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-<meta property="og:type" content="website">
-<meta property="og:title" content="devout">
-<meta property="og:url" content="https://06devout.github.io/blog/categories/P/index.html">
+    <meta name="description" content="3.1 对于一个最优解 \(O\)，我们把他分成两部分，第一部分是按照 \(v_k&#x2F;s_k\) 从大到小排序之后选出来的一个前缀，记这部分的价值为 \(\nu_1\)，大小记为 \(\sigma_1\)，剩下的部分是第二部分，代价记为 \(\nu_2\)，大小记为 \(\sigma_2\) 若 \(\nu_1\) 大于 \(\nu_2\)，则按照第一种选法选出来的价值 \(\geq \n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《近似算法设计》第三章习题">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/index.html">
 <meta property="og:site_name" content="devout">
-<meta property="og:description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+<meta property="og:description" content="3.1 对于一个最优解 \(O\)，我们把他分成两部分，第一部分是按照 \(v_k&#x2F;s_k\) 从大到小排序之后选出来的一个前缀，记这部分的价值为 \(\nu_1\)，大小记为 \(\sigma_1\)，剩下的部分是第二部分，代价记为 \(\nu_2\)，大小记为 \(\sigma_2\) 若 \(\nu_1\) 大于 \(\nu_2\)，则按照第一种选法选出来的价值 \(\geq \n">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-24T12:00:57.000Z">
+<meta property="article:modified_time" content="2023-12-24T13:13:38.446Z">
 <meta property="article:author" content="devout">
+<meta property="article:tag" content="近似算法">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://06devout.github.io/blog/categories/P/">
+<link rel="canonical" href="https://06devout.github.io/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"categories/P/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/","path":"2023/12/24/《近似算法设计》第三章习题/","title":"《近似算法设计》第三章习题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Category: P | devout</title>
+<title>《近似算法设计》第三章习题 | devout</title>
   
 
 
@@ -97,7 +100,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -110,6 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">3.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">3.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">3.3</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -186,50 +190,141 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">P
-          <small>Category</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="《近似算法设计》第三章习题 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《近似算法设计》第三章习题
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="Created: 2023-12-24 20:00:57 / Modified: 21:13:38" itemprop="dateCreated datePublished" datetime="2023-12-24T20:00:57+08:00">2023-12-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="section">3.1</h2>
+<p>对于一个最优解 <span
+class="math inline">\(O\)</span>，我们把他分成两部分，第一部分是按照
+<span class="math inline">\(v_k/s_k\)</span>
+从大到小排序之后选出来的一个前缀，记这部分的价值为 <span
+class="math inline">\(\nu_1\)</span>，大小记为 <span
+class="math inline">\(\sigma_1\)</span>，剩下的部分是第二部分，代价记为
+<span class="math inline">\(\nu_2\)</span>，大小记为 <span
+class="math inline">\(\sigma_2\)</span></p>
+<p>若 <span class="math inline">\(\nu_1\)</span> 大于 <span
+class="math inline">\(\nu_2\)</span>，则按照第一种选法选出来的价值 <span
+class="math inline">\(\geq \nu_1\geq (1/2)OPT\)</span></p>
+<p>若 <span class="math inline">\(\nu_1\)</span> 小于 <span
+class="math inline">\(\nu_2\)</span>，设第一部分的下一个为 <span
+class="math inline">\(k\)</span>，则 <span
+class="math inline">\(s_k&gt;\sigma_2\)</span>，因为 <span
+class="math inline">\(v_k/s_k\geq \nu_2/\sigma_2\)</span>，<span
+class="math inline">\(v_k\geq \nu_2\geq (1/2)OPT\)</span></p>
+<h2 id="section-1">3.2</h2>
+<p>设 3.1 得到的结果为 <span class="math inline">\(M\)</span>，将所有的
+<span class="math inline">\(v_i\)</span> 变为 <span
+class="math inline">\(\lfloor nv_i/\epsilon M\rfloor\)</span>，则</p>
+<p><span class="math display">\[\sum_{k\in O}v^\prime _k\leq
+\frac{n}{\epsilon M}\sum_{k\in O} v_k=\frac{2n}{\epsilon}\]</span></p>
+<p>因此可以将 dp 的上限设为 <span
+class="math inline">\(n/\epsilon\)</span>，最终复杂度为 <span
+class="math inline">\(O(n^2/\epsilon)\)</span></p>
+<h2 id="section-2">3.3</h2>
+<p><span class="math inline">\(O(nW)\)</span> 的做法就是一个很显然的
+dp，维护最小值即可。</p>
+<p>考虑我们要求一个 <span class="math inline">\((1-\epsilon)\)</span>
+近似，设 <span class="math inline">\(\mu=\epsilon W/n\)</span>，设 <span
+class="math inline">\(w_i^\prime=\lfloor w_i/\mu\rfloor\)</span>，对于
+<span class="math inline">\(w^\prime_i\)</span> 做上面的
+dp，设我们得到的对应选出的集合为 <span
+class="math inline">\(S\)</span>，真实最优解为 <span
+class="math inline">\(O\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i\in S}w_i&amp;\geq \mu\sum_{i\in S}w^\prime_i \\
+&amp;\geq \mu \sum_{i\in O}w^\prime_i \\
+&amp;\geq \sum_{i\in O}w_i-\mu|O| \\
+&amp;\geq OPT-\mu n \\
+&amp;\geq OPT-\epsilon W \\
+&amp;\geq (1-\epsilon)OPT
+\end{aligned}
+\]</span></p>
+<p>即解决。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-17T19:35:56+08:00"
-              content="2023-11-17">
-          11-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/blog/2023/11/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%81%E4%BA%94%E6%98%AF%E5%A4%A7%E6%BD%AE%EF%BC%9F/" itemprop="url">
-          <span itemprop="name">【P#1】 为什么十五是大潮？</span>
-        </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/" rel="tag"># 近似算法</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/" rel="prev" title="【M#2】 Cesaro 和, Abel 和">
+                  <i class="fa fa-angle-left"></i> 【M#2】 Cesaro 和, Abel 和
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/25/%E3%80%90Ynoi-31%E3%80%91%E3%80%90Ynoi2019-%E6%A8%A1%E6%8B%9F%E8%B5%9B%E3%80%91-Yuno-loves-sqrt-technology-III/" rel="next" title="【Ynoi#31】【Ynoi2019 模拟赛】 Yuno loves sqrt technology III">
+                  【Ynoi#31】【Ynoi2019 模拟赛】 Yuno loves sqrt technology III <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 </div>
   </main>
@@ -286,7 +381,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/blog/js/third-party/math/mathjax.js"></script>
 
 
