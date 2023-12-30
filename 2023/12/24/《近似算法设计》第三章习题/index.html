@@ -27,7 +27,7 @@
 <meta property="og:description" content="3.1 对于一个最优解 \(O\)，我们把他分成两部分，第一部分是按照 \(v_k&#x2F;s_k\) 从大到小排序之后选出来的一个前缀，记这部分的价值为 \(\nu_1\)，大小记为 \(\sigma_1\)，剩下的部分是第二部分，代价记为 \(\nu_2\)，大小记为 \(\sigma_2\) 若 \(\nu_1\) 大于 \(\nu_2\)，则按照第一种选法选出来的价值 \(\geq \n">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-24T12:00:57.000Z">
-<meta property="article:modified_time" content="2023-12-24T13:13:38.446Z">
+<meta property="article:modified_time" content="2023-12-26T13:30:17.580Z">
 <meta property="article:author" content="devout">
 <meta property="article:tag" content="近似算法">
 <meta name="twitter:card" content="summary">
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">3.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">3.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">3.3</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">3.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">3.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">3.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-number">4.</span> <span class="nav-text">3.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-number">5.</span> <span class="nav-text">3.5</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -128,7 +128,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -229,9 +229,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-12-24 20:00:57 / Modified: 21:13:38" itemprop="dateCreated datePublished" datetime="2023-12-24T20:00:57+08:00">2023-12-24</time>
+      <time title="Created: 2023-12-24 20:00:57" itemprop="dateCreated datePublished" datetime="2023-12-24T20:00:57+08:00">2023-12-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-26 21:30:17" itemprop="dateModified" datetime="2023-12-26T21:30:17+08:00">2023-12-26</time>
     </span>
 
   
@@ -291,6 +297,48 @@ class="math inline">\(O\)</span></p>
 \end{aligned}
 \]</span></p>
 <p>即解决。</p>
+<h2 id="section-3">3.4</h2>
+<p>不会。</p>
+<p>原论文是俄语的看不懂（</p>
+<h2 id="section-4">3.5</h2>
+<p>dp 还是好搞的，用 <span
+class="math inline">\(f(i,t_1,t_2,\cdots,t_m)(t_1\geq t_2\geq \cdots
+\geq t_m)\)</span> 表示前 <span class="math inline">\(i\)</span>
+个任务安排好了，各个处理器用时是多少 最后的代价最小是多少。</p>
+<p>下面考虑怎么确定 <span class="math inline">\(OPT_m\)</span>
+的范围，一个比较显然的界是 <span class="math inline">\(OPT_m\geq
+\dfrac{1}{m}OPT_1\)</span>，其中 <span
+class="math inline">\(OPT_1\)</span>
+表示只有一个处理器的最优值，这个可以直接 <span
+class="math inline">\(O(n)\)</span> 算出来。（实际上似乎有更优的界 <span
+class="math inline">\(OPT_m\geq \dfrac{n+m}{(n+1)m}OPT_1\)</span>，但是
+<span class="math inline">\(1/m\)</span> 已经足够）</p>
+<p>为了实现近似算法，我们需要换一种 dp 的形式，感觉在 OI
+里也见到过。</p>
+<p>设 <span class="math inline">\(G(i,T)\)</span> 表示满足 <span
+class="math inline">\(f(i,t_1,\cdots,t_m)=T\)</span> 的 <span
+class="math inline">\((t_1,\cdots,t_m)\)</span> 的集合。</p>
+<p>一个引理是对于相同的 <span class="math inline">\(T\)</span>
+，最多只有 <span class="math inline">\(n^{m-2}\)</span> (感觉可以
+generalize，但是似乎 <span class="math inline">\(m&gt;2\)</span>
+会有一些 casework)个不同的 <span
+class="math inline">\((t_1,\cdots,t_m)\)</span>
+是有用的，其他的一些是显然不优的。（如对于 <span
+class="math inline">\(m=2\)</span> 我们只需要保留一个）</p>
+<p>设 <span
+class="math inline">\(\mu=\dfrac{\epsilon}{nm}OPT_1\)</span>，对于 <span
+class="math inline">\(G(i,T)\)</span> 的每一个 <span
+class="math inline">\(T\)</span>，我们用 <span
+class="math inline">\(\lfloor T/\mu \rfloor\)</span> 来替代他，维护
+<span class="math inline">\(G(i,T^\prime)\)</span> 中的 <span
+class="math inline">\(n^{m-2}\)</span> 个元素一一进行转移。</p>
+<p>这样的话，每一步 <span class="math inline">\(T\)</span>
+上的误差不超过 <span
+class="math inline">\(\mu\)</span>，最终的总误差不超过 <span
+class="math inline">\(\dfrac{\epsilon OPT_1}{m}\leq \epsilon
+OPT_m\)</span>。</p>
+<p>复杂度为 <span class="math inline">\(O(n^m/\epsilon)\)</span>，实现了
+FTAS。</p>
 
     </div>
 
