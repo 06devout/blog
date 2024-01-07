@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -253,6 +253,234 @@ PSAPCE-hard?</li>
 <li>2.13 Local optimal solution of monotone, submodular function subject
 to a matroid is at least half the optimal solution.</li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/01/07/%E3%80%90M-4%E3%80%91%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/01/07/%E3%80%90M-4%E3%80%91%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0/" class="post-title-link" itemprop="url">【M#4】伯努利数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-01-07 20:17:43 / Modified: 21:23:48" itemprop="dateCreated datePublished" datetime="2024-01-07T20:17:43+08:00">2024-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="bernoulli-number">Bernoulli Number</h2>
+<p>伯努利数由 EGF 定义</p>
+<p><span class="math display">\[\mathcal
+B(z)=\frac{z}{e^z-1}=\sum_{n=0}^\infty \frac{B_n}{n!}z^n
+\tag{1}\]</span></p>
+<p>利用这个定义暴力展开生成函数，我们可以算出伯努利数的前几项。</p>
+<p><span class="math display">\[
+\begin{matrix}
+n  &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp;
+8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 \\
+B_n  &amp; 1 &amp; -1/2  &amp; 1/6 &amp; 0 &amp; -1/30 &amp; 0 &amp;
+1/42 &amp; 0 &amp; -1/30 &amp; 0 &amp; 5/66 &amp; 0 &amp; -691/2730
+\end{matrix}
+\]</span></p>
+<p>注意到这些数都比较丑，并且 <span class="math inline">\(\geq
+3\)</span> 的奇数都是 <span
+class="math inline">\(0\)</span>，这一点可以注意到 <span
+class="math inline">\(\dfrac{z}{e^z-1}+\dfrac{z}{2}\)</span>
+是一个偶函数。</p>
+<p>事实上，伯努利数并不存在封闭形式，这一点可以从 <span
+class="math inline">\(-691/2730\)</span>
+这样一个诡异的形式中看出来。</p>
+<p>另一种定义伯努利数的方法是通过递推定义，这一种定义和生成函数定义是等价的，可以用生成函数导出：</p>
+<p><span
+class="math display">\[\frac{z}{e^z-1}-1=-\frac{z}{e^z-1}(\frac{e^z-1}{z}-1)\]</span></p>
+<p>两边同时取 <span class="math inline">\(z^n\)</span> 项，我们得到</p>
+<p><span
+class="math display">\[B_n=-\frac{1}{n+1}\sum_{k=0}^{n-1}\binom{n+1}{k}B_k
+\tag{2}\]</span></p>
+<h2 id="zeta-function-at-positive-even-integers">Zeta Function at
+Positive Even Integers</h2>
+<p>伯努利数的一个重要应用就是他可以表示一类函数的展开系数，如 <span
+class="math inline">\(\zeta\)</span> 函数，其在 <span
+class="math inline">\(2n(n\in\mathbb Z)\)</span> 处的定义为</p>
+<p><span class="math display">\[\zeta(2n)=\sum_{m=1}^\infty
+\frac{1}{m^{2n}} \tag{3}\]</span></p>
+<p>为了导出 <span class="math inline">\(\zeta\)</span>
+函数的级数表示，我们首先研究一下 <span class="math inline">\(z\cot
+z\)</span> 的展开。</p>
+<p><span class="math display">\[
+\begin{aligned}
+z\cot z &amp;=(iz)\frac{e^{iz}+e^{-iz}}{e^{iz}-e^{-iz}} \\
+&amp;=\frac{1}{2}(2iz)\Big(\frac{1}{1-e^{-2iz}}+\frac{1}{e^{2iz}-1}\Big)
+\\
+&amp;=\frac{1}{2}(\mathcal B(2iz)+\mathcal B(-2iz)) \\
+&amp;=1+\sum_{n=1}^\infty (-1)^n\frac{2^{2n}B_{2n}}{(2n)!}z^{2n}
+\end{aligned}\tag{4}
+\]</span></p>
+<p>另一方面，对于 <span class="math inline">\(\cot z\)</span>
+我们有经典的公式</p>
+<p><span class="math display">\[\cot z=\frac{1}{z}+2\sum_{n=1}^\infty
+\frac{z}{z^2-n^2\pi^2}\]</span></p>
+<p>则有</p>
+<p><span class="math display">\[
+\begin{aligned}
+z\cot z &amp;=1+2\sum_{n=1}^\infty
+\frac{(\dfrac{z}{n\pi})^2}{(\dfrac{z}{n\pi})^2-1} \\
+&amp;=1-2\sum_{n=1}^\infty \sum_{j\in2\mathbb Z^+}\frac{z^j}{n^j\pi^j}
+\\
+&amp;=1-2\sum_{n=1}^\infty\frac{\zeta(2n)}{\pi^{2n}}z^{2n}
+\end{aligned}\tag{5}
+\]</span></p>
+<p>对比 <span class="math inline">\((4),(5)\)</span>
+的系数，我们可以得到</p>
+<p><span
+class="math display">\[\zeta(2n)=\frac{(-1)^{n+1}}{2}\frac{(2\pi)^{2n}}{(2n)!}B_{2n}
+\tag{6}\]</span></p>
+<p>事实上，伯努利数还出现在更多的函数的表达式中，如将 <span
+class="math inline">\(\tan z\)</span> 写作 <span
+class="math inline">\(\cot z-2\cot 2z\)</span>，就可以得到 <span
+class="math inline">\(\tan z\)</span> 的表达式。</p>
+<h2 id="bernoulli-polynomial">Bernoulli Polynomial</h2>
+<p>伯努利多项式 <span class="math inline">\(B_n(x)\)</span>
+通过生成函数</p>
+<p><span class="math display">\[\mathfrak
+B(x,z)=\frac{ze^{xz}}{e^z-1}=\sum_{n=0}^\infty \frac{B_n(x)}{n!}z^n
+\tag{7}\]</span></p>
+<p>定义。</p>
+<p>把 <span class="math inline">\(\mathfrak B(x,z)\)</span> 写成 <span
+class="math inline">\(\mathcal B(z)\)</span> 和 <span
+class="math inline">\(e^{xz}\)</span> 的卷积的形式，比较系数就得到</p>
+<p><span class="math display">\[B_n(x)=\sum_{k=0}^n
+\binom{n}{k}B_kx^{n-k} \tag{8}\]</span></p>
+<p>下面两个结论和伯努利数的实际意义有着重要的关联，首先 <span
+class="math inline">\(B_n(x)\)</span> 在离散微积分意义下和 <span
+class="math inline">\(x^n\)</span> 很像，具体的，</p>
+<p><span class="math display">\[\Delta B_n(x)=B_n(x+1)-B_n(x)=nx^{n-1}
+\tag{9}\]</span></p>
+<p>证明只需用 <span class="math inline">\(\mathfrak B(x,z+1)-\mathfrak
+B(x,z)\)</span> 即可。</p>
+<p>另一个实际上是伯努利数被发现的原因，即 <span
+class="math inline">\(x^m\)</span> 的离散积分的系数与 <span
+class="math inline">\(B_n\)</span> 有着紧密的联系。</p>
+<p>设 <span class="math inline">\(S_m(n)=\sum_{k=1}^{n-1}k^m=\sum_1^n
+x^m\delta x\)</span>，则有</p>
+<p><span class="math display">\[(m+1)S_m(n)=B_{m+1}(n)-B_{m+1}
+\tag{10}\]</span></p>
+<p>证明只需在 <span class="math inline">\((9)\)</span> 中取 <span
+class="math inline">\(n=m+1\)</span>，然后对 <span
+class="math inline">\(x\)</span> 从 <span
+class="math inline">\(1\)</span> 到 <span
+class="math inline">\(m-1\)</span> 求和即可。</p>
+<h2 id="bernoulli-denominator">Bernoulli Denominator</h2>
+<p>最后我们来考虑一下伯努利数的神秘的分母是什么。</p>
+<p>对着表仔细观察可以注意到，他是所有满足 <span
+class="math inline">\((p-1)|(2n)\)</span> 的素数 <span
+class="math inline">\(p\)</span> 的乘积。</p>
+<p>我们用数学归纳法证明这个猜想。</p>
+<p>注意到这个猜想实际上等价于</p>
+<p><span class="math display">\[I_{2n}=B_{2n}+\sum_{p为素数}
+\frac{[(p-1)|2n]}{p} \tag{11}\]</span></p>
+<p>是一个整数。</p>
+<p>观察到，对于素数 <span class="math inline">\(p\)</span> 和 <span
+class="math inline">\(m&gt;0\)</span>，<span
+class="math inline">\(S_m(p)+[(p-1)|m]=\mathbb Zp\)</span></p>
+<p>证明考虑 <span class="math inline">\(m\)</span> 是 <span
+class="math inline">\((p-1)\)</span> 的倍数，如果是，则 <span
+class="math inline">\(S_m(p)\equiv p-1 \bmod p\)</span>，否则 <span
+class="math inline">\(S_m(p)\)</span> 每一项模 <span
+class="math inline">\(p\)</span> 互不相同，加起来是 <span
+class="math inline">\(p\)</span> 的倍数。</p>
+<p>有了这个结论之后，对于 <span class="math inline">\((p-1)|2n\)</span>
+的 <span class="math inline">\(p\)</span>，利用 <span
+class="math inline">\((10)\)</span> 取 <span
+class="math inline">\(m=2n\)</span>，将其中的 <span
+class="math inline">\(B_{m+1}(x)\)</span> 用 <span
+class="math inline">\((8)\)</span> 展开。</p>
+<p><span
+class="math display">\[B_{2n}+\frac{[(p-1)|2n]}{p}+\frac{1}{2n+1}\sum_{k=0}^{2n-2}\binom{2n+1}{k}B_kp^{2n+1-k}=S_{2n}(p)+\mathbb
+Z\in \mathbb Z\]</span></p>
+<p>因此我们只需要证明</p>
+<p><span
+class="math display">\[\frac{1}{2n+1}\sum_{k=0}^{2n-2}\binom{2n+1}{k}B_kp^{2n+1-k}=\sum_{k=0}^{2n-2}\binom{2n}{k}B_kp^2\frac{p^{2n-1-k}}{2n+1-k}\]</span></p>
+<p>是整数即可，因为 <span class="math inline">\(p\)</span>
+是素数，这等价于他的分母不能被 <span class="math inline">\(p\)</span>
+整除。</p>
+<p>由归纳假设，<span class="math inline">\(B_k\)</span> 的分母中不含
+<span class="math inline">\(p^2\)</span>，因此 <span
+class="math inline">\(B_kp^2\)</span> 的分母中不含 <span
+class="math inline">\(p\)</span>，而在假设范围内有 <span
+class="math inline">\(p^{2n-1-k}\geq
+2n+1-k\)</span>，因此后面一部分的分母里同样没有 <span
+class="math inline">\(p\)</span>，假设成立。</p>
+<p>这也就完成了我们的证明。</p>
+<p>因为 <span class="math inline">\(2n\geq 2\)</span> 的时候，<span
+class="math inline">\(2-1,3-1\)</span> 一定整除 <span
+class="math inline">\(2n\)</span>，所以 <span
+class="math inline">\(\forall n\geq 1\)</span>,<span
+class="math inline">\(B_{2n}\)</span> 的分母一定是 <span
+class="math inline">\(6\)</span> 的倍数。</p>
 
       
     </div>
@@ -1240,231 +1468,6 @@ class="math inline">\(\dfrac{\epsilon OPT_1}{m}\leq \epsilon
 OPT_m\)</span>。</p>
 <p>复杂度为 <span class="math inline">\(O(n^m/\epsilon)\)</span>，实现了
 FTAS。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/" class="post-title-link" itemprop="url">【M#2】 Cesaro 和, Abel 和</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-19 21:01:12" itemprop="dateCreated datePublished" datetime="2023-12-19T21:01:12+08:00">2023-12-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-20 21:39:09" itemprop="dateModified" datetime="2023-12-20T21:39:09+08:00">2023-12-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="cesaro-sum">Cesaro Sum</h2>
-<p>在考虑一个级数的和的收敛的时候，我们可能会遇到一些问题，比如对于这样一个级数：</p>
-<p><span class="math display">\[1,-1,1,-1,1,-1,1,\cdots
-\tag{1}\]</span></p>
-<p>他的部分和 <span class="math inline">\(s_n=[n \text{ is
-odd}]\)</span>，在常规的意义下他是不可和的，但是他的部分和又表现出了一些收敛的性质。</p>
-<p>比如对于这个数列，他的部分和在一半的情况下是 <span
-class="math inline">\(1\)</span>，一半的情况下是 <span
-class="math inline">\(0\)</span>，那么我们把这个和的极限定义为 <span
-class="math inline">\(1/2\)</span> 是在一定程度上合理的。</p>
-<p>所以我们可能需要一些更强的收敛性质。</p>
-<p><span class="math inline">\(\color{red}{定义1}\)</span>: 定义</p>
-<p><span class="math display">\[\sigma_n=\frac{\sum_{k=0}^{n-1}
-s_k}{n}\]</span></p>
-<p>为级数 <span class="math inline">\(\{z_n\}\)</span> 的第 <span
-class="math inline">\(n\)</span> 个 Cesaro 和，其中 <span
-class="math inline">\(s_n\)</span> 为 <span
-class="math inline">\(z_n\)</span> 的部分和。</p>
-<p>如果 <span class="math inline">\(\sigma_n\)</span> 收敛，则称 <span
-class="math inline">\(\{z_n\}\)</span> 是 Cesaro 可和的。</p>
-<p>在这个定义下，不难验证 <span class="math inline">\((1)\)</span> 中的
-Cesaro 和收敛于 <span class="math inline">\(1/2\)</span>。</p>
-<h2 id="dirichlet-kernal-fejer-kernel">Dirichlet Kernal &amp; Fejer
-Kernel</h2>
-<p>回忆 Dirichlet Kernel 定义为</p>
-<p><span class="math display">\[D_n(x)=\sum_{k=-n}^n
-e^{inx}=\frac{\sin(n+\dfrac{1}{2})x}{\sin \dfrac{x}{2}}\]</span></p>
-<p>且满足</p>
-<p><span class="math display">\[S_n(f)(x)=(f*D_n)(x)\]</span></p>
-<p>我们对于 <span class="math inline">\(f\)</span> 求 Cesaro
-和，得到</p>
-<p><span
-class="math display">\[\sigma_n(f)(x)=\frac{S_0(f)(x)+S_1(f)(x)+\cdots+S_{n-1}(f)(x)}{n}=(f*K_n)(f)(x)\]</span></p>
-<p>其中 <span class="math inline">\(K_n\)</span> 为 Fejer
-Kernel，定义为</p>
-<p><span class="math display">\[K_n(x)=\sigma_n(D_n)(x)=\frac{\sin^2
-\dfrac{nx}{2}}{n\sin^2\dfrac{x}{2}}\]</span></p>
-<p>注意到 <span class="math inline">\(K_n\)</span> 满足 Good Kernel
-的所有性质，这直接得到了 Fejer 定理：</p>
-<p><span class="math inline">\(\color{red}{定理1}\)</span>: 如果 <span
-class="math inline">\(f\)</span> 可积，则 <span
-class="math inline">\(f\)</span> 的傅里叶级数在每一个 <span
-class="math inline">\(f\)</span> 的连续点处 Cesaro 可和；进一步的，如果
-<span class="math inline">\(f\)</span> 连续，则 <span
-class="math inline">\(f\)</span> 的傅里叶展开的 Cesaro 和一致收敛与
-<span class="math inline">\(f\)</span></p>
-<h2 id="abel-sum">Abel Sum</h2>
-<p><span class="math inline">\(\color{red}定义2\)</span>: 对于级数 <span
-class="math inline">\(\{z_n\}\)</span>，对于 <span
-class="math inline">\(0\leq r&lt;1\)</span>，定义</p>
-<p><span class="math display">\[A(r)=\sum_{k=0}^\infty
-z_kr^k\]</span></p>
-<p>若 <span class="math inline">\(A(r)\)</span> 收敛，且</p>
-<p><span class="math display">\[\lim_{r\to 1}A(r)=s\]</span></p>
-<p>则称 <span class="math inline">\(\{z_n\}\)</span> Abel 可和于 <span
-class="math inline">\(s\)</span>, <span class="math inline">\(s\)</span>
-被成为 Abel 均值。</p>
-<p>Abel 可和强于 Cesaro 可和，如对于级数</p>
-<p><span class="math display">\[1,-2,3,-4,\cdots \tag{2}\]</span></p>
-<p><span class="math display">\[A(r)=\sum_{k=0}^\infty
-(-1)^k(k+1)r^k=\frac{1}{(1+r)^2}\]</span></p>
-<p>是 Abel 可和的。</p>
-<p>但是他不是 Cesaro 可和的，因为</p>
-<p><span class="math inline">\(s_k=\lceil k/2\rceil
-(-1)^{k+1}\)</span>，<span class="math inline">\(s_k\)</span>
-的前缀和要么是 <span class="math inline">\(0\)</span> 要么是 <span
-class="math inline">\(n/2\)</span>，他的 Cesaro 部分和要么是 <span
-class="math inline">\(0\)</span> ，要么是 <span
-class="math inline">\(1/2\)</span>，并不收敛。</p>
-<h2 id="poisson-kernel">Poisson Kernel</h2>
-<p>Abel 和对应的 Kernel 是 Poisson Kernel。</p>
-<p>对于一个函数 <span class="math inline">\(f(\theta) \sim \sum_n
-a_ne^{in\theta}\)</span>，定义这个函数的 Abel 均值</p>
-<p><span
-class="math display">\[A_r(f)(\theta)=\sum_{n}a_nr^{|n|}e^{in\theta}\]</span></p>
-<p>定义 Poisson Kernel <span
-class="math inline">\(P_r(\theta)\)</span>满足 <span
-class="math inline">\(A_r(f)(\theta)=(f*P_r)(\theta)\)</span></p>
-<p>则</p>
-<p><span class="math display">\[P_r(\theta)=\sum_n
-r^{|n|}e^{in\theta}\]</span></p>
-<p>进一步展开得到</p>
-<p><span
-class="math display">\[P_r(\theta)=\frac{1-r^2}{1-2r\cos\theta+r^2}\]</span></p>
-<p><span class="math inline">\(P_r(\theta)\)</span> 同样是 Good
-Kernel，因此将定理1中的 Cesaro 可和结论替换为 Abel
-可和结论同样成立。</p>
-<h2 id="summable-cesaro-summable-abel-summable">Summable &amp; Cesaro
-Summable &amp; Abel Summable</h2>
-<p>在本节中，我们将证明三种可和是有强弱关系的，具体来说</p>
-<p><span class="math display">\[\text{Summable} \Longrightarrow
-\text{Cesaro Summable} \Longrightarrow \text{Abel Summable}\]</span></p>
-<p><span class="math inline">\(\color{red}{定理2}\)</span>: 若 <span
-class="math inline">\(\sum_{k=1}^{\infty} z_k=s\)</span>，则 <span
-class="math inline">\(\{z_n\}\)</span> Cesaro 可和，且 <span
-class="math inline">\(\sigma=s\)</span></p>
-<p>证明是基本的。</p>
-<p>在前面已经提到过，存在数列是 Cesaro 可和但不是可和的。</p>
-<p><span class="math inline">\(\color{red}{定理3}\)</span>：若 <span
-class="math inline">\(\{z_n\}\)</span> Cesaro 可和，则 <span
-class="math inline">\(\{z_n\}\)</span> Abel 可和，且 <span
-class="math inline">\(\lim_{r\to 1} A(r)=\sigma\)</span></p>
-<p><strong>证明：</strong></p>
-<p>假设 <span class="math inline">\(\sigma=0\)</span>，否则可以调整
-<span class="math inline">\(z_1\)</span>。</p>
-<p><span class="math display">\[A(r)=\sum_{n=0}^{\infty}z_nr^n =
-(1-r)^2\sum_{n=0}^{\infty}n\sigma_nr^n\]</span></p>
-<p>两边在 <span class="math inline">\(r\to 1\)</span> 时取极限，得到
-<span class="math inline">\(A(r)\to 0\)</span>。</p>
-<p>前面同样举出了是 Abel 可和但是不 Cesaro
-可和的例子，这完成了单向关系的构建。</p>
-<h2 id="taubers-theorem">Tauber's Theorem</h2>
-<p>当然，在对于 <span class="math inline">\(z_n\)</span>
-加以额外的限制的情况下，上面三个不同的可和性可以变为等价的。</p>
-<p><span class="math inline">\(\color{red}{定理4}\)</span>：若 <span
-class="math inline">\(z_n\)</span> Cesaro 可和于 <span
-class="math inline">\(\sigma\)</span>，且 <span
-class="math inline">\(c_n=o(1/n)\)</span>，则 <span
-class="math inline">\(z_n\)</span> 可和于 <span
-class="math inline">\(\sigma\)</span></p>
-<p><strong>证明：</strong></p>
-<p><span
-class="math display">\[s_n-\sigma_n=\frac{(n-1)z_n+(n-2)z_{n-1}+\cdots
-+z_2}{n}\]</span></p>
-<p>两边对 <span class="math inline">\(n\)</span> 取极限。</p>
-<p><span class="math inline">\(\color{red}{定理5}\)</span>：若 <span
-class="math inline">\(z_n\)</span> Abel 可和于 <span
-class="math inline">\(A\)</span>，且 <span
-class="math inline">\(c_n=o(1/n)\)</span>，则 <span
-class="math inline">\(z_n\)</span> 可和于 <span
-class="math inline">\(A\)</span></p>
-<p>取 <span class="math inline">\(r=1-1/n\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-|s_n-\sum_{k=1}^n z_kr^k| &amp;=|\sum_{k=1}^n z_k-\sum_{k=1}^n
-z_k(1-\frac{1}{n})^k| \\
-&amp;\leq |\sum_{k=1}^n z_k(1-(1-\frac{1}{n}))^k| \\
-&amp;\leq |\sum_{k=1}^n \frac{kz_k}{n}| +o(1/n) \\
-\end{aligned}
-\]</span></p>
-<p>对 <span class="math inline">\(n\)</span> 取极限，即证。</p>
 
       
     </div>

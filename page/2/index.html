@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -187,6 +187,231 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/" class="post-title-link" itemprop="url">【M#2】 Cesaro 和, Abel 和</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-19 21:01:12" itemprop="dateCreated datePublished" datetime="2023-12-19T21:01:12+08:00">2023-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-20 21:39:09" itemprop="dateModified" datetime="2023-12-20T21:39:09+08:00">2023-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="cesaro-sum">Cesaro Sum</h2>
+<p>在考虑一个级数的和的收敛的时候，我们可能会遇到一些问题，比如对于这样一个级数：</p>
+<p><span class="math display">\[1,-1,1,-1,1,-1,1,\cdots
+\tag{1}\]</span></p>
+<p>他的部分和 <span class="math inline">\(s_n=[n \text{ is
+odd}]\)</span>，在常规的意义下他是不可和的，但是他的部分和又表现出了一些收敛的性质。</p>
+<p>比如对于这个数列，他的部分和在一半的情况下是 <span
+class="math inline">\(1\)</span>，一半的情况下是 <span
+class="math inline">\(0\)</span>，那么我们把这个和的极限定义为 <span
+class="math inline">\(1/2\)</span> 是在一定程度上合理的。</p>
+<p>所以我们可能需要一些更强的收敛性质。</p>
+<p><span class="math inline">\(\color{red}{定义1}\)</span>: 定义</p>
+<p><span class="math display">\[\sigma_n=\frac{\sum_{k=0}^{n-1}
+s_k}{n}\]</span></p>
+<p>为级数 <span class="math inline">\(\{z_n\}\)</span> 的第 <span
+class="math inline">\(n\)</span> 个 Cesaro 和，其中 <span
+class="math inline">\(s_n\)</span> 为 <span
+class="math inline">\(z_n\)</span> 的部分和。</p>
+<p>如果 <span class="math inline">\(\sigma_n\)</span> 收敛，则称 <span
+class="math inline">\(\{z_n\}\)</span> 是 Cesaro 可和的。</p>
+<p>在这个定义下，不难验证 <span class="math inline">\((1)\)</span> 中的
+Cesaro 和收敛于 <span class="math inline">\(1/2\)</span>。</p>
+<h2 id="dirichlet-kernal-fejer-kernel">Dirichlet Kernal &amp; Fejer
+Kernel</h2>
+<p>回忆 Dirichlet Kernel 定义为</p>
+<p><span class="math display">\[D_n(x)=\sum_{k=-n}^n
+e^{inx}=\frac{\sin(n+\dfrac{1}{2})x}{\sin \dfrac{x}{2}}\]</span></p>
+<p>且满足</p>
+<p><span class="math display">\[S_n(f)(x)=(f*D_n)(x)\]</span></p>
+<p>我们对于 <span class="math inline">\(f\)</span> 求 Cesaro
+和，得到</p>
+<p><span
+class="math display">\[\sigma_n(f)(x)=\frac{S_0(f)(x)+S_1(f)(x)+\cdots+S_{n-1}(f)(x)}{n}=(f*K_n)(f)(x)\]</span></p>
+<p>其中 <span class="math inline">\(K_n\)</span> 为 Fejer
+Kernel，定义为</p>
+<p><span class="math display">\[K_n(x)=\sigma_n(D_n)(x)=\frac{\sin^2
+\dfrac{nx}{2}}{n\sin^2\dfrac{x}{2}}\]</span></p>
+<p>注意到 <span class="math inline">\(K_n\)</span> 满足 Good Kernel
+的所有性质，这直接得到了 Fejer 定理：</p>
+<p><span class="math inline">\(\color{red}{定理1}\)</span>: 如果 <span
+class="math inline">\(f\)</span> 可积，则 <span
+class="math inline">\(f\)</span> 的傅里叶级数在每一个 <span
+class="math inline">\(f\)</span> 的连续点处 Cesaro 可和；进一步的，如果
+<span class="math inline">\(f\)</span> 连续，则 <span
+class="math inline">\(f\)</span> 的傅里叶展开的 Cesaro 和一致收敛与
+<span class="math inline">\(f\)</span></p>
+<h2 id="abel-sum">Abel Sum</h2>
+<p><span class="math inline">\(\color{red}定义2\)</span>: 对于级数 <span
+class="math inline">\(\{z_n\}\)</span>，对于 <span
+class="math inline">\(0\leq r&lt;1\)</span>，定义</p>
+<p><span class="math display">\[A(r)=\sum_{k=0}^\infty
+z_kr^k\]</span></p>
+<p>若 <span class="math inline">\(A(r)\)</span> 收敛，且</p>
+<p><span class="math display">\[\lim_{r\to 1}A(r)=s\]</span></p>
+<p>则称 <span class="math inline">\(\{z_n\}\)</span> Abel 可和于 <span
+class="math inline">\(s\)</span>, <span class="math inline">\(s\)</span>
+被成为 Abel 均值。</p>
+<p>Abel 可和强于 Cesaro 可和，如对于级数</p>
+<p><span class="math display">\[1,-2,3,-4,\cdots \tag{2}\]</span></p>
+<p><span class="math display">\[A(r)=\sum_{k=0}^\infty
+(-1)^k(k+1)r^k=\frac{1}{(1+r)^2}\]</span></p>
+<p>是 Abel 可和的。</p>
+<p>但是他不是 Cesaro 可和的，因为</p>
+<p><span class="math inline">\(s_k=\lceil k/2\rceil
+(-1)^{k+1}\)</span>，<span class="math inline">\(s_k\)</span>
+的前缀和要么是 <span class="math inline">\(0\)</span> 要么是 <span
+class="math inline">\(n/2\)</span>，他的 Cesaro 部分和要么是 <span
+class="math inline">\(0\)</span> ，要么是 <span
+class="math inline">\(1/2\)</span>，并不收敛。</p>
+<h2 id="poisson-kernel">Poisson Kernel</h2>
+<p>Abel 和对应的 Kernel 是 Poisson Kernel。</p>
+<p>对于一个函数 <span class="math inline">\(f(\theta) \sim \sum_n
+a_ne^{in\theta}\)</span>，定义这个函数的 Abel 均值</p>
+<p><span
+class="math display">\[A_r(f)(\theta)=\sum_{n}a_nr^{|n|}e^{in\theta}\]</span></p>
+<p>定义 Poisson Kernel <span
+class="math inline">\(P_r(\theta)\)</span>满足 <span
+class="math inline">\(A_r(f)(\theta)=(f*P_r)(\theta)\)</span></p>
+<p>则</p>
+<p><span class="math display">\[P_r(\theta)=\sum_n
+r^{|n|}e^{in\theta}\]</span></p>
+<p>进一步展开得到</p>
+<p><span
+class="math display">\[P_r(\theta)=\frac{1-r^2}{1-2r\cos\theta+r^2}\]</span></p>
+<p><span class="math inline">\(P_r(\theta)\)</span> 同样是 Good
+Kernel，因此将定理1中的 Cesaro 可和结论替换为 Abel
+可和结论同样成立。</p>
+<h2 id="summable-cesaro-summable-abel-summable">Summable &amp; Cesaro
+Summable &amp; Abel Summable</h2>
+<p>在本节中，我们将证明三种可和是有强弱关系的，具体来说</p>
+<p><span class="math display">\[\text{Summable} \Longrightarrow
+\text{Cesaro Summable} \Longrightarrow \text{Abel Summable}\]</span></p>
+<p><span class="math inline">\(\color{red}{定理2}\)</span>: 若 <span
+class="math inline">\(\sum_{k=1}^{\infty} z_k=s\)</span>，则 <span
+class="math inline">\(\{z_n\}\)</span> Cesaro 可和，且 <span
+class="math inline">\(\sigma=s\)</span></p>
+<p>证明是基本的。</p>
+<p>在前面已经提到过，存在数列是 Cesaro 可和但不是可和的。</p>
+<p><span class="math inline">\(\color{red}{定理3}\)</span>：若 <span
+class="math inline">\(\{z_n\}\)</span> Cesaro 可和，则 <span
+class="math inline">\(\{z_n\}\)</span> Abel 可和，且 <span
+class="math inline">\(\lim_{r\to 1} A(r)=\sigma\)</span></p>
+<p><strong>证明：</strong></p>
+<p>假设 <span class="math inline">\(\sigma=0\)</span>，否则可以调整
+<span class="math inline">\(z_1\)</span>。</p>
+<p><span class="math display">\[A(r)=\sum_{n=0}^{\infty}z_nr^n =
+(1-r)^2\sum_{n=0}^{\infty}n\sigma_nr^n\]</span></p>
+<p>两边在 <span class="math inline">\(r\to 1\)</span> 时取极限，得到
+<span class="math inline">\(A(r)\to 0\)</span>。</p>
+<p>前面同样举出了是 Abel 可和但是不 Cesaro
+可和的例子，这完成了单向关系的构建。</p>
+<h2 id="taubers-theorem">Tauber's Theorem</h2>
+<p>当然，在对于 <span class="math inline">\(z_n\)</span>
+加以额外的限制的情况下，上面三个不同的可和性可以变为等价的。</p>
+<p><span class="math inline">\(\color{red}{定理4}\)</span>：若 <span
+class="math inline">\(z_n\)</span> Cesaro 可和于 <span
+class="math inline">\(\sigma\)</span>，且 <span
+class="math inline">\(c_n=o(1/n)\)</span>，则 <span
+class="math inline">\(z_n\)</span> 可和于 <span
+class="math inline">\(\sigma\)</span></p>
+<p><strong>证明：</strong></p>
+<p><span
+class="math display">\[s_n-\sigma_n=\frac{(n-1)z_n+(n-2)z_{n-1}+\cdots
++z_2}{n}\]</span></p>
+<p>两边对 <span class="math inline">\(n\)</span> 取极限。</p>
+<p><span class="math inline">\(\color{red}{定理5}\)</span>：若 <span
+class="math inline">\(z_n\)</span> Abel 可和于 <span
+class="math inline">\(A\)</span>，且 <span
+class="math inline">\(c_n=o(1/n)\)</span>，则 <span
+class="math inline">\(z_n\)</span> 可和于 <span
+class="math inline">\(A\)</span></p>
+<p>取 <span class="math inline">\(r=1-1/n\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+|s_n-\sum_{k=1}^n z_kr^k| &amp;=|\sum_{k=1}^n z_k-\sum_{k=1}^n
+z_k(1-\frac{1}{n})^k| \\
+&amp;\leq |\sum_{k=1}^n z_k(1-(1-\frac{1}{n}))^k| \\
+&amp;\leq |\sum_{k=1}^n \frac{kz_k}{n}| +o(1/n) \\
+\end{aligned}
+\]</span></p>
+<p>对 <span class="math inline">\(n\)</span> 取极限，即证。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1655,147 +1880,6 @@ class="math inline">\(OPT\geq k_0\)</span>。</p>
 c\ln n\cdot OPT(c&lt;1)\)</span>。</p>
 <h2 id="section-4">2.16</h2>
 <p>CF600F</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/12/%E3%80%90%E9%B2%9C%E8%8A%B1-3%E3%80%912023%E6%9C%9F%E4%B8%AD%E8%80%83%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/12/%E3%80%90%E9%B2%9C%E8%8A%B1-3%E3%80%912023%E6%9C%9F%E4%B8%AD%E8%80%83%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">【鲜花#3】2023期中考游记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-12 12:51:51" itemprop="dateCreated datePublished" datetime="2023-11-12T12:51:51+08:00">2023-11-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-11 19:11:23" itemprop="dateModified" datetime="2023-12-11T19:11:23+08:00">2023-12-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>濯足夜滩急，晞发北风凉。</p>
-</blockquote>
-<p>惧怕着、惧怕着，北风来了，期中考的脚步近了。</p>
-<h2 id="day-1">Day 1</h2>
-<p>上午语文，错了两个选择。</p>
-<p>出来 <span class="math inline">\(\zeta\)</span>
-君讲简答题讲的头头是道，感觉很不妙，要被 <span
-class="math inline">\(\zeta\)</span> 君吊打了。</p>
-<p>下午英语，头一次见到英语放第一天。</p>
-<p>出来之后一对答案，前面都没错，感觉又行了。</p>
-<p>下午无心复习，去 appralg 去了。</p>
-<h2 id="day-2">Day 2</h2>
-<p>上午先考数学。</p>
-<p>看到第八题有点害怕，算了一会算出来了，但是大概会比较难。</p>
-<p>第十题一眼回想起 <span class="math inline">\(xyc\)</span>
-射天狼，于是尝试 <span class="math inline">\(\gcd\)</span>
-证明了证明，感觉 2 个找不出来，随便胡了一会选了个 3</p>
-<p>第十五题的 4
-看上去挺对的，但是不会证，因为选择比较难所以觉得后面题也比较难，而且已经过去了快
-50 分钟，就直接感性理解了一下把 4 也给选了。</p>
-<p>然后就很慌，奋笔疾书的写。</p>
-<p>导数怎么两个题都是 <span class="math inline">\(\zeta\)</span>
-条件啊（</p>
-<p>写到了最后一道题，一看表还剩 40 分钟</p>
-<p>是这选择抽象还是大题抽象啊（</p>
-<p>21 一看第二问不会做，有点慌。</p>
-<p>然后仔细想了五分钟发现斜线上一定是交替的，但是这怎么写啊（</p>
-<p>然后想表述方法想了好久，最后直接答题卡上画了个矩阵给他穿了个串。</p>
-<p>写完已经只剩下不到 15 分钟了。</p>
-<p>于是就说直接写第三问能拿多少就拿多少吧。</p>
-<p>感觉就直接上面有和他一样的和右边有和他一样的就分别扔进俩集合，然后再容斥一下，我怎么做完了？</p>
-<p>于是写着写着就写完了 21.</p>
-<p>出考场有人举出了 15 的 2 个的例子，死啦。</p>
-<p>出考场发现 21(3) 小锅了，第一行和最后一列实际上是不能选的所以是 <span
-class="math inline">\(6\times 9\)</span> 而不是 <span
-class="math inline">\(6\times
-10\)</span>，不过大体思路还是对的，所以看能扣几分了。</p>
-<p>然后地理。</p>
-<p>地理一上来 5，6
-两个题直接搞蒙了，纠结了好久，是跟随自己的内心还是不跟随，随后决定还是选了一个当时就觉得要错的答案。</p>
-<p>这样做的代价也是惨重的，因为我花了 30 多分钟做选择。</p>
-<p>然后大题就奋笔疾书。</p>
-<p>不是你画图题怎么 8 分啊，为什么气温特征给 7 分，象屋给 6
-分，论述题咋写啊。</p>
-<p>写到最后都想要弃疗了，但是最后还是让不属于我的思想在答题卡上流淌到了最后一课。</p>
-<p>下午很自闭，写了写物理化学，然后 appralg</p>
-<h2 id="day-3">Day 3</h2>
-<p>物理，看到第四题我差点做错就知道要出事。</p>
-<p>11
-题算了好久，感觉和算出来的结果和物理定律不符，但是还是决定相信自己算的。</p>
-<p>后面的题好像还好，不是，最后一题是什么玩意。</p>
-<p>出来一对选择发现 11,12 全算错了，直接自闭。</p>
-<p>最后一科考化学，写到 14
-的时候满脑子都是物理的事情，让自己静心了两分钟然后果然发现自己之前 14
-做错了。</p>
-<p>后面的题感觉还好吧。</p>
-<p>下午找 hdq 讨论 11 题，讨论过程中，发现我 18(3)
-也算错了，感觉真真要死了（</p>
-<p>为什么考的全是课上讲的啊。</p>
-<h2 id="day-4">Day 4</h2>
-<p>回家玩了一整天，还看了电视剧 《对手》，感觉很好看。</p>
-<h2 id="day-5">Day 5</h2>
-<p><span
-class="math inline">\(111+141+142+94(90)+100(92)+91(69)=679\)</span></p>
-<p>感觉考的真的抽象，最后赋分也真的抽象。</p>
 
       
     </div>
