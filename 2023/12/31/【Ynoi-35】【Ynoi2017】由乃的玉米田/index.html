@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="莫队加 bitset 解决前三个操作 第四个操作在 \(x&gt;\sqrt n\) 的时候同样解决了。 \(x\leq \sqrt n\) 的时候，对于 \(x\) 相同的放在一起处理，设 \(f[i]\) 表示最大的 \(j\) 满足 \([i,j]\) 中有一对商是 \(x\) 的，不难转移。 复杂度 \(O(n\sqrt n)\) 123456789101112131415161">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Ynoi#35】【Ynoi2017】由乃的玉米田">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/index.html">
+<meta property="og:site_name" content="devout">
+<meta property="og:description" content="莫队加 bitset 解决前三个操作 第四个操作在 \(x&gt;\sqrt n\) 的时候同样解决了。 \(x\leq \sqrt n\) 的时候，对于 \(x\) 相同的放在一起处理，设 \(f[i]\) 表示最大的 \(j\) 满足 \([i,j]\) 中有一对商是 \(x\) 的，不难转移。 复杂度 \(O(n\sqrt n)\) 123456789101112131415161">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-31T09:54:58.000Z">
+<meta property="article:modified_time" content="2023-12-30T10:25:57.325Z">
+<meta property="article:author" content="devout">
+<meta property="article:tag" content="OI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://06devout.github.io/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/","path":"2023/12/31/【Ynoi-35】【Ynoi2017】由乃的玉米田/","title":"【Ynoi#35】【Ynoi2017】由乃的玉米田"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【Ynoi#35】【Ynoi2017】由乃的玉米田 | devout</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">devout</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="devout"
+      src="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+  <p class="site-author-name" itemprop="name">devout</p>
+  <div class="site-description" itemprop="description">拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/97344" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;97344" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/devout-29-51" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;devout-29-51" rel="noopener me" target="_blank">Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/06devout" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;06devout" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2062593323@qq.com" title="E-Mail → mailto:2062593323@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackexchange.com/users/28797913/yumesaki-yuuki" title="Stackexchange → https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;28797913&#x2F;yumesaki-yuuki" rel="noopener me" target="_blank">Stackexchange</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YuukiYumesaki" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YuukiYumesaki" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/channel/UCgUPaHs4mkEX7qsx0C-ObFA" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;channel&#x2F;UCgUPaHs4mkEX7qsx0C-ObFA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/199139" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;199139" rel="noopener" target="_blank">devans</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【Ynoi#35】【Ynoi2017】由乃的玉米田 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【Ynoi#35】【Ynoi2017】由乃的玉米田
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-31 17:54:58" itemprop="dateCreated datePublished" datetime="2023-12-31T17:54:58+08:00">2023-12-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-30 18:25:57" itemprop="dateModified" datetime="2023-12-30T18:25:57+08:00">2023-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Ynoi/" itemprop="url" rel="index"><span itemprop="name">Ynoi</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>莫队加 bitset 解决前三个操作</p>
+<p>第四个操作在 <span class="math inline">\(x&gt;\sqrt n\)</span>
+的时候同样解决了。</p>
+<p><span class="math inline">\(x\leq \sqrt n\)</span> 的时候，对于 <span
+class="math inline">\(x\)</span> 相同的放在一起处理，设 <span
+class="math inline">\(f[i]\)</span> 表示最大的 <span
+class="math inline">\(j\)</span> 满足 <span
+class="math inline">\([i,j]\)</span> 中有一对商是 <span
+class="math inline">\(x\)</span> 的，不难转移。</p>
+<p>复杂度 <span class="math inline">\(O(n\sqrt n)\)</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> Rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> _Rep(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> RepG(i,u) for(int i=head[u];~i;i=e[i].next)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">double</span> db;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmax(a,b) a=max(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmin(a,b) a=min(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> mkp make_pair</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="type">int</span> f=<span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> pos[N],sq;</span><br><span class="line"><span class="type">int</span> cnt[N];</span><br><span class="line"><span class="type">int</span> lst[N],f[N];</span><br><span class="line"><span class="type">int</span> out[N];</span><br><span class="line"><span class="type">int</span> lim=<span class="number">300</span>;</span><br><span class="line"><span class="type">int</span> qcnt;</span><br><span class="line"></span><br><span class="line">bitset&lt;N&gt; S,SI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">misaka</span>&#123;</span><br><span class="line">    <span class="type">int</span> opt,l,r,x,id;</span><br><span class="line">&#125;Q[N];</span><br><span class="line"></span><br><span class="line">vector&lt;misaka&gt; T[<span class="number">305</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(misaka x,misaka y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos[x.l]!=pos[y.l])<span class="keyword">return</span> pos[x.l]&lt;pos[y.l];</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(pos[x.l]&amp;<span class="number">1</span>)<span class="keyword">return</span> x.r&lt;y.r;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> x.r&gt;y.r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ins</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!cnt[x])S[x]=<span class="number">1</span>,SI[<span class="number">100000</span>-x]=<span class="number">1</span>;</span><br><span class="line">    cnt[x]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    cnt[x]--;</span><br><span class="line">    <span class="keyword">if</span>(!cnt[x])S[x]=<span class="number">0</span>,SI[<span class="number">100000</span>-x]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta"># <span class="keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;testdata.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="comment">//freopen(&quot;test1.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="meta"># <span class="keyword">endif</span></span></span><br><span class="line">    <span class="built_in">read</span>(n),<span class="built_in">read</span>(m);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)<span class="built_in">read</span>(a[i]);</span><br><span class="line">    sq=<span class="built_in">sqrt</span>(n)+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)pos[i]=(i<span class="number">-1</span>)/sq+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">        <span class="type">int</span> opt,x,l,r;</span><br><span class="line">        <span class="built_in">read</span>(opt),<span class="built_in">read</span>(l),<span class="built_in">read</span>(r),<span class="built_in">read</span>(x);</span><br><span class="line">        <span class="keyword">if</span>(opt==<span class="number">4</span>&amp;&amp;x&lt;=lim)T[x].<span class="built_in">push_back</span>((misaka)&#123;<span class="number">4</span>,l,r,x,i&#125;);</span><br><span class="line">        <span class="keyword">else</span> Q[++qcnt]=(misaka)&#123;opt,l,r,x,i&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(Q+<span class="number">1</span>,Q+qcnt+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,l=<span class="number">1</span>,r=<span class="number">0</span>;i&lt;=qcnt;i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(l&gt;Q[i].l)<span class="built_in">ins</span>(a[--l]);</span><br><span class="line">        <span class="keyword">while</span>(r&lt;Q[i].r)<span class="built_in">ins</span>(a[++r]);</span><br><span class="line">        <span class="keyword">while</span>(l&lt;Q[i].l)<span class="built_in">del</span>(a[l++]);</span><br><span class="line">        <span class="keyword">while</span>(r&gt;Q[i].r)<span class="built_in">del</span>(a[r--]);</span><br><span class="line">        <span class="keyword">if</span>(Q[i].opt==<span class="number">1</span>)out[Q[i].id]=((S&lt;&lt;Q[i].x)&amp;S).<span class="built_in">any</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Q[i].opt==<span class="number">2</span>)out[Q[i].id]=((S&lt;&lt;(<span class="number">100000</span>-Q[i].x))&amp;SI).<span class="built_in">any</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Q[i].opt==<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j*j&lt;=Q[i].x;j++)</span><br><span class="line">                <span class="keyword">if</span>(Q[i].x%j==<span class="number">0</span>&amp;&amp;S[j]&amp;&amp;S[Q[i].x/j])</span><br><span class="line">                    out[Q[i].id]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j*Q[i].x&lt;=<span class="number">100000</span>;j++)</span><br><span class="line">                <span class="keyword">if</span>(S[j]&amp;&amp;S[j*Q[i].x])</span><br><span class="line">                    out[Q[i].id]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Rep</span>(x,<span class="number">1</span>,lim)&#123;</span><br><span class="line">        <span class="keyword">if</span>(T[x].<span class="built_in">empty</span>())<span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">            <span class="type">int</span> y=a[i];</span><br><span class="line">            lst[y]=i;</span><br><span class="line">            f[i]=f[i<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span>(x*y&lt;=<span class="number">100000</span>)<span class="built_in">chkmax</span>(f[i],lst[x*y]);</span><br><span class="line">            <span class="keyword">if</span>(y%x==<span class="number">0</span>)<span class="built_in">chkmax</span>(f[i],lst[y/x]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i:T[x])</span><br><span class="line">            out[i.id]=i.l&lt;=f[i.r];</span><br><span class="line">        <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="built_in">sizeof</span>(f));</span><br><span class="line">        <span class="built_in">memset</span>(lst,<span class="number">0</span>,<span class="built_in">sizeof</span>(lst));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)<span class="built_in">puts</span>(out[i]?<span class="string">&quot;yuno&quot;</span>:<span class="string">&quot;yumi&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/OI/" rel="tag"># OI</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/30/%E3%80%90Ynoi-34%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84OJ/" rel="prev" title="【Ynoi#34】【Ynoi2017】由乃的OJ">
+                  <i class="fa fa-angle-left"></i> 【Ynoi#34】【Ynoi2017】由乃的OJ
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/" rel="next" title="【M#3】周长一定的闭合曲线为圆时围成的面积最大">
+                  【M#3】周长一定的闭合曲线为圆时围成的面积最大 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">devout</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

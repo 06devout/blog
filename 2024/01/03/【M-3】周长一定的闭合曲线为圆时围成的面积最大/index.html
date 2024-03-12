@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="我们在这里证明一个广为人知的结论，即周长一定的闭合曲线为圆时围成的面积最大。 具体的，对于平面上的一条闭合曲线 \(\gamma:[a,b]\to \mathbb R^2\) ，\(\gamma(a)&#x3D;\gamma(b)\)，其长度定义为 \[\ell&#x3D;\int_a^b \sqrt{(x^\prime)^2(t)+(y^\prime)^2(t)}\mathrm dt\] 其面积定义为 \">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【M#3】周长一定的闭合曲线为圆时围成的面积最大">
+<meta property="og:url" content="https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/index.html">
+<meta property="og:site_name" content="devout">
+<meta property="og:description" content="我们在这里证明一个广为人知的结论，即周长一定的闭合曲线为圆时围成的面积最大。 具体的，对于平面上的一条闭合曲线 \(\gamma:[a,b]\to \mathbb R^2\) ，\(\gamma(a)&#x3D;\gamma(b)\)，其长度定义为 \[\ell&#x3D;\int_a^b \sqrt{(x^\prime)^2(t)+(y^\prime)^2(t)}\mathrm dt\] 其面积定义为 \">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-03T12:28:23.000Z">
+<meta property="article:modified_time" content="2024-01-03T13:07:00.979Z">
+<meta property="article:author" content="devout">
+<meta property="article:tag" content="傅里叶分析">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/","path":"2024/01/03/【M-3】周长一定的闭合曲线为圆时围成的面积最大/","title":"【M#3】周长一定的闭合曲线为圆时围成的面积最大"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【M#3】周长一定的闭合曲线为圆时围成的面积最大 | devout</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">devout</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="devout"
+      src="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+  <p class="site-author-name" itemprop="name">devout</p>
+  <div class="site-description" itemprop="description">拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/97344" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;97344" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/devout-29-51" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;devout-29-51" rel="noopener me" target="_blank">Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/06devout" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;06devout" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2062593323@qq.com" title="E-Mail → mailto:2062593323@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackexchange.com/users/28797913/yumesaki-yuuki" title="Stackexchange → https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;28797913&#x2F;yumesaki-yuuki" rel="noopener me" target="_blank">Stackexchange</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YuukiYumesaki" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YuukiYumesaki" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/channel/UCgUPaHs4mkEX7qsx0C-ObFA" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;channel&#x2F;UCgUPaHs4mkEX7qsx0C-ObFA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/199139" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;199139" rel="noopener" target="_blank">devans</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【M#3】周长一定的闭合曲线为圆时围成的面积最大 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【M#3】周长一定的闭合曲线为圆时围成的面积最大
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-01-03 20:28:23 / Modified: 21:07:00" itemprop="dateCreated datePublished" datetime="2024-01-03T20:28:23+08:00">2024-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>我们在这里证明一个广为人知的结论，即周长一定的闭合曲线为圆时围成的面积最大。</p>
+<p>具体的，对于平面上的一条闭合曲线 <span
+class="math inline">\(\gamma:[a,b]\to \mathbb R^2\)</span> ，<span
+class="math inline">\(\gamma(a)=\gamma(b)\)</span>，其长度定义为</p>
+<p><span class="math display">\[\ell=\int_a^b
+\sqrt{(x^\prime)^2(t)+(y^\prime)^2(t)}\mathrm dt\]</span></p>
+<p>其面积定义为</p>
+<p><span class="math display">\[\mathcal A=\frac{1}{2}\Bigg|\int_a^b
+x(t)y^\prime(t)-x^\prime(t)y(t)\mathrm dt \Bigg|\]</span></p>
+<p>则有</p>
+<p><span class="math display">\[\mathcal A\leq
+\frac{\ell^2}{4\pi}\]</span></p>
+<p>当且仅当 <span class="math inline">\(\gamma\)</span>
+为一个圆时等式成立。</p>
+<p>首先，我们需要把曲线转化成一个标准的形式。</p>
+<p>对 <span class="math inline">\(t\)</span> 做变量代换，我们可以把
+<span class="math inline">\(\gamma\)</span> 定义到 <span
+class="math inline">\([0,2\pi]\)</span> 上。</p>
+<p>其次，调整 <span class="math inline">\(x(t),y(t)\)</span>
+使得任意时刻 <span
+class="math inline">\((x^\prime)^2(t)+(y^\prime)^2(t)=1\)</span>，这样我们将曲线的
+<span class="math inline">\(\ell\)</span> 调整为 <span
+class="math inline">\(2\pi\)</span>，接下来我们只需要证明 <span
+class="math inline">\(\mathcal A\leq \pi\)</span> 即可。</p>
+<p>注意到 <span
+class="math inline">\(\gamma(0)=\gamma(2\pi)\)</span>，我们可以将 <span
+class="math inline">\(x(t)\)</span> 和 <span
+class="math inline">\(y(t)\)</span> 分别写成傅里叶级数的表达</p>
+<p><span class="math display">\[x(t)\sim \sum a_ne^{int} \text{ and }
+y(t)\sim \sum b_ne^{int}\]</span></p>
+<p>则</p>
+<p><span class="math display">\[x^\prime(t) \sim \sum a_nine^{int}
+\text{ and } y^\prime(t)\sim \sum b_nine^{int}\]</span></p>
+<p>则</p>
+<p><span class="math display">\[\mathcal A=\Big|\pi \sum
+n(a_n\overline{b_n}-b_n\overline{a_n})\Big|\]</span></p>
+<p>利用</p>
+<p><span class="math display">\[n\leq n^2 \tag{1}\]</span></p>
+<p><span
+class="math display">\[|a_n\overline{b_n}-b_n\overline{a_n}|\leq
+2|a_n||b_n| \tag{2}\]</span></p>
+<p><span class="math display">\[2|a_n||b_n|\leq |a_n|^2+|b_n|^2
+\tag{3}\]</span></p>
+<p>得到</p>
+<p><span class="math display">\[\mathcal A\leq \pi \sum
+n^2(|a_n|^2+|b_n|^2)=\pi ||x(t)||\cdot ||y(t)||=\pi \tag{4}\]</span></p>
+<p>接下来考虑取等条件，<span class="math inline">\((1)\)</span> 说明
+<span class="math inline">\(a_k(|k|\geq 2)=0\)</span>，因为 <span
+class="math inline">\(x(t),y(t)\in\mathbb R\)</span>，说明 <span
+class="math inline">\(a_1=\overline{a_{-1}},b_1=\overline{b_{-1}}\)</span>，<span
+class="math inline">\((4)\)</span> 说明 <span
+class="math inline">\(|a_1|^2+|a_2|^2=1/2\)</span>，<span
+class="math inline">\((3)\)</span> 说明 <span
+class="math inline">\(|a_1|=|b_1|=\frac{1}{2}\)</span></p>
+<p>因此可设</p>
+<p><span class="math display">\[a_1=\frac{1}{2}e^{in\alpha} \text{ and }
+b_1=\frac{1}{2}e^{in\beta}\]</span></p>
+<p>带入 <span class="math inline">\((3)\)</span>，得到 <span
+class="math inline">\(|\sin(\alpha-\beta)|=1\)</span>，也就是说 <span
+class="math inline">\(a_1\)</span> 和 <span
+class="math inline">\(b_1\)</span> 是垂直的。</p>
+<p>旋转坐标系到 <span class="math inline">\(\alpha\)</span>，不妨设
+<span
+class="math inline">\(\beta=\alpha+\dfrac{\pi}{2}\)</span>，在新的坐标系下，有</p>
+<p><span class="math display">\[x(t)=a_0+2a_1\cos t\text{ and
+}y(t)=b_0+2b_1\sin t\]</span></p>
+<p>这正是圆的形式。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90/" rel="tag"># 傅里叶分析</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/" rel="prev" title="【Ynoi#35】【Ynoi2017】由乃的玉米田">
+                  <i class="fa fa-angle-left"></i> 【Ynoi#35】【Ynoi2017】由乃的玉米田
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2024/01/07/%E3%80%90M-4%E3%80%91%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0/" rel="next" title="【M#4】伯努利数">
+                  【M#4】伯努利数 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">devout</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

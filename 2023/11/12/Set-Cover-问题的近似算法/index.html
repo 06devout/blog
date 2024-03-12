@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="Set Cover Set Cover 是指给定 \(n\) 个元素 \(E&#x3D;\{e_1,\cdots,e_n\}\) 以及 \(m\) 个集合 \(S_1,\cdots,S_m\subseteq E\)，每个集合有代价 \(w_1,\cdots,w_m\)，要求从这些集合中选出 \(k\) 个集合 \(S_{i_1},\cdots,S_{i_k}\) 使得 \(\cup_{j&#x3D;1}^k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【CS#1】Set Cover 问题的近似算法">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="devout">
+<meta property="og:description" content="Set Cover Set Cover 是指给定 \(n\) 个元素 \(E&#x3D;\{e_1,\cdots,e_n\}\) 以及 \(m\) 个集合 \(S_1,\cdots,S_m\subseteq E\)，每个集合有代价 \(w_1,\cdots,w_m\)，要求从这些集合中选出 \(k\) 个集合 \(S_{i_1},\cdots,S_{i_k}\) 使得 \(\cup_{j&#x3D;1}^k">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-12T03:59:27.000Z">
+<meta property="article:modified_time" content="2023-12-20T13:39:33.593Z">
+<meta property="article:author" content="devout">
+<meta property="article:tag" content="近似算法">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/","path":"2023/11/12/Set-Cover-问题的近似算法/","title":"【CS#1】Set Cover 问题的近似算法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【CS#1】Set Cover 问题的近似算法 | devout</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">devout</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-cover"><span class="nav-number">1.</span> <span class="nav-text">Set Cover</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#h_n-approximation"><span class="nav-number">2.</span> <span class="nav-text">\(H_n\)-Approximation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#further-application"><span class="nav-number">3.</span> <span class="nav-text">Further Application</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="devout"
+      src="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+  <p class="site-author-name" itemprop="name">devout</p>
+  <div class="site-description" itemprop="description">拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/97344" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;97344" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/devout-29-51" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;devout-29-51" rel="noopener me" target="_blank">Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/06devout" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;06devout" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2062593323@qq.com" title="E-Mail → mailto:2062593323@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackexchange.com/users/28797913/yumesaki-yuuki" title="Stackexchange → https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;28797913&#x2F;yumesaki-yuuki" rel="noopener me" target="_blank">Stackexchange</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YuukiYumesaki" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YuukiYumesaki" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/channel/UCgUPaHs4mkEX7qsx0C-ObFA" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;channel&#x2F;UCgUPaHs4mkEX7qsx0C-ObFA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/199139" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;199139" rel="noopener" target="_blank">devans</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/12/Set-Cover-%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【CS#1】Set Cover 问题的近似算法 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【CS#1】Set Cover 问题的近似算法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-11-12 11:59:27" itemprop="dateCreated datePublished" datetime="2023-11-12T11:59:27+08:00">2023-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-20 21:39:33" itemprop="dateModified" datetime="2023-12-20T21:39:33+08:00">2023-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="set-cover">Set Cover</h2>
+<p>Set Cover 是指给定 <span class="math inline">\(n\)</span> 个元素
+<span class="math inline">\(E=\{e_1,\cdots,e_n\}\)</span> 以及 <span
+class="math inline">\(m\)</span> 个集合 <span
+class="math inline">\(S_1,\cdots,S_m\subseteq E\)</span>，每个集合有代价
+<span
+class="math inline">\(w_1,\cdots,w_m\)</span>，要求从这些集合中选出
+<span class="math inline">\(k\)</span> 个集合 <span
+class="math inline">\(S_{i_1},\cdots,S_{i_k}\)</span> 使得 <span
+class="math inline">\(\cup_{j=1}^k S_{j_k}=E\)</span>，且 <span
+class="math inline">\(\sum_{j=1}^k w_{i_k}\)</span> 最小。</p>
+<p>Set Cover 是经典的 NP-complete 问题，同时在近似上也是经典的
+LOG-APX-complete 问题。</p>
+<p>关于 Set Cover 的 LOG-APX-hard 的证明可以参见 Fiege'98 的论文。</p>
+<p>下面我们给出一个 Set Cover 的 <span
+class="math inline">\(H_n\)</span>- 近似。</p>
+<h2 id="h_n-approximation"><span
+class="math inline">\(H_n\)</span>-Approximation</h2>
+<p>Set Cover 的近似是非常易于入门的。</p>
+<p>我们考虑一个自然的贪心，即每次选择一个“平均代价最小的集合”，把他加到集合中。</p>
+<p>具体来说，初始我们选择的集合的集合 <span
+class="math inline">\(I=\emptyset\)</span>，设 <span
+class="math inline">\(\hat S_k\)</span> 表示 <span
+class="math inline">\(S_k\)</span>
+中现在还没有覆盖的元素的集合，我们每次选择</p>
+<p><span class="math display">\[\ell=\operatorname{argmin}_{|\hat
+S_k|&gt;0} \frac{w_k}{|\hat S_k|}\]</span></p>
+<p>并将他放入 <span class="math inline">\(I\)</span> 中，再从所有 <span
+class="math inline">\(\hat S_k\)</span> 中去掉 <span
+class="math inline">\(\ell\)</span>，直到我们选出了一个覆盖。</p>
+<p>这个过程显然可以在多项式时间内实现，下面我们证明 <span
+class="math inline">\(\sum_{k\in I}w_k\leq H_n\cdot OPT\)</span>.</p>
+<p>直觉上来讲，对于一个最优的覆盖 <span
+class="math inline">\(O\)</span>, <span class="math inline">\(\sum_{k\in
+O}w_k=OPT\)</span>，在 <span class="math inline">\(O\)</span>
+中一定存在一个集合的平均代价不超过 <span
+class="math inline">\(OPT/n\)</span>，覆盖了第一个之后，相应的，<span
+class="math inline">\(O\)</span> 中一定存在一个集合平均代价不超过 <span
+class="math inline">\(OPT/(n-1)\)</span>
+来覆盖第二个，以此类推就得到了我们这个算法得到的结果 <span
+class="math inline">\(\leq
+OPT\cdot(1+\frac{1}{2}+\cdots+\frac{1}{n})\)</span>。</p>
+<p>下面是严谨的证明：设加入 <span class="math inline">\(k\)</span>
+个集合之后还剩下 <span class="math inline">\(n_k\)</span>
+个元素没有被覆盖，则</p>
+<p><span class="math display">\[\min_{|\hat S_k|&gt;0}\frac{w_k}{|\hat
+S_k|}\leq \min_{k\in O \wedge |\hat S_k|&gt;0}\frac{w_k}{|\hat
+S_k|}\]</span></p>
+<p>根据盐水原理，右边小于等于</p>
+<p><span class="math display">\[\frac{\sum_{k\in O\wedge |\hat
+S_k|&gt;0}w_k}{\sum_{k\in O}|\hat S_k|}\leq \frac{OPT}{n_k}\]</span></p>
+<p>故</p>
+<p><span class="math display">\[\sum_{k\in I}w_k\leq \sum_{j=1}^k
+\frac{n_j-n_{j+1}}{n_j}OPT\leq H_n\cdot OPT\]</span></p>
+<p>即完成了我们的证明。</p>
+<h2 id="further-application">Further Application</h2>
+<p>Set Cover 是（比较少有的） LOG-APX-complete 的问题，所以往往需要证明
+LOG-APX-hardness 时往往需要从 Set Cover 来规约。比如 Steiner Tree
+等问题的 hardness 可以通过非常简单的规约来解决。</p>
+<p>同时这种调和级数的证明方法也可以用在 Steiner Tree Variants 的 <span
+class="math inline">\(O(\log n)\)</span> Approximation
+的正确性的证明。</p>
+<p>习题：</p>
+<p>对于两个集合 <span class="math inline">\(A,B,A\cap
+B=\emptyset\)</span>，<span class="math inline">\(B\)</span>
+中每个元素有代价 <span class="math inline">\(w_k\)</span>，对于 <span
+class="math inline">\(i\in A,j\in B\)</span> 有额外代价 <span
+class="math inline">\(c_{i,j}\)</span>，选取 <span
+class="math inline">\(B\)</span> 的一个非空子集 <span
+class="math inline">\(E\)</span>，最小化</p>
+<p><span class="math display">\[\sum_{i\in E}w_i+\sum_{i\in A}\min_{j\in
+E}c_{i,j}\]</span></p>
+<p>通过证明这个问题是 LOG-APX-hard 并给出一个 <span
+class="math inline">\(O(\log n)\)</span> 近似算法，证明他是
+LOG-APX-complete。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/" rel="tag"># 近似算法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/11/06/%E3%80%90%E9%B2%9C%E8%8A%B1-2%E3%80%91%E8%AD%A6%E9%86%92%E4%B9%8B%E9%A3%8E/" rel="prev" title="【鲜花#2】警醒之风">
+                  <i class="fa fa-angle-left"></i> 【鲜花#2】警醒之风
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2023/11/12/%E3%80%90%E9%B2%9C%E8%8A%B1-3%E3%80%912023%E6%9C%9F%E4%B8%AD%E8%80%83%E6%B8%B8%E8%AE%B0/" rel="next" title="【鲜花#3】2023期中考游记">
+                  【鲜花#3】2023期中考游记 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">devout</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

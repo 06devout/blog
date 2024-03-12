@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="大概从寒假开始都叫暑假吧 所以要从头开始 大概记录一下在学校划水的事吧 day -213(2020.1.17) 放寒假啦！开心 day -204(2020.1.26) 延期开学了 day -77(2020.6.1) 终于开学了... 然后我们一帮人中午就被 gu 放学之后找去谈话，说了说“训练计划” 然后 nls 把我扣在了食堂，等我过去的时候他们差不多都说完了... 于是啥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NOI2020同步赛爆零记">
+<meta property="og:url" content="https://06devout.github.io/blog/2020/08/23/NOI2020%E5%90%8C%E6%AD%A5%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/index.html">
+<meta property="og:site_name" content="devout">
+<meta property="og:description" content="大概从寒假开始都叫暑假吧 所以要从头开始 大概记录一下在学校划水的事吧 day -213(2020.1.17) 放寒假啦！开心 day -204(2020.1.26) 延期开学了 day -77(2020.6.1) 终于开学了... 然后我们一帮人中午就被 gu 放学之后找去谈话，说了说“训练计划” 然后 nls 把我扣在了食堂，等我过去的时候他们差不多都说完了... 于是啥">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-23T12:51:28.000Z">
+<meta property="article:modified_time" content="2023-11-02T13:49:12.604Z">
+<meta property="article:author" content="devout">
+<meta property="article:tag" content="日常">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://06devout.github.io/blog/2020/08/23/NOI2020%E5%90%8C%E6%AD%A5%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2020/08/23/NOI2020%E5%90%8C%E6%AD%A5%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/","path":"2020/08/23/NOI2020同步赛爆零记/","title":"NOI2020同步赛爆零记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NOI2020同步赛爆零记 | devout</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">devout</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#day--2132020.1.17"><span class="nav-number">1.</span> <span class="nav-text">day -213(2020.1.17)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--2042020.1.26"><span class="nav-number">2.</span> <span class="nav-text">day -204(2020.1.26)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--772020.6.1"><span class="nav-number">3.</span> <span class="nav-text">day -77(2020.6.1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--722020.6.6"><span class="nav-number">4.</span> <span class="nav-text">day -72(2020.6.6)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--672020.6.11"><span class="nav-number">5.</span> <span class="nav-text">day -67(2020.6.11)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--662020.6.12"><span class="nav-number">6.</span> <span class="nav-text">day -66(2020.6.12)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--612020.6.17"><span class="nav-number">7.</span> <span class="nav-text">day -61(2020.6.17)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--392020.7.9"><span class="nav-number">8.</span> <span class="nav-text">day -39(2020.7.9)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--372020.7.11"><span class="nav-number">9.</span> <span class="nav-text">day -37(2020.7.11)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day"><span class="nav-number">10.</span> <span class="nav-text">day ???</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--3"><span class="nav-number">11.</span> <span class="nav-text">day -3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--2"><span class="nav-number">12.</span> <span class="nav-text">day -2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day--1"><span class="nav-number">13.</span> <span class="nav-text">day -1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day-0"><span class="nav-number">14.</span> <span class="nav-text">day 0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day-1"><span class="nav-number">15.</span> <span class="nav-text">day 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day-2"><span class="nav-number">16.</span> <span class="nav-text">day 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#day-3"><span class="nav-number">17.</span> <span class="nav-text">day 3</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="devout"
+      src="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+  <p class="site-author-name" itemprop="name">devout</p>
+  <div class="site-description" itemprop="description">拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/97344" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;97344" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/devout-29-51" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;devout-29-51" rel="noopener me" target="_blank">Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/06devout" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;06devout" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2062593323@qq.com" title="E-Mail → mailto:2062593323@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackexchange.com/users/28797913/yumesaki-yuuki" title="Stackexchange → https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;28797913&#x2F;yumesaki-yuuki" rel="noopener me" target="_blank">Stackexchange</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YuukiYumesaki" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YuukiYumesaki" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/channel/UCgUPaHs4mkEX7qsx0C-ObFA" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;channel&#x2F;UCgUPaHs4mkEX7qsx0C-ObFA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/199139" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;199139" rel="noopener" target="_blank">devans</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2020/08/23/NOI2020%E5%90%8C%E6%AD%A5%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NOI2020同步赛爆零记 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NOI2020同步赛爆零记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-23 20:51:28" itemprop="dateCreated datePublished" datetime="2020-08-23T20:51:28+08:00">2020-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-02 21:49:12" itemprop="dateModified" datetime="2023-11-02T21:49:12+08:00">2023-11-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><del>大概从寒假开始都叫暑假吧</del></p>
+<p><del>所以要从头开始</del></p>
+<p><del>大概记录一下在学校划水的事吧</del></p>
+<h4 id="day--2132020.1.17">day -213(2020.1.17)</h4>
+<p>放寒假啦！<del>开心</del></p>
+<h4 id="day--2042020.1.26">day -204(2020.1.26)</h4>
+<p><del>延期开学了</del></p>
+<h4 id="day--772020.6.1">day -77(2020.6.1)</h4>
+<p>终于开学了...</p>
+<p>然后我们一帮人中午就被 gu 放学之后找去谈话，说了说“训练计划”</p>
+<p>然后 nls 把我扣在了食堂，等我过去的时候他们差不多都说完了...</p>
+<p>于是啥东西都没听见</p>
+<h4 id="day--722020.6.6">day -72(2020.6.6)</h4>
+<p>开学之后的第一次<del>唯一一次</del>训练</p>
+<p>做的是 FJ 集训的题好像，反正三道暴力走人，被吊打了/dk</p>
+<h4 id="day--672020.6.11">day -67(2020.6.11)</h4>
+<p>BJ 新增一例确诊</p>
+<h4 id="day--662020.6.12">day -66(2020.6.12)</h4>
+<p>BJOI2020 没了（</p>
+<h4 id="day--612020.6.17">day -61(2020.6.17)</h4>
+<p>终于还是放假了，然后<del>愉快</del>的暑假就开始啦（</p>
+<h4 id="day--392020.7.9">day -39(2020.7.9)</h4>
+<p>学校期末总算搞完了，然后微信群里就被 gu 催着去学校训练了...</p>
+<h4 id="day--372020.7.11">day -37(2020.7.11)</h4>
+<p>集训第一天，日常在学校的<del>小破OJ</del>上打模拟赛</p>
+<p>然后成功被 lpl 吊打</p>
+<h4 id="day">day ???</h4>
+<p>gu 让 cy 每天下午给我们讲两道题，然后 cy 问我们想听什么，毒瘤的 xyc
+想听牛顿迭代法，于是 cy 就说给我们贩毒，于是就开始讲 <span
+class="math inline">\(\text{FFT}\)</span>，开始听的一头雾水，后来 cy
+让我们手玩了一遍 <span class="math inline">\(limit=8\)</span>
+的，然后差不多就懂了。</p>
+<p><del>虽然中间推错了无数次</del></p>
+<p>反正最后算是会了吧。。。虽然 <span
+class="math inline">\(\text{IFFT}\)</span> 没听懂（</p>
+<p>后来讲多项式全家桶基本上就不说人话了</p>
+<p>然后 cy 就放弃<del>贩毒</del>了</p>
+<p>gjm
+说“他家里有点事”，然后就没来，<strong>这意味着什么呢？</strong></p>
+<hr />
+<p>上午模拟赛，下午 cy 讲题，然后还被 gu
+<del>压榨现役选手</del>去给初一的讲课。。。。。。</p>
+<p>初一除了一个 hhr 跟我们一起训练还有一堆人，但是都是来这里划水的</p>
+<p>gu 让我讲 ds，还不让我讲树状数组，说“先把基础数据结构讲明白”</p>
+<p>xyc 给他们讲图论，一天就讲到 tarjan
+了，最后一问，连链式<strong>向前</strong>星都不会</p>
+<p>感觉他们听课的感受跟我们去年差不多...我们初一的时候就被强行灌输了树剖<del>虽然显然没听懂</del></p>
+<p>最后 gu
+还说“我们这个暑假，把提高组的东西<strong>都过了一遍</strong>了，接下来就是大量的刷题了”</p>
+<p>但是...</p>
+<hr />
+<p>然后某天早上，gjm 依然家里有事，gu
+进来给我们宣布了一个消息，那就是</p>
+<p>gjm 家里的事，就是去 bdf 某校区 1+3 面试了（</p>
+<p>于是 gjm 就光荣的去了 bdf（</p>
+<p>然后他就光荣的成为了 gu 嘴里的下一个反例（</p>
+<hr />
+<p>中午饭学校有盒饭，第一天的时候 gu
+给我们弄了两份饭于是我们就觉得饭是免费的（</p>
+<p>于是后来两天都去那里白嫖，每次就签个字走人</p>
+<p>然后第三天开始<del>食堂的就开始催债了</del></p>
+<p>然后我们<del>一气之下</del>就去华彩吃了</p>
+<p>第一天出去的时候正面撞上 gu，</p>
+<blockquote>
+<p>gu:“你们是去食堂吧”</p>
+<p>齐:“去华彩”</p>
+<p>gu:“嫌学校的太次了啊”</p>
+<p>(沉默)</p>
+<p>lpl:“换换口味”</p>
+</blockquote>
+<p>然后我们就天天换口味了，顺便长了个教训，不从4层走了，先下到3层再去做电梯</p>
+<p><del>后来发现 cy 和 ljh 也是这么干的</del></p>
+<p>后来中午太晒了就开始点外卖，压榨苦力 lpl 取外卖，顺便我们刷
+Railgun（</p>
+<p>点外卖点汉堡王或者西少爷之类的地方，<del>西少爷的酸辣粉是真好吃</del></p>
+<p>不过不得不说，疫情之后学校的饭越做越难吃了</p>
+<hr />
+<p>晚上和<del>反例同学</del>打CF <del>话说这不是 gu
+禁止做的事情吗</del></p>
+<p>然而日常 fst</p>
+<p>一共没打几场都 fst 三次了。。。</p>
+<p>然后发挥极不稳定。。。</p>
+<p>反正菜是原罪啦</p>
+<hr />
+<p>后来 cy 貌似也没题讲了，然后就带着我们随机跳题</p>
+<p>“诶这题挺简单啊，你们5分钟想一想”</p>
+<p>“我觉得洛谷评分一直偏高啊，这题（蓝题）应该也就是个黄题水平吧”</p>
+<p><del>并且叉掉了小行星那道题（虽然之前有人叉过了</del></p>
+<p>后来WC，省队集训之后就没讲过了...</p>
+<hr />
+<p>然后放暑假之前就知道初三学校要提前开学补课</p>
+<p><del>为啥不选赶快直升选完就没这事了</del></p>
+<p>大悲 #### day -4 之前 gu 让我们报 NOI 同步赛，结果 xyc 和 lpl
+因为某种原因没报（</p>
+<p>gu 进来遗憾的说</p>
+<p>“哎呀你知道吗，好不容易 CCF
+能有一次免费的比赛，之前这些比赛都是要收费的啊，好不容易这次免费了，要抓住这种机会啊”</p>
+<p>然后我跟他说我们刚好8.18开始线上补课</p>
+<p>然后 gu 让我请假</p>
+<p>神奇的是 nls lls zls 居然没有阻拦我</p>
+<p><del>想当年NOIP集训可是费了 gu
+九牛二虎之力才把我们几个从班里弄出来</del></p>
+<h4 id="day--3">day -3</h4>
+<p>暑假集训最后一天了（</p>
+<p>模拟赛依然是被吊打</p>
+<p>中午想着最后一天了就去了必胜客，然后撞见了（撞见了 cjr cfz ms
+等人）的 cy ljh 和学姐</p>
+<p>然后就相当于给 cy 和学姐壮行了？（雾</p>
+<p>然后听 cjr 给我们分享经验“只要做出D1T1，后面的瞎搞点分，就能到 Cu 和
+Ag 之间的位置”</p>
+<p>嗯...</p>
+<p>晚上本来说好和<del>反例同学</del>打CF，结果网死活上不去，<strong>这意味着什么呢？</strong></p>
+<p>然后刚好有点拉肚子...然后就没打</p>
+<h4 id="day--2">day -2</h4>
+<p>凌晨不知道几点醒了，头疼，然后是不是的肚子剧烈的疼痛</p>
+<p>然后强迫自己睡着，然后失败了</p>
+<p>感觉天快亮了才又睡着</p>
+<p>醒了之后头更痛了</p>
+<p>然后上午就发烧了 <del>莫非是必胜客出问题了</del></p>
+<p>然后喝了美林下午就好了（</p>
+<p><del>退烧药还是要美林啊</del></p>
+<p>晚上被老爸拉去看电影，挑了个什么“龙门飞甲”</p>
+<h4 id="day--1">day -1</h4>
+<p>写去年NOI D1T1，然后斜率优化挂了好几次。。。</p>
+<p>感觉会炸的很惨的样子。。。</p>
+<p>晚上打 Global Round 成功掉分</p>
+<p>看A的时候对自己说，A就这么毒瘤要不然不打了吧</p>
+<p>然后最后还是交了。。。</p>
+<p>然后A和C都因为数组开小了RE了一次。。。</p>
+<p><del>不知道是不是发烧把脑子烧坏了</del></p>
+<h4 id="day-0">day 0</h4>
+<p>上午望京医院半日游</p>
+<p>下午回来尝试写之前 cy 讲过的斗主地，经过WA了无数次之后总算过了</p>
+<p>看 dthkxy 的题还有一个莫队二离没写，感觉都0202年了，只要不是 lxl
+那种毒瘤出题人不会考莫队二离这种毒瘤东西吧，就想NOI之后写（flag）</p>
+<p>然后就开始颓废（</p>
+<h4 id="day-1">day 1</h4>
+<blockquote>
+<p>一个<strong>美食家</strong>，因为悲惨的<strong>命运</strong>，成为了<strong>时代的眼泪</strong>。</p>
+</blockquote>
+<p>刚过7点就醒了，rp--</p>
+<p>NOI同步赛成功继承了NOIO的光荣传统</p>
+<p>8:45终于进去了</p>
+<p>第一题看数据范围想到矩阵乘法</p>
+<p>但是这复杂度好像是 <span class="math inline">\(O(5^3n^3k\log
+T)\)</span> 的</p>
+<p>感觉复杂度不太对啊。。。</p>
+<p>就打了前 <span class="math inline">\(65pts\)</span>
+的分，然后莫名其妙忘了 <span class="math inline">\(k\leq 10\)</span>
+的点 <del>要打了估计还多能拿个十几二十分的</del></p>
+<p>大概10:30左右的时候过掉了样例</p>
+<p>看T2，发现前几个点 <span class="math inline">\(m\)</span>
+很小，想到了暴力枚举状态做个容斥</p>
+<p>然后套个树剖就好了，复杂度 <span
+class="math inline">\(O(2^mm\log^2n)\)</span>，大概能拿 <span
+class="math inline">\(32pts\)</span>
+吧，然后开始码，12：00左右过了，然后去吃了点东西回来看T3</p>
+<p>题面写的真毒瘤，有点像 Ynoi 的风格了（flag</p>
+<p>大概问的就是“区间有上下界顺序对个数”（</p>
+<p>然后看部分分，没有上下界的部分不就是区间顺序对个数吗</p>
+<p>只会莫队+BIT的 <span class="math inline">\(O(m\sqrt n\log n)\)</span>
+的做法</p>
+<p>等会这不是 Ynoi 模拟赛的题吗？</p>
+<p>那题做法好像是莫队二离吧。。。</p>
+<p>然后就只能打前面一部分的题</p>
+<p>大概能拿<span class="math inline">\(24pts\)</span></p>
+<p>然后就剩十分钟了就跑了</p>
+<p>期望得分：<span class="math inline">\(65+32+24=121\)</span></p>
+<p>实际得分：<span class="math inline">\(55+32+32=119\)</span></p>
+<p>T1莫名其妙挂了10，T2好像过了第二个点。。。<span
+class="math inline">\(O(n^2m)\)</span> 过 <span
+class="math inline">\(3000\)</span> khx</p>
+<p><del>T3真的是 lxl 出的</del></p>
+<p>其实T1要把那个暴力拆点的矩阵乘打了应该最后就有 Ag 了吧。。。</p>
+<p>要是打了 NOIO 知道那个套路应该就有 Ag 了吧。。。</p>
+<p>不过感觉 Day1 炸的还是不是特别惨。。。</p>
+<h4 id="day-2">day 2</h4>
+<p>成功 Day2 崩盘了</p>
+<p>早上被 nls 拎起来上早读，然后就特别困</p>
+<p>网站没有咕咕咕还不错</p>
+<p>读T1，NOI 考构造？</p>
+<p>感觉可以退火（</p>
+<p>然后不会</p>
+<p><span class="math inline">\(15pts\)</span> 暴力走人</p>
+<p>T2 “超”现实树？</p>
+<p><del>绢旗最爱附体</del></p>
+<p><del>设X1=绢旗最爱，X2=芙兰）（达</del></p>
+<p>阿哲，三页的题面</p>
+<p><del>众所周知，这道题在致敬[NOI2018]你的名字，所以题面要有三页（叶）</del></p>
+<p>没看懂，叉了一堆做法，最后 <span class="math inline">\(12pts\)</span>
+走人了。。。</p>
+<p>T3 输出-1总要有 <span class="math inline">\(5\)</span> 吧。。。</p>
+<p>回去想T1，叉了好几个贪心，无果</p>
+<p>然后就崩盘了，回去弄 whk 了</p>
+<p>期望得分：<span class="math inline">\(15+12+(0\sim 100)=27\sim
+127\)</span> <del>你可真敢估</del></p>
+<p>实际得分：<span class="math inline">\(15+12+5=32\)</span></p>
+<p>最后 <span class="math inline">\(151\)</span> 滚粗了</p>
+<p>发现某些错误的贪心可以骗一堆分。。。</p>
+<p>要T1打了或许又 Ag 了？（</p>
+<p>cy 好像Day1崩了。。。最后差 <span class="math inline">\(5pts\)</span>
+Au，太惨了。。。</p>
+<p>然后在网上找到了和 cy 一个屋的人的<a
+target="_blank" rel="noopener" href="https://blog.csdn.net/smarthehe/article/details/108064865">游记</a></p>
+<p><del>然后知道了 cy 在女生宿舍里电竞的故事</del></p>
+<hr />
+<p>感觉这次还是有失误的。。。</p>
+<p>包括策略上的和代码上的</p>
+<p>d1t1 挂了 10 分
+，然后当时感觉拆点矩阵乘不太好写，就说都打完再来写，然后就没时间了</p>
+<p>然后 Day2 的策略有点太保守了，一个认为是错的的方法就没写。。。</p>
+<p>其实之前打 CF 和 AT
+的时候就好几次自己猜到了结论因为不会证就没写。。。</p>
+<p>比预期的位置还是低了点。。。</p>
+<h4 id="day-3">day 3</h4>
+<p>美妙的 whk，再次开启（</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E6%97%A5%E5%B8%B8/" rel="tag"># 日常</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2020/04/29/NOI-Online-Round-2-%E6%B8%B8%E8%AE%B0/" rel="prev" title="NOI Online Round 2 游记">
+                  <i class="fa fa-angle-left"></i> NOI Online Round 2 游记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2020/11/08/CSP2020%E6%B8%B8%E8%AE%B0/" rel="next" title="CSP2020游记">
+                  CSP2020游记 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">devout</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

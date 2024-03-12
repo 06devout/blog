@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="1 \[\int_0^{\pi&#x2F;2}\frac{\sqrt[3]{\tan x}}{(\cos x+\sin x)^2}\mathrm dx\] \[ \begin{aligned} I &amp;&#x3D; \int_0^{\pi&#x2F;2}\frac{\sqrt[3]{\tan x}}{(1+\tan x)^2}\mathrm d\tan x \\ &amp;&#x3D;\int_0^{\infty}\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT Integration Bee 2023 - Final 题目解答">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/index.html">
+<meta property="og:site_name" content="devout">
+<meta property="og:description" content="1 \[\int_0^{\pi&#x2F;2}\frac{\sqrt[3]{\tan x}}{(\cos x+\sin x)^2}\mathrm dx\] \[ \begin{aligned} I &amp;&#x3D; \int_0^{\pi&#x2F;2}\frac{\sqrt[3]{\tan x}}{(1+\tan x)^2}\mathrm d\tan x \\ &amp;&#x3D;\int_0^{\infty}\">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-12T11:37:15.000Z">
+<meta property="article:modified_time" content="2023-12-13T09:36:21.361Z">
+<meta property="article:author" content="devout">
+<meta property="article:tag" content="微积分">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://06devout.github.io/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/","path":"2023/12/12/MIT-Integration-Bee-2023-Final-题目解答/","title":"MIT Integration Bee 2023 - Final 题目解答"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MIT Integration Bee 2023 - Final 题目解答 | devout</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">devout</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-number">5.</span> <span class="nav-text">5</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="devout"
+      src="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+  <p class="site-author-name" itemprop="name">devout</p>
+  <div class="site-description" itemprop="description">拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/97344" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;97344" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/devout-29-51" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;devout-29-51" rel="noopener me" target="_blank">Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/06devout" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;06devout" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2062593323@qq.com" title="E-Mail → mailto:2062593323@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackexchange.com/users/28797913/yumesaki-yuuki" title="Stackexchange → https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;28797913&#x2F;yumesaki-yuuki" rel="noopener me" target="_blank">Stackexchange</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YuukiYumesaki" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YuukiYumesaki" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/channel/UCgUPaHs4mkEX7qsx0C-ObFA" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;channel&#x2F;UCgUPaHs4mkEX7qsx0C-ObFA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/199139" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;199139" rel="noopener" target="_blank">devans</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MIT Integration Bee 2023 - Final 题目解答 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MIT Integration Bee 2023 - Final 题目解答
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-12 19:37:15" itemprop="dateCreated datePublished" datetime="2023-12-12T19:37:15+08:00">2023-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-13 17:36:21" itemprop="dateModified" datetime="2023-12-13T17:36:21+08:00">2023-12-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="section">1</h2>
+<p><span class="math display">\[\int_0^{\pi/2}\frac{\sqrt[3]{\tan
+x}}{(\cos x+\sin x)^2}\mathrm dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I &amp;= \int_0^{\pi/2}\frac{\sqrt[3]{\tan x}}{(1+\tan x)^2}\mathrm
+d\tan x \\
+&amp;=\int_0^{\infty}\frac{t^{1/3}}{(1+t)^2}\mathrm dt \\
+&amp;=\mathcal B(\frac{4}{3},\frac{2}{3}) \\
+&amp;=\Gamma(\frac{4}{3})\Gamma(\frac{2}{3}) \\
+&amp;=\frac{\Gamma(\dfrac{1}{3})\Gamma(\dfrac{2}{3})}{3} \\
+&amp;=\frac{2\pi}{3\sin\dfrac{\pi}{3}} \\
+&amp;= \frac{2\sqrt 3}{9}\pi
+\end{aligned}
+\]</span></p>
+<h2 id="section-1">2</h2>
+<p><span class="math display">\[\int_0^\pi \Big(\frac{\sin 2x\sin 3x\sin
+5x\sin 30x}{\sin x\sin 6x\sin 10x\sin 15x}\Big)^2\mathrm dx\]</span></p>
+<p>先用二倍角公式上下抵消一下，得到</p>
+<p><span class="math display">\[I=\int_0^\pi \Big(\frac{\cos x\cos
+15x}{\cos 3x\cos 5x}\Big)^2\mathrm dx\]</span></p>
+<p>然后用三倍角公式展开，得到</p>
+<p><span class="math display">\[I=\int_0^\pi\Big(\frac{4\cos^2
+5x-3}{4\cos^2 x-3}\Big)\mathrm dx=\int_0^\pi\Big(\frac{2\cos
+10x-1}{2\cos 2x-1}\Big)^2\mathrm dx\]</span></p>
+<p>然后做变换 <span class="math inline">\(t=2x\)</span>，得到</p>
+<p><span class="math display">\[I=\frac{1}{2}\int_0^{2\pi}
+\Big(\frac{2\cos 5x-1}{2\cos x-1})^2\mathrm dx\]</span></p>
+<p>对这个东西傅里叶展开，得到</p>
+<p><span class="math display">\[-1-2\cos x+2\cos 3x+2\cos
+4x\]</span></p>
+<p>这个的平方在 <span class="math inline">\(0\)</span> 到 <span
+class="math inline">\(2\pi\)</span> 积分，因为 <span
+class="math inline">\(\sin kx\)</span>
+是正交的，所以只需要考虑平方的积分，除了常数项是 <span
+class="math inline">\(2\pi\)</span> 其他的都是 <span
+class="math inline">\(\pi\)</span>，因此</p>
+<p><span
+class="math display">\[I=\frac{1}{2}(2\pi+4\pi+4\pi+4\pi)=7\pi\]</span></p>
+<h2 id="section-2">3</h2>
+<p><span
+class="math display">\[\int_{-1/2}^{1/2}\sqrt{x^2+1+\sqrt{x^4+x^2+1}}\mathrm
+dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I&amp;=2\int_0^{1/2}\sqrt{\Big(\sqrt{\frac{x^2+x+1}{2}}+\sqrt{\frac{x^2-x+1}{2}}\Big)^2}\mathrm
+dx \\
+&amp;= \sqrt 2\int_0^{1/2}\sqrt{x^2+x+1}\mathrm dx+\sqrt
+2\int_0^{1/2}\sqrt {x^2-x+1}\mathrm dx
+\end{aligned}\]</span></p>
+<p>后面就是基本的套公式了。</p>
+<p><span class="math display">\[I=\frac{\sqrt 7}{2\sqrt
+8}+\frac{3}{4\sqrt 2}\ln |\frac{\sqrt 7+2}{\sqrt 3}|\]</span></p>
+<h2 id="section-3">4</h2>
+<p>感觉做法挺一眼的，就是可能如果不让用计算器的话最后计算数值解会有些困难？</p>
+<h2 id="section-4">5</h2>
+<p><span class="math display">\[\int_0^1
+\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2\mathrm
+dx\]</span></p>
+<p>神仙题呜呜呜</p>
+<p>stackexchange 上抄的初等做法。</p>
+<p><span class="math display">\[I_a:=\int_0^a
+\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2\mathrm
+dx\]</span></p>
+<p>则对于 <span
+class="math inline">\(I_1\)</span>，我们有两种处理方法，一种是做变换
+<span class="math inline">\(t=x/2\)</span>，一种是做变换 <span
+class="math inline">\(t=x-1/2\)</span>，这两种都可以得到一个 <span
+class="math inline">\(I_1\)</span> 和 <span
+class="math inline">\(I_{1/2}\)</span> 的关系、</p>
+<p>首先做变换 <span class="math inline">\(t=x/2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I_1 &amp;= 2\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^{n+1}x\rfloor}{3^n}\Big)^2 \mathrm dx \\
+&amp;= 2\int_0^{1/2}\Big(3\sum_{n=\color{red}1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}\Big)^2 \mathrm dx \\
+&amp;= 18 I_1
+\end{aligned}
+\]</span></p>
+<p>注意红色的地方，本来是没有这一项的，但是因为 <span
+class="math inline">\(\lfloor 2x\rfloor\)</span> 对于 <span
+class="math inline">\(x\in (0,1/2)\)</span> 都是 <span
+class="math inline">\(0\)</span>，所以可以添上这一项。</p>
+<p>接下来做变换 <span class="math inline">\(t=x-1/2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I_1 &amp;= \int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}\Big)^2\mathrm dx+\int_{1/2}^1
+\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2 \mathrm dx
+\\
+&amp;= I_{1/2}+\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}-\sum_{n=1}^{\infty}\frac{2^{n-1}}{3^n}\Big)^2 \mathrm
+dx \\
+&amp;= I_{1/2}+\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
+2^nx\rfloor}{3^n}-1\Big)^2\mathrm dx \\
+&amp;= 2I_{1/2}+2\int_0^{1/2}\sum_{n=1}^\infty \frac{\lfloor 2^n
+x\rfloor}{3^n}\mathrm dx+\frac{1}{2}
+\end{aligned}
+\]</span></p>
+<p>这个一次项的积分是好做的。</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_0^{1/2}\frac{\lfloor 2^n x\rfloor}{3^n}\mathrm dx &amp;=
+\frac{1}{6^n}\int_0^{2^{n-1}}\lfloor x \rfloor \mathrm dx \\
+&amp;= \frac{1}{6^n}\frac{1}{2}2^{n-1}(2^{n-1}-1) \\
+&amp;= \frac{2^{n-1}-1}{4\times 3^n}
+\end{aligned}
+\]</span></p>
+<p>等比数列求和得到</p>
+<p><span class="math display">\[\int_0^{1/2}\sum_{n=1}^\infty
+\frac{\lfloor 2^n x\rfloor}{3^n}\mathrm dx=\frac{1}{8}\]</span></p>
+<p>带入 <span class="math inline">\(I_{1/2}=I_1/18\)</span>，有</p>
+<p><span
+class="math display">\[I_1=\frac{I_1}{9}+\frac{3}{4}\]</span></p>
+<p>整理即得</p>
+<p><span class="math display">\[I_1=\frac{27}{32}\]</span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/11/%E3%80%90%E9%B2%9C%E8%8A%B1-5%E3%80%91Aizu-Glimpse-%E6%96%B0%E9%9B%AA/" rel="prev" title="【鲜花#5】Aizu Glimpse - 新雪">
+                  <i class="fa fa-angle-left"></i> 【鲜花#5】Aizu Glimpse - 新雪
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2023/12/18/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/" rel="next" title="Steins 傅里叶分析 第二章部分习题解答">
+                  Steins 傅里叶分析 第二章部分习题解答 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">devout</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="Description 对于 \(A,B\in \mathbb F_2^n\)，定义 \(A\cdot B&#x3D;\sum_{i&#x3D;1}^n a_ib_i\)，并定义 \(T_n&#x3D;\{A\in\mathbb F_2^n|A\cdot A&#x3D;3\}\) 证明：对于互不相同的 \(A_1,A_2,\cdots,A_{n+1}\in T_n\), \(\exists 1\leq i&lt;j\leq n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maths is Hard I">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/index.html">
+<meta property="og:site_name" content="devout">
+<meta property="og:description" content="Description 对于 \(A,B\in \mathbb F_2^n\)，定义 \(A\cdot B&#x3D;\sum_{i&#x3D;1}^n a_ib_i\)，并定义 \(T_n&#x3D;\{A\in\mathbb F_2^n|A\cdot A&#x3D;3\}\) 证明：对于互不相同的 \(A_1,A_2,\cdots,A_{n+1}\in T_n\), \(\exists 1\leq i&lt;j\leq n">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-06T10:45:22.000Z">
+<meta property="article:modified_time" content="2023-11-06T11:45:05.631Z">
+<meta property="article:author" content="devout">
+<meta property="article:tag" content="初等数学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/","path":"2023/11/06/Maths-is-Hard-I/","title":"Maths is Hard I"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Maths is Hard I | devout</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">devout</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="devout"
+      src="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+  <p class="site-author-name" itemprop="name">devout</p>
+  <div class="site-description" itemprop="description">拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/97344" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;97344" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/devout-29-51" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;devout-29-51" rel="noopener me" target="_blank">Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/06devout" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;06devout" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2062593323@qq.com" title="E-Mail → mailto:2062593323@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackexchange.com/users/28797913/yumesaki-yuuki" title="Stackexchange → https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;28797913&#x2F;yumesaki-yuuki" rel="noopener me" target="_blank">Stackexchange</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YuukiYumesaki" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YuukiYumesaki" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/channel/UCgUPaHs4mkEX7qsx0C-ObFA" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;channel&#x2F;UCgUPaHs4mkEX7qsx0C-ObFA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/199139" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;199139" rel="noopener" target="_blank">devans</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/06/Maths-is-Hard-I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Maths is Hard I | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Maths is Hard I
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-11-06 18:45:22 / Modified: 19:45:05" itemprop="dateCreated datePublished" datetime="2023-11-06T18:45:22+08:00">2023-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Maths-Is-Hard-Series/" itemprop="url" rel="index"><span itemprop="name">Maths Is Hard Series</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="description">Description</h2>
+<p>对于 <span class="math inline">\(A,B\in \mathbb F_2^n\)</span>，定义
+<span class="math inline">\(A\cdot B=\sum_{i=1}^n
+a_ib_i\)</span>，并定义 <span class="math inline">\(T_n=\{A\in\mathbb
+F_2^n|A\cdot A=3\}\)</span></p>
+<p>证明：对于互不相同的 <span
+class="math inline">\(A_1,A_2,\cdots,A_{n+1}\in T_n\)</span>, <span
+class="math inline">\(\exists 1\leq i&lt;j\leq n+1\)</span> 使得 <span
+class="math inline">\(A_i\cdots A_j=1\)</span>.</p>
+<h2 id="solution">Solution</h2>
+<p>用 <span class="math inline">\(A_k(i)\)</span> 表示 <span
+class="math inline">\(A_k\)</span> 的 <span
+class="math inline">\(x_i\)</span> 的值。</p>
+<p>设 <span
+class="math inline">\(B_k=\{i=1,2,\cdots,n|A_k(i)=1\}\)</span>，即 <span
+class="math inline">\(A_k\)</span> 中每个元素的值为 1 的下标位置。</p>
+<p>由抽屉原理，<span class="math inline">\(n+1\)</span> 个 <span
+class="math inline">\(A_k\)</span> 代表 <span
+class="math inline">\(n+1\)</span>
+个颜色的小球，每个颜色有三个小球，放入 <span
+class="math inline">\(A_k(i)=1\)</span>
+的三个位置（抽屉）中，则存在一个抽屉中有至少两个不同颜色的小球，即 <span
+class="math inline">\(\exists 1\leq i&lt;j\leq n+1\)</span> 使得 <span
+class="math inline">\(A_i\cdot A_j&gt;0\)</span>。</p>
+<p>因为 <span class="math inline">\(A_i\cdot A_j\in
+\{0,1,2\}\)</span>，</p>
+<ul>
+<li>若 <span class="math inline">\(A_i\cdot
+A_j=1\)</span>，则命题成立.</li>
+<li>否则 <span class="math inline">\(\forall A_i\cdot A_j\neq 0,A_i\cdot
+A_j=2\)</span>.</li>
+</ul>
+<p>假设 <span class="math inline">\(\forall A_i\cdot A_j\neq 0,A_i\cdot
+A_j=2(*)\)</span>。</p>
+<p><strong>引理1：</strong> 对于互不相同的 <span
+class="math inline">\(i,j,k\)</span>，若 <span
+class="math inline">\(A_i\cdot A_j=A_j\cdot A_k=2\)</span>，则 <span
+class="math inline">\(A_i\cdot A_k=2\)</span>。</p>
+<p><strong>证明：</strong> 不妨设 <span
+class="math inline">\(A_j(1)=A_j(2)=A_j(3)=1,A_i(1)=A_i(2)=1\)</span>，因为
+<span class="math inline">\(A_j\cdot A_k=2\)</span>，所以 <span
+class="math inline">\(A_k(1),A_k(2)\)</span> 中至少有一个为 <span
+class="math inline">\(1\)</span>，故 <span
+class="math inline">\(A_i\cdot A_k\neq 0,A_i\cdot A_k=2\)</span>. <span
+class="math inline">\(\Box\)</span></p>
+<p>即我们可以把 <span class="math inline">\(A_i\)</span> 分成若干组
+<span
+class="math inline">\(E_1,E_2,\cdots,E_m\)</span>，每一组内的任意两个元素的点乘恰好为
+2，而不同组的元素的点乘为 0.</p>
+<p>形式化的：设 <span
+class="math inline">\(C_k=\{j=1,2,\cdots,n+1|A_j\cdot
+A_k=2\}\)</span>，则 <span class="math inline">\(\forall j\in
+C_k,C_j=C_k\)</span>，而 <span
+class="math inline">\(\{C_k\}_{k=1}^n\)</span> 中所有不同的元素构成
+<span class="math inline">\(\{E_k\}_{k=1}^m\)</span>。</p>
+<p>设 <span class="math inline">\(D_j=\cup_{i\in E_j}B_i\)</span>，即
+<span class="math inline">\(E_j\)</span> 中某个元素在该位上为 1
+的下标集合（<span class="math inline">\(E_j\)</span>
+覆盖的下标位置）</p>
+<p><strong>引理2：</strong> <span class="math inline">\(\forall i\neq
+j,D_i\cap D_j=\emptyset\)</span>，即 <span
+class="math inline">\(E_i\)</span> 和 <span
+class="math inline">\(E_j\)</span> 覆盖的下标无交集。</p>
+<p><strong>证明：</strong> 反证法：若 <span
+class="math inline">\(D_i\cap D_j\neq \emptyset,\)</span> 则存在 <span
+class="math inline">\(k\in E_i,\ell\in E_j\)</span> 使得 <span
+class="math inline">\(B_k\cap B_\ell\neq \emptyset\)</span>，即 <span
+class="math inline">\(A_k\cdot A_\ell \neq 0\)</span>，则 <span
+class="math inline">\(A_k\cdot A_\ell=2\)</span>，与 <span
+class="math inline">\(k,\ell\)</span> 在不同的 <span
+class="math inline">\(E_i,E_j\)</span> 中矛盾。 <span
+class="math inline">\(\Box\)</span></p>
+<p><strong>引理3：</strong> <span class="math inline">\(|D_k|\geq
+|E_k|\)</span>，即大小为 <span class="math inline">\(\sigma\)</span>
+的一个集合 <span class="math inline">\(E_k\)</span> 至少覆盖了 <span
+class="math inline">\(\sigma\)</span> 个位置。</p>
+<p><strong>证明：</strong></p>
+<p>对于 <span class="math inline">\(\sigma\leq
+2\)</span>，不难证明。</p>
+<p>设 <span
+class="math inline">\(E_k=\{e_1,e_2,\cdots,e_\sigma\}\)</span>,</p>
+<p>不妨设 <span class="math inline">\(B_{e_1}=\{1,2,3\}\)</span>，即
+<span class="math inline">\(A_{e_1}=1,1,1,0,\cdots\)</span>。</p>
+<p>因为 <span class="math inline">\(A_{e_2}\cdot
+A_{e_1}=2\)</span>，不妨设 <span
+class="math inline">\(B_{e_2}=\{1,2,4\}\)</span>。</p>
+<p>则对于 <span class="math inline">\(\sigma=3,4\)</span>，<span
+class="math inline">\(\{1,2,3,4\}\subseteq D_k\)</span>，<span
+class="math inline">\(|D_k|\geq \sigma\)</span>。</p>
+<p>对于 <span class="math inline">\(\sigma\geq 5\)</span>，</p>
+<p>若 <span class="math inline">\(B_{e_3}\cap B_{e_1}\neq
+\{1,2\}\)</span>，则不妨设 <span
+class="math inline">\(B_{e_3}=\{1,3,4\}\)</span>。</p>
+<p><span class="math inline">\(B_{e_4}\)</span> 只能等于 <span
+class="math inline">\(\{2,3,4\}\)</span>。（类似第二问证明）</p>
+<p>此时不存在合法的 <span class="math inline">\(B_{e_5}\)</span>。</p>
+<p>故 <span class="math inline">\(B_{e_1}\cap B_{e_3}=
+\{1,2\}\)</span>，不妨设 <span
+class="math inline">\(B_{e_3}=\{1,2,4\}\)</span>。</p>
+<p>则 <span class="math inline">\(B_{e_4}\cap
+B_{e_1}=\{1,2\}\)</span>，否则无法同时满足 <span
+class="math inline">\(A_{e_2}\cdot A_{e_4}=A_{e_3}\cdot
+A_{e_4}=2\)</span>，则不妨设 <span
+class="math inline">\(B_{e_4}=\{1,2,5\}\)</span>。</p>
+<p>以此类推，<span class="math inline">\(B_{e_k}\)</span>
+唯一确定，不难发现此时 <span
+class="math inline">\(|D_k|=\sigma+1\)</span>，引理3即证。 <span
+class="math inline">\(\Box\)</span></p>
+<p>应用引理3，对于所有的 <span class="math inline">\(E_k\)</span>
+求和，得到</p>
+<p><span class="math display">\[n=\sum_{k=1}^m |D_k|\geq \sum_{k=1}^m
+|E_k|=n+1\]</span></p>
+<p>的矛盾，即假设 <span class="math inline">\((*)\)</span>
+不成立，原命题成立。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="tag"># 初等数学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/11/04/Dirichlet%E9%97%AE%E9%A2%98/" rel="prev" title="【M#1】 Dirichlet问题">
+                  <i class="fa fa-angle-left"></i> 【M#1】 Dirichlet问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2023/11/06/%E3%80%90%E9%B2%9C%E8%8A%B1-2%E3%80%91%E8%AD%A6%E9%86%92%E4%B9%8B%E9%A3%8E/" rel="next" title="【鲜花#2】警醒之风">
+                  【鲜花#2】警醒之风 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">devout</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

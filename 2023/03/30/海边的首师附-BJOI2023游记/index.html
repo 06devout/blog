@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="终于，故事要结尾了呢 生涯回忆是会写的。 就像海边的曼彻斯特不在海边一样，海边的首师附也不在海边。 前言 我2021年末到2022年初的竞赛生涯是没法要的，NOIP2021 T2高估了样例强度惨挂成20分，WC2022 T2调试输出没删惨遭打铁，BJOI2022无力回天（好像还把前面几场攒下来的rp给用光了），最后还能坚持下去的理由可能是......没有。或者说，我只是不想回去上whk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="海边的首师附: BJOI2023游记">
+<meta property="og:url" content="https://06devout.github.io/blog/2023/03/30/%E6%B5%B7%E8%BE%B9%E7%9A%84%E9%A6%96%E5%B8%88%E9%99%84-BJOI2023%E6%B8%B8%E8%AE%B0/index.html">
+<meta property="og:site_name" content="devout">
+<meta property="og:description" content="终于，故事要结尾了呢 生涯回忆是会写的。 就像海边的曼彻斯特不在海边一样，海边的首师附也不在海边。 前言 我2021年末到2022年初的竞赛生涯是没法要的，NOIP2021 T2高估了样例强度惨挂成20分，WC2022 T2调试输出没删惨遭打铁，BJOI2022无力回天（好像还把前面几场攒下来的rp给用光了），最后还能坚持下去的理由可能是......没有。或者说，我只是不想回去上whk">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-30T12:58:31.000Z">
+<meta property="article:modified_time" content="2023-11-02T13:52:07.094Z">
+<meta property="article:author" content="devout">
+<meta property="article:tag" content="日常">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://06devout.github.io/blog/2023/03/30/%E6%B5%B7%E8%BE%B9%E7%9A%84%E9%A6%96%E5%B8%88%E9%99%84-BJOI2023%E6%B8%B8%E8%AE%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2023/03/30/%E6%B5%B7%E8%BE%B9%E7%9A%84%E9%A6%96%E5%B8%88%E9%99%84-BJOI2023%E6%B8%B8%E8%AE%B0/","path":"2023/03/30/海边的首师附-BJOI2023游记/","title":"海边的首师附: BJOI2023游记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>海边的首师附: BJOI2023游记 | devout</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">devout</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">水晶宫里奏霓裳，准拟岳阳楼上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E4%BA%8E%E6%95%85%E4%BA%8B%E8%A6%81%E7%BB%93%E5%B0%BE%E4%BA%86%E5%91%A2"><span class="nav-number">1.</span> <span class="nav-text">终于，故事要结尾了呢</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-02023.3.31"><span class="nav-number">1.2.</span> <span class="nav-text">Day 0(2023.3.31)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-12023.4.1"><span class="nav-number">1.3.</span> <span class="nav-text">Day 1(2023.4.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-22023.4.2"><span class="nav-number">1.4.</span> <span class="nav-text">Day 2(2023.4.2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-32023.4.3"><span class="nav-number">1.5.</span> <span class="nav-text">Day 3(2023.4.3)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="devout"
+      src="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+  <p class="site-author-name" itemprop="name">devout</p>
+  <div class="site-description" itemprop="description">拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/97344" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;97344" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/devout-29-51" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;devout-29-51" rel="noopener me" target="_blank">Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/06devout" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;06devout" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2062593323@qq.com" title="E-Mail → mailto:2062593323@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackexchange.com/users/28797913/yumesaki-yuuki" title="Stackexchange → https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;28797913&#x2F;yumesaki-yuuki" rel="noopener me" target="_blank">Stackexchange</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YuukiYumesaki" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YuukiYumesaki" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/channel/UCgUPaHs4mkEX7qsx0C-ObFA" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;channel&#x2F;UCgUPaHs4mkEX7qsx0C-ObFA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/199139" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;199139" rel="noopener" target="_blank">devans</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/03/30/%E6%B5%B7%E8%BE%B9%E7%9A%84%E9%A6%96%E5%B8%88%E9%99%84-BJOI2023%E6%B8%B8%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="海边的首师附: BJOI2023游记 | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          海边的首师附: BJOI2023游记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-30 20:58:31" itemprop="dateCreated datePublished" datetime="2023-03-30T20:58:31+08:00">2023-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-02 21:52:07" itemprop="dateModified" datetime="2023-11-02T21:52:07+08:00">2023-11-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="终于故事要结尾了呢">终于，故事要结尾了呢</h2>
+<p>生涯回忆是会写的。</p>
+<p>就像海边的曼彻斯特不在海边一样，海边的首师附也不在海边。</p>
+<h3 id="前言">前言</h3>
+<p>我2021年末到2022年初的竞赛生涯是没法要的，NOIP2021
+T2高估了样例强度惨挂成20分，WC2022
+T2调试输出没删惨遭打铁，BJOI2022无力回天（好像还把前面几场攒下来的rp给用光了），最后还能坚持下去的理由可能是......没有。或者说，我只是不想回去上whk。</p>
+<p>而初三的 Dark_night_qwq 已经在 NOI2022 中怒砍 400 分了。</p>
+<p>于是我问自己：“<strong>差距在哪里？</strong>”</p>
+<p>但是直到现在我已经知道了，人不是一下子退役的，人是一点一点退役的。</p>
+<p>就像 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/93382">gjm2005</a>，就像
+<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/119986">china_xyc</a>，就像 <a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/129737">Oldman_and_Sea</a>，就像 <a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/97344">devout</a>。</p>
+<p>即使 BJOI2022 的最后五分钟过题，即使 NOI2022 拿到了
+Ag，在比赛的时间里每一分每一秒都是那样的煎熬。</p>
+<p>或许不能说是煎熬，毕竟在 NOI2022 Day2
+中的最后一个半小时里，我只是坐在电脑前，数着每一分每一秒的流逝，在走马灯中迎来了终结。</p>
+<p>我的 OI 生涯本应在 NOIP2021
+结束，但是因为种种机缘巧合，我得以苟延残喘到 NOI2022，但 NOI
+之后的结局，也早已注定。</p>
+<p>好像是第一次在比赛之前写游记，之前大概想着炸了之后有些丢人，但是这次或许结局已经无所谓了。</p>
+<p>或许另一个结局才会让我更加痛苦。</p>
+<p>因为 OI 是一座围城，城外的人想进去，城里的人想出来。</p>
+<h3 id="day-02023.3.31">Day 0(2023.3.31)</h3>
+<p>上午美术社+孤独摇滚，中午 generals，下午 gartic。</p>
+<p>放学之前一如既往的写了退役感言，但是这次大概是真要退役了。</p>
+<h3 id="day-12023.4.1">Day 1(2023.4.1)</h3>
+<p>昨天做了一个很有寓意的梦。</p>
+<p>我、devans、matengsdu、cszhpdx 在一个高速服务区偶遇了。</p>
+<p>和子达哥在一个考场。</p>
+<p>今年继承去年优良传统带了士力架。</p>
+<p>但是士力架上写的是“篮板高手”，而不是“全队的希望”。</p>
+<p>第一眼看 T1 发现是 sb
+题，于是直接写了个差分，十分钟过了个大样例。</p>
+<p>然后看 T2，感觉非常不可做，一眼下去只会 25，于是决定肝 T3</p>
+<p>T3开始先想了个48，然后发现编出来一个没有操作2的。</p>
+<p>发现套个线段树分治就对了，但是 3 个
+log，以为过不了，于是就没有写。</p>
+<p>不过就算写了估计也写不完。</p>
+<p>然后先写了个 B 的 25 分，然后开始肝 C。</p>
+<p>然后怒码 7K 12：40 左右调过了样例。</p>
+<p>估分: <span class="math inline">\(100+25+62=187\)</span>。</p>
+<h3 id="day-22023.4.2">Day 2(2023.4.2)</h3>
+<p>今天座位似乎是昨天的镜像。</p>
+<p>第一眼 A 不会做，于是搞 B。</p>
+<p>B 大概搞出来一个 ABC 性质，但是 B C 感觉不太好写，于是先写了个 <span
+class="math inline">\(20+A\)</span>，然后写了个 C 题 10 分暴力，回来搞
+T1。</p>
+<p>发现 T1 可以直接搜，于是开始写。</p>
+<p>于是写了一整场。</p>
+<p>直到 12:50 我还相信去年的奇迹会发生。</p>
+<p><span class="math inline">\(?+28+10\)</span></p>
+<p>出考场听小马哥说我 d1t1 挂了。</p>
+<p>下午和子达哥看铃芽小姐来锁门。</p>
+<h3 id="day-32023.4.3">Day 3(2023.4.3)</h3>
+<p>结束了。</p>
+<p>但结束也好。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E6%97%A5%E5%B8%B8/" rel="tag"># 日常</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2022/08/27/NOI2022%E6%B8%B8%E8%AE%B0/" rel="prev" title="NOI2022游记">
+                  <i class="fa fa-angle-left"></i> NOI2022游记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2023/06/25/%E9%AB%98%E8%80%832023%E6%B8%B8%E8%AE%B0/" rel="next" title="高考2023游记">
+                  高考2023游记 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">devout</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
