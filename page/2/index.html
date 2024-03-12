@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,117 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/28/%E3%80%90Ynoi-33%E3%80%91%E3%80%90Ynoi2014%E3%80%91%E4%B8%8D%E5%BD%92%E4%B9%8B%E4%BA%BA%E4%B8%8E%E6%9C%9B%E7%9C%BC%E6%AC%B2%E7%A9%BF%E7%9A%84%E4%BA%BA%E4%BB%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/28/%E3%80%90Ynoi-33%E3%80%91%E3%80%90Ynoi2014%E3%80%91%E4%B8%8D%E5%BD%92%E4%B9%8B%E4%BA%BA%E4%B8%8E%E6%9C%9B%E7%9C%BC%E6%AC%B2%E7%A9%BF%E7%9A%84%E4%BA%BA%E4%BB%AC/" class="post-title-link" itemprop="url">【Ynoi#33】【Ynoi2014】不归之人与望眼欲穿的人们</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-28 21:45:46" itemprop="dateCreated datePublished" datetime="2023-12-28T21:45:46+08:00">2023-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-30 18:26:23" itemprop="dateModified" datetime="2023-12-30T18:26:23+08:00">2023-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Ynoi/" itemprop="url" rel="index"><span itemprop="name">Ynoi</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>首先有一个经典的结论，就是对于固定的右端点，or 和的不同的值最多只有
+<span class="math inline">\(O(\log a)\)</span> 个。</p>
+<p>考虑分块，对于每个整块，维护前缀和后缀的所有不同的 or 和。</p>
+<p>对于跨越块的区间，每次查询从左向右扫，记录前 <span
+class="math inline">\(k-1\)</span> 个块的后缀不同 or
+和，然后用这个后缀和第 <span class="math inline">\(k\)</span>
+个块的前缀做一个双指针计算答案，然后将前 <span
+class="math inline">\(k-1\)</span> 个块的后缀 or 上第 <span
+class="math inline">\(k\)</span> 个块，再将第 <span
+class="math inline">\(k\)</span> 个块内的后缀加入更新去重即可。</p>
+<p>对于块内的部分，我们用 <span class="math inline">\(f(len)\)</span>
+表示长度 <span class="math inline">\(\leq len\)</span> 的区间中 or
+和最大的是多少，每次询问二分即可。</p>
+<p>对于修改，我们暴力重构一个块即可。</p>
+<p>注意在块内 <span class="math inline">\(f(len)\)</span>
+的部分，对于每个右端点计算 <span class="math inline">\(O(\log
+a)\)</span> 个左区间的时候，实际上就是对于每一位求 <span
+class="math inline">\(\leq i\)</span> 的第一个
+1，这部分如果额外排序的话就会损失一个 <span class="math inline">\(\log
+\log
+a\)</span>。所以我们从左往右推的时候用队列维护一下这个顺序就可以了，因为除了
+<span class="math inline">\(a_i\)</span> 是 <span
+class="math inline">\(1\)</span> 的那些为其他位变成 <span
+class="math inline">\(1\)</span> 的顺序和 <span
+class="math inline">\(i-1\)</span> 是一样的。</p>
+<p>复杂度 <span class="math inline">\(O(n\sqrt n\log a)\)</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> Rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> _Rep(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> RepG(i,u) for(int i=head[u];~i;i=e[i].next)</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">50005</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> M=<span class="number">135</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> db double</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> uint unsigned int</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmax(a,b) a=max(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmin(a,b) a=min(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> mkp make_pair</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PIL pair<span class="string">&lt;int,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLI pair<span class="string">&lt;ll,int&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="type">int</span> f=<span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> L[N],R[N],pos[N],sq=<span class="number">400</span>,bl;</span><br><span class="line">PII res[<span class="number">66</span>];</span><br><span class="line"><span class="type">int</span> len;</span><br><span class="line"><span class="type">int</span> orsum[M];</span><br><span class="line"><span class="type">int</span> mx[M][<span class="number">405</span>];</span><br><span class="line"><span class="type">int</span> lenp[M],lens[M];</span><br><span class="line">PII pre[M][<span class="number">33</span>],suf[M][<span class="number">33</span>];</span><br><span class="line">PII myq[<span class="number">23333</span>],cach[<span class="number">66</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rebuild</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(mx[x],<span class="number">0</span>,<span class="built_in">sizeof</span>(mx[x]));</span><br><span class="line">    lenp[x]=lens[x]=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> tmp=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,L[x],R[x]) <span class="keyword">if</span>((tmp|a[i])!=pre[x][lenp[x]].first)tmp|=a[i],pre[x][++lenp[x]]=<span class="built_in">mkp</span>(tmp,i);</span><br><span class="line">    tmp=<span class="number">0</span>;</span><br><span class="line">    _Rep(i,R[x],L[x])<span class="keyword">if</span>((tmp|a[i])!=suf[x][lens[x]].first)tmp|=a[i],suf[x][++lens[x]]=<span class="built_in">mkp</span>(tmp,i);</span><br><span class="line">    <span class="type">int</span> head=<span class="number">1</span>,tail=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,L[x],R[x])&#123;</span><br><span class="line">        <span class="type">int</span> lst=tail;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=a[i];j;j-=j&amp;-j)myq[++tail]=<span class="built_in">mkp</span>(__builtin_ctz(j),i);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=head;j&lt;=lst;j++)<span class="keyword">if</span>(!(a[i]&gt;&gt;myq[j].first&amp;<span class="number">1</span>))myq[++tail]=myq[j];</span><br><span class="line">        head=lst+<span class="number">1</span>;</span><br><span class="line">        tmp=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">Rep</span>(j,head,tail)&#123;</span><br><span class="line">            tmp|=a[myq[j].second];</span><br><span class="line">            <span class="built_in">chkmax</span>(mx[x][i-myq[j].second+<span class="number">1</span>],tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">2</span>,R[x]-L[x]+<span class="number">1</span>)<span class="built_in">chkmax</span>(mx[x][i],mx[x][i<span class="number">-1</span>]);</span><br><span class="line">    orsum[x]=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,L[x],R[x])orsum[x]|=a[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">maintain</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">2</span>,len)<span class="keyword">if</span>(res[i].first==res[i<span class="number">-1</span>].first)res[i].second=res[i<span class="number">-1</span>].second;</span><br><span class="line">    len=<span class="built_in">unique</span>(res+<span class="number">1</span>,res+len+<span class="number">1</span>)-res<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>,it=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=len&amp;&amp;j&lt;=lens[x])</span><br><span class="line">        <span class="keyword">if</span>(res[i].first&lt;suf[x][j].first)cach[it++]=res[i++];</span><br><span class="line">        <span class="keyword">else</span> cach[it++]=suf[x][j++];</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=len)cach[it++]=res[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=lens[x])cach[it++]=suf[x][j++];</span><br><span class="line">    it--;</span><br><span class="line">    len=it;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,len)res[i]=cach[i];</span><br><span class="line">    <span class="built_in">maintain</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">calc</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">1e9</span>+<span class="number">114514</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,lenp[x])</span><br><span class="line">        <span class="keyword">while</span>(len&amp;&amp;(res[len].first|pre[x][i].first)&gt;=k)</span><br><span class="line">            <span class="built_in">chkmin</span>(ans,pre[x][i].second-res[len].second+<span class="number">1</span>),len--;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta"># <span class="keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;testdata.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="comment">//freopen(&quot;test1.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="meta"># <span class="keyword">endif</span></span></span><br><span class="line">    <span class="built_in">read</span>(n),<span class="built_in">read</span>(m);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)<span class="built_in">read</span>(a[i]);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)pos[i]=(i<span class="number">-1</span>)/sq+<span class="number">1</span>;</span><br><span class="line">    bl=pos[n];</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,bl)L[i]=(i<span class="number">-1</span>)*sq+<span class="number">1</span>,R[i]=i*sq;</span><br><span class="line">    R[bl]=n;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,bl)<span class="built_in">rebuild</span>(i);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">        <span class="type">int</span> opt,x,y;</span><br><span class="line">        <span class="built_in">read</span>(opt),<span class="built_in">read</span>(x);</span><br><span class="line">        <span class="keyword">if</span>(opt==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">read</span>(y);</span><br><span class="line">            a[x]=y;</span><br><span class="line">            <span class="built_in">rebuild</span>(pos[x]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="type">int</span> ans=<span class="number">1e9</span>+<span class="number">114514</span>;</span><br><span class="line">            <span class="built_in">Rep</span>(i,<span class="number">1</span>,bl)<span class="keyword">if</span>(orsum[i]&gt;=x)<span class="built_in">chkmin</span>(ans,(<span class="type">int</span>)(<span class="built_in">lower_bound</span>(mx[i]+<span class="number">1</span>,mx[i]+R[i]-L[i]+<span class="number">2</span>,x)-mx[i]));</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="built_in">merge</span>(<span class="number">1</span>);</span><br><span class="line">            <span class="built_in">Rep</span>(i,<span class="number">2</span>,bl)&#123;</span><br><span class="line">                <span class="built_in">chkmin</span>(ans,<span class="built_in">calc</span>(i,x));</span><br><span class="line">                <span class="built_in">Rep</span>(j,<span class="number">1</span>,len)res[j].first|=orsum[i];</span><br><span class="line">                <span class="built_in">maintain</span>();</span><br><span class="line">                <span class="built_in">merge</span>(i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(ans&gt;<span class="number">1e9</span>)<span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1531,210 +1642,6 @@ class="math inline">\(u\)</span> 的表达形式，所以利用定理，</p>
 <p><span
 class="math display">\[I=\frac{1}{2}\int_{-\infty}^{+\infty}\operatorname{sech}^2x\mathrm
 dx=\tanh x\Big |_{-\infty}^{+\infty}=1\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/25/MIT-Integration-Bee-2023-Regular-Season-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">MIT Integration Bee 2023 - Regular Season 部分题目解答</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-25 17:31:32" itemprop="dateCreated datePublished" datetime="2023-11-25T17:31:32+08:00">2023-11-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-28 21:35:11" itemprop="dateModified" datetime="2023-11-28T21:35:11+08:00">2023-11-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一些有意思的题的解答，题目见 <a
-target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_regular_season.pdf">这里</a></p>
-<h2 id="section">5.</h2>
-<p><span class="math display">\[\int_{0}^{\pi/2}x\cot x\mathrm
-dx\]</span></p>
-<p><strong>法1：</strong></p>
-<p><span class="math display">\[
-\begin{aligned}
-\int_{0}^{\pi/2}x\cot x\mathrm dx &amp;= \int_{0}^{\pi/2}x\mathrm
-d\ln\sin x \\
-&amp;= x\ln\sin x\Big |_0^{\pi/2}-\int_0^{\pi/2} \ln \sin x \mathrm dx
-\\
-&amp;= -\int_0^{\pi/2} \ln \sin x \mathrm dx
-\end{aligned}
-\]</span></p>
-<p><span class="math inline">\(\ln\sin x\)</span> 在 <span
-class="math inline">\([0,\pi/2]\)</span> 上积分是经典的问题。</p>
-<p>设</p>
-<p><span class="math display">\[I=\int_0^{\pi/2} \ln \sin x \mathrm
-dx\]</span></p>
-<p>则</p>
-<p><span class="math display">\[\int_0^{\pi/2} \ln \cos x \mathrm
-dx=I\]</span></p>
-<p><span class="math display">\[\int_0^{\pi/2} \ln \sin 2x \mathrm
-dx=I\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I&amp;=\int_0^{\pi/2} \ln \sin 2x \mathrm dx \\
-&amp;=\int_0^{\pi/2} (\ln 2+\ln\sin x+\ln\cos x) \mathrm dx \\
-&amp;= \frac{\pi}{2}\ln 2+2I
-\end{aligned}
-\]</span></p>
-<p>整理有 <span class="math inline">\(I=-\dfrac{\pi}{2}\ln
-2\)</span>，故</p>
-<p><span class="math display">\[\int_{0}^{\pi/2}x\cot x\mathrm
-dx=\frac{\pi}{2}\ln 2\]</span></p>
-<p><strong>法2:</strong></p>
-<p>运用 Feynman 方法，设</p>
-<p><span class="math display">\[I(a)=\int_0^{\pi/2}\frac{\arctan(a\tan
-x)}{\tan x}\mathrm dx\]</span></p>
-<p>所求即 <span class="math inline">\(I(1)\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I^\prime(a)&amp;=\int_0^{\pi/2} \frac{1}{1+a^2\tan^2 x}\mathrm dx \\
-&amp;=\int_0^{\pi/2}\frac{1}{(1+a^2\tan^2 x)(1+\tan^2 x)}\cdot
-\frac{1}{\cos^2 x}\mathrm dx \  (t:=\tan x) \\
-&amp;=\int_0^\infty \frac{\mathrm dt}{(1+a^2t^2)(1+t^2)} \\
-&amp;=\frac{1}{a^2-1}\int_0^\infty
-(\frac{a^2}{1+a^2t^2}-\frac{1}{1+t^2})\mathrm dt \\
-&amp;=\frac{1}{a+1}\cdot \frac{\pi}{2}
-\end{aligned}
-\]</span></p>
-<p>同时我们有 <span
-class="math inline">\(I(0)=0\)</span>，因此我们知道</p>
-<p><span class="math display">\[I(1)=\int_0^1 I^\prime(a)\mathrm
-da=\frac{\pi}{2}\ln 2\]</span></p>
-<h2 id="section-1">8.</h2>
-<p><span class="math display">\[\int_0^\pi x\sin^4 x\mathrm
-dx\]</span></p>
-<p>经典方法</p>
-<p><span class="math display">\[
-\int_0^\pi x\sin^4 x\mathrm dx=\pi \int_0^{\pi/2}\sin^4x\mathrm dx
-\]</span></p>
-<p>然后点火，得到 <span
-class="math inline">\(\dfrac{3}{16}\pi^2\)</span></p>
-<h2 id="section-2">11.</h2>
-<p><span class="math display">\[\int(\sqrt{2\ln x}+\frac{1}{\sqrt{2\ln
-x}})\mathrm dx\]</span></p>
-<p>先换元设 <span class="math inline">\(t=\sqrt{\ln x}\)</span></p>
-<p>得到</p>
-<p><span class="math display">\[\sqrt 2\int (2t^2+1)e^{t^2}\mathrm
-dt\]</span></p>
-<p>对 <span class="math inline">\(e^{t^2}\)</span> 分部积分</p>
-<p><span class="math display">\[\int e^{t^2}\mathrm dt=te^{t^2}-\int
-2t^2e^{t^2}\mathrm dt\]</span></p>
-<p>把右边积分挪到左边即得 <span
-class="math inline">\((2t^2+1)e^{t^2}\)</span> 的积分，最后得到 <span
-class="math inline">\(x\sqrt{2\ln x}\)</span></p>
-<h2 id="section-3">13.</h2>
-<p><span
-class="math display">\[\int_0^{\frac{\pi}{2}+1}\sin(x-\sin(x-\sin(x-\cdots)))\mathrm
-dx\]</span></p>
-<p>看到的时候是相当震撼的，实际上不要被他欺骗了。</p>
-<p>设 <span
-class="math inline">\(t=\sin(x-\sin(x-\sin(x-\cdots)))\)</span>，则
-<span class="math inline">\(t=\sin(x-t)\)</span></p>
-<p>两边对 <span class="math inline">\(x\)</span> 求导得到</p>
-<p><span class="math display">\[\frac{\mathrm dt}{\mathrm
-dx}=\sqrt{1-t^2}(1-\frac{\mathrm dt}{\mathrm dx})\]</span></p>
-<p>即</p>
-<p><span class="math display">\[\mathrm
-dx=(1+\frac{1}{\sqrt{1-t^2}})\mathrm dt\]</span></p>
-<p>然后对初始积分做换元，得到</p>
-<p><span class="math display">\[\int_0^1
-(t+\frac{t}{\sqrt{1-t^2}})\mathrm dt=\frac{3}{2}\]</span></p>
-<h2 id="section-4">18.</h2>
-<p><span class="math display">\[\int_0^\infty \frac{x+1}{x+2}\cdot
-\frac{x+3}{x+4} \cdot \frac{x+5}{x+6} \cdots \mathrm dx\]</span></p>
-<p>设 <span class="math inline">\(A=\dfrac{x+1}{x+2}\cdot
-\dfrac{x+3}{x+4} \cdots \dfrac{x+2n+1}{x+2n+2}&lt;\dfrac{x+2}{x+3}\cdot
-\dfrac{x+4}{x+5}\cdots \dfrac{x+2n+2}{x+2n+3}=B\)</span></p>
-<p>则 <span
-class="math inline">\(A&lt;\sqrt{AB}=\sqrt{\dfrac{x+1}{x+2n+3}}\)</span></p>
-<p>同理 <span class="math inline">\(A&gt;\dfrac{x+1}{x+2}\cdot
-\dfrac{x+2}{x+3}\cdot \dfrac{x+4}{x+5}\cdots
-\dfrac{x+2n}{x+2n+1}=C\)</span></p>
-<p>则 <span
-class="math inline">\(A&gt;\sqrt{AC}=\sqrt{\dfrac{(x+1)^2}{x+2n+1}}\)</span></p>
-<p>由极限的夹逼性知，<span
-class="math inline">\(\lim_{n\to\infty}A=0\)</span>，故原积分为 <span
-class="math inline">\(0\)</span>。</p>
-<h2 id="section-5">19.</h2>
-<p><span class="math display">\[\int_{0}^{\pi/2}\frac{\sin 23x}{\sin
-x}\mathrm dx\]</span></p>
-<p>经典方法</p>
-<p><span class="math display">\[\frac{\sin (2k+1)x}{\sin
-x}=1+2\sum_{n=1}^k \cos 2nx\]</span></p>
-<p>证明直接数归。</p>
-<p>于是直接做完了，积分值为 <span
-class="math inline">\(\pi/2\)</span>。</p>
 
       
     </div>

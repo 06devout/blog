@@ -19,28 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"06devout.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="我们在这里证明一个广为人知的结论，即周长一定的闭合曲线为圆时围成的面积最大。 具体的，对于平面上的一条闭合曲线 \(\gamma:[a,b]\to \mathbb R^2\) ，\(\gamma(a)&#x3D;\gamma(b)\)，其长度定义为 \[\ell&#x3D;\int_a^b \sqrt{(x^\prime)^2(t)+(y^\prime)^2(t)}\mathrm dt\] 其面积定义为 \">
+    <meta name="description" content="想不到吧，你被四个男同包围了。——某同学  此话一出便引发了小范围的轰动。四个男同加上一位男同学都笑了。 说话的这位同学想必是把自己归结为了男同，这自然不是出于自我剖析，而是因为他大概不是男同。 他说的四个人中，除去他的剩下三个里面自然是有男同的，但有几个，我不好说。 首先，大于等于一个是好断言的，因为有一位确确实实的是男同了，甚至还给男同学写了一首小情歌，在新年联欢的时候当众演唱。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【M#3】周长一定的闭合曲线为圆时围成的面积最大">
-<meta property="og:url" content="https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/index.html">
+<meta property="og:title" content="【鲜花#6】病中杂记">
+<meta property="og:url" content="https://06devout.github.io/blog/2024/03/11/%E3%80%90%E9%B2%9C%E8%8A%B1-6%E3%80%91%E7%97%85%E4%B8%AD%E6%9D%82%E8%AE%B0/index.html">
 <meta property="og:site_name" content="devout">
-<meta property="og:description" content="我们在这里证明一个广为人知的结论，即周长一定的闭合曲线为圆时围成的面积最大。 具体的，对于平面上的一条闭合曲线 \(\gamma:[a,b]\to \mathbb R^2\) ，\(\gamma(a)&#x3D;\gamma(b)\)，其长度定义为 \[\ell&#x3D;\int_a^b \sqrt{(x^\prime)^2(t)+(y^\prime)^2(t)}\mathrm dt\] 其面积定义为 \">
+<meta property="og:description" content="想不到吧，你被四个男同包围了。——某同学  此话一出便引发了小范围的轰动。四个男同加上一位男同学都笑了。 说话的这位同学想必是把自己归结为了男同，这自然不是出于自我剖析，而是因为他大概不是男同。 他说的四个人中，除去他的剩下三个里面自然是有男同的，但有几个，我不好说。 首先，大于等于一个是好断言的，因为有一位确确实实的是男同了，甚至还给男同学写了一首小情歌，在新年联欢的时候当众演唱。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-01-03T12:28:23.000Z">
-<meta property="article:modified_time" content="2024-01-03T13:07:00.979Z">
+<meta property="article:published_time" content="2024-03-11T14:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-12T12:56:14.631Z">
 <meta property="article:author" content="devout">
-<meta property="article:tag" content="傅里叶分析">
+<meta property="article:tag" content="日常">
+<meta property="article:tag" content="鲜花">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/">
+<link rel="canonical" href="https://06devout.github.io/blog/2024/03/11/%E3%80%90%E9%B2%9C%E8%8A%B1-6%E3%80%91%E7%97%85%E4%B8%AD%E6%9D%82%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/","path":"2024/01/03/【M-3】周长一定的闭合曲线为圆时围成的面积最大/","title":"【M#3】周长一定的闭合曲线为圆时围成的面积最大"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://06devout.github.io/blog/2024/03/11/%E3%80%90%E9%B2%9C%E8%8A%B1-6%E3%80%91%E7%97%85%E4%B8%AD%E6%9D%82%E8%AE%B0/","path":"2024/03/11/【鲜花-6】病中杂记/","title":"【鲜花#6】病中杂记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>【M#3】周长一定的闭合曲线为圆时围成的面积最大 | devout</title>
+<title>【鲜花#6】病中杂记 | devout</title>
   
 
 
@@ -200,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/03/11/%E3%80%90%E9%B2%9C%E8%8A%B1-6%E3%80%91%E7%97%85%E4%B8%AD%E6%9D%82%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
@@ -213,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="【M#3】周长一定的闭合曲线为圆时围成的面积最大 | devout">
+      <meta itemprop="name" content="【鲜花#6】病中杂记 | devout">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【M#3】周长一定的闭合曲线为圆时围成的面积最大
+          【鲜花#6】病中杂记
         </h1>
 
         <div class="post-meta-container">
@@ -228,9 +229,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-01-03 20:28:23 / Modified: 21:07:00" itemprop="dateCreated datePublished" datetime="2024-01-03T20:28:23+08:00">2024-01-03</time>
+      <time title="Created: 2024-03-11 22:00:00" itemprop="dateCreated datePublished" datetime="2024-03-11T22:00:00+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-12 20:56:14" itemprop="dateModified" datetime="2024-03-12T20:56:14+08:00">2024-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -238,7 +245,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
+          <a href="/blog/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a>
         </span>
     </span>
 
@@ -251,73 +258,65 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我们在这里证明一个广为人知的结论，即周长一定的闭合曲线为圆时围成的面积最大。</p>
-<p>具体的，对于平面上的一条闭合曲线 <span
-class="math inline">\(\gamma:[a,b]\to \mathbb R^2\)</span> ，<span
-class="math inline">\(\gamma(a)=\gamma(b)\)</span>，其长度定义为</p>
-<p><span class="math display">\[\ell=\int_a^b
-\sqrt{(x^\prime)^2(t)+(y^\prime)^2(t)}\mathrm dt\]</span></p>
-<p>其面积定义为</p>
-<p><span class="math display">\[\mathcal A=\frac{1}{2}\Bigg|\int_a^b
-x(t)y^\prime(t)-x^\prime(t)y(t)\mathrm dt \Bigg|\]</span></p>
-<p>则有</p>
-<p><span class="math display">\[\mathcal A\leq
-\frac{\ell^2}{4\pi}\]</span></p>
-<p>当且仅当 <span class="math inline">\(\gamma\)</span>
-为一个圆时等式成立。</p>
-<p>首先，我们需要把曲线转化成一个标准的形式。</p>
-<p>对 <span class="math inline">\(t\)</span> 做变量代换，我们可以把
-<span class="math inline">\(\gamma\)</span> 定义到 <span
-class="math inline">\([0,2\pi]\)</span> 上。</p>
-<p>其次，调整 <span class="math inline">\(x(t),y(t)\)</span>
-使得任意时刻 <span
-class="math inline">\((x^\prime)^2(t)+(y^\prime)^2(t)=1\)</span>，这样我们将曲线的
-<span class="math inline">\(\ell\)</span> 调整为 <span
-class="math inline">\(2\pi\)</span>，接下来我们只需要证明 <span
-class="math inline">\(\mathcal A\leq \pi\)</span> 即可。</p>
-<p>注意到 <span
-class="math inline">\(\gamma(0)=\gamma(2\pi)\)</span>，我们可以将 <span
-class="math inline">\(x(t)\)</span> 和 <span
-class="math inline">\(y(t)\)</span> 分别写成傅里叶级数的表达</p>
-<p><span class="math display">\[x(t)\sim \sum a_ne^{int} \text{ and }
-y(t)\sim \sum b_ne^{int}\]</span></p>
-<p>则</p>
-<p><span class="math display">\[x^\prime(t) \sim \sum a_nine^{int}
-\text{ and } y^\prime(t)\sim \sum b_nine^{int}\]</span></p>
-<p>则</p>
-<p><span class="math display">\[\mathcal A=\Big|\pi \sum
-n(a_n\overline{b_n}-b_n\overline{a_n})\Big|\]</span></p>
-<p>利用</p>
-<p><span class="math display">\[n\leq n^2 \tag{1}\]</span></p>
-<p><span
-class="math display">\[|a_n\overline{b_n}-b_n\overline{a_n}|\leq
-2|a_n||b_n| \tag{2}\]</span></p>
-<p><span class="math display">\[2|a_n||b_n|\leq |a_n|^2+|b_n|^2
-\tag{3}\]</span></p>
-<p>得到</p>
-<p><span class="math display">\[\mathcal A\leq \pi \sum
-n^2(|a_n|^2+|b_n|^2)=\pi ||x(t)||\cdot ||y(t)||=\pi \tag{4}\]</span></p>
-<p>接下来考虑取等条件，<span class="math inline">\((1)\)</span> 说明
-<span class="math inline">\(a_k(|k|\geq 2)=0\)</span>，因为 <span
-class="math inline">\(x(t),y(t)\in\mathbb R\)</span>，说明 <span
-class="math inline">\(a_1=\overline{a_{-1}},b_1=\overline{b_{-1}}\)</span>，<span
-class="math inline">\((4)\)</span> 说明 <span
-class="math inline">\(|a_1|^2+|a_2|^2=1/2\)</span>，<span
-class="math inline">\((3)\)</span> 说明 <span
-class="math inline">\(|a_1|=|b_1|=\frac{1}{2}\)</span></p>
-<p>因此可设</p>
-<p><span class="math display">\[a_1=\frac{1}{2}e^{in\alpha} \text{ and }
-b_1=\frac{1}{2}e^{in\beta}\]</span></p>
-<p>带入 <span class="math inline">\((3)\)</span>，得到 <span
-class="math inline">\(|\sin(\alpha-\beta)|=1\)</span>，也就是说 <span
-class="math inline">\(a_1\)</span> 和 <span
-class="math inline">\(b_1\)</span> 是垂直的。</p>
-<p>旋转坐标系到 <span class="math inline">\(\alpha\)</span>，不妨设
-<span
-class="math inline">\(\beta=\alpha+\dfrac{\pi}{2}\)</span>，在新的坐标系下，有</p>
-<p><span class="math display">\[x(t)=a_0+2a_1\cos t\text{ and
-}y(t)=b_0+2b_1\sin t\]</span></p>
-<p>这正是圆的形式。</p>
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>想不到吧，你被四个男同包围了。——某同学</p>
+</blockquote>
+<p>此话一出便引发了小范围的轰动。四个男同加上一位男同学都笑了。</p>
+<p>说话的这位同学想必是把自己归结为了男同，这自然不是出于自我剖析，而是因为他大概不是男同。</p>
+<p>他说的四个人中，除去他的剩下三个里面自然是有男同的，但有几个，我不好说。</p>
+<p>首先，大于等于一个是好断言的，因为有一位确确实实的是男同了，甚至还给男同学写了一首小情歌，在新年联欢的时候当众演唱。</p>
+<p>其次，男同学后面那位“男同”，我是不熟的，他是不是男同我不清楚，但是他在刚上高一的时候给我写了一封情书，姑且算是男同吧。</p>
+<p>最后，虽然我笑的最开心，但是某同学算上的四个男同里面显然有我一个。</p>
+<p>我不觉得我是男同，最多也只能算半个，毕竟我喜欢好看的小姐姐。</p>
+<p>也许这里面只有 2.5 个男同？</p>
+<p>想必不能这么说，因为还没有考虑那位男同学呢。</p>
+<p>为什么这位男同学能够吸引 2.5 个男同呢？</p>
+<p>其中一个原因大概是他的外貌吧。且看：</p>
+<blockquote>
+<p>一双丹凤三角眼,两弯柳叶吊稍眉;身量苗条,体格风骚;粉面含春威不露,丹唇未启笑先闻。</p>
+</blockquote>
+<p>再有就是不可否认的，他至少曾经是半个男同。也许时间已经到了男同的半衰期，姑且认定
+5 个人里有 2.75 个男同吧。</p>
+<p>再回头一看，只有某同学坦坦荡荡清清白白。</p>
+<p>之前不知道在何处听到了一种说法，说男生在成长过程中同性恋是正常阶段。</p>
+<p>于是拉小手拉了四年。</p>
+<p>于是不懂，发现女孩子看百合番也能津津乐道，感觉女孩子真的是太好了。</p>
+<p>后来思考男同的根本原因。</p>
+<blockquote>
+<p>贴贴是欲望的释放。</p>
+</blockquote>
+<p>很难想象这句话出自一个初三生之口。</p>
+<p>说起来当年某同学还怒骂这句话来着，现在已经自诩为男同了。</p>
+<p>对于这句话，我是部分认同的，只是似乎仅仅为此而背上男同的骂名有些得不偿失了。——现在物质和精神生活那么发达。</p>
+<p>又想起每次被找上贴贴的时候，男同学会说。</p>
+<blockquote>
+<p>你好饥渴啊。</p>
+</blockquote>
+<p>他投怀送抱的时候，自然也会收到相同的答复。</p>
+<p>这么一看上面那句话似乎更加的成立了。</p>
+<p>口渴了自然要喝水，空虚了自然想要爱。</p>
+<hr />
+<p>当年第一次看《灿烂千阳》，被里面的“hs”桥段震碎了三观。</p>
+<p>后来读了日本文学，发现卡勒德胡赛尼写出来的东西也就是小菜一碟。</p>
+<p>小时候家长提到某些书的时候总会说“你这个年纪还看不懂”</p>
+<p>印象中其中有一本被给予这个评价的书是《活着》。</p>
+<p>大概小孩子确实是看不懂《活着》的，但是恐怕比起“看不懂”可能问题更大的是给予孩子幼小心灵的震撼吧。</p>
+<p>但是同样我想《故乡》对于初中生来说也一定是看不懂的，但是他确确实实存在于初中课本中。</p>
+<p>但不对，《故乡》大概怎么说也能看个大概其，《雪国》《山音》这些作品大概大部分人只能不明觉厉，空留遐想。</p>
+<p>记得此前 <span class="math inline">\(y\)</span>
+君告诉我，他在初中（还是小学？）的时候就读了《人间失格》，如果我要做家长，恐怕这本书要算作禁书中的禁书。</p>
+<p>但是读一本书能够彻彻底底改变一个人吗？轻微的消沉自然会有，大影响恐怕不然。奋发的人读了《且听风吟》一句无病呻吟便一笑带过了，颓丧的人读了《睡美人》也不会更加想死。</p>
+<p>难道没有什么适合看的了吗？</p>
+<p>《伊豆的舞女》自然是好的，没有所谓hs情节，也没有弥漫着颓丧的气息，用时髦的话说便是“青春伤痛”。</p>
+<p>这样的作品我这样空虚的人是爱看的。</p>
+<p>就像《夏至未至》，当年还是和曹哥哥一起读的，被调侃为“日本原装进口”，现在想起依旧刻骨铭心的腹痛感。</p>
+<p>就像《秒速五厘米》，就像《四月是你的谎言》，就像《可塑性记忆》，故事在最辉煌的时刻凋谢。</p>
+<blockquote>
+<p>瞻顾遗迹，如在昨日，令人长号不自禁。</p>
+</blockquote>
+<p>贪婪的人有无尽的欲望，想要甜甜的恋爱，想要电视剧中梦幻的生活，想溺死在幻想之中。</p>
+<p>贪婪归于空虚。</p>
+<p>这欲望，恐怕就是那些男同们内心贪婪的外在表现。</p>
 
     </div>
 
@@ -327,21 +326,19 @@ class="math inline">\(\beta=\alpha+\dfrac{\pi}{2}\)</span>，在新的坐标系�
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90/" rel="tag"># 傅里叶分析</a>
+              <a href="/blog/tags/%E6%97%A5%E5%B8%B8/" rel="tag"># 日常</a>
+              <a href="/blog/tags/%E9%B2%9C%E8%8A%B1/" rel="tag"># 鲜花</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/" rel="prev" title="【Ynoi#35】【Ynoi2017】由乃的玉米田">
-                  <i class="fa fa-angle-left"></i> 【Ynoi#35】【Ynoi2017】由乃的玉米田
+                <a href="/blog/2024/01/21/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%94%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/" rel="prev" title="Steins 傅里叶分析 第五章部分习题解答">
+                  <i class="fa fa-angle-left"></i> Steins 傅里叶分析 第五章部分习题解答
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2024/01/07/%E3%80%90M-4%E3%80%91%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0/" rel="next" title="【M#4】伯努利数">
-                  【M#4】伯努利数 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
