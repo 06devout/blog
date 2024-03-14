@@ -124,13 +124,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -187,6 +187,330 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">MIT Integration Bee 2023 - Semifinal 部分题目解答</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-09 19:36:47" itemprop="dateCreated datePublished" datetime="2023-12-09T19:36:47+08:00">2023-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-10 20:06:21" itemprop="dateModified" datetime="2023-12-10T20:06:21+08:00">2023-12-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a
+target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_semifinal.pdf">题目链接</a></p>
+<p>感觉 Semifinal 除了 1.3 和 2.3 神题以外其他的反而比较常规。</p>
+<h2 id="section">1.1</h2>
+<p><span class="math display">\[\int e^{\cos x}\cos(2x+\sin x)\mathrm
+dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I &amp;=\int e^{\cos x}\cos(x+(x+\sin x))\mathrm dx \\
+&amp;= \int e^{\cos x}\Big((1+\cos x)\cos(x+\sin x)-\sin x\sin (x+\sin
+x)\Big) \mathrm dx-\int e^{\cos x}\cos(x+\sin x)\mathrm dx \\
+&amp;= e^{\cos x}\sin(x+\sin x)-\int e^{\cos x}\Big(\cos x\cos\sin
+x-\sin x\sin\sin x)\mathrm dx \\
+&amp;= e^{\cos x}\sin (x+\sin x)-e^{\cos x}\sin\sin x
+\end{aligned}
+\]</span></p>
+<h2 id="section-1">1.2</h2>
+<p><del>不会。</del></p>
+<p>直接扔个 <a
+target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/4638248/evaluate-int1-0-9x9-x909x99-x9009x909-x9909x999-x900">StackExchange</a></p>
+<p>讲真这题神了（</p>
+<h2 id="section-2">1.3</h2>
+<p><span class="math display">\[\int_0^\pi \frac{1\cos x-\cos
+2021x-2\cos 2022 x-\cos 2023 x+2}{1-\cos 2x}\mathrm dx\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+I &amp;=\int_0^\pi \frac{2\cos x+2-(\cos 2021x+\cos 2022 x)-(\cos2022
+x-\cos 2023 x)}{1-\cos 2x}\mathrm dx \\
+&amp;=\int_0^\pi \frac{2\cos
+x+2-2\cos\dfrac{x}{2}\Big(\cos\dfrac{4043}{2}x+\cos\dfrac{4045}{2}x\Big)}{1-\cos
+2x}\mathrm dx \\
+&amp;= \int_0^\pi \frac{2\cos x+2-4\cos^2\dfrac{x}{2}\cos 2022 x}{1-\cos
+2x}\mathrm dx \\
+&amp;= \int_0^\pi \frac{4\cos^2\dfrac{x}{2}(1-\cos 2022x)}{2\sin^2
+x}\mathrm dx \\
+&amp;= \int_0^\pi \frac{1-\cos 2022x}{2\cos^2\dfrac{x}{2}}\mathrm dx \\
+&amp;= \int_0^\pi \frac{1-\cos 2022x}{1-\cos x}\mathrm dx \\
+&amp;= 2022\pi
+\end{aligned}
+\]</span></p>
+<p>最后一步用了 Fejer 积分：</p>
+<p><span class="math display">\[\int_0^{\pi/2}\frac{1-\cos nx}{1-\cos
+x}\mathrm dx=\frac{n\pi}{2}\]</span></p>
+<p>证明实际上不难：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1-\cos nx}{1-\cos x} &amp;= \frac{(1-\cos x)+(\cos x-\cos
+2x)+\cdots (\cos(n-1)x-\cos nx)}{1-\cos x} \\
+&amp;= \frac{2\sin \dfrac{x}{2}\sum_{k=1}^n
+\sin(k-\dfrac{1}{2})x}{2\sin^2 \dfrac{x}{2}} \\
+&amp;=\sum_{k=1}^n \sin(k-\frac{1}{2})x
+\end{aligned}
+\]</span></p>
+<p>因为</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sin(n+\frac{1}{2})x&amp;=\sin\frac{x}{2}+(\sin \frac{3}{2}x-\sin
+x)+\cdots+(\sin(n+\frac{1}{2})x-\sin(n-\frac{1}{2})x) \\
+&amp;=\sin\frac{x}{2}(1+\sum_{k=1}^n\cos kx)
+\end{aligned}
+\]</span></p>
+<p>带入上面的式子，得到</p>
+<p><span class="math display">\[\frac{1-\cos nx}{1-\cos
+x}=n+\sum_{k=1}^n\sum_{j=1}^k\cos jx\]</span></p>
+<p>两边在 <span class="math inline">\((0,\pi)\)</span> 上积分，<span
+class="math inline">\(\cos kx\)</span> 积分值是 <span
+class="math inline">\(0\)</span>，因此</p>
+<p><span class="math display">\[\int_0^\pi \frac{1-\cos nx}{1-\cos
+x}\mathrm dx=n\pi\]</span></p>
+<h2 id="section-3">2.2</h2>
+<p><span class="math display">\[\int_{-2}^2
+((((x^2-2)^2-2)^2-2)^2-2)\mathrm dx\]</span></p>
+<p>找规律，</p>
+<p><span class="math display">\[\int_{-2}^2 (x^2-2)\mathrm
+dx=-\frac{8}{3}\]</span></p>
+<p><span class="math display">\[\int_{-2}^2 ((x^2-2)^2-2)\mathrm
+dx=-\frac{8}{15}\]</span></p>
+<p>因此原积分 <span class="math inline">\(-\dfrac{8}{255}\)</span></p>
+<h2 id="section-4">2.3</h2>
+<p>不会。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/04/MIT-Integration-Bee-2023-Quarterfinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/04/MIT-Integration-Bee-2023-Quarterfinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">MIT Integration Bee 2023 - Quarterfinal 部分题目解答</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-04 21:20:48" itemprop="dateCreated datePublished" datetime="2023-12-04T21:20:48+08:00">2023-12-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-06 15:53:38" itemprop="dateModified" datetime="2023-12-06T15:53:38+08:00">2023-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a
+target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_quarterfinal.pdf">题目链接</a></p>
+<h2 id="section">2.1</h2>
+<p><span class="math display">\[\int_{\sqrt e}^\infty x^{-\ln x}\mathrm
+dx\]</span></p>
+<p>设 <span class="math inline">\(t=\ln x\)</span>，积分转化为</p>
+<p><span class="math display">\[\int_{1/2}^\infty e^{-t^2+t}\mathrm
+dt=e^{1/4}\int_{1/2}^\infty e^{(t-1/2)^2}\mathrm dt=e^{1/4}\int_0^\infty
+e^{-u^2}\mathrm du\]</span></p>
+<p>最后一个积分是经典的结论，这里也证一下。</p>
+<p>设 <span class="math inline">\(I=\int_0^\infty e^{-x^2}\mathrm
+dx\)</span></p>
+<p>则</p>
+<p><span class="math display">\[I^2=\int_0^\infty\int_0^\infty
+e^{-x^2-y^2}\mathrm dx\mathrm dy\]</span></p>
+<p>做极坐标换元，</p>
+<p><span class="math display">\[\mathrm dx\mathrm
+dy=\frac{\partial(x,y)}{\partial(r,\theta)}\mathrm dr\mathrm
+d\theta\]</span></p>
+<p>得到</p>
+<p><span class="math display">\[I^2=\int_0^{\pi/2}\mathrm
+d\theta\int_0^\infty e^{-r^2}r\mathrm dr=\frac{\pi}{4}\]</span></p>
+<p>故 <span
+class="math inline">\(I=\dfrac{\pi^{1/2}}{2}\)</span>，原积分为 <span
+class="math inline">\(\dfrac{e^{1/4}\pi^{1/2}}{2}\)</span>。</p>
+<h2 id="section-1">2.2</h2>
+<p><span class="math display">\[\int \frac{1-2x}{(1+x)^2x^{2/3}}\mathrm
+dx\]</span></p>
+<p>做代换 <span class="math inline">\(t= x^{1/3}\)</span>，得到</p>
+<p><span class="math display">\[I=3\int \frac{1-2t^3}{(1+t^3)^2}\mathrm
+dt=3\int\frac{1}{1+t^3}-\frac{3t^3}{(1+t^3)^2}\mathrm dt\]</span></p>
+<p>注意到</p>
+<p><span
+class="math display">\[\frac{1}{1+t^3}-\frac{3t^3}{(1+t^3)^2}=\frac{1}{1+t^3}\cdot
+\frac{\mathrm dt}{\mathrm dt}+t\frac{\mathrm d(\frac{1}{1+t^3})}{\mathrm
+dt}=\frac{\mathrm d\frac{t}{1+t^3}}{\mathrm dt}\]</span></p>
+<p>故原积分 <span
+class="math inline">\(I=\dfrac{3x^{1/3}}{1+x}\)</span></p>
+<h2 id="section-2">2.3</h2>
+<p><span class="math display">\[\lim_{n\to\infty}(\frac{1}{n}\int_0^n
+\cos^2(\frac{\pi x^2}{\sqrt 2})\mathrm dx)\]</span></p>
+<p><span class="math display">\[I_n=\frac{1}{2}\int_0^n 1+\cos(\sqrt
+2\pi x^2)\mathrm dx\]</span></p>
+<p>做代换 <span class="math inline">\(t=x^2\)</span></p>
+<p><span class="math display">\[I_n=\frac{n}{2}+\frac{1}{2}\int_0^{\sqrt
+n}\frac{\cos(\sqrt 2\pi t)}{\sqrt t}\mathrm
+dt=\frac{n}{2}+O(1)\]</span></p>
+<p>故</p>
+<p><span class="math display">\[\lim_{n\to\infty}
+\frac{1}{n}I_n=\frac{1}{2}\]</span></p>
+<p>上上式最后一步利用了 A-D 判别法，反常积分</p>
+<p><span class="math display">\[\int_0^\infty \frac{\cos(\sqrt 2\pi
+t)}{\sqrt t}\mathrm dt\]</span></p>
+<p>收敛。</p>
+<h2 id="section-3">3.2</h2>
+<p><span class="math display">\[\int_0^\infty
+\operatorname{sech}^2(x+\tan x)\mathrm dx\]</span></p>
+<p>首先要用 <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Glasser%27s_master_theorem">Glasser's
+master theorem</a></p>
+<p>对于形如 <span class="math inline">\(x-a-\sum_{n=1}^N
+\dfrac{|a_n|}{x-b_n}\)</span> 的 <span class="math inline">\(u\)</span>
+和 <span class="math inline">\(f(x)\)</span>，有</p>
+<p><span
+class="math display">\[\text{P.V.}\int_{-\infty}^{+\infty}f(u)\mathrm
+dx=\text{P.V.}\int_{-\infty}^{+\infty}f(x)\mathrm dx\]</span></p>
+<p>而因为</p>
+<p><span class="math display">\[\pi\cot x=\frac{1}{x}+\sum_{i=1}^\infty
+\Big(\frac{1}{x+i\pi}+\frac{1}{x-i\pi}\Big)\]</span></p>
+<p>做代换 <span class="math inline">\(t=\dfrac{\pi}{2}-x\)</span>
+就可以得到 <span class="math inline">\(\tan t\)</span> 的表达式，因此
+<span class="math inline">\(x+\tan x\)</span> 是上面 <span
+class="math inline">\(u\)</span> 的表达形式，所以利用定理，</p>
+<p><span
+class="math display">\[I=\frac{1}{2}\int_{-\infty}^{+\infty}\operatorname{sech}^2x\mathrm
+dx=\tanh x\Big |_{-\infty}^{+\infty}=1\]</span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1519,541 +1843,8 @@ class="math inline">\(\Box\)</span></p>
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/04/Dirichlet%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/04/Dirichlet%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">【M#1】 Dirichlet问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-04 19:47:36" itemprop="dateCreated datePublished" datetime="2023-11-04T19:47:36+08:00">2023-11-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-20 21:39:26" itemprop="dateModified" datetime="2023-12-20T21:39:26+08:00">2023-12-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="dirichlet-问题">Dirichlet 问题</h1>
-<p>Dirichlet 问题是指对于实值函数 <span class="math inline">\(V\in
-C([0,1])\)</span>，求常微分方程</p>
-<p><span class="math display">\[
-(DP)
-\left\{\begin{matrix}
--u^{\prime\prime}(x)+V(x)u(x)=f(x)  &amp; x\in [0,1]\\
-u(0)=u(1)=0  &amp;
-\end{matrix}\right.
-\]</span></p>
-<p>的解。</p>
-<p>我们接下来会证明，当 <span class="math inline">\(V\geq 0\)</span>
-恒成立的时候，<span class="math inline">\((DP)\)</span> 恒有唯一解。</p>
-<h1 id="唯一性">唯一性</h1>
-<p><strong><span
-class="math inline">\(\color{red}定理1\)</span>：</strong> 假设 <span
-class="math inline">\(V\geq 0\)</span>，<span class="math inline">\(f\in
-C([0,1]),u_1,u_2\in C^2([0,1])\)</span> 是 <span
-class="math inline">\((DP)\)</span> 的解，则 <span
-class="math inline">\(u_1=u_2\)</span></p>
-<p><strong>证明：</strong></p>
-<p>设 <span class="math inline">\(u=u_1-u_2\)</span>，则 <span
-class="math inline">\(u\)</span> 满足</p>
-<p><span class="math display">\[\left\{\begin{matrix}
--u^{\prime\prime}+Vu=0  \\
-u(0)=u(1)=0
-\end{matrix}\right.\]</span></p>
-<p>则</p>
-<p><span class="math display">\[
-\begin{aligned}
-0&amp;=\int_0^1 [-u^{\prime\prime}+Vu]\bar u\mathrm dx \\
-&amp;= -\int_0^1 u^{\prime\prime}\bar u\mathrm dx+\int_0^1 V|u|^2\mathrm
-dx \text{ (分部积分)}\\
-&amp;= -u^\prime(x)\bar u(x)\Big |_0^1 +\int_0^1 u^\prime\bar
-u^\prime\mathrm dx+\int_0^1 V|u|^2\mathrm dx \  (\bar u(0)=\bar u(1)=0)
-\\
-&amp;= \int_0^1 |u^\prime|^2\mathrm dx+\int_0^1 V|u|^2\mathrm dx\geq
-\int_0^1 |u^\prime|\mathrm dx
-\end{aligned}
-\]</span></p>
-<p>所以 <span class="math inline">\(u^\prime =0,u\)</span> 为常函数，
-<span class="math inline">\(u=u(0)=0\)</span>.</p>
-<h1 id="v0-的情况"><span class="math inline">\(V=0\)</span> 的情况</h1>
-<p>我们先考虑 <span class="math inline">\(V=0\)</span>.</p>
-<p><strong><span
-class="math inline">\(\color{red}定理2\)</span>：</strong> 定义</p>
-<p><span class="math display">\[
-K(x,y)=\left\{\begin{matrix}
-(x-1)y &amp; 0\leq y\leq x\leq 1 \\
-(y-1)x &amp; 0\leq x\leq y\leq 1
-\end{matrix}\right.
-\in C([0,1]\times [0,1])
-\]</span></p>
-<p>并定义运算 <span class="math inline">\(A\)</span>：</p>
-<p><span class="math display">\[Af(x)=\int_0^1 K(x,y)f(y)\mathrm
-dy\]</span></p>
-<p>则 <span class="math inline">\(A\in\mathcal B(L^2([0,1]))\)</span> 为
-compact symmetric 算子，且对于 <span class="math inline">\(f\in
-C([0,1]),Af\)</span> 是常微分方程</p>
-<p><span class="math display">\[
-\left\{\begin{matrix}
--u^{\prime\prime}(x)=f(x)  &amp; x\in [0,1]\\
-u(0)=u(1)=0  &amp;
-\end{matrix}\right.
-\]</span></p>
-<p>的唯一解。</p>
-<p><strong>注：实际上在下面的证明过程中，我们并不依赖 <span
-class="math inline">\(K(x,y)\)</span> 具体是多少，定理成立只需要 <span
-class="math inline">\(K(x,y)\)</span> 有界实值即可，但这里明确给出 <span
-class="math inline">\(K\)</span> 是因为这个就是解决 Dirichlet 问题的
-Kernel。</strong></p>
-<p><strong>证明：</strong></p>
-<p>先证 <span class="math inline">\(A\)</span> 是紧(compact)的：设 <span
-class="math inline">\(C=\sup_{[0,1]\times [0,1]} K(x,y)\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-|Af(x)| &amp;= |\int_0^1 K(x,y) f(y)\mathrm dy| \\
-&amp;\leq C\int_0^1 |f(y)|\mathrm dy (\text{ Cauchy-Schwarz 不等式}) \\
-&amp;\leq C(\int_0^1 1^2)^{1/2}(\int_0^1 |f(y)|^2 \mathrm dy)^{1/2} \\
-&amp;= C ||f||_2
-\end{aligned}
-\]</span></p>
-<p>即 <span class="math inline">\(Af\)</span> 一致有界，同理对于 <span
-class="math inline">\(\forall x,z\)</span> 有</p>
-<p><span class="math display">\[|Af(x)-Af(z)|\leq \sup_{y\in [0,1]}
-|K(x,y)-K(z,y)|\cdot ||f||_2\]</span></p>
-<p>故 <span class="math inline">\(Af\)</span> 是连续的</p>
-<p>有了这两个性质，运用 <a
-target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Arzel%C3%A0%E2%80%93Ascoli_theorem">Arzela-Ascoli
-Theorem</a> 就可以证明 <span class="math inline">\(A\)</span>
-是紧的。</p>
-<p>接下来证明 <span class="math inline">\(A\)</span>
-是对称(symmetric)的</p>
-<p><span class="math display">\[
-\begin{aligned}
-\langle Af,g \rangle_2 &amp;= \int_0^1 \Big[ \int_0^1 K(x,y)f(y)\mathrm
-dy\Big] \overline{g(x)}\mathrm dx (\text{ 交换积分次序}) \\
-&amp;= \int_0^1 f(y) \overline{\Big[\int_0^1 \overline{K(x,y)}
-g(x)\mathrm dx \Big]}\mathrm dy \\
-&amp;= \int_0^1 f(y) \overline{\Big[\int_0^1 K(x,y) g(x)\mathrm dx
-\Big]}\mathrm dy \\
-&amp;= \langle f,Ag \rangle_2
-\end{aligned}
-\]</span></p>
-<p>故 <span class="math inline">\(A\)</span> 是对称的。</p>
-<p>不难验证 <span class="math inline">\(u=Af\)</span>
-确实是函数的一个解。</p>
-<h1 id="vneq-0-的情况"><span class="math inline">\(V\neq 0\)</span>
-的情况</h1>
-<p>首先给出一个 sketch。</p>
-<p>问题等价于求解 <span
-class="math inline">\(-u^{\prime\prime}=f-Vu\)</span>，即求 <span
-class="math inline">\(u=A(f-Vu)\)</span>，即求 <span
-class="math inline">\((I+Av)u=Af\)</span>.</p>
-<p>把 <span class="math inline">\(u\)</span> 写作 <span
-class="math inline">\(u=A^{1/2}v\)</span>，注意我们这里只是一个
-sketch，我们接下来会证明 <span class="math inline">\(A^{1/2}\)</span>
-存在且为紧且对称的（说明他有逆）</p>
-<p>则原来的问题转化成</p>
-<p><span
-class="math display">\[A^{1/2}(I+A^{1/2}VA^{1/2})v=Af\]</span></p>
-<p>即</p>
-<p><span
-class="math display">\[(I+A^{1/2}VA^{1/2})v=A^{1/2}f\]</span></p>
-<p>我们接下来要做的就是证明 <span class="math inline">\(A^{1/2}\)</span>
-是存在的，但这还不足以说明问题，因为我们还需要求出 <span
-class="math inline">\(v\)</span>，这需要 <span
-class="math inline">\((I+A^{1/2}VA^{1/2})\)</span> 是可逆的，</p>
-<p><strong><span
-class="math inline">\(\color{red}引理3\)</span>：</strong> <span
-class="math inline">\(NULL(A)=\{0\}\)</span>，且 <span
-class="math inline">\(A\)</span> 存在一组无穷特征值 <span
-class="math inline">\(\{\lambda_k\}_k\)</span>
-即其对应的正交单位特征向量 <span
-class="math inline">\(\{u_k\}_k\)</span> 满足</p>
-<p><span class="math display">\[\left\{\begin{matrix}
-u_k(x)=\sqrt 2\sin 2k\pi x  &amp; \\
-\lambda_k=\dfrac{1}{k^2\pi^2} &amp;
-\end{matrix}\right. \forall k\in\mathbb N\]</span></p>
-<p><strong>证明：</strong></p>
-<p>因为 <span
-class="math inline">\(NULL(A)=\overline{Range(A)}^\bot\)</span>，只需证明
-<span class="math inline">\(\overline{Range(A)}=L^2([0,1])\)</span>
-即可。</p>
-<p>取 <span class="math inline">\(u\)</span> 为 <span
-class="math inline">\([0,1]\)</span> 上的多项式，取 <span
-class="math inline">\(f=-u^{\prime\prime}\)</span>，此时 <span
-class="math inline">\(Af=0\)</span> 是唯一的 <span
-class="math inline">\((DP)\)</span> 的解，故 <span
-class="math inline">\(Range(A)\)</span> 包含所有的 <span
-class="math inline">\([0,1]\)</span> 上的多项式。</p>
-<p>因为 <span class="math inline">\([0,1]\)</span>
-上的多项式是致密的，且任意一个连续函数可以用多项式来逼近 (<a
-target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Stone%E2%80%93Weierstrass_theorem">Weierstrass
-Approximation Theorem</a>)</p>
-<p>故 <span
-class="math inline">\(\overline{Range(A)}=L^2([0,1])\)</span>.</p>
-<p>接下来我们求解 <span class="math inline">\(A\)</span>
-的各个特征值。</p>
-<p>设 <span class="math inline">\(\lambda\neq 0,Au=\lambda
-u\)</span>，则 <span
-class="math inline">\(u=\dfrac{1}{\lambda}A\Rightarrow
-u=A(\dfrac{1}{\lambda}u) \Rightarrow
--u^{\prime\prime}=\dfrac{u}{\lambda}\)</span>，这是最基本的常微分方程，他的解是三角级数
-<span class="math inline">\(u=A\sin
-\dfrac{1}{\sqrt\lambda}x+B\cos\dfrac{1}{\sqrt \lambda}x\)</span>。</p>
-<p>因为 <span class="math inline">\(u(0)=0\)</span>，所以 <span
-class="math inline">\(B=0\)</span>，因为 <span
-class="math inline">\(u(1)=0\)</span>，所以我们要求 <span
-class="math inline">\(\dfrac{1}{\sqrt\lambda}\in \mathbb
-N\pi\)</span>，故 <span class="math inline">\(u(x)=A\sin k\pi
-x\)</span>，为了满足 <span
-class="math inline">\(||u||_2=1\)</span>，我们可以解得 <span
-class="math inline">\(A=\sqrt 2\)</span>.</p>
-<p>接下来我们证明 <span class="math inline">\(A^{1/2}\)</span>
-存在，且是紧且对称的。</p>
-<p><strong><span
-class="math inline">\(\color{red}引理4\)</span>：</strong> 对于 <span
-class="math inline">\(f\in L^2([0,1])\)</span> 且有傅里叶级数表示</p>
-<p><span class="math display">\[
-\left\{\begin{matrix}
-f(x)=\sum_{k=1}^\infty c_k\sqrt 2 \sin k\pi x  &amp; \\
-c_k=\int_0^1 f(x)\sqrt 2\sin k\pi x\mathrm dx  &amp;
-\end{matrix}\right.
-\]</span></p>
-<p>定义算子 <span class="math inline">\(B\)</span> 为</p>
-<p><span class="math display">\[Bf(x)=\sum_{k=1}^\infty \frac{1}{k\pi
-}c_k\sqrt 2\sin k\pi x\]</span></p>
-<p>则 <span class="math inline">\(B\)</span> 在 <span
-class="math inline">\(L^2([0,1])\)</span> 上为紧且对称的有界算子，且
-<span class="math inline">\(B^2=A\)</span>.</p>
-<p><strong>证明：</strong> <span class="math inline">\(B^2=A\)</span>
-不难验证，剩下的咕咕咕</p>
-<p>接下来我们对于实值函数 <span class="math inline">\(V\in
-C([0,1])\)</span> 定义 <span class="math inline">\(m_Vf=Vf\)</span>，则
-<span class="math inline">\(m_V\in\mathcal B(L^2([0,1]))\)</span>
-且是对称的（<span class="math inline">\(V\)</span> 是连续有界的故 <span
-class="math inline">\(m_V\)</span> 有界，<span
-class="math inline">\(V\)</span> 是实值函数故 <span
-class="math inline">\(m_V\)</span> 是对称的）</p>
-<p><strong><span
-class="math inline">\(\color{red}引理5\)</span>：</strong> <span
-class="math inline">\(T=Bm_V B\)</span> 满足 1）<span
-class="math inline">\(T\)</span> 是紧且对称的 2) <span
-class="math inline">\(T\in\mathcal B(L^2([0,1]),C([0,1]))\)</span></p>
-<p><strong>证明：</strong></p>
-<p>因为 <span class="math inline">\(B\)</span> 和 <span
-class="math inline">\(m_V\)</span> 都是紧且对称的，所以 1)
-可以直接得出。</p>
-<p>对于 2)，我们只需要证明 <span class="math inline">\(B\in\mathcal
-B(L^2([0,1]),C([0,1]))\)</span>.</p>
-<p>延续此前对 <span class="math inline">\(f\)</span>
-的傅里叶级数表示的记号，</p>
-<p><span class="math display">\[Bf=\sum_{k=1}^\infty
-\frac{c_k}{k\pi}\sqrt 2\sin k\pi x,\]</span> <span
-class="math display">\[\frac{c_k}{k\pi}\sqrt 2 \sin k\pi x| \leq
-\frac{|c_k|\sqrt 2}{k\pi}\leq \frac{|c_k|}{k},\]</span> <span
-class="math display">\[\sum_{k=1}^\infty \frac{|c_k|}{k}\leq (\sum_j
-\frac{1}{k^2})^{1/2}(\sum_{k}|c_k|^2)^{1/2}=\frac{\pi}{\sqrt
-6}||f||_2\]</span></p>
-<p>由 <a
-target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Weierstrass_M-test">Weierstrass
-M-test</a>，<span class="math inline">\(|Bf(x)|\leq \dfrac{\pi}{\sqrt 6}
-||f||_2\)</span>，即证明 <span class="math inline">\(B\)</span>
-是有界的。</p>
-<p><strong><span
-class="math inline">\(\color{red}引理6\)</span>：</strong> <span
-class="math inline">\(I+Bm_VB\)</span> 可逆</p>
-<p>根据 <a
-target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Fredholm_alternative">Fredholm
-Alternative</a>，一个紧对称算子的逆算子存在当且仅当他的零空间是平凡的。</p>
-<p>假设 <span class="math inline">\((I+Bm_VB)g=0\)</span>，则</p>
-<p><span class="math display">\[
-\begin{aligned}
-0 &amp;=\langle (I+Bm_VB)g,g\rangle \\
-&amp;= ||g||_2^2+\langle Bm_VBg,g\rangle (\text{ B 是对称的}) \\
-&amp;= ||g||_2^2+\langle m_V Bg,Bg\rangle \\
-&amp;= ||g||_2^2+\int_0^1 V|Bg|^2\mathrm dx \\
-&amp;\geq ||g||_2^2
-\end{aligned}
-\]</span></p>
-<p>所以 <span class="math inline">\(g=0\)</span>，<span
-class="math inline">\(NULL(I+Bm_VB)=\{0\}\)</span>，<span
-class="math inline">\(I+Bm_VB\)</span> 可逆。</p>
-<p><strong><span
-class="math inline">\(\color{red}定理7：\)</span></strong> 对于 <span
-class="math inline">\(V\in C([0,1])\)</span> 且 <span
-class="math inline">\(V\geq 0\)</span> 的实值函数和 <span
-class="math inline">\(f\in C([0,1])\)</span>，存在唯一 <span
-class="math inline">\(u\in C^2([0,1])\)</span> 为常微分方程</p>
-<p><span class="math display">\[
-(DP)
-\left\{\begin{matrix}
--u^{\prime\prime}(x)+V(x)u(x)=f(x)  &amp; x\in [0,1]\\
-u(0)=u(1)=0  &amp;
-\end{matrix}\right.
-\]</span></p>
-<p>的解。</p>
-<p><strong>证明：</strong></p>
-<p>取 <span
-class="math inline">\(v=(I+A^{1/2}m_VA^{1/2})^{-1}A^{1/2}f,u=A^{1/2}v\)</span>，则</p>
-<p><span class="math display">\[
-\begin{aligned}
-u+A(Vu) &amp;=A^{1/2} v+A^{1/2}[A^{1/2}m_VA^{1/2}]v \\
-&amp;= A^{1/2}(I+A^{1/2}m_V A^{1/2})v \\
-&amp;= Af
-\end{aligned}
-\]</span></p>
-<p>两边同时求二阶导，得到</p>
-<p><span class="math display">\[u^{\prime\prime}-Vu=-f\]</span></p>
-<p>整理即得</p>
-<p><span class="math display">\[-u^{\prime\prime}+Vu=f\]</span></p>
-<p>不难验证 <span class="math inline">\(u\)</span>
-也满足边界条件，故存在唯一的</p>
-<p><span
-class="math display">\[u=A^{1/2}(I+A^{1/2}m_VA^{1/2})^{-1}A^{1/2}f\]</span></p>
-<p>解决 Dirichlet 问题。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/10/28/The-Dance-After-Last-Dance-CSP2023%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/10/28/The-Dance-After-Last-Dance-CSP2023%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">The Dance After Last Dance - CSP2023游记 / 【鲜花#1】 会津梦记·引</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-10-28 21:01:27" itemprop="dateCreated datePublished" datetime="2023-10-28T21:01:27+08:00">2023-10-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-02 21:53:00" itemprop="dateModified" datetime="2023-11-02T21:53:00+08:00">2023-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/OI%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">OI游记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="前言">前言</h2>
-<blockquote>
-<p>波神留我看斜阳，唤起层层细浪。</p>
-</blockquote>
-<p>高三也不过是这样，在银杏叶黄的烂漫的季节，骑车回家的路上总能望见绯红的轻云，但银杏叶下也缺不了成群结队的“高考”的速成班，手里拿着致密的复习资料，桌上凌乱的堆着书本和卷子，形成一座富士山。也有摒弃一切杂念，专心学习，于外界断绝一切联系的，宛如未出闺阁的小姑娘一般，还要在电子词典中摆弄摆弄秀发，实在标致极了。</p>
-<p>ocw 的课程里有几门可以看，有时还值得去思考思考；倘在中午，407
-里面的几间电脑倒也还可以用一用的。但到傍晚，晚自习的教室里就容不下接水的同学了。问问上晚自习的同学，答道：那是在打牌。</p>
-<p>到别的地方去看一看，如何呢？</p>
-<p>我就往会津的计算机专门学校去，从东京出发，不就便到一处驿站，写到：日暮里。不止怎地，我到现在还记得这名目。其次却只记得郡山了，这是去若松新干线能坐到最远的地方。会津是一个市镇，并不大；冬天冷的厉害，还没有中国的学生。</p>
-<p>从此就见到许多有趣的先生，首先进来的是一个身高不高戴黑框眼镜的先生，身材不高，神采奕奕，一站到讲台上，便用急促的一开始让人不适应的声音做起了自我介绍：“我就是叫做山人江伟(Yamabito
-Erai)的...”</p>
-<p>山人先生担任的是国文课，国文课曾经有另一位女先生，但是名字总被认成是男生，据同桌竞宇小五郎君称今日（10.26）是上一位先生的生日，小五郎君还给她送了礼物。</p>
-<p>山人先生是喜欢分享自己的生活的，一日他说道“我每日吃两餐饭，早餐吃八个馅饼。”我们自然是笑而不信也的，只是后来一日我去找他，发现他正拎着8个韭菜盒子（和馅饼差不多大）往宿舍走。</p>
-<p>另一位有趣的先生是任化学的浩海尼奥(Koukai
-Amaoku)先生，浩海先生是一位英俊帅气且幽默的先生。大约发生在他身上的事情过于的多了，以至于这里地方太小，写不下，这里姑且举出一二。</p>
-<p>一日浩海先生点同学回答问题，曰“我点名并不是为了为难大家，只是让大家共同进步尔。”</p>
-<p>然后点了嘉齐太郎君，曰“太郎君，你先来说，你脸皮最厚。”</p>
-<p>会津大的校园是相当狭小的，东西 672 步，南北 596
-步，就已经走到头了，以至于连一个小操场都无法塞进去。但是与狭小的校园相对的，食堂相当的气派，以至于偶尔点外卖的同学们都会被通报。</p>
-<p>食堂门口常常能看到一位不知是讲师还是学生的男子，总是呆呆地盯着一处不动，后来一问才知道原来是系主任。因为平时学习较为刻苦，所以成绩多少还是不错的，因此也常常与系主任聊天，得知我不是本地人（虽然会津大本地人并不多）之后，他神秘兮兮的跟我说：“你知道吗，从东京到若松有四种走法。”</p>
-<p>我当然是知道的，第一条坐东北新干线到郡山，再换磐越西线；第二条坐上越新干线到浦佐，再换只见线，途中要翻越谷川岳和六十里越峠，在日本已经足以算是险要的地势；第三条坐上越新干线到新潟，再坐另一个方向的磐越西线；第四条如果你有闲心，完全从浅草坐东武特急直接到鬼怒川温泉，再转乘会津铁道。早在我在若松住的前三个月里，我就已经把这一带可以坐过的铁路线都坐了一遍。</p>
-<p>但是我不明白为什么他要和我说这个。</p>
-<p>系主任非常喜欢发表讲话，毕竟这是计算机专门学校，他所讲的话的往往是令人热血沸腾的。记得第一次集会，系主任在台上高喊“你们的理想是什么？”台下我身边被感染的同学们则以“图灵奖”高声回应。我突然感到了一层可悲的厚障壁，为什么图灵奖能够作为人生的理想呢？人生的理想应该是一种境界，而不是一种成就。比起拿图灵奖，或许证明
-<span class="math inline">\(P\neq NP\)</span> 的那 <span
-class="math inline">\(10^6\)</span>
-美刀（获得了富足的境界）更吸引我。</p>
-<p>作为计算机传统强校，我在来若松之前就读过了会津大一位教授 Viglietta
-的几篇论文，对他非常的崇拜。因此我更加崇拜与系主任的成就，想必是某些我无法理解的学说，于是怀着好奇的心情，从各方小道消息才打探到他的名字，可惜现在太过于久远，只记得他姓谷口(Taniguchi)，名字好像读作
-Shiisa 还是什么。只记得把他的名字输入到了 google
-搜索框里，原来他是东京都江东区青海町的一名政/府工作人员。</p>
-<p>于是我在思考，为什么系主任是系主任，为什么 Viglietta 是
-Viglietta。</p>
-<p>或许有必要讲一讲会津地区的风景。这里冬天的雪景是极美的，盆地周边环绕的就是大大小小的滑雪场。向南坐上一个小时的火车可以到鬼怒川温泉，是有名的度假胜地，而这里其实已经算是东京都市人的娱乐范围了。向北去没有火车，但是坐上半个小时的汽车，穿过长长的跨越县境的隧道，可以到最上川平原和山形地区，我每每在梦里听见最上川的名字，都为这个气派的名字所折服。但是最美的风景一定要向西走，只见线和磐越西线都是有名的观景路线。</p>
-<p>在这样美丽的风景里是让人沉醉的，可惜这里的樱花不如代代木的樱花开的烂漫，春天便少了一分色彩。</p>
-<p>会津大本来不大，学生自然也不多，但是因为不多我们也建立了非常牢靠的关系。我们这个课题组一共五人，我，<span
-class="math inline">\(y\)</span> 君，<span
-class="math inline">\(\gamma\)</span> 君，<span
-class="math inline">\(\Upsilon\)</span> 君 和 <span
-class="math inline">\(\mathcal Y\)</span> 君。</p>
-<p>先说说 <span class="math inline">\(y\)</span> 君，<span
-class="math inline">\(y\)</span>
-君大约确实是一位极好的人，十分机灵活泼，可爱极了，在各种小事上也能看出他天真的一面。
-<span class="math inline">\(y\)</span>
-君自然是聪明的，不必提他的思维能力，他对事物也有独到的看法。有时羡慕他对事物独到的看法，有时又对他过往的经历感到好奇，到底是什么样的事情能够塑造一个这样的他。</p>
-<p><span class="math inline">\(\gamma\)</span> 君大约是和 <span
-class="math inline">\(y\)</span> 君关系不错的，且写得一手好文章。 <span
-class="math inline">\(\gamma\)</span>
-君年纪不及我，但有时在属于他这个年纪的笑容中展现的是不属于他这个年纪的痛苦。</p>
-<p><span class="math inline">\(\Upsilon\)</span>
-君大约也潜藏着忧郁的内心，和 <span class="math inline">\(\mathcal
-Y\)</span> 君以及一位叫做 Shirapikari
-君的（拥有炫酷名字）的同学交往甚密。</p>
-<p><span class="math inline">\(\mathcal Y\)</span>
-君与前面三人的显著的不同的一点在于，他是一个自信的人，至少他在一些场合是一个自信的人。大约在
-cts
-里，自信并不是一件坏事，但是也并不能算是一件好事。或许有时候他过于自信了，或许有时候他发现自己的内心被窥探了，或许有的时候他和系主任聊天，或许有的时候他追求至上的地位，或许他不知道自己努力的意义在于什么，或许他希望得到的只是来自他人的肯定，或许他坚持的目的只是不被家长批判，或许他是一个矛盾的人，这样的矛盾塑造了一个矛盾的他。</p>
-<hr />
-<p>在会津大的时间是短暂的，8
-月底福岛开始排核废水，自然赶快被家长召回了故乡。虽然若松也是福岛县下属的市镇，但是需要横跨整个福岛县才能到核电站。说道核电站，他旁边的浪江町私认为名字是极美的，曾在课余时间去过几次，从代行巴士上可以看到曾经被称作核电站的地方。</p>
-<p>离开的心情自然是复杂的，最后一次在阿贺川滨漫步，最后一次坐上在磐梯山间穿行的火车，最后一次路过猪苗代湖畔，最后一次在
-Hayabusa/Komachi 上飞驰，最后一次坐上成田特慢。</p>
-<p>会津若松是一个美丽的地方，但是我不会再回去。</p>
-<h2 id="正文">正文</h2>
-<p>OI 生涯最后一次 CSP，痛失 AK，感觉挺遗憾。</p>
-<p>upd: <span class="math inline">\(100+100+100+95\)</span></p>
-<h2 id="后记">后记</h2>
-<p>会津大门前有两棵树，一棵是樱花树，另一棵也是樱花树。</p>
-<p>最后一次见到系主任和 <span
-class="math inline">\(y,\gamma,\Upsilon,\mathcal Y\)</span> 四君是在 CSP
-之后。</p>
-<p>系主任在食堂门口呆呆的望着什么。</p>
-<p><span class="math inline">\(y\)</span> 君，<span
-class="math inline">\(\gamma\)</span> 君和 <span
-class="math inline">\(\Upsilon\)</span> 君依旧想死。</p>
-<p><span class="math inline">\(\mathcal Y\)</span> 君也开始想死了。</p>
-<p>在这之后过去了很多年，<span class="math inline">\(y\)</span> 君和
-<span class="math inline">\(\gamma\)</span>
-君曾成为了会津大扛把子的人物，他们的故事至今是坊间奇谈。</p>
-<p><span class="math inline">\(\Upsilon\)</span>
-君去向不知所踪，听说去了遥远的地方，<span class="math inline">\(\mathcal
-Y\)</span>
-君和她爱过的女孩在一个风雪交加的夜晚逃出了会津，上一次他向我们发来消息，他在种子岛东岸的一个小渔村里。</p>
-<p>至少四君依然活的好好的，但是他们依然想死。</p>
-<p>我又一次坐在往东北去的火车上，这一次沿着滦河北上，山水之间夹杂的是金黄的麦野。想起浪江在核辐射的滋养之下肆意生长的油菜花田也是如此，又想起我和四君一起沿
-121
-号国道往最上川去的事，那也是在一场梦里，我们在道の站偶然相遇，然后各自散开。</p>
-<p>于是我不禁问，我是他们中的哪一个？</p>
-<p>-完-</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/blog/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/blog/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/blog/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/blog/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

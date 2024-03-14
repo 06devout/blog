@@ -124,13 +124,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -187,6 +187,200 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/29/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%B8%89%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/29/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%B8%89%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">Steins 傅里叶分析 第三章部分习题解答</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-29 22:00:56" itemprop="dateCreated datePublished" datetime="2023-12-29T22:00:56+08:00">2023-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-01-02 18:56:49" itemprop="dateModified" datetime="2024-01-02T18:56:49+08:00">2024-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Steins-I/" itemprop="url" rel="index"><span itemprop="name">Steins I</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="exercise-6">Exercise 6</h2>
+<p>假设存在 <span class="math inline">\(f\)</span> 的傅里叶系数是 <span
+class="math inline">\(\{a\}\)</span>，则 <span
+class="math inline">\(|f|\leq M\)</span></p>
+<p><span
+class="math display">\[A_r(f)(0)=\bigg|\frac{1}{2\pi}\int_{-\pi}^{\pi}P_r(0-t)f(t)\mathrm
+dt\bigg|\leq M\frac{1}{2\pi}\int_{-\pi}^\pi P_r(t)\mathrm
+dt=M\]</span></p>
+<p>另一方面，</p>
+<p><span class="math display">\[\bigg|\sum_{n={-\infty}}^\infty
+a_nr^{|n|}e^{in\theta}\bigg|=\sum_{n=1}^{\infty} \frac{r^n}{n}\to
+\infty(r\to 1)\]</span></p>
+<p>出现矛盾。</p>
+<h2 id="exercise-10">Exercise 10</h2>
+<p><span class="math display">\[
+\begin{aligned}
+E^\prime(t)&amp;=\rho\int_0^{L}\frac{\partial u}{\partial
+t}\frac{\partial^2 u}{\partial t^2}\mathrm dx+\tau\int_0^L
+\frac{\partial u}{\partial x}\frac{\partial^2 u}{\partial x\partial
+t}\mathrm dx \\
+&amp;=\rho\int_0^{L}\frac{\partial u}{\partial t}\frac{\partial^2
+u}{\partial t^2}\mathrm dx+\tau \frac{\partial u}{\partial
+t}\frac{\partial u}{\partial x}\Big|_0^L-\tau \int_0^L \frac{\partial
+u}{\partial t}\frac{\partial^2 u}{\partial x^2}\mathrm dx \\
+&amp;=0
+\end{aligned}
+\]</span></p>
+<h2 id="exercise-12">Exercise 12</h2>
+<p>注意到 <span class="math inline">\(\dfrac{1}{\sin
+\dfrac{x}{2}}-\dfrac{2}{x}\)</span> 在 <span
+class="math inline">\(0\)</span> 处是可去间断点，补充定义后可令其 <span
+class="math inline">\(\in \mathcal R[0,\pi]\)</span>，由
+Riemann-Lebesgue Lemma</p>
+<p><span
+class="math display">\[\int_0^{\pi}\Bigg(\frac{1}{\sin\dfrac{x}{2}}-\frac{2}{x}\bigg)\sin(N+\frac{1}{2})x\mathrm
+dx\to 0,N\to \infty\]</span></p>
+<p>而</p>
+<p><span class="math display">\[\int_0^\pi
+\frac{\sin(N+\dfrac{1}{2})x}{\sin \dfrac{x}{2}}\mathrm dx=\int_0^\pi
+D_N(x)\mathrm dx=\pi\]</span></p>
+<p>得到</p>
+<p><span class="math display">\[\int_0^\pi
+\frac{\sin(N+\dfrac{1}{2})x}{x}\mathrm dx\to
+\frac{\pi}{2},N\to\infty,N\in \mathbb Z\]</span></p>
+<p>换元得到</p>
+<p><span class="math display">\[\int_0^{(N+\frac{1}{2})\pi} \frac{\sin
+x}{x}\mathrm dx\to \frac{\pi}{2},N\to\infty,N\in \mathbb Z\]</span></p>
+<p>两边取极限即得所求为 <span
+class="math inline">\(\dfrac{\pi}{2}\)</span></p>
+<h2 id="exercise-14">Exercise 14</h2>
+<p><span class="math inline">\(\hat f^\prime(n)=\dfrac{1}{in}\hat
+f(n)\)</span></p>
+<p>于是有</p>
+<p><span class="math display">\[\sum_{n\neq 0} |\hat f(n)|\leq
+\sum_{n\neq 0}\dfrac{|\hat f^\prime(n)|}{|n|}\leq \sqrt{\sum_{n\neq
+0}|\hat f^\prime(n)|^2}\cdot\sqrt{\sum_{n\neq
+0}\frac{1}{n^2}}=C||f^\prime||&lt; \infty\]</span></p>
+<p>于是 <span class="math inline">\(\sum |\hat f(n)|\)</span>
+绝对收敛，即一致收敛。</p>
+<h2 id="exercise-18">Exercise 18</h2>
+<p>因为 <span class="math inline">\(\epsilon_n\to\infty\)</span>，所以
+<span class="math inline">\(\forall k\in \mathbb Z^+,\exist
+\epsilon_{n_k}&lt;\dfrac{1}{2^k}\)</span>，取 <span
+class="math inline">\(f=\sum \epsilon_{n_k}e^{in_kx}\)</span> 即可。</p>
+<p>这个练习归纳了之前关于傅里叶级数收敛速度的一些结论。</p>
+<ul>
+<li><span class="math inline">\(f\in C^k\Rightarrow \hat
+f(n)=O(1/|n|^k)\)</span></li>
+<li><span class="math inline">\(f\)</span> is Lipschitz <span
+class="math inline">\(\Rightarrow \hat f(n)=O(1/|n|)\)</span></li>
+<li><span class="math inline">\(f\)</span> is monotonic <span
+class="math inline">\(\Rightarrow \hat f(n)=O(1/|n|)\)</span></li>
+<li><span class="math inline">\(f\)</span> satisfies Holder's condition
+with exponent <span class="math inline">\(0&lt;\alpha&lt;1 \Rightarrow
+\hat f(n)=O(1/|n|^{\alpha})\)</span></li>
+<li><span class="math inline">\(f\)</span> is Riemann Integrable <span
+class="math inline">\(\Rightarrow \hat f\in \ell^2,\hat
+f(n)=o(1)\)</span></li>
+</ul>
+<h2 id="problem-1">Problem 1</h2>
+<ol type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[\tilde
+D_N(x)=\frac{\cos\dfrac{x}{2}-\cos(N+\dfrac{1}{2})x}{\sin
+\dfrac{x}{2}}\]</span></p>
+<p>用和差化积</p>
+<p><span class="math display">\[|\tilde
+D_N(x)|=2\frac{|\sin(\dfrac{N}{2}+1)x\sin Nx|}{|\sin\dfrac{x}{2}|}\leq
+2\pi\frac{|\sin Nx|}{|x|}\]</span></p>
+<p>其中用了 <span class="math inline">\(|\sin(\dfrac{N}{2}+1)x| \leq
+1\)</span> 和 Jordan 不等式 <span class="math inline">\(|\sin
+\dfrac{x}{2}|\geq |\dfrac{x}{\pi}|\)</span></p>
+<p>对 <span class="math inline">\(\dfrac{|\sin Nx|}{|x|}\)</span> 在
+<span class="math inline">\([0,\pi]\)</span> 上积分，考虑对 <span
+class="math inline">\(\sin Nx\)</span> 的符号分段讨论，<span
+class="math inline">\(x\)</span>
+放缩成区间左端点，就得到了类似调和级数的表达式，因此为 <span
+class="math inline">\(O(\log N)\)</span></p>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<p>假设 <span class="math inline">\(\sum_{n=1}^\infty\)</span> 是某个
+<span class="math inline">\(f\in\mathcal R\)</span> 的傅里叶级数，则</p>
+<p><span class="math display">\[(f*\tilde
+D_n)(0)=\frac{i}{\pi}\int_0^\pi f(t)\sum_{n=1}^\infty
+(e^{int}-e^{-int})\mathrm dt=2i\sum_{n=1}^\infty
+\frac{1}{n^\alpha}=\omega(\log N)\]</span></p>
+<p>得到矛盾，因此不存在这样的 <span
+class="math inline">\(f\)</span>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -638,6 +832,94 @@ class="math inline">\(\dfrac{\epsilon OPT_1}{m}\leq \epsilon
 OPT_m\)</span>。</p>
 <p>复杂度为 <span class="math inline">\(O(n^m/\epsilon)\)</span>，实现了
 FTAS。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/20/%E6%B8%B8%E7%A3%90%E8%B6%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/20/%E6%B8%B8%E7%A3%90%E8%B6%8A/" class="post-title-link" itemprop="url">游磐越</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-20 21:28:18" itemprop="dateCreated datePublished" datetime="2023-12-20T21:28:18+08:00">2023-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-14 21:29:35" itemprop="dateModified" datetime="2024-03-14T21:29:35+08:00">2024-03-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E8%AF%97/" itemprop="url" rel="index"><span itemprop="name">诗</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>常期时来行古道，征程今朝把景收。</p>
+<p>若松三月吹樱雪，江城半日悬海楼。</p>
+<p>千年孤烟道尚在，一朝风雨路未休。</p>
+<p>人生海海多惆怅，且行宇内纵神游。</p>
 
       
     </div>
@@ -1336,332 +1618,8 @@ class="math display">\[I_1=\frac{I_1}{9}+\frac{3}{4}\]</span></p>
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/09/MIT-Integration-Bee-2023-Semifinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">MIT Integration Bee 2023 - Semifinal 部分题目解答</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-09 19:36:47" itemprop="dateCreated datePublished" datetime="2023-12-09T19:36:47+08:00">2023-12-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-10 20:06:21" itemprop="dateModified" datetime="2023-12-10T20:06:21+08:00">2023-12-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a
-target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_semifinal.pdf">题目链接</a></p>
-<p>感觉 Semifinal 除了 1.3 和 2.3 神题以外其他的反而比较常规。</p>
-<h2 id="section">1.1</h2>
-<p><span class="math display">\[\int e^{\cos x}\cos(2x+\sin x)\mathrm
-dx\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I &amp;=\int e^{\cos x}\cos(x+(x+\sin x))\mathrm dx \\
-&amp;= \int e^{\cos x}\Big((1+\cos x)\cos(x+\sin x)-\sin x\sin (x+\sin
-x)\Big) \mathrm dx-\int e^{\cos x}\cos(x+\sin x)\mathrm dx \\
-&amp;= e^{\cos x}\sin(x+\sin x)-\int e^{\cos x}\Big(\cos x\cos\sin
-x-\sin x\sin\sin x)\mathrm dx \\
-&amp;= e^{\cos x}\sin (x+\sin x)-e^{\cos x}\sin\sin x
-\end{aligned}
-\]</span></p>
-<h2 id="section-1">1.2</h2>
-<p><del>不会。</del></p>
-<p>直接扔个 <a
-target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/4638248/evaluate-int1-0-9x9-x909x99-x9009x909-x9909x999-x900">StackExchange</a></p>
-<p>讲真这题神了（</p>
-<h2 id="section-2">1.3</h2>
-<p><span class="math display">\[\int_0^\pi \frac{1\cos x-\cos
-2021x-2\cos 2022 x-\cos 2023 x+2}{1-\cos 2x}\mathrm dx\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I &amp;=\int_0^\pi \frac{2\cos x+2-(\cos 2021x+\cos 2022 x)-(\cos2022
-x-\cos 2023 x)}{1-\cos 2x}\mathrm dx \\
-&amp;=\int_0^\pi \frac{2\cos
-x+2-2\cos\dfrac{x}{2}\Big(\cos\dfrac{4043}{2}x+\cos\dfrac{4045}{2}x\Big)}{1-\cos
-2x}\mathrm dx \\
-&amp;= \int_0^\pi \frac{2\cos x+2-4\cos^2\dfrac{x}{2}\cos 2022 x}{1-\cos
-2x}\mathrm dx \\
-&amp;= \int_0^\pi \frac{4\cos^2\dfrac{x}{2}(1-\cos 2022x)}{2\sin^2
-x}\mathrm dx \\
-&amp;= \int_0^\pi \frac{1-\cos 2022x}{2\cos^2\dfrac{x}{2}}\mathrm dx \\
-&amp;= \int_0^\pi \frac{1-\cos 2022x}{1-\cos x}\mathrm dx \\
-&amp;= 2022\pi
-\end{aligned}
-\]</span></p>
-<p>最后一步用了 Fejer 积分：</p>
-<p><span class="math display">\[\int_0^{\pi/2}\frac{1-\cos nx}{1-\cos
-x}\mathrm dx=\frac{n\pi}{2}\]</span></p>
-<p>证明实际上不难：</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{1-\cos nx}{1-\cos x} &amp;= \frac{(1-\cos x)+(\cos x-\cos
-2x)+\cdots (\cos(n-1)x-\cos nx)}{1-\cos x} \\
-&amp;= \frac{2\sin \dfrac{x}{2}\sum_{k=1}^n
-\sin(k-\dfrac{1}{2})x}{2\sin^2 \dfrac{x}{2}} \\
-&amp;=\sum_{k=1}^n \sin(k-\frac{1}{2})x
-\end{aligned}
-\]</span></p>
-<p>因为</p>
-<p><span class="math display">\[
-\begin{aligned}
-\sin(n+\frac{1}{2})x&amp;=\sin\frac{x}{2}+(\sin \frac{3}{2}x-\sin
-x)+\cdots+(\sin(n+\frac{1}{2})x-\sin(n-\frac{1}{2})x) \\
-&amp;=\sin\frac{x}{2}(1+\sum_{k=1}^n\cos kx)
-\end{aligned}
-\]</span></p>
-<p>带入上面的式子，得到</p>
-<p><span class="math display">\[\frac{1-\cos nx}{1-\cos
-x}=n+\sum_{k=1}^n\sum_{j=1}^k\cos jx\]</span></p>
-<p>两边在 <span class="math inline">\((0,\pi)\)</span> 上积分，<span
-class="math inline">\(\cos kx\)</span> 积分值是 <span
-class="math inline">\(0\)</span>，因此</p>
-<p><span class="math display">\[\int_0^\pi \frac{1-\cos nx}{1-\cos
-x}\mathrm dx=n\pi\]</span></p>
-<h2 id="section-3">2.2</h2>
-<p><span class="math display">\[\int_{-2}^2
-((((x^2-2)^2-2)^2-2)^2-2)\mathrm dx\]</span></p>
-<p>找规律，</p>
-<p><span class="math display">\[\int_{-2}^2 (x^2-2)\mathrm
-dx=-\frac{8}{3}\]</span></p>
-<p><span class="math display">\[\int_{-2}^2 ((x^2-2)^2-2)\mathrm
-dx=-\frac{8}{15}\]</span></p>
-<p>因此原积分 <span class="math inline">\(-\dfrac{8}{255}\)</span></p>
-<h2 id="section-4">2.3</h2>
-<p>不会。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/04/MIT-Integration-Bee-2023-Quarterfinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/04/MIT-Integration-Bee-2023-Quarterfinal-%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">MIT Integration Bee 2023 - Quarterfinal 部分题目解答</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-04 21:20:48" itemprop="dateCreated datePublished" datetime="2023-12-04T21:20:48+08:00">2023-12-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-06 15:53:38" itemprop="dateModified" datetime="2023-12-06T15:53:38+08:00">2023-12-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a
-target="_blank" rel="noopener" href="https://math.mit.edu/~yyao1/pdf/2023_quarterfinal.pdf">题目链接</a></p>
-<h2 id="section">2.1</h2>
-<p><span class="math display">\[\int_{\sqrt e}^\infty x^{-\ln x}\mathrm
-dx\]</span></p>
-<p>设 <span class="math inline">\(t=\ln x\)</span>，积分转化为</p>
-<p><span class="math display">\[\int_{1/2}^\infty e^{-t^2+t}\mathrm
-dt=e^{1/4}\int_{1/2}^\infty e^{(t-1/2)^2}\mathrm dt=e^{1/4}\int_0^\infty
-e^{-u^2}\mathrm du\]</span></p>
-<p>最后一个积分是经典的结论，这里也证一下。</p>
-<p>设 <span class="math inline">\(I=\int_0^\infty e^{-x^2}\mathrm
-dx\)</span></p>
-<p>则</p>
-<p><span class="math display">\[I^2=\int_0^\infty\int_0^\infty
-e^{-x^2-y^2}\mathrm dx\mathrm dy\]</span></p>
-<p>做极坐标换元，</p>
-<p><span class="math display">\[\mathrm dx\mathrm
-dy=\frac{\partial(x,y)}{\partial(r,\theta)}\mathrm dr\mathrm
-d\theta\]</span></p>
-<p>得到</p>
-<p><span class="math display">\[I^2=\int_0^{\pi/2}\mathrm
-d\theta\int_0^\infty e^{-r^2}r\mathrm dr=\frac{\pi}{4}\]</span></p>
-<p>故 <span
-class="math inline">\(I=\dfrac{\pi^{1/2}}{2}\)</span>，原积分为 <span
-class="math inline">\(\dfrac{e^{1/4}\pi^{1/2}}{2}\)</span>。</p>
-<h2 id="section-1">2.2</h2>
-<p><span class="math display">\[\int \frac{1-2x}{(1+x)^2x^{2/3}}\mathrm
-dx\]</span></p>
-<p>做代换 <span class="math inline">\(t= x^{1/3}\)</span>，得到</p>
-<p><span class="math display">\[I=3\int \frac{1-2t^3}{(1+t^3)^2}\mathrm
-dt=3\int\frac{1}{1+t^3}-\frac{3t^3}{(1+t^3)^2}\mathrm dt\]</span></p>
-<p>注意到</p>
-<p><span
-class="math display">\[\frac{1}{1+t^3}-\frac{3t^3}{(1+t^3)^2}=\frac{1}{1+t^3}\cdot
-\frac{\mathrm dt}{\mathrm dt}+t\frac{\mathrm d(\frac{1}{1+t^3})}{\mathrm
-dt}=\frac{\mathrm d\frac{t}{1+t^3}}{\mathrm dt}\]</span></p>
-<p>故原积分 <span
-class="math inline">\(I=\dfrac{3x^{1/3}}{1+x}\)</span></p>
-<h2 id="section-2">2.3</h2>
-<p><span class="math display">\[\lim_{n\to\infty}(\frac{1}{n}\int_0^n
-\cos^2(\frac{\pi x^2}{\sqrt 2})\mathrm dx)\]</span></p>
-<p><span class="math display">\[I_n=\frac{1}{2}\int_0^n 1+\cos(\sqrt
-2\pi x^2)\mathrm dx\]</span></p>
-<p>做代换 <span class="math inline">\(t=x^2\)</span></p>
-<p><span class="math display">\[I_n=\frac{n}{2}+\frac{1}{2}\int_0^{\sqrt
-n}\frac{\cos(\sqrt 2\pi t)}{\sqrt t}\mathrm
-dt=\frac{n}{2}+O(1)\]</span></p>
-<p>故</p>
-<p><span class="math display">\[\lim_{n\to\infty}
-\frac{1}{n}I_n=\frac{1}{2}\]</span></p>
-<p>上上式最后一步利用了 A-D 判别法，反常积分</p>
-<p><span class="math display">\[\int_0^\infty \frac{\cos(\sqrt 2\pi
-t)}{\sqrt t}\mathrm dt\]</span></p>
-<p>收敛。</p>
-<h2 id="section-3">3.2</h2>
-<p><span class="math display">\[\int_0^\infty
-\operatorname{sech}^2(x+\tan x)\mathrm dx\]</span></p>
-<p>首先要用 <a
-target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Glasser%27s_master_theorem">Glasser's
-master theorem</a></p>
-<p>对于形如 <span class="math inline">\(x-a-\sum_{n=1}^N
-\dfrac{|a_n|}{x-b_n}\)</span> 的 <span class="math inline">\(u\)</span>
-和 <span class="math inline">\(f(x)\)</span>，有</p>
-<p><span
-class="math display">\[\text{P.V.}\int_{-\infty}^{+\infty}f(u)\mathrm
-dx=\text{P.V.}\int_{-\infty}^{+\infty}f(x)\mathrm dx\]</span></p>
-<p>而因为</p>
-<p><span class="math display">\[\pi\cot x=\frac{1}{x}+\sum_{i=1}^\infty
-\Big(\frac{1}{x+i\pi}+\frac{1}{x-i\pi}\Big)\]</span></p>
-<p>做代换 <span class="math inline">\(t=\dfrac{\pi}{2}-x\)</span>
-就可以得到 <span class="math inline">\(\tan t\)</span> 的表达式，因此
-<span class="math inline">\(x+\tan x\)</span> 是上面 <span
-class="math inline">\(u\)</span> 的表达形式，所以利用定理，</p>
-<p><span
-class="math display">\[I=\frac{1}{2}\int_{-\infty}^{+\infty}\operatorname{sech}^2x\mathrm
-dx=\tanh x\Big |_{-\infty}^{+\infty}=1\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/blog/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/blog/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
