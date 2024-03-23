@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,784 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/01/09/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/01/09/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">Steins 傅里叶分析 第四章部分习题解答</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-01-09 19:23:41" itemprop="dateCreated datePublished" datetime="2024-01-09T19:23:41+08:00">2024-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-01-15 20:54:32" itemprop="dateModified" datetime="2024-01-15T20:54:32+08:00">2024-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Steins-I/" itemprop="url" rel="index"><span itemprop="name">Steins I</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="exercise-4">Exercise 4</h2>
+<p><span class="math inline">\((\text{Wirtinger} \Rightarrow
+\text{isoperimetric})\)</span>：</p>
+<p><span class="math display">\[
+\begin{aligned}
+2(\pi-\mathcal A)&amp;=\int_{-\pi}^\pi
+[x^\prime(s)^2+y^\prime(s)^2]\mathrm ds-\int_{-\pi}^\pi
+[x(s)y^\prime(s)-y(x)x^\prime(s)]\mathrm ds \\
+&amp;= \int_{-\pi}^\pi [x^\prime(s)+y(s)]^2\mathrm
+ds+\int_{-\pi}^\pi[y^\prime(s)^2-y^2(s)]\mathrm ds \\
+&amp;\geq 0
+\end{aligned}
+\]</span></p>
+<p>最后一步利用 Wirtinger 不等式。</p>
+<p><span class="math inline">\((\text{isoperimetric} \Rightarrow
+\text{wirtinger})\)</span>:</p>
+<p>因为 <span class="math inline">\(f\)</span> 连续，所以 <span
+class="math inline">\(f\)</span> 有原函数，设 <span
+class="math inline">\(g\)</span> 满足 <span
+class="math inline">\(g^\prime=-f\)</span></p>
+<p>考虑 <span class="math inline">\(\gamma:[-\pi,\pi]\to \mathbb
+R^2:t\to(g(t),f(t))\)</span></p>
+$$
+<span class="math display">\[\begin{aligned}
+\int_{-\pi}^\pi [f^\prime(t)^2-f^2(t)]\mathrm dt &amp;= \int_{-\pi}^\pi
+[g^\prime(t)+f(t)]^2\mathrm dt+\int_{-\pi}^\pi
+[f^\prime(t)^2-f^2(t)]\mathrm dt \\
+&amp;=\int_{-\pi}^\pi
+[g^\prime(t)^2+2g^\prime(t)f(t)+f^\prime(t)^2]\mathrm dt \\
+&amp;=\int_{-\pi}^\pi [g^\prime(t)^2+f^\prime(t)^2]\mathrm dt -2\mathcal
+A \\
+&amp;\overset{Cauchy}{\geq} \frac{1}{2\pi} \Bigg(\int_{-\pi}^\pi
+\sqrt{g^\prime(t)^2+f^\prime(t)^2}\mathrm dt \Bigg)^2-2\mathcal A \\
+&amp;=2(\pi-\mathcal A) \\
+&amp;\geq 0
+
+\end{aligned}\]</span>
+<p>$$</p>
+<h2 id="exercise-5">Exercise 5</h2>
+<p>注意到</p>
+<p><span class="math display">\[(\frac{1-\sqrt 5}{2})^n+(\frac{\sqrt
+5+1}{2})^n\]</span></p>
+<p>是 <span
+class="math inline">\(a_n=a_{n-1}+a_{n-2},a_1=1,a_2=2\)</span>
+的通项公式，而 <span class="math inline">\((\frac{1-\sqrt 5}{2})^n\to
+0\)</span>，故随 <span
+class="math inline">\(n\to\infty\)</span>，后面一项无限接近一个整数。</p>
+<h2 id="exercise-8">Exercise 8</h2>
+<p><span class="math display">\[\Big|\sum_{n=1}^N e^{2\pi
+ibn^\sigma}\Big|\leq \Big |\sum_{n=1}^Ne^{2\pi ibn^\sigma}-\int_1^N
+e^{2\pi ibx^\sigma}\mathrm dx\Big|+\Big|\int_1^N e^{2\pi i
+bx^\sigma}\mathrm dx \Big|\]</span></p>
+<p>而后一项可以利用分部积分提出一个 <span class="math inline">\(e^{2\pi
+i b x^\sigma}\)</span>，证明他是 <span
+class="math inline">\(O(N^{1-\sigma})\)</span>，前一项可以 <span
+class="math inline">\((n,n+1)\)</span> 分开考虑放缩，得到 <span
+class="math inline">\(O(N^\sigma)\)</span>，即得证。</p>
+<h2 id="exercise-9">Exercise 9</h2>
+<p>这次是证明</p>
+<p><span class="math display">\[\lim_{N\to\infty}\frac{1}{N}\sum_{n=1}^N
+e^{2\pi ib\ln n}&gt;0\]</span></p>
+<p>我们还是拆分成 <span class="math inline">\(\sum-\int_1^N\)</span> 和
+<span class="math inline">\(\int_1^N\)</span> 两部分，注意到 <span
+class="math inline">\(\sum-\int_1^N=O(\log
+n)\)</span>，因此不会对极限造成影响，而 <span
+class="math inline">\(\int_1^N\)</span> 的结果是 <span
+class="math inline">\((N^{2\pi ib+1}-1)/(2\pi ib+1)\)</span>，由 <span
+class="math inline">\(|N^{2\pi ib}|=1\)</span> 知最后的极限是 <span
+class="math inline">\(1/(2\pi i b+1)\)</span></p>
+<h2 id="exercise-11">Exercise 11</h2>
+<p>首先求出 <span class="math inline">\(u-f\)</span> 的傅里叶系数</p>
+<p><span
+class="math display">\[\widehat{u-f}(n)=\widehat{(f*H_t)}(n)-\widehat
+f(n)=\widehat f(n)[e^{-4\pi^2n^2t^2}-1]\]</span></p>
+<p>由 Parseval</p>
+<p><span class="math display">\[\int_0^1 |u(x,t)-f(x)|^2\mathrm dx=\sum
+|\hat f(n)|^2+|\widehat{H_t}(n)-1|^2\mathrm dx\]</span></p>
+<p>对于 <span class="math inline">\(\forall \epsilon&gt;0\)</span></p>
+<p>注意到因为 <span
+class="math inline">\(||f||&lt;\infty\)</span>，所以存在 <span
+class="math inline">\(N\)</span> 使得</p>
+<p><span class="math display">\[\sum_{|n|&gt;N} |\hat f(n)|&lt;\sqrt
+\epsilon\]</span></p>
+<p>因此对于 <span class="math inline">\(|n|&gt;N\)</span> 的部分，由
+<span class="math inline">\(|\widehat{H_t}(n)-1|\leq 1\)</span>
+可知后面的和 <span class="math inline">\(&lt;\epsilon\)</span></p>
+<p>对于 <span class="math inline">\(|n|\leq N\)</span>
+的部分，我们只需要 <span
+class="math inline">\(|\widehat{H_t}(n)-1|&lt;\sqrt \epsilon(\forall
+t&lt;\delta)\)</span> 即可，可取 <span
+class="math inline">\(\delta=\dfrac{\ln(1-\sqrt
+\epsilon)}{4\pi^2N^2}\)</span></p>
+<p>这样 <span class="math inline">\(\sum=\sum_{|n|\leq
+N}+\sum_{|n|&gt;N}\leq ||f||\epsilon+\epsilon=O(\epsilon) (t\to
+0)\)</span>，即证。</p>
+<h2 id="exercise-13b">Exercise 13(b)</h2>
+<p>感觉主要是想到第一步，后面都比较机械了。</p>
+<p>先用 Jordan 不等式 <span class="math inline">\(|x|\leq
+\dfrac{1}{2}|\sin \pi x|,x\in
+[-\dfrac{1}{2},\dfrac{1}{2}]\)</span>，转化成 <span
+class="math inline">\(\int |\sin\pi xH_t(x)|^2\mathrm dx\)</span>，然后
+Parseval，转化成傅里叶系数平方求和，用 <span
+class="math inline">\(\dfrac{1}{2i}(e^{i\pi x}-e^{-i\pi x})\)</span>
+代替 <span class="math inline">\(\sin x\)</span>，最后可以转化成 <span
+class="math inline">\(\pi^4t^2\sum |(2n+1)^2e^{-8\pi^2 x^2 t}|\)</span>
+的形式，再转换成积分的形式，求阶即可。</p>
+<h2 id="problem-1">Problem 1</h2>
+<ol type="a">
+<li>用 Exercise 15 Chap.3 的结论，有</li>
+</ol>
+<p><span class="math display">\[2|a_n|=\frac{1}{2\pi}\int_{-\pi}^\pi
+(\gamma(t)-\gamma(t+\pi/n))e^{-int}\mathrm dt\]</span></p>
+<ol start="2" type="a">
+<li>设 <span class="math inline">\(t\)</span> 为 <span
+class="math inline">\(\gamma(\tau)\)</span> 的切线与 <span
+class="math inline">\(y\)</span> 轴的夹角，则 <span
+class="math inline">\(\gamma^\prime(t)\)</span> 可写作 <span
+class="math inline">\(ie^{it}r(t)\)</span>，其中 <span
+class="math inline">\(r(t)\)</span> 控制在 <span
+class="math inline">\(\tau(t)\)</span> 处的切线长度，则 <span
+class="math inline">\(r(t)\)</span> 是周期为 <span
+class="math inline">\(2\pi\)</span> 的实值函数且 <span
+class="math inline">\(r(t)=-r(t+\pi)\)</span></li>
+</ol>
+<p>由分部积分</p>
+<p><span class="math display">\[\gamma(t)=r(t)e^{it}-\int
+r^\prime(t)e^{it}\mathrm dt\]</span></p>
+<p>求傅里叶系数得</p>
+<p><span class="math display">\[\hat
+\gamma(1)=\frac{1}{2\pi}\int_{-\pi}^\pi r(t)\mathrm
+dt=\frac{1}{2\pi}\int_{-\pi}^\pi|\gamma^\prime(t)|\mathrm
+dt=\frac{\ell}{2\pi}\]</span></p>
+<p>再由 <span class="math inline">\(2\hat \gamma(1)\leq d\)</span>
+即证。</p>
+<h2 id="problem-3">Problem 3</h2>
+<p>运用 Problem 2 的结论，数学归纳法，每次差分，直到 <span
+class="math inline">\(\sigma\in (0,1)\)</span>。</p>
+<h2 id="problem-6">Problem 6</h2>
+<p>可将 <span class="math inline">\(f(n)\)</span>
+拆成若干段单调有界的函数，因此有 <span class="math inline">\(\hat
+f(n)=O(1/n)\)</span>，然后用 Problem 5 的结论。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/01/07/%E3%80%90M-4%E3%80%91%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/01/07/%E3%80%90M-4%E3%80%91%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0/" class="post-title-link" itemprop="url">【M#4】伯努利数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-01-07 20:17:43 / Modified: 21:23:48" itemprop="dateCreated datePublished" datetime="2024-01-07T20:17:43+08:00">2024-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="bernoulli-number">Bernoulli Number</h2>
+<p>伯努利数由 EGF 定义</p>
+<p><span class="math display">\[\mathcal
+B(z)=\frac{z}{e^z-1}=\sum_{n=0}^\infty \frac{B_n}{n!}z^n
+\tag{1}\]</span></p>
+<p>利用这个定义暴力展开生成函数，我们可以算出伯努利数的前几项。</p>
+<p><span class="math display">\[
+\begin{matrix}
+n  &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp;
+8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 \\
+B_n  &amp; 1 &amp; -1/2  &amp; 1/6 &amp; 0 &amp; -1/30 &amp; 0 &amp;
+1/42 &amp; 0 &amp; -1/30 &amp; 0 &amp; 5/66 &amp; 0 &amp; -691/2730
+\end{matrix}
+\]</span></p>
+<p>注意到这些数都比较丑，并且 <span class="math inline">\(\geq
+3\)</span> 的奇数都是 <span
+class="math inline">\(0\)</span>，这一点可以注意到 <span
+class="math inline">\(\dfrac{z}{e^z-1}+\dfrac{z}{2}\)</span>
+是一个偶函数。</p>
+<p>事实上，伯努利数并不存在封闭形式，这一点可以从 <span
+class="math inline">\(-691/2730\)</span>
+这样一个诡异的形式中看出来。</p>
+<p>另一种定义伯努利数的方法是通过递推定义，这一种定义和生成函数定义是等价的，可以用生成函数导出：</p>
+<p><span
+class="math display">\[\frac{z}{e^z-1}-1=-\frac{z}{e^z-1}(\frac{e^z-1}{z}-1)\]</span></p>
+<p>两边同时取 <span class="math inline">\(z^n\)</span> 项，我们得到</p>
+<p><span
+class="math display">\[B_n=-\frac{1}{n+1}\sum_{k=0}^{n-1}\binom{n+1}{k}B_k
+\tag{2}\]</span></p>
+<h2 id="zeta-function-at-positive-even-integers">Zeta Function at
+Positive Even Integers</h2>
+<p>伯努利数的一个重要应用就是他可以表示一类函数的展开系数，如 <span
+class="math inline">\(\zeta\)</span> 函数，其在 <span
+class="math inline">\(2n(n\in\mathbb Z)\)</span> 处的定义为</p>
+<p><span class="math display">\[\zeta(2n)=\sum_{m=1}^\infty
+\frac{1}{m^{2n}} \tag{3}\]</span></p>
+<p>为了导出 <span class="math inline">\(\zeta\)</span>
+函数的级数表示，我们首先研究一下 <span class="math inline">\(z\cot
+z\)</span> 的展开。</p>
+<p><span class="math display">\[
+\begin{aligned}
+z\cot z &amp;=(iz)\frac{e^{iz}+e^{-iz}}{e^{iz}-e^{-iz}} \\
+&amp;=\frac{1}{2}(2iz)\Big(\frac{1}{1-e^{-2iz}}+\frac{1}{e^{2iz}-1}\Big)
+\\
+&amp;=\frac{1}{2}(\mathcal B(2iz)+\mathcal B(-2iz)) \\
+&amp;=1+\sum_{n=1}^\infty (-1)^n\frac{2^{2n}B_{2n}}{(2n)!}z^{2n}
+\end{aligned}\tag{4}
+\]</span></p>
+<p>另一方面，对于 <span class="math inline">\(\cot z\)</span>
+我们有经典的公式</p>
+<p><span class="math display">\[\cot z=\frac{1}{z}+2\sum_{n=1}^\infty
+\frac{z}{z^2-n^2\pi^2}\]</span></p>
+<p>则有</p>
+<p><span class="math display">\[
+\begin{aligned}
+z\cot z &amp;=1+2\sum_{n=1}^\infty
+\frac{(\dfrac{z}{n\pi})^2}{(\dfrac{z}{n\pi})^2-1} \\
+&amp;=1-2\sum_{n=1}^\infty \sum_{j\in2\mathbb Z^+}\frac{z^j}{n^j\pi^j}
+\\
+&amp;=1-2\sum_{n=1}^\infty\frac{\zeta(2n)}{\pi^{2n}}z^{2n}
+\end{aligned}\tag{5}
+\]</span></p>
+<p>对比 <span class="math inline">\((4),(5)\)</span>
+的系数，我们可以得到</p>
+<p><span
+class="math display">\[\zeta(2n)=\frac{(-1)^{n+1}}{2}\frac{(2\pi)^{2n}}{(2n)!}B_{2n}
+\tag{6}\]</span></p>
+<p>事实上，伯努利数还出现在更多的函数的表达式中，如将 <span
+class="math inline">\(\tan z\)</span> 写作 <span
+class="math inline">\(\cot z-2\cot 2z\)</span>，就可以得到 <span
+class="math inline">\(\tan z\)</span> 的表达式。</p>
+<h2 id="bernoulli-polynomial">Bernoulli Polynomial</h2>
+<p>伯努利多项式 <span class="math inline">\(B_n(x)\)</span>
+通过生成函数</p>
+<p><span class="math display">\[\mathfrak
+B(x,z)=\frac{ze^{xz}}{e^z-1}=\sum_{n=0}^\infty \frac{B_n(x)}{n!}z^n
+\tag{7}\]</span></p>
+<p>定义。</p>
+<p>把 <span class="math inline">\(\mathfrak B(x,z)\)</span> 写成 <span
+class="math inline">\(\mathcal B(z)\)</span> 和 <span
+class="math inline">\(e^{xz}\)</span> 的卷积的形式，比较系数就得到</p>
+<p><span class="math display">\[B_n(x)=\sum_{k=0}^n
+\binom{n}{k}B_kx^{n-k} \tag{8}\]</span></p>
+<p>下面两个结论和伯努利数的实际意义有着重要的关联，首先 <span
+class="math inline">\(B_n(x)\)</span> 在离散微积分意义下和 <span
+class="math inline">\(x^n\)</span> 很像，具体的，</p>
+<p><span class="math display">\[\Delta B_n(x)=B_n(x+1)-B_n(x)=nx^{n-1}
+\tag{9}\]</span></p>
+<p>证明只需用 <span class="math inline">\(\mathfrak B(x,z+1)-\mathfrak
+B(x,z)\)</span> 即可。</p>
+<p>另一个实际上是伯努利数被发现的原因，即 <span
+class="math inline">\(x^m\)</span> 的离散积分的系数与 <span
+class="math inline">\(B_n\)</span> 有着紧密的联系。</p>
+<p>设 <span class="math inline">\(S_m(n)=\sum_{k=1}^{n-1}k^m=\sum_1^n
+x^m\delta x\)</span>，则有</p>
+<p><span class="math display">\[(m+1)S_m(n)=B_{m+1}(n)-B_{m+1}
+\tag{10}\]</span></p>
+<p>证明只需在 <span class="math inline">\((9)\)</span> 中取 <span
+class="math inline">\(n=m+1\)</span>，然后对 <span
+class="math inline">\(x\)</span> 从 <span
+class="math inline">\(1\)</span> 到 <span
+class="math inline">\(m-1\)</span> 求和即可。</p>
+<h2 id="bernoulli-denominator">Bernoulli Denominator</h2>
+<p>最后我们来考虑一下伯努利数的神秘的分母是什么。</p>
+<p>对着表仔细观察可以注意到，他是所有满足 <span
+class="math inline">\((p-1)|(2n)\)</span> 的素数 <span
+class="math inline">\(p\)</span> 的乘积。</p>
+<p>我们用数学归纳法证明这个猜想。</p>
+<p>注意到这个猜想实际上等价于</p>
+<p><span class="math display">\[I_{2n}=B_{2n}+\sum_{p为素数}
+\frac{[(p-1)|2n]}{p} \tag{11}\]</span></p>
+<p>是一个整数。</p>
+<p>观察到，对于素数 <span class="math inline">\(p\)</span> 和 <span
+class="math inline">\(m&gt;0\)</span>，<span
+class="math inline">\(S_m(p)+[(p-1)|m]=\mathbb Zp\)</span></p>
+<p>证明考虑 <span class="math inline">\(m\)</span> 是 <span
+class="math inline">\((p-1)\)</span> 的倍数，如果是，则 <span
+class="math inline">\(S_m(p)\equiv p-1 \bmod p\)</span>，否则 <span
+class="math inline">\(S_m(p)\)</span> 每一项模 <span
+class="math inline">\(p\)</span> 互不相同，加起来是 <span
+class="math inline">\(p\)</span> 的倍数。</p>
+<p>有了这个结论之后，对于 <span class="math inline">\((p-1)|2n\)</span>
+的 <span class="math inline">\(p\)</span>，利用 <span
+class="math inline">\((10)\)</span> 取 <span
+class="math inline">\(m=2n\)</span>，将其中的 <span
+class="math inline">\(B_{m+1}(x)\)</span> 用 <span
+class="math inline">\((8)\)</span> 展开。</p>
+<p><span
+class="math display">\[B_{2n}+\frac{[(p-1)|2n]}{p}+\frac{1}{2n+1}\sum_{k=0}^{2n-2}\binom{2n+1}{k}B_kp^{2n+1-k}=S_{2n}(p)+\mathbb
+Z\in \mathbb Z\]</span></p>
+<p>因此我们只需要证明</p>
+<p><span
+class="math display">\[\frac{1}{2n+1}\sum_{k=0}^{2n-2}\binom{2n+1}{k}B_kp^{2n+1-k}=\sum_{k=0}^{2n-2}\binom{2n}{k}B_kp^2\frac{p^{2n-1-k}}{2n+1-k}\]</span></p>
+<p>是整数即可，因为 <span class="math inline">\(p\)</span>
+是素数，这等价于他的分母不能被 <span class="math inline">\(p\)</span>
+整除。</p>
+<p>由归纳假设，<span class="math inline">\(B_k\)</span> 的分母中不含
+<span class="math inline">\(p^2\)</span>，因此 <span
+class="math inline">\(B_kp^2\)</span> 的分母中不含 <span
+class="math inline">\(p\)</span>，而在假设范围内有 <span
+class="math inline">\(p^{2n-1-k}\geq
+2n+1-k\)</span>，因此后面一部分的分母里同样没有 <span
+class="math inline">\(p\)</span>，假设成立。</p>
+<p>这也就完成了我们的证明。</p>
+<p>因为 <span class="math inline">\(2n\geq 2\)</span> 的时候，<span
+class="math inline">\(2-1,3-1\)</span> 一定整除 <span
+class="math inline">\(2n\)</span>，所以 <span
+class="math inline">\(\forall n\geq 1\)</span>,<span
+class="math inline">\(B_{2n}\)</span> 的分母一定是 <span
+class="math inline">\(6\)</span> 的倍数。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/01/03/%E3%80%90M-3%E3%80%91%E5%91%A8%E9%95%BF%E4%B8%80%E5%AE%9A%E7%9A%84%E9%97%AD%E5%90%88%E6%9B%B2%E7%BA%BF%E4%B8%BA%E5%9C%86%E6%97%B6%E5%9B%B4%E6%88%90%E7%9A%84%E9%9D%A2%E7%A7%AF%E6%9C%80%E5%A4%A7/" class="post-title-link" itemprop="url">【M#3】周长一定的闭合曲线为圆时围成的面积最大</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-01-03 20:28:23 / Modified: 21:07:00" itemprop="dateCreated datePublished" datetime="2024-01-03T20:28:23+08:00">2024-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我们在这里证明一个广为人知的结论，即周长一定的闭合曲线为圆时围成的面积最大。</p>
+<p>具体的，对于平面上的一条闭合曲线 <span
+class="math inline">\(\gamma:[a,b]\to \mathbb R^2\)</span> ，<span
+class="math inline">\(\gamma(a)=\gamma(b)\)</span>，其长度定义为</p>
+<p><span class="math display">\[\ell=\int_a^b
+\sqrt{(x^\prime)^2(t)+(y^\prime)^2(t)}\mathrm dt\]</span></p>
+<p>其面积定义为</p>
+<p><span class="math display">\[\mathcal A=\frac{1}{2}\Bigg|\int_a^b
+x(t)y^\prime(t)-x^\prime(t)y(t)\mathrm dt \Bigg|\]</span></p>
+<p>则有</p>
+<p><span class="math display">\[\mathcal A\leq
+\frac{\ell^2}{4\pi}\]</span></p>
+<p>当且仅当 <span class="math inline">\(\gamma\)</span>
+为一个圆时等式成立。</p>
+<p>首先，我们需要把曲线转化成一个标准的形式。</p>
+<p>对 <span class="math inline">\(t\)</span> 做变量代换，我们可以把
+<span class="math inline">\(\gamma\)</span> 定义到 <span
+class="math inline">\([0,2\pi]\)</span> 上。</p>
+<p>其次，调整 <span class="math inline">\(x(t),y(t)\)</span>
+使得任意时刻 <span
+class="math inline">\((x^\prime)^2(t)+(y^\prime)^2(t)=1\)</span>，这样我们将曲线的
+<span class="math inline">\(\ell\)</span> 调整为 <span
+class="math inline">\(2\pi\)</span>，接下来我们只需要证明 <span
+class="math inline">\(\mathcal A\leq \pi\)</span> 即可。</p>
+<p>注意到 <span
+class="math inline">\(\gamma(0)=\gamma(2\pi)\)</span>，我们可以将 <span
+class="math inline">\(x(t)\)</span> 和 <span
+class="math inline">\(y(t)\)</span> 分别写成傅里叶级数的表达</p>
+<p><span class="math display">\[x(t)\sim \sum a_ne^{int} \text{ and }
+y(t)\sim \sum b_ne^{int}\]</span></p>
+<p>则</p>
+<p><span class="math display">\[x^\prime(t) \sim \sum a_nine^{int}
+\text{ and } y^\prime(t)\sim \sum b_nine^{int}\]</span></p>
+<p>则</p>
+<p><span class="math display">\[\mathcal A=\Big|\pi \sum
+n(a_n\overline{b_n}-b_n\overline{a_n})\Big|\]</span></p>
+<p>利用</p>
+<p><span class="math display">\[n\leq n^2 \tag{1}\]</span></p>
+<p><span
+class="math display">\[|a_n\overline{b_n}-b_n\overline{a_n}|\leq
+2|a_n||b_n| \tag{2}\]</span></p>
+<p><span class="math display">\[2|a_n||b_n|\leq |a_n|^2+|b_n|^2
+\tag{3}\]</span></p>
+<p>得到</p>
+<p><span class="math display">\[\mathcal A\leq \pi \sum
+n^2(|a_n|^2+|b_n|^2)=\pi ||x(t)||\cdot ||y(t)||=\pi \tag{4}\]</span></p>
+<p>接下来考虑取等条件，<span class="math inline">\((1)\)</span> 说明
+<span class="math inline">\(a_k(|k|\geq 2)=0\)</span>，因为 <span
+class="math inline">\(x(t),y(t)\in\mathbb R\)</span>，说明 <span
+class="math inline">\(a_1=\overline{a_{-1}},b_1=\overline{b_{-1}}\)</span>，<span
+class="math inline">\((4)\)</span> 说明 <span
+class="math inline">\(|a_1|^2+|a_2|^2=1/2\)</span>，<span
+class="math inline">\((3)\)</span> 说明 <span
+class="math inline">\(|a_1|=|b_1|=\frac{1}{2}\)</span></p>
+<p>因此可设</p>
+<p><span class="math display">\[a_1=\frac{1}{2}e^{in\alpha} \text{ and }
+b_1=\frac{1}{2}e^{in\beta}\]</span></p>
+<p>带入 <span class="math inline">\((3)\)</span>，得到 <span
+class="math inline">\(|\sin(\alpha-\beta)|=1\)</span>，也就是说 <span
+class="math inline">\(a_1\)</span> 和 <span
+class="math inline">\(b_1\)</span> 是垂直的。</p>
+<p>旋转坐标系到 <span class="math inline">\(\alpha\)</span>，不妨设
+<span
+class="math inline">\(\beta=\alpha+\dfrac{\pi}{2}\)</span>，在新的坐标系下，有</p>
+<p><span class="math display">\[x(t)=a_0+2a_1\cos t\text{ and
+}y(t)=b_0+2b_1\sin t\]</span></p>
+<p>这正是圆的形式。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/31/%E3%80%90Ynoi-35%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84%E7%8E%89%E7%B1%B3%E7%94%B0/" class="post-title-link" itemprop="url">【Ynoi#35】【Ynoi2017】由乃的玉米田</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-31 17:54:58" itemprop="dateCreated datePublished" datetime="2023-12-31T17:54:58+08:00">2023-12-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-30 18:25:57" itemprop="dateModified" datetime="2023-12-30T18:25:57+08:00">2023-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Ynoi/" itemprop="url" rel="index"><span itemprop="name">Ynoi</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>莫队加 bitset 解决前三个操作</p>
+<p>第四个操作在 <span class="math inline">\(x&gt;\sqrt n\)</span>
+的时候同样解决了。</p>
+<p><span class="math inline">\(x\leq \sqrt n\)</span> 的时候，对于 <span
+class="math inline">\(x\)</span> 相同的放在一起处理，设 <span
+class="math inline">\(f[i]\)</span> 表示最大的 <span
+class="math inline">\(j\)</span> 满足 <span
+class="math inline">\([i,j]\)</span> 中有一对商是 <span
+class="math inline">\(x\)</span> 的，不难转移。</p>
+<p>复杂度 <span class="math inline">\(O(n\sqrt n)\)</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> Rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> _Rep(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> RepG(i,u) for(int i=head[u];~i;i=e[i].next)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">double</span> db;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmax(a,b) a=max(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmin(a,b) a=min(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> mkp make_pair</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="type">int</span> f=<span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> pos[N],sq;</span><br><span class="line"><span class="type">int</span> cnt[N];</span><br><span class="line"><span class="type">int</span> lst[N],f[N];</span><br><span class="line"><span class="type">int</span> out[N];</span><br><span class="line"><span class="type">int</span> lim=<span class="number">300</span>;</span><br><span class="line"><span class="type">int</span> qcnt;</span><br><span class="line"></span><br><span class="line">bitset&lt;N&gt; S,SI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">misaka</span>&#123;</span><br><span class="line">    <span class="type">int</span> opt,l,r,x,id;</span><br><span class="line">&#125;Q[N];</span><br><span class="line"></span><br><span class="line">vector&lt;misaka&gt; T[<span class="number">305</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(misaka x,misaka y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos[x.l]!=pos[y.l])<span class="keyword">return</span> pos[x.l]&lt;pos[y.l];</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(pos[x.l]&amp;<span class="number">1</span>)<span class="keyword">return</span> x.r&lt;y.r;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> x.r&gt;y.r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ins</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!cnt[x])S[x]=<span class="number">1</span>,SI[<span class="number">100000</span>-x]=<span class="number">1</span>;</span><br><span class="line">    cnt[x]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    cnt[x]--;</span><br><span class="line">    <span class="keyword">if</span>(!cnt[x])S[x]=<span class="number">0</span>,SI[<span class="number">100000</span>-x]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta"># <span class="keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;testdata.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="comment">//freopen(&quot;test1.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="meta"># <span class="keyword">endif</span></span></span><br><span class="line">    <span class="built_in">read</span>(n),<span class="built_in">read</span>(m);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)<span class="built_in">read</span>(a[i]);</span><br><span class="line">    sq=<span class="built_in">sqrt</span>(n)+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)pos[i]=(i<span class="number">-1</span>)/sq+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">        <span class="type">int</span> opt,x,l,r;</span><br><span class="line">        <span class="built_in">read</span>(opt),<span class="built_in">read</span>(l),<span class="built_in">read</span>(r),<span class="built_in">read</span>(x);</span><br><span class="line">        <span class="keyword">if</span>(opt==<span class="number">4</span>&amp;&amp;x&lt;=lim)T[x].<span class="built_in">push_back</span>((misaka)&#123;<span class="number">4</span>,l,r,x,i&#125;);</span><br><span class="line">        <span class="keyword">else</span> Q[++qcnt]=(misaka)&#123;opt,l,r,x,i&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(Q+<span class="number">1</span>,Q+qcnt+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,l=<span class="number">1</span>,r=<span class="number">0</span>;i&lt;=qcnt;i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(l&gt;Q[i].l)<span class="built_in">ins</span>(a[--l]);</span><br><span class="line">        <span class="keyword">while</span>(r&lt;Q[i].r)<span class="built_in">ins</span>(a[++r]);</span><br><span class="line">        <span class="keyword">while</span>(l&lt;Q[i].l)<span class="built_in">del</span>(a[l++]);</span><br><span class="line">        <span class="keyword">while</span>(r&gt;Q[i].r)<span class="built_in">del</span>(a[r--]);</span><br><span class="line">        <span class="keyword">if</span>(Q[i].opt==<span class="number">1</span>)out[Q[i].id]=((S&lt;&lt;Q[i].x)&amp;S).<span class="built_in">any</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Q[i].opt==<span class="number">2</span>)out[Q[i].id]=((S&lt;&lt;(<span class="number">100000</span>-Q[i].x))&amp;SI).<span class="built_in">any</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Q[i].opt==<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j*j&lt;=Q[i].x;j++)</span><br><span class="line">                <span class="keyword">if</span>(Q[i].x%j==<span class="number">0</span>&amp;&amp;S[j]&amp;&amp;S[Q[i].x/j])</span><br><span class="line">                    out[Q[i].id]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j*Q[i].x&lt;=<span class="number">100000</span>;j++)</span><br><span class="line">                <span class="keyword">if</span>(S[j]&amp;&amp;S[j*Q[i].x])</span><br><span class="line">                    out[Q[i].id]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Rep</span>(x,<span class="number">1</span>,lim)&#123;</span><br><span class="line">        <span class="keyword">if</span>(T[x].<span class="built_in">empty</span>())<span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">            <span class="type">int</span> y=a[i];</span><br><span class="line">            lst[y]=i;</span><br><span class="line">            f[i]=f[i<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span>(x*y&lt;=<span class="number">100000</span>)<span class="built_in">chkmax</span>(f[i],lst[x*y]);</span><br><span class="line">            <span class="keyword">if</span>(y%x==<span class="number">0</span>)<span class="built_in">chkmax</span>(f[i],lst[y/x]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i:T[x])</span><br><span class="line">            out[i.id]=i.l&lt;=f[i.r];</span><br><span class="line">        <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="built_in">sizeof</span>(f));</span><br><span class="line">        <span class="built_in">memset</span>(lst,<span class="number">0</span>,<span class="built_in">sizeof</span>(lst));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)<span class="built_in">puts</span>(out[i]?<span class="string">&quot;yuno&quot;</span>:<span class="string">&quot;yumi&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/30/%E3%80%90Ynoi-34%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84OJ/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/30/%E3%80%90Ynoi-34%E3%80%91%E3%80%90Ynoi2017%E3%80%91%E7%94%B1%E4%B9%83%E7%9A%84OJ/" class="post-title-link" itemprop="url">【Ynoi#34】【Ynoi2017】由乃的OJ</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-12-30 17:44:15 / Modified: 18:26:32" itemprop="dateCreated datePublished" datetime="2023-12-30T17:44:15+08:00">2023-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Ynoi/" itemprop="url" rel="index"><span itemprop="name">Ynoi</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>首先注意到每一位是独立的，只需要枚举 <span
+class="math inline">\(0\)</span> 进去还是 <span
+class="math inline">\(1\)</span> 进去对应的就可以算出来。</p>
+<p>这个不难用树剖线段树/LCT 维护，得到 3log 的做法。</p>
+<p>然后可以用一个 unsigned long long 把每一位压到一起，然后就 2log(1log)
+了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> Rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> _Rep(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> RepG(i,u) for(int i=head[u];~i;i=e[i].next)</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> inf=<span class="number">0</span><span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> db double</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> uint unsigned int</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmax(a,b) a=max(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmin(a,b) a=min(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> mkp make_pair</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PIL pair<span class="string">&lt;int,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLI pair<span class="string">&lt;ll,int&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="type">int</span> f=<span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,bit;</span><br><span class="line"><span class="type">int</span> head[N],cnt;</span><br><span class="line"><span class="type">int</span> o[N];</span><br><span class="line">ull a[N];</span><br><span class="line"><span class="type">int</span> dfn[N],siz[N],_a[N],top[N],dep[N],faz[N],son[N],dfsxu;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span>&#123;</span><br><span class="line">    <span class="type">int</span> to,next;</span><br><span class="line">&#125;e[N&lt;&lt;<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    e[++cnt]=(Edge)&#123;y,head[x]&#125;,head[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    ull l0,l1,r0,r1;</span><br><span class="line">    <span class="built_in">node</span>()&#123;l0=r0=<span class="number">0</span>,l1=r1=inf;&#125;</span><br><span class="line">&#125;seg[N&lt;&lt;<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs1</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> fa)</span></span>&#123;</span><br><span class="line">    faz[u]=fa,dep[u]=dep[fa]+<span class="number">1</span>;</span><br><span class="line">    siz[u]=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">RepG</span>(i,u)&#123;</span><br><span class="line">        <span class="type">int</span> v=e[i].to;</span><br><span class="line">        <span class="keyword">if</span>(v==fa)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs1</span>(v,u);</span><br><span class="line">        siz[u]+=siz[v];</span><br><span class="line">        <span class="keyword">if</span>(siz[v]&gt;siz[son[u]])son[u]=v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> _top)</span></span>&#123;</span><br><span class="line">    dfn[u]=++dfsxu;</span><br><span class="line">    _a[dfsxu]=u;</span><br><span class="line">    top[u]=_top;</span><br><span class="line">    <span class="keyword">if</span>(!son[u])<span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">dfs2</span>(son[u],_top);</span><br><span class="line">    <span class="built_in">RepG</span>(i,u)&#123;</span><br><span class="line">        <span class="type">int</span> v=e[i].to;</span><br><span class="line">        <span class="keyword">if</span>(v==faz[u]||v==son[u])<span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs2</span>(v,v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> lc (u&lt;&lt;1)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> rc (u&lt;&lt;1|1)</span></span><br><span class="line"></span><br><span class="line"><span class="function">ull <span class="title">calc</span><span class="params">(ull x,<span class="type">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(o[p]==<span class="number">1</span>)<span class="keyword">return</span> x&amp;a[p];</span><br><span class="line">    <span class="keyword">if</span>(o[p]==<span class="number">2</span>)<span class="keyword">return</span> x|a[p];</span><br><span class="line">    <span class="keyword">if</span>(o[p]==<span class="number">3</span>)<span class="keyword">return</span> x^a[p];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">node <span class="title">merge</span><span class="params">(node x,node y)</span></span>&#123;</span><br><span class="line">    node res;</span><br><span class="line">    res.l0=(x.l0&amp;y.l1)|((~x.l0)&amp;y.l0); </span><br><span class="line">    res.l1=(x.l1&amp;y.l1)|((~x.l1)&amp;y.l0);</span><br><span class="line">    res.r0=(y.r0&amp;x.r1)|((~y.r0)&amp;x.r0);</span><br><span class="line">    res.r1=(y.r1&amp;x.r1)|((~y.r1)&amp;x.r0);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">        seg[u].l0=seg[u].r0=<span class="built_in">calc</span>(<span class="number">0</span>,_a[l]);</span><br><span class="line">        seg[u].l1=seg[u].r1=<span class="built_in">calc</span>(inf,_a[l]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">build</span>(lc,l,mid);</span><br><span class="line">    <span class="built_in">build</span>(rc,mid+<span class="number">1</span>,r);</span><br><span class="line">    seg[u]=<span class="built_in">merge</span>(seg[lc],seg[rc]);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">        seg[u].l0=seg[u].r0=<span class="built_in">calc</span>(<span class="number">0</span>,_a[l]);</span><br><span class="line">        seg[u].l1=seg[u].r1=<span class="built_in">calc</span>(inf,_a[l]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=mid)<span class="built_in">update</span>(lc,l,mid,x);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">update</span>(rc,mid+<span class="number">1</span>,r,x);</span><br><span class="line">    seg[u]=<span class="built_in">merge</span>(seg[lc],seg[rc]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">node <span class="title">query</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> ql,<span class="type">int</span> qr)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;=ql&amp;&amp;r&lt;=qr)<span class="keyword">return</span> seg[u];</span><br><span class="line">    <span class="type">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(qr&lt;=mid)<span class="keyword">return</span> <span class="built_in">query</span>(lc,l,mid,ql,qr);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(ql&gt;mid)<span class="keyword">return</span> <span class="built_in">query</span>(rc,mid+<span class="number">1</span>,r,ql,qr);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">merge</span>(<span class="built_in">query</span>(lc,l,mid,ql,qr),<span class="built_in">query</span>(rc,mid+<span class="number">1</span>,r,ql,qr));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">node <span class="title">RouteQuery</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    node l,r;</span><br><span class="line">    <span class="keyword">while</span>(top[x]!=top[y])</span><br><span class="line">        <span class="keyword">if</span>(dfn[top[x]]&gt;dfn[top[y]])&#123;</span><br><span class="line">            l=<span class="built_in">merge</span>(<span class="built_in">query</span>(<span class="number">1</span>,<span class="number">1</span>,n,dfn[top[x]],dfn[x]),l);</span><br><span class="line">            x=faz[top[x]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            r=<span class="built_in">merge</span>(<span class="built_in">query</span>(<span class="number">1</span>,<span class="number">1</span>,n,dfn[top[y]],dfn[y]),r);</span><br><span class="line">            y=faz[top[y]];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(dfn[x]&lt;dfn[y])r=<span class="built_in">merge</span>(<span class="built_in">query</span>(<span class="number">1</span>,<span class="number">1</span>,n,dfn[x],dfn[y]),r);</span><br><span class="line">    <span class="keyword">else</span> l=<span class="built_in">merge</span>(<span class="built_in">query</span>(<span class="number">1</span>,<span class="number">1</span>,n,dfn[y],dfn[x]),l);</span><br><span class="line">    <span class="built_in">swap</span>(l.l0,l.r0),<span class="built_in">swap</span>(l.l1,l.r1);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">merge</span>(l,r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta"># <span class="keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;testdata.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="comment">//freopen(&quot;test1.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="meta"># <span class="keyword">endif</span></span></span><br><span class="line">    <span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="built_in">sizeof</span>(head));</span><br><span class="line">    <span class="built_in">read</span>(n),<span class="built_in">read</span>(m),<span class="built_in">read</span>(bit);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)<span class="built_in">read</span>(o[i]),<span class="built_in">read</span>(a[i]);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        <span class="built_in">read</span>(x),<span class="built_in">read</span>(y);</span><br><span class="line">        <span class="built_in">add</span>(x,y),<span class="built_in">add</span>(y,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs1</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">dfs2</span>(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>,<span class="number">1</span>,n);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">        <span class="type">int</span> opt,x,y;</span><br><span class="line">        ull z;</span><br><span class="line">        <span class="built_in">read</span>(opt),<span class="built_in">read</span>(x),<span class="built_in">read</span>(y),<span class="built_in">read</span>(z);</span><br><span class="line">        <span class="keyword">if</span>(opt==<span class="number">2</span>)&#123;</span><br><span class="line">            o[x]=y;</span><br><span class="line">            a[x]=z;</span><br><span class="line">            <span class="built_in">update</span>(<span class="number">1</span>,<span class="number">1</span>,n,dfn[x]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            node res=<span class="built_in">RouteQuery</span>(x,y);</span><br><span class="line">            ull ans=<span class="number">0</span>;</span><br><span class="line">            _Rep(i,<span class="number">63</span>,<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="type">int</span> v0=(res.l0&gt;&gt;i)&amp;<span class="number">1ull</span>;</span><br><span class="line">                <span class="type">int</span> v1=(res.l1&gt;&gt;i)&amp;<span class="number">1ull</span>;</span><br><span class="line">                <span class="keyword">if</span>(v0&gt;=v1||((<span class="number">1ull</span>&lt;&lt;i)&gt;z))ans|=(v0?(<span class="number">1ull</span>&lt;&lt;i):<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">else</span> ans|=(v1?(<span class="number">1ull</span>&lt;&lt;i):<span class="number">0</span>),z-=<span class="number">1ull</span>&lt;&lt;i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%llu\n&quot;</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -832,774 +1610,6 @@ class="math inline">\(\dfrac{\epsilon OPT_1}{m}\leq \epsilon
 OPT_m\)</span>。</p>
 <p>复杂度为 <span class="math inline">\(O(n^m/\epsilon)\)</span>，实现了
 FTAS。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/20/%E6%B8%B8%E7%A3%90%E8%B6%8A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/20/%E6%B8%B8%E7%A3%90%E8%B6%8A/" class="post-title-link" itemprop="url">【P#2】游磐越</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-20 21:28:18" itemprop="dateCreated datePublished" datetime="2023-12-20T21:28:18+08:00">2023-12-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-14 21:32:13" itemprop="dateModified" datetime="2024-03-14T21:32:13+08:00">2024-03-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/P/" itemprop="url" rel="index"><span itemprop="name">P</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>常期时来行古道，征程今朝把景收。</p>
-<p>若松三月吹樱雪，江城半日悬海楼。</p>
-<p>千年孤烟道尚在，一朝风雨路未休。</p>
-<p>人生海海多惆怅，且行宇内纵神游。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/19/%E3%80%90M-2%E3%80%91-Cesaro-%E5%92%8C-Abel-%E5%92%8C/" class="post-title-link" itemprop="url">【M#2】 Cesaro 和, Abel 和</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-19 21:01:12" itemprop="dateCreated datePublished" datetime="2023-12-19T21:01:12+08:00">2023-12-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-20 21:39:09" itemprop="dateModified" datetime="2023-12-20T21:39:09+08:00">2023-12-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="cesaro-sum">Cesaro Sum</h2>
-<p>在考虑一个级数的和的收敛的时候，我们可能会遇到一些问题，比如对于这样一个级数：</p>
-<p><span class="math display">\[1,-1,1,-1,1,-1,1,\cdots
-\tag{1}\]</span></p>
-<p>他的部分和 <span class="math inline">\(s_n=[n \text{ is
-odd}]\)</span>，在常规的意义下他是不可和的，但是他的部分和又表现出了一些收敛的性质。</p>
-<p>比如对于这个数列，他的部分和在一半的情况下是 <span
-class="math inline">\(1\)</span>，一半的情况下是 <span
-class="math inline">\(0\)</span>，那么我们把这个和的极限定义为 <span
-class="math inline">\(1/2\)</span> 是在一定程度上合理的。</p>
-<p>所以我们可能需要一些更强的收敛性质。</p>
-<p><span class="math inline">\(\color{red}{定义1}\)</span>: 定义</p>
-<p><span class="math display">\[\sigma_n=\frac{\sum_{k=0}^{n-1}
-s_k}{n}\]</span></p>
-<p>为级数 <span class="math inline">\(\{z_n\}\)</span> 的第 <span
-class="math inline">\(n\)</span> 个 Cesaro 和，其中 <span
-class="math inline">\(s_n\)</span> 为 <span
-class="math inline">\(z_n\)</span> 的部分和。</p>
-<p>如果 <span class="math inline">\(\sigma_n\)</span> 收敛，则称 <span
-class="math inline">\(\{z_n\}\)</span> 是 Cesaro 可和的。</p>
-<p>在这个定义下，不难验证 <span class="math inline">\((1)\)</span> 中的
-Cesaro 和收敛于 <span class="math inline">\(1/2\)</span>。</p>
-<h2 id="dirichlet-kernal-fejer-kernel">Dirichlet Kernal &amp; Fejer
-Kernel</h2>
-<p>回忆 Dirichlet Kernel 定义为</p>
-<p><span class="math display">\[D_n(x)=\sum_{k=-n}^n
-e^{inx}=\frac{\sin(n+\dfrac{1}{2})x}{\sin \dfrac{x}{2}}\]</span></p>
-<p>且满足</p>
-<p><span class="math display">\[S_n(f)(x)=(f*D_n)(x)\]</span></p>
-<p>我们对于 <span class="math inline">\(f\)</span> 求 Cesaro
-和，得到</p>
-<p><span
-class="math display">\[\sigma_n(f)(x)=\frac{S_0(f)(x)+S_1(f)(x)+\cdots+S_{n-1}(f)(x)}{n}=(f*K_n)(f)(x)\]</span></p>
-<p>其中 <span class="math inline">\(K_n\)</span> 为 Fejer
-Kernel，定义为</p>
-<p><span class="math display">\[K_n(x)=\sigma_n(D_n)(x)=\frac{\sin^2
-\dfrac{nx}{2}}{n\sin^2\dfrac{x}{2}}\]</span></p>
-<p>注意到 <span class="math inline">\(K_n\)</span> 满足 Good Kernel
-的所有性质，这直接得到了 Fejer 定理：</p>
-<p><span class="math inline">\(\color{red}{定理1}\)</span>: 如果 <span
-class="math inline">\(f\)</span> 可积，则 <span
-class="math inline">\(f\)</span> 的傅里叶级数在每一个 <span
-class="math inline">\(f\)</span> 的连续点处 Cesaro 可和；进一步的，如果
-<span class="math inline">\(f\)</span> 连续，则 <span
-class="math inline">\(f\)</span> 的傅里叶展开的 Cesaro 和一致收敛与
-<span class="math inline">\(f\)</span></p>
-<h2 id="abel-sum">Abel Sum</h2>
-<p><span class="math inline">\(\color{red}定义2\)</span>: 对于级数 <span
-class="math inline">\(\{z_n\}\)</span>，对于 <span
-class="math inline">\(0\leq r&lt;1\)</span>，定义</p>
-<p><span class="math display">\[A(r)=\sum_{k=0}^\infty
-z_kr^k\]</span></p>
-<p>若 <span class="math inline">\(A(r)\)</span> 收敛，且</p>
-<p><span class="math display">\[\lim_{r\to 1}A(r)=s\]</span></p>
-<p>则称 <span class="math inline">\(\{z_n\}\)</span> Abel 可和于 <span
-class="math inline">\(s\)</span>, <span class="math inline">\(s\)</span>
-被成为 Abel 均值。</p>
-<p>Abel 可和强于 Cesaro 可和，如对于级数</p>
-<p><span class="math display">\[1,-2,3,-4,\cdots \tag{2}\]</span></p>
-<p><span class="math display">\[A(r)=\sum_{k=0}^\infty
-(-1)^k(k+1)r^k=\frac{1}{(1+r)^2}\]</span></p>
-<p>是 Abel 可和的。</p>
-<p>但是他不是 Cesaro 可和的，因为</p>
-<p><span class="math inline">\(s_k=\lceil k/2\rceil
-(-1)^{k+1}\)</span>，<span class="math inline">\(s_k\)</span>
-的前缀和要么是 <span class="math inline">\(0\)</span> 要么是 <span
-class="math inline">\(n/2\)</span>，他的 Cesaro 部分和要么是 <span
-class="math inline">\(0\)</span> ，要么是 <span
-class="math inline">\(1/2\)</span>，并不收敛。</p>
-<h2 id="poisson-kernel">Poisson Kernel</h2>
-<p>Abel 和对应的 Kernel 是 Poisson Kernel。</p>
-<p>对于一个函数 <span class="math inline">\(f(\theta) \sim \sum_n
-a_ne^{in\theta}\)</span>，定义这个函数的 Abel 均值</p>
-<p><span
-class="math display">\[A_r(f)(\theta)=\sum_{n}a_nr^{|n|}e^{in\theta}\]</span></p>
-<p>定义 Poisson Kernel <span
-class="math inline">\(P_r(\theta)\)</span>满足 <span
-class="math inline">\(A_r(f)(\theta)=(f*P_r)(\theta)\)</span></p>
-<p>则</p>
-<p><span class="math display">\[P_r(\theta)=\sum_n
-r^{|n|}e^{in\theta}\]</span></p>
-<p>进一步展开得到</p>
-<p><span
-class="math display">\[P_r(\theta)=\frac{1-r^2}{1-2r\cos\theta+r^2}\]</span></p>
-<p><span class="math inline">\(P_r(\theta)\)</span> 同样是 Good
-Kernel，因此将定理1中的 Cesaro 可和结论替换为 Abel
-可和结论同样成立。</p>
-<h2 id="summable-cesaro-summable-abel-summable">Summable &amp; Cesaro
-Summable &amp; Abel Summable</h2>
-<p>在本节中，我们将证明三种可和是有强弱关系的，具体来说</p>
-<p><span class="math display">\[\text{Summable} \Longrightarrow
-\text{Cesaro Summable} \Longrightarrow \text{Abel Summable}\]</span></p>
-<p><span class="math inline">\(\color{red}{定理2}\)</span>: 若 <span
-class="math inline">\(\sum_{k=1}^{\infty} z_k=s\)</span>，则 <span
-class="math inline">\(\{z_n\}\)</span> Cesaro 可和，且 <span
-class="math inline">\(\sigma=s\)</span></p>
-<p>证明是基本的。</p>
-<p>在前面已经提到过，存在数列是 Cesaro 可和但不是可和的。</p>
-<p><span class="math inline">\(\color{red}{定理3}\)</span>：若 <span
-class="math inline">\(\{z_n\}\)</span> Cesaro 可和，则 <span
-class="math inline">\(\{z_n\}\)</span> Abel 可和，且 <span
-class="math inline">\(\lim_{r\to 1} A(r)=\sigma\)</span></p>
-<p><strong>证明：</strong></p>
-<p>假设 <span class="math inline">\(\sigma=0\)</span>，否则可以调整
-<span class="math inline">\(z_1\)</span>。</p>
-<p><span class="math display">\[A(r)=\sum_{n=0}^{\infty}z_nr^n =
-(1-r)^2\sum_{n=0}^{\infty}n\sigma_nr^n\]</span></p>
-<p>两边在 <span class="math inline">\(r\to 1\)</span> 时取极限，得到
-<span class="math inline">\(A(r)\to 0\)</span>。</p>
-<p>前面同样举出了是 Abel 可和但是不 Cesaro
-可和的例子，这完成了单向关系的构建。</p>
-<h2 id="taubers-theorem">Tauber's Theorem</h2>
-<p>当然，在对于 <span class="math inline">\(z_n\)</span>
-加以额外的限制的情况下，上面三个不同的可和性可以变为等价的。</p>
-<p><span class="math inline">\(\color{red}{定理4}\)</span>：若 <span
-class="math inline">\(z_n\)</span> Cesaro 可和于 <span
-class="math inline">\(\sigma\)</span>，且 <span
-class="math inline">\(c_n=o(1/n)\)</span>，则 <span
-class="math inline">\(z_n\)</span> 可和于 <span
-class="math inline">\(\sigma\)</span></p>
-<p><strong>证明：</strong></p>
-<p><span
-class="math display">\[s_n-\sigma_n=\frac{(n-1)z_n+(n-2)z_{n-1}+\cdots
-+z_2}{n}\]</span></p>
-<p>两边对 <span class="math inline">\(n\)</span> 取极限。</p>
-<p><span class="math inline">\(\color{red}{定理5}\)</span>：若 <span
-class="math inline">\(z_n\)</span> Abel 可和于 <span
-class="math inline">\(A\)</span>，且 <span
-class="math inline">\(c_n=o(1/n)\)</span>，则 <span
-class="math inline">\(z_n\)</span> 可和于 <span
-class="math inline">\(A\)</span></p>
-<p>取 <span class="math inline">\(r=1-1/n\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-|s_n-\sum_{k=1}^n z_kr^k| &amp;=|\sum_{k=1}^n z_k-\sum_{k=1}^n
-z_k(1-\frac{1}{n})^k| \\
-&amp;\leq |\sum_{k=1}^n z_k(1-(1-\frac{1}{n}))^k| \\
-&amp;\leq |\sum_{k=1}^n \frac{kz_k}{n}| +o(1/n) \\
-\end{aligned}
-\]</span></p>
-<p>对 <span class="math inline">\(n\)</span> 取极限，即证。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/18/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/18/Steins-%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">Steins 傅里叶分析 第二章部分习题解答</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-18 21:22:56" itemprop="dateCreated datePublished" datetime="2023-12-18T21:22:56+08:00">2023-12-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-19 20:53:34" itemprop="dateModified" datetime="2023-12-19T20:53:34+08:00">2023-12-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Steins-I/" itemprop="url" rel="index"><span itemprop="name">Steins I</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="exercise">Exercise</h1>
-<h2 id="section">9</h2>
-<blockquote>
-<p>定义</p>
-<p><span class="math display">\[\chi_{[a,b]}(x)=[x\in[a,b]]\]</span></p>
-<ol type="1">
-<li><p>求其在 <span class="math inline">\([-\pi,pi]\)</span>
-上的傅里叶展开</p></li>
-<li><p>证明该展开在 <span class="math inline">\(a,b\neq \pi\)</span> 且
-<span class="math inline">\(a\neq b\)</span> 时不绝对收敛</p></li>
-<li><p>证明该展开在任意一点收敛</p></li>
-</ol>
-</blockquote>
-<p>(1)，易得</p>
-<p><span class="math display">\[f(x)\sim \frac{b-a}{2\pi}+\sum_{n\neq
-0}\frac{e^{-ina}-e^{-inb}}{2\pi in}e^{inx}\]</span></p>
-<ol start="2" type="1">
-<li></li>
-</ol>
-<p>取 <span
-class="math inline">\(x=\dfrac{a+b}{2}\)</span>，注意到最后是 <span
-class="math inline">\(\sum \dfrac{\sin n\frac{b-a}{2}}{\pi n}\)</span>
-的形式，而 <span class="math inline">\(|\sin \dfrac{b-a}{2}|\)</span>
-在大部分地方 <span class="math inline">\(\geq \epsilon
-&gt;0\)</span>，因此不绝对收敛。</p>
-<ol start="3" type="1">
-<li></li>
-</ol>
-<p><span class="math inline">\(a=b\)</span> 和 <span
-class="math inline">\(a=-\pi,b=\pi\)</span> 的情况易证。</p>
-<p><span class="math display">\[\hat f(n)e^{inx}+\hat
-f(-n)e^{-inx}=\frac{\sin n(x-a)-\sin n(x-b)}{\pi n} \]</span></p>
-<p>考虑级数 <span class="math inline">\(\sum \sin n(x-a)-\sin
-n(x-b)\)</span> 的部分和</p>
-<p><span class="math display">\[
-\begin{aligned}
-\sum_{n=1}^N \sin n(x-a)-\sin n(a-b)&amp;=\frac{\sin
-\dfrac{N(x-a)}{2}\sin \dfrac{(N+1)(x-a)}{2}}{\sin \dfrac{x-a}{2}}[x\neq
-a] \\
-&amp;- \frac{\sin \dfrac{N(x-b)}{2}\sin \dfrac{(N+1)(x-b)}{2}}{\sin
-\dfrac{x-b}{2}}[x\neq b] \\
-&amp; \leq \frac{1}{\sin \dfrac{x-a}{2}}[x\neq a] + \frac{1}{\sin
-\dfrac{x-b}{2}}[x\neq b] = O(1)
-\end{aligned}
-\]</span></p>
-<p>由 A-D 判别法，<span
-class="math inline">\(\{\dfrac{1}{n\pi}\}_n\)</span> 单调收敛于 0，
-<span class="math inline">\(\sum \sin n(x-a)+\sin n(x-b)\)</span>
-有界，因此 <span class="math inline">\(\sum \hat f(n)e^{inx}+\hat
-f(-n)e^{-inx}\)</span> 收敛。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/12/MIT-Integration-Bee-2023-Final-%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94/" class="post-title-link" itemprop="url">MIT Integration Bee 2023 - Final 题目解答</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-12 19:37:15" itemprop="dateCreated datePublished" datetime="2023-12-12T19:37:15+08:00">2023-12-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-13 17:36:21" itemprop="dateModified" datetime="2023-12-13T17:36:21+08:00">2023-12-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MIT-Integration-Bee/" itemprop="url" rel="index"><span itemprop="name">MIT Integration Bee</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="section">1</h2>
-<p><span class="math display">\[\int_0^{\pi/2}\frac{\sqrt[3]{\tan
-x}}{(\cos x+\sin x)^2}\mathrm dx\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I &amp;= \int_0^{\pi/2}\frac{\sqrt[3]{\tan x}}{(1+\tan x)^2}\mathrm
-d\tan x \\
-&amp;=\int_0^{\infty}\frac{t^{1/3}}{(1+t)^2}\mathrm dt \\
-&amp;=\mathcal B(\frac{4}{3},\frac{2}{3}) \\
-&amp;=\Gamma(\frac{4}{3})\Gamma(\frac{2}{3}) \\
-&amp;=\frac{\Gamma(\dfrac{1}{3})\Gamma(\dfrac{2}{3})}{3} \\
-&amp;=\frac{2\pi}{3\sin\dfrac{\pi}{3}} \\
-&amp;= \frac{2\sqrt 3}{9}\pi
-\end{aligned}
-\]</span></p>
-<h2 id="section-1">2</h2>
-<p><span class="math display">\[\int_0^\pi \Big(\frac{\sin 2x\sin 3x\sin
-5x\sin 30x}{\sin x\sin 6x\sin 10x\sin 15x}\Big)^2\mathrm dx\]</span></p>
-<p>先用二倍角公式上下抵消一下，得到</p>
-<p><span class="math display">\[I=\int_0^\pi \Big(\frac{\cos x\cos
-15x}{\cos 3x\cos 5x}\Big)^2\mathrm dx\]</span></p>
-<p>然后用三倍角公式展开，得到</p>
-<p><span class="math display">\[I=\int_0^\pi\Big(\frac{4\cos^2
-5x-3}{4\cos^2 x-3}\Big)\mathrm dx=\int_0^\pi\Big(\frac{2\cos
-10x-1}{2\cos 2x-1}\Big)^2\mathrm dx\]</span></p>
-<p>然后做变换 <span class="math inline">\(t=2x\)</span>，得到</p>
-<p><span class="math display">\[I=\frac{1}{2}\int_0^{2\pi}
-\Big(\frac{2\cos 5x-1}{2\cos x-1})^2\mathrm dx\]</span></p>
-<p>对这个东西傅里叶展开，得到</p>
-<p><span class="math display">\[-1-2\cos x+2\cos 3x+2\cos
-4x\]</span></p>
-<p>这个的平方在 <span class="math inline">\(0\)</span> 到 <span
-class="math inline">\(2\pi\)</span> 积分，因为 <span
-class="math inline">\(\sin kx\)</span>
-是正交的，所以只需要考虑平方的积分，除了常数项是 <span
-class="math inline">\(2\pi\)</span> 其他的都是 <span
-class="math inline">\(\pi\)</span>，因此</p>
-<p><span
-class="math display">\[I=\frac{1}{2}(2\pi+4\pi+4\pi+4\pi)=7\pi\]</span></p>
-<h2 id="section-2">3</h2>
-<p><span
-class="math display">\[\int_{-1/2}^{1/2}\sqrt{x^2+1+\sqrt{x^4+x^2+1}}\mathrm
-dx\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I&amp;=2\int_0^{1/2}\sqrt{\Big(\sqrt{\frac{x^2+x+1}{2}}+\sqrt{\frac{x^2-x+1}{2}}\Big)^2}\mathrm
-dx \\
-&amp;= \sqrt 2\int_0^{1/2}\sqrt{x^2+x+1}\mathrm dx+\sqrt
-2\int_0^{1/2}\sqrt {x^2-x+1}\mathrm dx
-\end{aligned}\]</span></p>
-<p>后面就是基本的套公式了。</p>
-<p><span class="math display">\[I=\frac{\sqrt 7}{2\sqrt
-8}+\frac{3}{4\sqrt 2}\ln |\frac{\sqrt 7+2}{\sqrt 3}|\]</span></p>
-<h2 id="section-3">4</h2>
-<p>感觉做法挺一眼的，就是可能如果不让用计算器的话最后计算数值解会有些困难？</p>
-<h2 id="section-4">5</h2>
-<p><span class="math display">\[\int_0^1
-\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2\mathrm
-dx\]</span></p>
-<p>神仙题呜呜呜</p>
-<p>stackexchange 上抄的初等做法。</p>
-<p><span class="math display">\[I_a:=\int_0^a
-\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2\mathrm
-dx\]</span></p>
-<p>则对于 <span
-class="math inline">\(I_1\)</span>，我们有两种处理方法，一种是做变换
-<span class="math inline">\(t=x/2\)</span>，一种是做变换 <span
-class="math inline">\(t=x-1/2\)</span>，这两种都可以得到一个 <span
-class="math inline">\(I_1\)</span> 和 <span
-class="math inline">\(I_{1/2}\)</span> 的关系、</p>
-<p>首先做变换 <span class="math inline">\(t=x/2\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I_1 &amp;= 2\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
-2^{n+1}x\rfloor}{3^n}\Big)^2 \mathrm dx \\
-&amp;= 2\int_0^{1/2}\Big(3\sum_{n=\color{red}1}^\infty\frac{\lfloor
-2^nx\rfloor}{3^n}\Big)^2 \mathrm dx \\
-&amp;= 18 I_1
-\end{aligned}
-\]</span></p>
-<p>注意红色的地方，本来是没有这一项的，但是因为 <span
-class="math inline">\(\lfloor 2x\rfloor\)</span> 对于 <span
-class="math inline">\(x\in (0,1/2)\)</span> 都是 <span
-class="math inline">\(0\)</span>，所以可以添上这一项。</p>
-<p>接下来做变换 <span class="math inline">\(t=x-1/2\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-I_1 &amp;= \int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
-2^nx\rfloor}{3^n}\Big)^2\mathrm dx+\int_{1/2}^1
-\Big(\sum_{n=1}^\infty\frac{\lfloor 2^nx\rfloor}{3^n}\Big)^2 \mathrm dx
-\\
-&amp;= I_{1/2}+\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
-2^nx\rfloor}{3^n}-\sum_{n=1}^{\infty}\frac{2^{n-1}}{3^n}\Big)^2 \mathrm
-dx \\
-&amp;= I_{1/2}+\int_0^{1/2}\Big(\sum_{n=1}^\infty\frac{\lfloor
-2^nx\rfloor}{3^n}-1\Big)^2\mathrm dx \\
-&amp;= 2I_{1/2}+2\int_0^{1/2}\sum_{n=1}^\infty \frac{\lfloor 2^n
-x\rfloor}{3^n}\mathrm dx+\frac{1}{2}
-\end{aligned}
-\]</span></p>
-<p>这个一次项的积分是好做的。</p>
-<p><span class="math display">\[
-\begin{aligned}
-\int_0^{1/2}\frac{\lfloor 2^n x\rfloor}{3^n}\mathrm dx &amp;=
-\frac{1}{6^n}\int_0^{2^{n-1}}\lfloor x \rfloor \mathrm dx \\
-&amp;= \frac{1}{6^n}\frac{1}{2}2^{n-1}(2^{n-1}-1) \\
-&amp;= \frac{2^{n-1}-1}{4\times 3^n}
-\end{aligned}
-\]</span></p>
-<p>等比数列求和得到</p>
-<p><span class="math display">\[\int_0^{1/2}\sum_{n=1}^\infty
-\frac{\lfloor 2^n x\rfloor}{3^n}\mathrm dx=\frac{1}{8}\]</span></p>
-<p>带入 <span class="math inline">\(I_{1/2}=I_1/18\)</span>，有</p>
-<p><span
-class="math display">\[I_1=\frac{I_1}{9}+\frac{3}{4}\]</span></p>
-<p>整理即得</p>
-<p><span class="math display">\[I_1=\frac{27}{32}\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/11/%E3%80%90%E9%B2%9C%E8%8A%B1-5%E3%80%91Aizu-Glimpse-%E6%96%B0%E9%9B%AA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/11/%E3%80%90%E9%B2%9C%E8%8A%B1-5%E3%80%91Aizu-Glimpse-%E6%96%B0%E9%9B%AA/" class="post-title-link" itemprop="url">【鲜花#5】Aizu Glimpse - 新雪</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-12-11 19:10:26 / Modified: 19:29:08" itemprop="dateCreated datePublished" datetime="2023-12-11T19:10:26+08:00">2023-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>天空是绯色的，就像沙尘暴。</p>
-<p>早上进学校的时候发现小猫还活着，不知道该为他们感到高兴还是感到悲哀。</p>
-<p>雪花白了我的发迹，引得涂洁对我指手画脚。</p>
-<hr />
-<p>今天换了羽绒服，于是没戴手套。</p>
-<p>课间玩雪，寒冰红润了我的双手。</p>
-<p>滚起雪球，为了雪球最终化为水。</p>
-<hr />
-<p>出校门，风平浪静，冰冷渐渐刺进我的躯干。</p>
-<p>校门口有两个小贩，卖冰糖葫芦。</p>
-<p>第一个小贩在校门口的有利位置，还提供了 Extra Service - 卖烤肠。</p>
-<p>他的生意相当的好。</p>
-<p>第二个小贩在校门口出去走一段路的不利位置，还不会营销，他卖的是糖雪球。</p>
-<p>这么说来还挺应景。</p>
-<p>小贩在这一学期重新出现了，不知道应当感到高兴还是悲哀。</p>
-<p>大概还是高兴的好，因为相当小贩的人本没有消失，只是曾经被强制抹去了。</p>
-<hr />
-<p>冰封，等公交车。</p>
-<p>小学生们愉快的打着雪仗。</p>
-<p>一个小男孩对另一个小女孩说“去年就下了一次雪”。</p>
-<p>第一反应想，原来去年就下了一次雪啊。</p>
-<p>转念一想，这一次雪是什么时候呢？</p>
-<p>大概还记得去年发生了什么的人已经相当的少了吧。</p>
-<p>原来去年我在杭州见过雪。</p>
-<p>但是去年北京的雪在哪里呢？</p>
-<hr />
-<p>原来去年是我从杭州回来的日子。</p>
-<p>葡萄牙被淘汰已经一年了。</p>
-<p>从五点睡到六点半，起来赶火车的故事也已经快要忘了吧。</p>
-<p>果然寒冷的天气是好的。</p>
-<p>寒冷的天气让人警醒。</p>
-<hr />
-<p>微醺。</p>
-<p>上一次喝醉是什么时候？</p>
-<p>好像那时候子达哥还在。</p>
-<p>喝酒是好的，让人温暖。</p>
-<p>也让人麻痹。</p>
-<hr />
-<p>小同学们去三亚了。</p>
-<p>我的三亚就这样被疫情偷走了。</p>
-<p>我的三年就这样被疫情偷走了。</p>
-<p>什么都变了。</p>
 
       
     </div>
