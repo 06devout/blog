@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,155 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2024/01/20/%E3%80%90M-5%E3%80%91Van-der-Corput-Difference-Theorem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/01/20/%E3%80%90M-5%E3%80%91Van-der-Corput-Difference-Theorem/" class="post-title-link" itemprop="url">【M#5】Van der Corput Difference Theorem</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-01-20 09:00:52 / Modified: 09:27:14" itemprop="dateCreated datePublished" datetime="2024-01-20T09:00:52+08:00">2024-01-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/M/" itemprop="url" rel="index"><span itemprop="name">M</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p><strong>Van der Corput Difference Theomrem:</strong> 对于数列 <span
+class="math inline">\(\{f(n)\}_n\)</span>，若 <span
+class="math inline">\(\forall h\in \mathbb Z\)</span> ,<span
+class="math inline">\(\{f(n+h)-f(n)\}_n\)</span> 在 <span
+class="math inline">\([0,1]\)</span> 上等分布，则 <span
+class="math inline">\(\{f(n)\}_n\)</span> 在 <span
+class="math inline">\([0,1]\)</span> 上等分布。</p>
+</blockquote>
+<p>我们首先证明一个引理：</p>
+<blockquote>
+<p><strong>Lemma(Van der Corput's Fundamental Inequality):</strong> 设
+<span class="math inline">\(\{u_n\}_{n=1}^N\in\mathbb C,H\in\mathbb
+Z,1\leq H\leq N\)</span>，则有</p>
+<p><span class="math display">\[H^2\Bigg|\sum_{n=1}^N u_n\Bigg|^2\leq
+\color{red}{H(N+H-1)\sum_{n=1}^N
+|u_n|^2}+\color{green}2(N+H-1)\sum_{h=1}^{H-1}(H-h)\Re\sum_{n=1}^{N-h}u_n\overline{u_{n+h}}
+\tag{1}\]</span></p>
+</blockquote>
+<p>证明考虑把 <span class="math inline">\(u_n\)</span> 拓展定义到 <span
+class="math inline">\(\{u_n\}_n\)</span>，其中 <span
+class="math inline">\(u_k=0,k&gt;N\)</span>，那么有</p>
+<p><span class="math display">\[H\Bigg|\sum_{n=1}^N
+u_n\Bigg|=\sum_{p=1}^{N+H-1}\sum_{h=0}^{H-1}u_{p-h}=\sum_{p=1}^{N+H-1}\Bigg(1\cdot
+\sum_{h=0}^{H-1}u_{p-h}\Bigg)\]</span></p>
+<p>两边用 Cauchy-Schwartz 不等式</p>
+<p><span class="math display">\[
+\begin{aligned}
+H^2\Bigg|\sum_{n=1}^N u_n\Bigg|^2 &amp;\leq
+(N+H-1)\sum_{p=1}^{N+H-1}\Bigg(\sum_{h=0}^{H-1}u_{p-h}\Bigg)^2 \\
+&amp;=(N+H-1)\sum_{p=1}^{N+H-1}\Bigg(\sum_{h_1=0}^{H-1}u_{p-h_1}\Bigg)\Bigg(\sum_{h_2=0}^{H-1}\overline{u_{p-h_2}}\Bigg)
+\end{aligned}
+\]</span></p>
+<p>对于 <span class="math inline">\(h_1=h_2\)</span>
+的单独提出来，就得到了 <span class="math inline">\((1)\)</span>
+中红色的部分</p>
+<p>对于 <span class="math inline">\(h_1\neq h_2\)</span> 的部分，考虑
+<span class="math inline">\(|h_1-h_2|=h\)</span> 的 <span
+class="math inline">\(u_n\overline{u_{n+h}}\)</span>
+一共出现的次数，以及注意到结果一定是实数，所以虚部抵消掉了，就得到了绿色的部分。</p>
+<p>证明了引理之后，我们取 <span class="math inline">\(u_n=e^{2\pi
+if(n)}\)</span>，得到</p>
+<p><span class="math display">\[|S_N|^2\leq
+\frac{H(N+H-1)N}{H^2}+\frac{\sum_{h=1}^{H-1}2(N+H-1)H|\sum_{n=1}^{N-h}e^{2\pi
+i(f(n+h)-f(n))}|}{H^2}\]</span></p>
+<p>接下来利用放缩 <span class="math inline">\(N+H-1\leq 2N\)</span>
+得到</p>
+<p><span class="math display">\[
+\begin{aligned}
+|S_N|^2&amp;\leq
+\frac{4N}{H}\sum_{h=1}^{H-1}\Bigg|\sum_{n=1}^{N-h}e^{2\pi
+i(f(n+h)-f(n))}\Bigg| \\
+&amp;\leq
+\frac{4N^2}{H}\sum_{h=1}^{H-1}\Bigg|\frac{1}{N-h}\sum_{n=1}^{N-h}e^{2\pi
+i(f(n+h)-f(n))}\Bigg|
+\end{aligned}
+\]</span></p>
+<p>由定理假设，以及 <span class="math inline">\(H\)</span>
+为有限数，得后面大 sigma 里面是 <span
+class="math inline">\(o(1)\)</span>，故 <span
+class="math inline">\(|S_N|^2=o(N^2)\)</span>，即证明 <span
+class="math inline">\(\{f(n)\}\)</span> 是等分布 <span
+class="math inline">\([0,1]\)</span> 上的序列。</p>
+<p>一些应用：</p>
+<p>对于 <span class="math inline">\(\sigma&gt;0,a\neq\in\mathbb
+Z\)</span>,<span class="math inline">\(\{an^\sigma\}\)</span> 在 <span
+class="math inline">\([0,1]\)</span> 为等部分序列。</p>
+<p>在 Exercise 8 中我们已经证明了 <span
+class="math inline">\(\sigma\in(0,1)\)</span> 的时候的结果，对于 <span
+class="math inline">\(\sigma\in (k,k+1)\)</span>
+只需要每次差分然后数学归纳即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1445,171 +1594,6 @@ class="math inline">\(ans:=ans+1\)</span>，然后一步一步往前跳。</p>
 class="math inline">\(O((n+m)\sqrt n)\)</span>。</p>
 <p>应当说是 Ynoi 里面相当简单的一道题，也不卡常。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> Rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> _Rep(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> RepG(i,u) for(int i=head[u];~i;i=e[i].next)</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">5e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> M=<span class="number">805</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> db double</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> uint unsigned int</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmax(a,b) a=max(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> chkmin(a,b) a=min(a,b)</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> mkp make_pair</span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PIL pair<span class="string">&lt;int,ll&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">define</span> PLI pair<span class="string">&lt;ll,int&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="type">int</span> f=<span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(c);c=<span class="built_in">getchar</span>())x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> sq=<span class="number">700</span>,bl,L[N],R[N],pos[N];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; p[N];</span><br><span class="line"><span class="type">int</span> mode[M][M],cnt[N];</span><br><span class="line"><span class="type">int</span> loc[N];</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta"># <span class="keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;testdata.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="comment">//freopen(&quot;test1.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="meta"># <span class="keyword">endif</span></span></span><br><span class="line">    <span class="built_in">read</span>(n),<span class="built_in">read</span>(m);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)<span class="built_in">read</span>(a[i]),loc[i]=p[a[i]].<span class="built_in">size</span>(),p[a[i]].<span class="built_in">push_back</span>(i);</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,n)pos[i]=(i<span class="number">-1</span>)/sq+<span class="number">1</span>;</span><br><span class="line">    bl=pos[n];</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,bl)L[i]=(i<span class="number">-1</span>)*sq+<span class="number">1</span>,R[i]=i*sq;</span><br><span class="line">    R[bl]=n;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,bl)&#123;</span><br><span class="line">        <span class="built_in">Rep</span>(j,i,bl)&#123;</span><br><span class="line">            mode[i][j]=mode[i][j<span class="number">-1</span>];</span><br><span class="line">            <span class="built_in">Rep</span>(k,L[j],R[j])&#123;</span><br><span class="line">                cnt[a[k]]++;</span><br><span class="line">                <span class="built_in">chkmax</span>(mode[i][j],cnt[a[k]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">Rep</span>(j,L[i],n)cnt[a[j]]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Rep</span>(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        <span class="built_in">read</span>(x),<span class="built_in">read</span>(y);</span><br><span class="line">        x^=ans,y^=ans;</span><br><span class="line">        <span class="keyword">if</span>(pos[x]==pos[y])&#123;</span><br><span class="line">            ans=<span class="number">0</span>;</span><br><span class="line">            <span class="built_in">Rep</span>(j,x,y)cnt[a[j]]++,<span class="built_in">chkmax</span>(ans,cnt[a[j]]);</span><br><span class="line">            <span class="built_in">Rep</span>(j,x,y)cnt[a[j]]=<span class="number">0</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            ans=mode[pos[x]+<span class="number">1</span>][pos[y]<span class="number">-1</span>];</span><br><span class="line">            <span class="built_in">Rep</span>(j,x,R[pos[x]])&#123;</span><br><span class="line">                <span class="type">int</span> k=loc[j];</span><br><span class="line">                <span class="keyword">while</span>(k+ans&lt;p[a[j]].<span class="built_in">size</span>()&amp;&amp;p[a[j]][k+ans]&lt;=y)ans++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">Rep</span>(j,L[pos[y]],y)&#123;</span><br><span class="line">                <span class="type">int</span> k=loc[j];</span><br><span class="line">                <span class="keyword">while</span>(k-ans&gt;=<span class="number">0</span>&amp;&amp;p[a[j]][k-ans]&gt;=x)ans++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/" class="post-title-link" itemprop="url">《近似算法设计》第三章习题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-12-24 20:00:57" itemprop="dateCreated datePublished" datetime="2023-12-24T20:00:57+08:00">2023-12-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-26 21:30:17" itemprop="dateModified" datetime="2023-12-26T21:30:17+08:00">2023-12-26</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="section">3.1</h2>
-<p>对于一个最优解 <span
-class="math inline">\(O\)</span>，我们把他分成两部分，第一部分是按照
-<span class="math inline">\(v_k/s_k\)</span>
-从大到小排序之后选出来的一个前缀，记这部分的价值为 <span
-class="math inline">\(\nu_1\)</span>，大小记为 <span
-class="math inline">\(\sigma_1\)</span>，剩下的部分是第二部分，代价记为
-<span class="math inline">\(\nu_2\)</span>，大小记为 <span
-class="math inline">\(\sigma_2\)</span></p>
-<p>若 <span class="math inline">\(\nu_1\)</span> 大于 <span
-class="math inline">\(\nu_2\)</span>，则按照第一种选法选出来的价值 <span
-class="math inline">\(\geq \nu_1\geq (1/2)OPT\)</span></p>
-<p>若 <span class="math inline">\(\nu_1\)</span> 小于 <span
-class="math inline">\(\nu_2\)</span>，设第一部分的下一个为 <span
-class="math inline">\(k\)</span>，则 <span
-class="math inline">\(s_k&gt;\sigma_2\)</span>，因为 <span
-class="math inline">\(v_k/s_k\geq \nu_2/\sigma_2\)</span>，<span
-class="math inline">\(v_k\geq \nu_2\geq (1/2)OPT\)</span></p>
-<h2 id="section-1">3.2</h2>
-<p>设 3.1 得到的结果为 <span class="math inline">\(M\)</span>，将所有的
-<span class="math inline">\(v_i\)</span> 变为 <span
-class="math inline">\(\lfloor nv_i/\epsilon M\rfloor\)</span>，则</p>
-<p><span class="math display">\[\sum_{k\in O}v^\prime _k\leq
-\frac{n}{\epsilon M}\sum_{k\in O} v_k=\frac{2n}{\epsilon}\]</span></p>
-<p>因此可以将 dp 的上限设为 <span
-class="math inline">\(n/\epsilon\)</span>，最终复杂度为 <span
-class="math inline">\(O(n^2/\epsilon)\)</span></p>
-<h2 id="section-2">3.3</h2>
-<p><span class="math inline">\(O(nW)\)</span> 的做法就是一个很显然的
-dp，维护最小值即可。</p>
-<p>考虑我们要求一个 <span class="math inline">\((1-\epsilon)\)</span>
-近似，设 <span class="math inline">\(\mu=\epsilon W/n\)</span>，设 <span
-class="math inline">\(w_i^\prime=\lfloor w_i/\mu\rfloor\)</span>，对于
-<span class="math inline">\(w^\prime_i\)</span> 做上面的
-dp，设我们得到的对应选出的集合为 <span
-class="math inline">\(S\)</span>，真实最优解为 <span
-class="math inline">\(O\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-\sum_{i\in S}w_i&amp;\geq \mu\sum_{i\in S}w^\prime_i \\
-&amp;\geq \mu \sum_{i\in O}w^\prime_i \\
-&amp;\geq \sum_{i\in O}w_i-\mu|O| \\
-&amp;\geq OPT-\mu n \\
-&amp;\geq OPT-\epsilon W \\
-&amp;\geq (1-\epsilon)OPT
-\end{aligned}
-\]</span></p>
-<p>即解决。</p>
-<h2 id="section-3">3.4</h2>
-<p>不会。</p>
-<p>原论文是俄语的看不懂（</p>
-<h2 id="section-4">3.5</h2>
-<p>dp 还是好搞的，用 <span
-class="math inline">\(f(i,t_1,t_2,\cdots,t_m)(t_1\geq t_2\geq \cdots
-\geq t_m)\)</span> 表示前 <span class="math inline">\(i\)</span>
-个任务安排好了，各个处理器用时是多少 最后的代价最小是多少。</p>
-<p>下面考虑怎么确定 <span class="math inline">\(OPT_m\)</span>
-的范围，一个比较显然的界是 <span class="math inline">\(OPT_m\geq
-\dfrac{1}{m}OPT_1\)</span>，其中 <span
-class="math inline">\(OPT_1\)</span>
-表示只有一个处理器的最优值，这个可以直接 <span
-class="math inline">\(O(n)\)</span> 算出来。（实际上似乎有更优的界 <span
-class="math inline">\(OPT_m\geq \dfrac{n+m}{(n+1)m}OPT_1\)</span>，但是
-<span class="math inline">\(1/m\)</span> 已经足够）</p>
-<p>为了实现近似算法，我们需要换一种 dp 的形式，感觉在 OI
-里也见到过。</p>
-<p>设 <span class="math inline">\(G(i,T)\)</span> 表示满足 <span
-class="math inline">\(f(i,t_1,\cdots,t_m)=T\)</span> 的 <span
-class="math inline">\((t_1,\cdots,t_m)\)</span> 的集合。</p>
-<p>一个引理是对于相同的 <span class="math inline">\(T\)</span>
-，最多只有 <span class="math inline">\(n^{m-2}\)</span> (感觉可以
-generalize，但是似乎 <span class="math inline">\(m&gt;2\)</span>
-会有一些 casework)个不同的 <span
-class="math inline">\((t_1,\cdots,t_m)\)</span>
-是有用的，其他的一些是显然不优的。（如对于 <span
-class="math inline">\(m=2\)</span> 我们只需要保留一个）</p>
-<p>设 <span
-class="math inline">\(\mu=\dfrac{\epsilon}{nm}OPT_1\)</span>，对于 <span
-class="math inline">\(G(i,T)\)</span> 的每一个 <span
-class="math inline">\(T\)</span>，我们用 <span
-class="math inline">\(\lfloor T/\mu \rfloor\)</span> 来替代他，维护
-<span class="math inline">\(G(i,T^\prime)\)</span> 中的 <span
-class="math inline">\(n^{m-2}\)</span> 个元素一一进行转移。</p>
-<p>这样的话，每一步 <span class="math inline">\(T\)</span>
-上的误差不超过 <span
-class="math inline">\(\mu\)</span>，最终的总误差不超过 <span
-class="math inline">\(\dfrac{\epsilon OPT_1}{m}\leq \epsilon
-OPT_m\)</span>。</p>
-<p>复杂度为 <span class="math inline">\(O(n^m/\epsilon)\)</span>，实现了
-FTAS。</p>
 
       
     </div>

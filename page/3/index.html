@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,171 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
+      <meta itemprop="name" content="devout">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="devout">
+      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | devout">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/24/%E3%80%8A%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98/" class="post-title-link" itemprop="url">《近似算法设计》第三章习题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-24 20:00:57" itemprop="dateCreated datePublished" datetime="2023-12-24T20:00:57+08:00">2023-12-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-26 21:30:17" itemprop="dateModified" datetime="2023-12-26T21:30:17+08:00">2023-12-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="section">3.1</h2>
+<p>对于一个最优解 <span
+class="math inline">\(O\)</span>，我们把他分成两部分，第一部分是按照
+<span class="math inline">\(v_k/s_k\)</span>
+从大到小排序之后选出来的一个前缀，记这部分的价值为 <span
+class="math inline">\(\nu_1\)</span>，大小记为 <span
+class="math inline">\(\sigma_1\)</span>，剩下的部分是第二部分，代价记为
+<span class="math inline">\(\nu_2\)</span>，大小记为 <span
+class="math inline">\(\sigma_2\)</span></p>
+<p>若 <span class="math inline">\(\nu_1\)</span> 大于 <span
+class="math inline">\(\nu_2\)</span>，则按照第一种选法选出来的价值 <span
+class="math inline">\(\geq \nu_1\geq (1/2)OPT\)</span></p>
+<p>若 <span class="math inline">\(\nu_1\)</span> 小于 <span
+class="math inline">\(\nu_2\)</span>，设第一部分的下一个为 <span
+class="math inline">\(k\)</span>，则 <span
+class="math inline">\(s_k&gt;\sigma_2\)</span>，因为 <span
+class="math inline">\(v_k/s_k\geq \nu_2/\sigma_2\)</span>，<span
+class="math inline">\(v_k\geq \nu_2\geq (1/2)OPT\)</span></p>
+<h2 id="section-1">3.2</h2>
+<p>设 3.1 得到的结果为 <span class="math inline">\(M\)</span>，将所有的
+<span class="math inline">\(v_i\)</span> 变为 <span
+class="math inline">\(\lfloor nv_i/\epsilon M\rfloor\)</span>，则</p>
+<p><span class="math display">\[\sum_{k\in O}v^\prime _k\leq
+\frac{n}{\epsilon M}\sum_{k\in O} v_k=\frac{2n}{\epsilon}\]</span></p>
+<p>因此可以将 dp 的上限设为 <span
+class="math inline">\(n/\epsilon\)</span>，最终复杂度为 <span
+class="math inline">\(O(n^2/\epsilon)\)</span></p>
+<h2 id="section-2">3.3</h2>
+<p><span class="math inline">\(O(nW)\)</span> 的做法就是一个很显然的
+dp，维护最小值即可。</p>
+<p>考虑我们要求一个 <span class="math inline">\((1-\epsilon)\)</span>
+近似，设 <span class="math inline">\(\mu=\epsilon W/n\)</span>，设 <span
+class="math inline">\(w_i^\prime=\lfloor w_i/\mu\rfloor\)</span>，对于
+<span class="math inline">\(w^\prime_i\)</span> 做上面的
+dp，设我们得到的对应选出的集合为 <span
+class="math inline">\(S\)</span>，真实最优解为 <span
+class="math inline">\(O\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i\in S}w_i&amp;\geq \mu\sum_{i\in S}w^\prime_i \\
+&amp;\geq \mu \sum_{i\in O}w^\prime_i \\
+&amp;\geq \sum_{i\in O}w_i-\mu|O| \\
+&amp;\geq OPT-\mu n \\
+&amp;\geq OPT-\epsilon W \\
+&amp;\geq (1-\epsilon)OPT
+\end{aligned}
+\]</span></p>
+<p>即解决。</p>
+<h2 id="section-3">3.4</h2>
+<p>不会。</p>
+<p>原论文是俄语的看不懂（</p>
+<h2 id="section-4">3.5</h2>
+<p>dp 还是好搞的，用 <span
+class="math inline">\(f(i,t_1,t_2,\cdots,t_m)(t_1\geq t_2\geq \cdots
+\geq t_m)\)</span> 表示前 <span class="math inline">\(i\)</span>
+个任务安排好了，各个处理器用时是多少 最后的代价最小是多少。</p>
+<p>下面考虑怎么确定 <span class="math inline">\(OPT_m\)</span>
+的范围，一个比较显然的界是 <span class="math inline">\(OPT_m\geq
+\dfrac{1}{m}OPT_1\)</span>，其中 <span
+class="math inline">\(OPT_1\)</span>
+表示只有一个处理器的最优值，这个可以直接 <span
+class="math inline">\(O(n)\)</span> 算出来。（实际上似乎有更优的界 <span
+class="math inline">\(OPT_m\geq \dfrac{n+m}{(n+1)m}OPT_1\)</span>，但是
+<span class="math inline">\(1/m\)</span> 已经足够）</p>
+<p>为了实现近似算法，我们需要换一种 dp 的形式，感觉在 OI
+里也见到过。</p>
+<p>设 <span class="math inline">\(G(i,T)\)</span> 表示满足 <span
+class="math inline">\(f(i,t_1,\cdots,t_m)=T\)</span> 的 <span
+class="math inline">\((t_1,\cdots,t_m)\)</span> 的集合。</p>
+<p>一个引理是对于相同的 <span class="math inline">\(T\)</span>
+，最多只有 <span class="math inline">\(n^{m-2}\)</span> (感觉可以
+generalize，但是似乎 <span class="math inline">\(m&gt;2\)</span>
+会有一些 casework)个不同的 <span
+class="math inline">\((t_1,\cdots,t_m)\)</span>
+是有用的，其他的一些是显然不优的。（如对于 <span
+class="math inline">\(m=2\)</span> 我们只需要保留一个）</p>
+<p>设 <span
+class="math inline">\(\mu=\dfrac{\epsilon}{nm}OPT_1\)</span>，对于 <span
+class="math inline">\(G(i,T)\)</span> 的每一个 <span
+class="math inline">\(T\)</span>，我们用 <span
+class="math inline">\(\lfloor T/\mu \rfloor\)</span> 来替代他，维护
+<span class="math inline">\(G(i,T^\prime)\)</span> 中的 <span
+class="math inline">\(n^{m-2}\)</span> 个元素一一进行转移。</p>
+<p>这样的话，每一步 <span class="math inline">\(T\)</span>
+上的误差不超过 <span
+class="math inline">\(\mu\)</span>，最终的总误差不超过 <span
+class="math inline">\(\dfrac{\epsilon OPT_1}{m}\leq \epsilon
+OPT_m\)</span>。</p>
+<p>复杂度为 <span class="math inline">\(O(n^m/\epsilon)\)</span>，实现了
+FTAS。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1676,167 +1841,6 @@ class="math inline">\(\mathcal Y\)</span>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Goodbye World!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2023.11.18</p>
 <p>首都师范大学附属中学 笃行楼403-18</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://06devout.github.io/blog/2023/11/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%81%E4%BA%94%E6%98%AF%E5%A4%A7%E6%BD%AE%EF%BC%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/97344.png">
-      <meta itemprop="name" content="devout">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="devout">
-      <meta itemprop="description" content="拼命地，想把双手伸向暗云的天空中 ...为了寻找那远而不可及的彼岸的某些东西">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | devout">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%81%E4%BA%94%E6%98%AF%E5%A4%A7%E6%BD%AE%EF%BC%9F/" class="post-title-link" itemprop="url">【Ph#1】 为什么十五是大潮？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-17 19:35:56" itemprop="dateCreated datePublished" datetime="2023-11-17T19:35:56+08:00">2023-11-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-14 21:40:56" itemprop="dateModified" datetime="2024-03-14T21:40:56+08:00">2024-03-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Ph/" itemprop="url" rel="index"><span itemprop="name">Ph</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>期中考试地理死在了“常识”题上。</p>
-<p>所以回去研究了一下潮汐的问题（</p>
-<p>实际上海面是等势面，地球和太阳组成的系统和地球和月球组成的系统是类似的，我们仅分析地球和月球组成的系统。</p>
-<p>这里面主要有这么几个势能：地球引力势，月球引力势，地月系转动势，地球自转势。</p>
-<p>设地球质量为 <span class="math inline">\(M\)</span>，月球质量为 <span
-class="math inline">\(m\)</span>，月球质心到地球质心的矢量为 <span
-class="math inline">\(\vec d\)</span>，用 <span
-class="math inline">\(v\)</span> 表示 <span class="math inline">\(\vec
-v\)</span> 的模，以地球为原点，分析位置 <span class="math inline">\(\vec
-r\)</span> 的势能情况</p>
-<p>引力势很简单，<span
-class="math inline">\(\varphi_{earth}=-G\dfrac{M}{r},\varphi_{moon}=-G\dfrac{M}{|\vec
-r+\vec d|}\)</span>。</p>
-<p>接下来是地月系转动势，虽然常说月球绕着地球转，但是实际上他们是绕着整个系统的质心转动。</p>
-<p>设地月质心到地球的矢量为 <span class="math inline">\(\vec
-s\)</span>，设地月转动角速度为 <span
-class="math inline">\(\omega_{rot}\)</span></p>
-<p>则 <span
-class="math inline">\(G\dfrac{Mm}{d^2}=Ms\omega_{rot}^2\)</span></p>
-<p>地球表面的所有物体运动均需要角速度为 <span
-class="math inline">\(\omega_{rot}\)</span>，实际上忽略自转的情况下，他们的轨迹都是一个半径相同的圆，因此地球和月球的旋转系中的惯性是一个常数场，他的大小为
-<span class="math inline">\(s\omega_{rot}\dfrac{\vec
-d}{d}\)</span>，选取恰当的零势面，得到 <span
-class="math inline">\(\varphi_{rot}=G\dfrac{m\vec d\cdot \vec
-r}{d^3}\)</span></p>
-<p>接下来是地球自转的转动势，设地球自转角速度为 <span
-class="math inline">\(\omega_{aut}\)</span>，则 <span
-class="math inline">\(F=r\omega_{aut}^2,\varphi_{aut}=-\frac{1}{2}\omega_{aut}^2r^2\)</span></p>
-<p>所以我们得到了海平面方程：</p>
-<p><span class="math display">\[-G\frac{M}{r}-G\frac{m}{|\vec r+\vec
-d|}-G\frac{m\vec d\cdot \vec
-r}{d^3}-\frac{1}{2}\omega_{aut}^2r^2=C\]</span></p>
-<p>考虑赤道平面的潮高，设 <span class="math inline">\(\theta=\langle
-\vec r,\vec d\rangle\)</span>，则有</p>
-<p><span
-class="math display">\[\varphi(r,\theta)=-G\frac{M}{r}-G\frac{m}{\sqrt{r^2+d^2+2rd\cos
-\theta}}-G\frac{mr\cos\theta}{d^2}-\frac{1}{2}\omega_{aut}^2r^2=C\]</span></p>
-<p>设 <span class="math inline">\(r(0)=r_0,r(\theta)=r_0+\Delta
-r\)</span>，则上面的方程可以写作</p>
-<p><span class="math display">\[\varphi(r_0+\Delta
-r,\theta)=\varphi(r_0,0)\]</span></p>
-<p>因为 <span class="math inline">\(\Delta r \ll r\)</span>，所以可以取
-<span class="math inline">\(\varphi(r,\theta)\)</span> 对 <span
-class="math inline">\(\dfrac{\Delta r}{r_0}\)</span>
-的一次项近似，这样可以得到一个 <span class="math inline">\(A\Delta
-r=B\)</span> 的形式。</p>
-<p>因为 <span class="math inline">\(\varphi(r,\theta)\)</span> 中都是
-<span class="math inline">\(\varphi_i(\vec r)\)</span>
-的形式，所以提取出 <span class="math inline">\(\Delta r\)</span>
-之后，<span class="math inline">\(A\)</span> 中每一项都是 <span
-class="math inline">\(\dfrac{\mathrm d\varphi_i(\vec r)}{\mathrm
-dr}\)</span>
-的形式，这刚好是加速度的相反数，而这些势能中，除了地球重力加速度产生的
-<span class="math inline">\(g=9.8 m/s^2\)</span>
-以外，其他的加速度均远小于这个，因此在展开的时候只需要展开第一项的地球引力势能，其他的都可以用
-<span class="math inline">\(r_0\)</span> 来近似替代 <span
-class="math inline">\(r_0+\Delta r\)</span></p>
-<p>而 <span class="math inline">\(-G\dfrac{M}{r_0+\Delta
-r}=-G\dfrac{M}{r_0(1+\dfrac{\Delta r}{r_0})}\sim
--G\dfrac{M}{r_0}+G\dfrac{M\Delta r}{r^2}\)</span>，这里用到的是 <span
-class="math inline">\((1+x)^k\sim 1+kx(x\to 0)\)</span>.</p>
-<p>因此得到方程</p>
-<p><span class="math display">\[-G\frac{M}{r_0}+G\frac{M\Delta
-r}{r_0^2}-G\frac{m}{\sqrt{r_0^2+d^2+2r_0d\cos\theta}}-G\frac{mr_0\cos\theta}{d^2}-\frac{1}{2}\omega_{aut}^2r_0^2
-\\ =
--G\frac{M}{r_0}-G\frac{m}{d+r_0}-G\frac{mr_0}{d^2}-\frac{1}{2}\omega_{aut}^2r_0^2\]</span></p>
-<p>化简可得</p>
-<p><span class="math display">\[G\frac{M\Delta
-r}{r_0^2}=G\frac{m}{\sqrt{r_0^2+d^2+2r_0d\cos\theta}}-G\frac{m}{d+r_0}-G\frac{mr_0(1-\cos\theta)}{d^2}\]</span></p>
-<p>将左右对 <span class="math inline">\(\dfrac{r_0}{d}\)</span>
-展开到平方项，化简得到</p>
-<p><span class="math display">\[\Delta
-r=-\frac{3mr_0^4}{2Md^3}(1-\cos^2\theta)\]</span></p>
-<p>所以潮汐的最高点在 <span class="math inline">\(\theta=0,\pi\)</span>
-处，最低点在 <span class="math inline">\(\pi/2,3\pi/2\)</span> 处。</p>
-<p>也就是说仅由地月作用就已经产生了一个“椭圆”的潮汐形状，而太阳引起的潮汐也是这个形状。</p>
-<p>这也就不难解释为什么初一和十五是大潮了，因为此时日地月处于同一直线上，月球引起的潮汐和太阳引起的潮汐叠加形成大潮，而初七和二十三则形成小潮。</p>
 
       
     </div>
